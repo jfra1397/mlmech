@@ -41,8 +41,8 @@ class CustomDataGenerator(Sequence):
         self.process = process_fcn
         self.onelabel = onelabel
 
-        hshift = 10
-        vshift = 10
+        hshift = 4
+        vshift = 4
 
         flip = [True, False] if flip else [False]
         if shift > 1: 
