@@ -23,6 +23,6 @@ def generate_model():
 
     model = Model(inputs=encoder.inputs, outputs=output)
 
-    
+    #Dies ist ein GIT-Test Kommentar von Samuel, bitte löschen
 
     return model
