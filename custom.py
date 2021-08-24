@@ -1,7 +1,7 @@
 
 #DATA GENERATOR
 seed = 42
-onelabel = False
+onelabel = True
 shift = 1
 from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
@@ -12,8 +12,8 @@ preprocess_fcn = preprocess
 
 # TRAINING
 import tensorflow.keras.losses as losses
-loss = losses.CategoricalCrossentropy()
-#loss = losses.BinaryCrossentropy()
+#loss = losses.CategoricalCrossentropy()
+loss = losses.BinaryCrossentropy()
 # import tensorflow.keras.backend as K
 # def IoULoss(targets, inputs, smooth=1e-6):
     
