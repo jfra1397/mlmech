@@ -12,7 +12,7 @@ preprocess_fcn = preprocess
 
 # TRAINING
 import tensorflow.keras.losses as losses
-#loss = losses.CategoricalCrossentropy()
+#loss = losses.SparseCategoricalCrossentropy()
 loss = losses.BinaryCrossentropy()
 # import tensorflow.keras.backend as K
 # def IoULoss(targets, inputs, smooth=1e-6):
