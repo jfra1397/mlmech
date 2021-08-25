@@ -43,4 +43,4 @@ callback = EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/julian/vgg16_1"
+dir_name = "results/julian/vgg16_2"
