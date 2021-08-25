@@ -17,30 +17,11 @@ class CustomDataGenerator(Sequence):
     @classmethod
     def generate_data(cls, batch_size, img_size, img_dir, mask_dir, horizontal_split, 
                     vertical_split, img_extension, mask_extension, process_fcn, validation_split = 0.2, flip = True, shift = 0, onelabel = False, seed=None):
+        
         onlyfiles_images = [f for f in listdir(img_dir) if isfile(join(img_dir, f)) if f.endswith(img_extension)]
         onlyfiles_masks = [f for f in listdir(mask_dir) if isfile(join(mask_dir, f)) if f.endswith(mask_extension)]
         onlyfiles = [a[:-4] for a in onlyfiles_masks for b in onlyfiles_images if a[:-4] == b[:-4]]
-        split = int(len(onlyfiles)*(1-validation_split))
-        test_onlyfiles = onlyfiles[:split]
-        val_onlyfiles = onlyfiles[split:]
-        test = cls(batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, test_onlyfiles, process_fcn, flip = flip, shift = shift, onelabel = onelabel, seed=seed)
-        val = cls(batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, val_onlyfiles, process_fcn, flip = flip, shift = shift, onelabel = onelabel, seed = seed)
-
-        return test,val
-    
-    def __init__(self, batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, flip = True, shift = 0, onelabel = False, seed=None):
-        self.batch_size = batch_size
-        self.img_size = img_size
-        self.img_dir = img_dir
-        self.mask_dir = mask_dir
-        self.img_extension = img_extension
-        self.mask_extension = mask_extension
-        self.horizontal_split = horizontal_split
-        self.vertical_split = vertical_split
-        self.classes = np.array([])
-        self.process = process_fcn
-        self.onelabel = onelabel
-
+        
         hshift = 4
         vshift = 4
 
@@ -53,7 +34,7 @@ class CustomDataGenerator(Sequence):
             vshift = 1
 
 
-        self.data = []
+        data = []
         for files in onlyfiles:
             for i in range(horizontal_split):
                 for j in range(vertical_split):
@@ -61,10 +42,33 @@ class CustomDataGenerator(Sequence):
                         for vflip in flip:
                             for _ in range(hshift):
                                 for _ in range(vshift):
-                                    self.data.append([files, i, j, hflip, vflip, random.uniform(0,shift), random.uniform(0,shift)])
+                                    data.append([files, i, j, hflip, vflip, random.uniform(0,shift), random.uniform(0,shift)])
 
         random.seed(seed)
-        random.shuffle(self.data)
+        random.shuffle(data)
+        split = int(len(data)*(1-validation_split))
+        test_data = data[:split]
+        val_data = data[split:]
+        
+        test = cls(test_data, batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = onelabel)
+        val = cls(val_data, batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = onelabel)
+
+        return test,val
+    
+    def __init__(self, data, batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = False):
+        self.batch_size = batch_size
+        self.img_size = img_size
+        self.img_dir = img_dir
+        self.mask_dir = mask_dir
+        self.img_extension = img_extension
+        self.mask_extension = mask_extension
+        self.horizontal_split = horizontal_split
+        self.vertical_split = vertical_split
+        self.classes = np.array([])
+        self.process = process_fcn
+        self.onelabel = onelabel
+        self.data = data
+        
         print("Number of samples: ", len(self.data))
         if self.onelabel:
             self.classes = np.array([0,1])

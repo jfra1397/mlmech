@@ -19,7 +19,8 @@ def generate_model():
     d4 = UpSampling2D(size=(2, 2))(c3)
     c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
     d5 = UpSampling2D(size=(2, 2))(c4)
-    c5 = Conv2D(1, kernel_size=(3, 3), activation='sigmoid', padding='same')(d5)
+    c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     output = c5
 
     model = Model(inputs=encoder.inputs, outputs=output)
