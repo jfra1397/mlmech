@@ -1,0 +1,39 @@
+Epoch 1/50
+20/20 [==============================] - 238s 12s/step - loss: 0.6581 - accuracy: 0.7185 - val_loss: 0.2542 - val_accuracy: 0.9101
+Epoch 2/50
+20/20 [==============================] - 228s 12s/step - loss: 0.3154 - accuracy: 0.8912 - val_loss: 0.2395 - val_accuracy: 0.9185
+Epoch 3/50
+20/20 [==============================] - 224s 11s/step - loss: 0.2704 - accuracy: 0.9139 - val_loss: 0.1949 - val_accuracy: 0.9323
+Epoch 4/50
+20/20 [==============================] - 230s 12s/step - loss: 0.1842 - accuracy: 0.9338 - val_loss: 0.1722 - val_accuracy: 0.9381
+Epoch 5/50
+20/20 [==============================] - 228s 12s/step - loss: 0.2025 - accuracy: 0.9330 - val_loss: 0.1928 - val_accuracy: 0.9381
+Epoch 6/50
+20/20 [==============================] - 226s 12s/step - loss: 0.1982 - accuracy: 0.9332 - val_loss: 0.1604 - val_accuracy: 0.9422
+Epoch 7/50
+20/20 [==============================] - 223s 12s/step - loss: 0.1944 - accuracy: 0.9276 - val_loss: 0.1587 - val_accuracy: 0.9448
+Epoch 8/50
+20/20 [==============================] - 227s 12s/step - loss: 0.2009 - accuracy: 0.9355 - val_loss: 0.1478 - val_accuracy: 0.9476
+Epoch 9/50
+20/20 [==============================] - 224s 12s/step - loss: 0.1474 - accuracy: 0.9445 - val_loss: 0.1399 - val_accuracy: 0.9505
+Epoch 10/50
+20/20 [==============================] - 225s 12s/step - loss: 0.1387 - accuracy: 0.9529 - val_loss: 0.1473 - val_accuracy: 0.9514
+Epoch 11/50
+20/20 [==============================] - 225s 12s/step - loss: 0.1541 - accuracy: 0.9467 - val_loss: 0.1434 - val_accuracy: 0.9453
+Epoch 12/50
+20/20 [==============================] - 228s 12s/step - loss: 0.1651 - accuracy: 0.9456 - val_loss: 0.1359 - val_accuracy: 0.9532
+Epoch 13/50
+20/20 [==============================] - 212s 11s/step - loss: 0.1588 - accuracy: 0.9492 - val_loss: 0.1411 - val_accuracy: 0.9553
+Epoch 14/50
+20/20 [==============================] - 213s 11s/step - loss: 0.1292 - accuracy: 0.9608 - val_loss: 0.1272 - val_accuracy: 0.9556
+Epoch 15/50
+20/20 [==============================] - 213s 11s/step - loss: 0.1934 - accuracy: 0.9396 - val_loss: 0.1403 - val_accuracy: 0.9494
+Epoch 16/50
+20/20 [==============================] - 212s 11s/step - loss: 0.1824 - accuracy: 0.9359 - val_loss: 0.1309 - val_accuracy: 0.9544
+Epoch 17/50
+20/20 [==============================] - 213s 11s/step - loss: 0.1438 - accuracy: 0.9479 - val_loss: 0.1244 - val_accuracy: 0.9562
+Epoch 18/50
+20/20 [==============================] - 212s 11s/step - loss: 0.1383 - accuracy: 0.9499 - val_loss: 0.1260 - val_accuracy: 0.9567
+Epoch 19/50
+20/20 [==============================] - 214s 11s/step - loss: 0.1830 - accuracy: 0.9357 - val_loss: 0.1259 - val_accuracy: 0.9553
+Epoch 00019: early stopping
