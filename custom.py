@@ -43,4 +43,4 @@ callback = None#EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/samuel/ResNet50V2_2"
+dir_name = "results/julian/vgg16_5"
