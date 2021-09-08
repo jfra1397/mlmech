@@ -7,7 +7,8 @@ from tensorflow.keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampli
 def generate_model():
     
     # encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(256, 256, 3), classifier_activation=None)
-    encoder = tf.keras.applications.VGG16(include_top=False, weights="imagenet", input_tensor=None, input_shape=(256, 256, 3), pooling=None, classifier_activation= None)
+    # encoder = tf.keras.applications.VGG16(include_top=False, weights="imagenet", input_tensor=None, input_shape=(256, 256, 3), pooling=None, classifier_activation= None)
+    encoder = tf.keras.applications.ResNet50V2(include_top=False,weights="imagenet",input_tensor=None,input_shape=None,pooling=None,classifier_activation=None)
     encoder.trainable = False
 
     d1 = UpSampling2D(size=(2, 2))(encoder.layers[-1].output)

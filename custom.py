@@ -3,9 +3,9 @@
 seed = 42
 onelabel = False
 shift = 1
-from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
+#from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
-#from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
+from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
 
@@ -43,4 +43,4 @@ callback = None#EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/julian/vgg16_5"
+dir_name = "results/samuel/ResNet50V2_2"
