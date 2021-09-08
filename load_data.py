@@ -166,7 +166,15 @@ class CustomDataGenerator(Sequence):
         for i in range(self.batch_size):
             axs[3*i].imshow(img[i])
             axs[3*i+1].imshow(mask[i], vmin=0, vmax = len(self.classes))
-            axs[3*i+2].imshow(predictions[i].reshape(256,256), vmin=0, vmax = len(self.classes))
+            if predictions[i].shape[2] > 1:
+                class_0 = predictions[i][:,:,0]
+                class_1 = predictions[i][:,:,1]
+                class_2 = predictions[i][:,:,2]
+                result = 0*(np.where(class_1>class_2,class_1,class_2) < class_0) +  1*(np.where(class_0>class_2,class_0,class_2) < class_1) +  2*(np.where(class_1>class_0,class_1,class_0) < class_2)
+            else:
+                result = predictions[i].reshape(256,256)
+            
+            axs[3*i+2].imshow(result, vmin=0, vmax = len(self.classes))
             
         for ax in axs:
             ax.axis("off")
