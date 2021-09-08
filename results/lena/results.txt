@@ -1,0 +1,20 @@
+Todo:
+======
+
+MobileNetV2:
+
+
+SegNet:
+- mehr Layer?
+
+
+
+
+
+
+
+Results:
+=========
+
+MobileNetV2:
+- bessere Ergebnisse ohen Shift
