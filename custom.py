@@ -1,7 +1,7 @@
 
 #DATA GENERATOR
 seed = 42
-onelabel = True
+onelabel = False
 shift = 1
 from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
@@ -12,8 +12,8 @@ preprocess_fcn = preprocess
 
 # TRAINING
 import tensorflow.keras.losses as losses
-#loss = losses.SparseCategoricalCrossentropy()
-loss = losses.BinaryCrossentropy()
+loss = losses.SparseCategoricalCrossentropy()
+#loss = losses.BinaryCrossentropy()
 # import tensorflow.keras.backend as K
 # def IoULoss(targets, inputs, smooth=1e-6):
     
@@ -32,15 +32,15 @@ loss = losses.BinaryCrossentropy()
 epochs=50
 steps_per_epoch=20
 from tensorflow.keras.callbacks import EarlyStopping
-callback = EarlyStopping(monitor="loss",
-    min_delta=0.01,
-    patience=5,
-    verbose=1,
-    mode="auto",
-    baseline=None,
-    restore_best_weights=False)
+callback = None#EarlyStopping(monitor="loss",
+    # min_delta=0.01,
+    # patience=5,
+    # verbose=1,
+    # mode="auto",
+    # baseline=None,
+    # restore_best_weights=False)
 
 
 
 #RESULTS
-dir_name = "results/julian/vgg16_2"
+dir_name = "results/julian/vgg16_5"
