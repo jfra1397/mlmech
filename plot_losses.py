@@ -18,15 +18,15 @@ import matplotlib.pyplot as plt
 
 all_loss = []
 all_epochs = []
-for _, hist in results.items():
-    all_loss += list(hist["loss"].values())
-    all_loss += list(hist["val_loss"].values())
-    all_epochs += list(hist["val_loss"].keys())
+# for _, hist in results.items():
+#     all_loss += list(hist["loss"].values())
+#     all_loss += list(hist["val_loss"].values())
+#     all_epochs += list(hist["val_loss"].keys())
 
-all_loss = np.array(all_loss)
-all_epochs = np.array([float(e) for e in all_epochs])
-max_loss = all_loss.max()
-max_epochs = all_epochs.max()
+# all_loss = np.array(all_loss)
+# all_epochs = np.array([float(e) for e in all_epochs])
+max_loss = 0.3 # all_loss.max()
+max_epochs = 20 # all_epochs.max()
 
 
 fig, axes = plt.subplots(math.ceil(len(results)/3),3)

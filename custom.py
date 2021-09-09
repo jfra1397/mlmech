@@ -2,8 +2,8 @@
 #DATA GENERATOR
 seed = 42
 onelabel = False
-shift = 1
-#from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
+shift = 0
+from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 preprocess_fcn = preprocess
@@ -29,7 +29,7 @@ loss = losses.SparseCategoricalCrossentropy()
 #     return 1 - IoU
 # loss = IoULoss()
 
-epochs=50
+epochs=100
 steps_per_epoch=20
 from tensorflow.keras.callbacks import EarlyStopping
 callback = None#EarlyStopping(monitor="loss",
@@ -43,4 +43,4 @@ callback = None#EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/julian/vgg16_5"
+dir_name = "results/julian/vgg16_6"
