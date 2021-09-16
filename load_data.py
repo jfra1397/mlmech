@@ -2,6 +2,7 @@ from enum import Flag
 from os import listdir
 from os.path import isfile, join
 import random
+from traceback import print_tb
 
 import matplotlib.pyplot as plt
 
@@ -15,8 +16,8 @@ class CustomDataGenerator(Sequence):
     """Helper to iterate over the data (as Numpy arrays)."""
 
     @classmethod
-    def generate_data(cls, batch_size, img_size, img_dir, mask_dir, horizontal_split, 
-                    vertical_split, img_extension, mask_extension, process_fcn, validation_split = 0.2, flip = True, shift = 0, onelabel = False, seed=None):
+    def generate_data(cls, batch_size, img_dir, mask_dir, horizontal_split, 
+                    vertical_split, img_extension, mask_extension, process_fcn, validation_split = 0.2, flip = True, shift = 0, onelabel = False, seed=None, single_img = True):
         
         onlyfiles_images = [f for f in listdir(img_dir) if isfile(join(img_dir, f)) if f.endswith(img_extension)]
         onlyfiles_masks = [f for f in listdir(mask_dir) if isfile(join(mask_dir, f)) if f.endswith(mask_extension)]
@@ -50,14 +51,13 @@ class CustomDataGenerator(Sequence):
         test_data = data[:split]
         val_data = data[split:]
         
-        test = cls(test_data, batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = onelabel)
-        val = cls(val_data, batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = onelabel)
+        test = cls(test_data, batch_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = onelabel, single_img = single_img)
+        val = cls(val_data, batch_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = onelabel, single_img = single_img)
 
         return test,val
     
-    def __init__(self, data, batch_size, img_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = False):
+    def __init__(self, data, batch_size, img_dir, mask_dir, horizontal_split, vertical_split, img_extension, mask_extension, onlyfiles, process_fcn, onelabel = False, single_img = True):
         self.batch_size = batch_size
-        self.img_size = img_size
         self.img_dir = img_dir
         self.mask_dir = mask_dir
         self.img_extension = img_extension
@@ -68,6 +68,7 @@ class CustomDataGenerator(Sequence):
         self.process = process_fcn
         self.onelabel = onelabel
         self.data = data
+        self.single_img = single_img
         
         print("Number of samples: ", len(self.data))
         if self.onelabel:
@@ -76,6 +77,8 @@ class CustomDataGenerator(Sequence):
             self._count_classes(onlyfiles)
 
         print(f"Classes: {self.classes}")
+
+        self.__getrawitem__(0)
     def __len__(self):
         return len(self.data) // self.batch_size
 
@@ -91,7 +94,16 @@ class CustomDataGenerator(Sequence):
         for mask in masks:
             y.append(mask)
         
-        return np.array(x), np.array(y)
+        if not self.single_img and not self.onelabel: 
+            y = np.array(y)
+            y_temp = np.zeros((*y.shape,3), dtype=np.uint16)
+            y_temp[:,:,:,0] = np.where(y == 0,1,0)
+            y_temp[:,:,:,1] = np.where(y == 1,1,0)
+            y_temp[:,:,:,2] = np.where(y == 2,1,0)
+
+            y = y_temp
+        
+        return np.array(x), np.array(y, dtype=np.float32)
 
     def get_path(self, idx):
         i = idx * self.batch_size
@@ -127,7 +139,9 @@ class CustomDataGenerator(Sequence):
             mask_array_split = np.roll(mask_array_split, int(mask_array_split.shape[0]*data[5]), axis=0)
             mask_array_split = np.roll(mask_array_split, int(mask_array_split.shape[1]*data[6]), axis=1)
 
-            
+            self.img_size = image_array_split.shape
+            self.mask_size = mask_array_split.shape
+
             x.append(image_array_split)
             y.append(mask_array_split)
         
@@ -172,10 +186,35 @@ class CustomDataGenerator(Sequence):
                 class_2 = predictions[i][:,:,2]
                 result = 0*(np.where(class_1>class_2,class_1,class_2) < class_0) +  1*(np.where(class_0>class_2,class_0,class_2) < class_1) +  2*(np.where(class_1>class_0,class_1,class_0) < class_2)
             else:
-                result = predictions[i].reshape(256,256)
+                result = predictions[i].reshape(self.mask_size)
             
             axs[3*i+2].imshow(result, vmin=0, vmax = len(self.classes))
             
         for ax in axs:
             ax.axis("off")
         plt.tight_layout()
+
+
+if __name__ == "__main__":
+    from custom import *
+    
+    img_dir = "images/"
+    mask_dir = "labels/"
+    image_extension = ".png"
+    mask_extension = ".png"
+    batch_size = 16
+    horizontal_split = 12
+    vertical_split = 1
+
+    train, validation = CustomDataGenerator.generate_data(batch_size, img_dir, mask_dir,
+                                                        horizontal_split, vertical_split, image_extension, mask_extension, 
+                                                        preprocess_fcn, validation_split=0.1, flip=True, shift = shift, onelabel=onelabel, seed=seed)
+
+    train.plot_batch(3)
+
+    img, mask = train.__getitem__(2)
+    print(img.min())
+    print(img.max())
+    print(mask.min())
+    print(mask.max())
+    print(train.classes)

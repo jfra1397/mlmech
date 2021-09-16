@@ -1,9 +1,13 @@
+import tensorflow as tf
+import numpy as np
+
 
 #DATA GENERATOR
 seed = 42
-onelabel = False
-shift = 1
-#from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
+onelabel = True
+shift = 0
+from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
+
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 preprocess_fcn = preprocess
@@ -11,9 +15,24 @@ preprocess_fcn = preprocess
 
 
 # TRAINING
+def jaccard_distance(y_true, y_pred, smooth=100):
+
+    y_pred = tf.cast(y_pred, tf.float32)
+    y_true = tf.cast(y_true, tf.float32)
+    
+    """ Calculates mean of Jaccard distance as a loss function """
+    intersection = tf.reduce_sum(y_true * y_pred, axis=(1,2))
+    sum_ = tf.reduce_sum(y_true + y_pred, axis=(1,2))
+    jac = (intersection + smooth) / (sum_ - intersection + smooth)
+    jd =  (1 - jac) * smooth
+    return tf.reduce_mean(jd)
+
 import tensorflow.keras.losses as losses
-loss = losses.SparseCategoricalCrossentropy()
-#loss = losses.BinaryCrossentropy()
+#loss = losses.SparseCategoricalCrossentropy()
+loss = losses.BinaryCrossentropy()
+single_img = False
+#loss = jaccard_distance
+
 # import tensorflow.keras.backend as K
 # def IoULoss(targets, inputs, smooth=1e-6):
     
@@ -43,4 +62,4 @@ callback = None#EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/samuel/ResNet50V2_2"
+dir_name = "results/julian/unet_256x3072_3"
