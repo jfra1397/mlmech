@@ -52,7 +52,7 @@ steps_per_epoch=20
 from tensorflow.keras.callbacks import EarlyStopping
 callback = EarlyStopping(monitor="loss",
      min_delta=0.01,
-     patience=3,
+     patience=5,
      verbose=1,
      mode="auto",
      baseline=None,
