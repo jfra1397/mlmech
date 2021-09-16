@@ -1,4 +1,4 @@
-path = "results/"
+path = "results"
 
 import os
 import json
@@ -15,6 +15,12 @@ for root, dirs, files in os.walk(path):
             with open(os.path.join(root, file)) as f:
                 key =  os.path.join(root, file).replace(path,'')
                 results[key] = json.load(f)
+# for root, dirs, files in os.walk(path):
+#     for file in files:
+#         if file == ("history.json"):
+#             with open(os.path.join(root, file)) as f:
+#                 key =  os.path.join(root, file).replace(path,'')
+#                 results[key] = json.load(f)
 
 import matplotlib.pyplot as plt
 

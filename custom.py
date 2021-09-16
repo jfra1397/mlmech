@@ -6,8 +6,7 @@ import numpy as np
 seed = 42
 onelabel = True
 shift = 0
-from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
-
+#from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 preprocess_fcn = preprocess
@@ -48,7 +47,7 @@ single_img = False
 #     return 1 - IoU
 # loss = IoULoss()
 
-epochs=50
+epochs=100
 steps_per_epoch=20
 from tensorflow.keras.callbacks import EarlyStopping
 callback = None#EarlyStopping(monitor="loss",
@@ -62,4 +61,4 @@ callback = None#EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/julian/unet_256x3072_3"
+dir_name = "results/samuel/ResNet50V2_nS_SC"
