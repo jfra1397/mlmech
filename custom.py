@@ -6,8 +6,7 @@ import numpy as np
 seed = 42
 onelabel = True
 shift = 0
-from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
-
+#from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 preprocess_fcn = preprocess
@@ -51,15 +50,15 @@ single_img = False
 epochs=50
 steps_per_epoch=20
 from tensorflow.keras.callbacks import EarlyStopping
-callback = None#EarlyStopping(monitor="loss",
-    # min_delta=0.01,
-    # patience=5,
-    # verbose=1,
-    # mode="auto",
-    # baseline=None,
-    # restore_best_weights=False)
+callback = EarlyStopping(monitor="loss",
+     min_delta=0.01,
+     patience=5,
+     verbose=1,
+     mode="auto",
+     baseline=None,
+     restore_best_weights=False)
 
 
 
 #RESULTS
-dir_name = "results/julian/unet_256x3072_3"
+dir_name = "results/samuel/ResNet50V2_bB_SC2"

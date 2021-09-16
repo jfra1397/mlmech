@@ -66,6 +66,9 @@ def generate_model(img_size):
     model = Model(inputs=[inputs], outputs=[outputs])
 
 
-    
+    #BatchNormilzedlayer
+    #GeneralAveragePooling
+    #Dropout
+    #NoShift
 
     return model
