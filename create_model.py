@@ -65,6 +65,7 @@ def generate_model(img_size):
     #model creation 
     model = Model(inputs=[inputs], outputs=[outputs])
 
+
     
 
     return model

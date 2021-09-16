@@ -7,6 +7,7 @@ seed = 42
 onelabel = True
 shift = 0
 from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
+
 #from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 preprocess_fcn = preprocess
