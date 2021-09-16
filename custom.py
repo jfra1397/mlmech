@@ -47,18 +47,18 @@ single_img = False
 #     return 1 - IoU
 # loss = IoULoss()
 
-epochs=100
+epochs=50
 steps_per_epoch=20
 from tensorflow.keras.callbacks import EarlyStopping
-callback = None#EarlyStopping(monitor="loss",
-    # min_delta=0.01,
-    # patience=5,
-    # verbose=1,
-    # mode="auto",
-    # baseline=None,
-    # restore_best_weights=False)
+callback = EarlyStopping(monitor="loss",
+     min_delta=0.01,
+     patience=3,
+     verbose=1,
+     mode="auto",
+     baseline=None,
+     restore_best_weights=False)
 
 
 
 #RESULTS
-dir_name = "results/samuel/ResNet50V2_nS_SC"
+dir_name = "results/samuel/ResNet50V2_bB_SC2"
