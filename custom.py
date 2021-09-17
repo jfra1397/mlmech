@@ -65,4 +65,4 @@ callback = EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/samuel/MobileNetV2_AddUpsampling"
+dir_name = "results/samuel/MobileNetV2_AddDropout"

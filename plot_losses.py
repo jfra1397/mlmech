@@ -1,4 +1,4 @@
-path = "results\samuel\MoblieNetV2-WithEarlyStoppingApplied"
+path = "results\samuel\MoblieNetV2-WithEarlyStoppingApplied-MC"
 
 import os
 import json
