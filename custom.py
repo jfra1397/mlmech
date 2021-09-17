@@ -4,11 +4,13 @@ import numpy as np
 
 #DATA GENERATOR
 seed = 42
-onelabel = True
+onelabel = False
 shift = 0
+single_img = False
+
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
+#from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
-#from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
-from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
 
@@ -26,12 +28,6 @@ def jaccard_distance(y_true, y_pred, smooth=100):
     jd =  (1 - jac) * smooth
     return tf.reduce_mean(jd)
 
-import tensorflow.keras.losses as losses
-#loss = losses.SparseCategoricalCrossentropy()
-loss = losses.BinaryCrossentropy()
-single_img = False
-#loss = jaccard_distance
-
 # import tensorflow.keras.backend as K
 # def IoULoss(targets, inputs, smooth=1e-6):
     
@@ -45,7 +41,15 @@ single_img = False
     
 #     IoU = (intersection + smooth) / (union + smooth)
 #     return 1 - IoU
-# loss = IoULoss()
+
+
+import tensorflow.keras.losses as losses
+loss = losses.SparseCategoricalCrossentropy()
+#loss = losses.BinaryCrossentropy()
+#loss = jaccard_distance
+#loss = IoULoss()
+
+
 
 epochs=50
 steps_per_epoch=20
@@ -61,4 +65,4 @@ callback = EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/samuel/ResNet50V2_bB_SC2"
+dir_name = "results/samuel/MobileNetV2_BN"
