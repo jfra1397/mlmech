@@ -11,14 +11,19 @@
 ##### Test Case
 - EarlyStopping/Shift = True <br>
   validation_split=0.01 <br>
-  * Single Class
-  * Multiclass <br>
+  * Single Class (A)
+  * Multiclass (B) <br>
   with 50 epochs
 - EarlyStopping/Shift = False <br>
   validation_split=0.1 <br>
-  * Single Class
-  * Multiclass <br>
+  * Single Class (C)
+  * Multiclass (D) <br>
   with 100 epochs
+ MobileNet_v2: 
+ - A: results\lena\mobilenetV2\oneLabel\standard_V2
+ - B: results\lena\mobilenetV2\multiLabel\standard
+ - C: results\lena\mobilenetV2\oneLabel\withoutShift\noEarlyStopping\epochs100_validationSplit0-1
+ - D: results\lena\mobilenetV2\multiLabel\withoutShift\noEarlyStopping_epochs100_validationSplit0-1
 #### Decoder:
 Very simple only `UpSampling2D` and `Conv2D`
 
