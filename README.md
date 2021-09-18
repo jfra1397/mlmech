@@ -19,8 +19,8 @@
   * Single Class (C)
   * Multiclass (D) <br>
   with 100 epochs 
- <br>
- MobileNet_v2: <br>
+
+###### Results MobileNet_v2
  - A: results\lena\mobilenetV2\oneLabel\standard_V2
  - B: results\lena\mobilenetV2\multiLabel\standard
  - C: results\lena\mobilenetV2\oneLabel\withoutShift\noEarlyStopping\epochs100_validationSplit0-1
