@@ -18,7 +18,8 @@
   validation_split=0.1 <br>
   * Single Class (C)
   * Multiclass (D) <br>
-  with 100 epochs
+  with 100 epochs 
+ <br>
  MobileNet_v2: 
  - A: results\lena\mobilenetV2\oneLabel\standard_V2
  - B: results\lena\mobilenetV2\multiLabel\standard
