@@ -3,11 +3,20 @@ import numpy as np
 
 
 #DATA GENERATOR
+img_dir = "images/"
+mask_dir = "labels/"
+image_extension = ".png"
+mask_extension = ".png"
+batch_size = 16
+horizontal_split = 12 #1
+vertical_split = 1
+
 seed = 42
 onelabel = False
 shift = 0
 single_img = False
 
+#PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
 from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
@@ -15,7 +24,7 @@ preprocess_fcn = preprocess
 
 
 
-# TRAINING
+# TRAINING 
 def jaccard_distance(y_true, y_pred, smooth=100):
 
     y_pred = tf.cast(y_pred, tf.float32)
@@ -53,16 +62,16 @@ loss = losses.SparseCategoricalCrossentropy()
 
 epochs=50
 steps_per_epoch=20
-from tensorflow.keras.callbacks import EarlyStopping
-callback = EarlyStopping(monitor="loss",
-     min_delta=0.01,
-     patience=5,
-     verbose=1,
-     mode="auto",
-     baseline=None,
-     restore_best_weights=False)
+# from tensorflow.keras.callbacks import EarlyStopping
+# callback = EarlyStopping(monitor="loss",
+#      min_delta=0.01,
+#      patience=5,
+#      verbose=1,
+#      mode="auto",
+#      baseline=None,
+#      restore_best_weights=False)
 
 
 
 #RESULTS
-dir_name = "results/samuel/MobileNetV2_AddDropout"
+dir_name = "results/samuel/MobileNetV2_KerasModel"

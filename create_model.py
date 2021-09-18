@@ -13,20 +13,20 @@ def generate_model(img_size):
     # encoder = tf.keras.applications.ResNet50V5(include_top=False, weights="imagenet", input_tensor=None, input_shape=(img_size), pooling=None, classifier_activation= None)
     encoder.trainable = False
 
-    # d1 = UpSampling2D(size=(2, 2))(encoder.layers[-1].output)
-    # c1 = Conv2D(8, kernel_size=(3, 3), activation='selu', padding='same')(d1)
-    # d2 = UpSampling2D(size=(2, 2))(c1)
-    # c2 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d2)
-    # d3 = UpSampling2D(size=(2, 2))(c2)
-    # c3 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d3)
-    # d4 = UpSampling2D(size=(2, 2))(c3)
-    # c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
-    # d5 = UpSampling2D(size=(2, 2))(c4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
-    # output = c5
+    d1 = UpSampling2D(size=(2, 2))(encoder.layers[-1].output)
+    c1 = Conv2D(8, kernel_size=(3, 3), activation='selu', padding='same')(d1)
+    d2 = UpSampling2D(size=(2, 2))(c1)
+    c2 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d2)
+    d3 = UpSampling2D(size=(2, 2))(c2)
+    c3 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d3)
+    d4 = UpSampling2D(size=(2, 2))(c3)
+    c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
+    d5 = UpSampling2D(size=(2, 2))(c4)
+    #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    output = c5
 
-    # model = Model(inputs=encoder.inputs, outputs=output)
+    model = Model(inputs=encoder.inputs, outputs=output)
 #####################
 # BatchNormalization:
 
@@ -232,53 +232,52 @@ def generate_model(img_size):
 ####################################################
 # Conv2DTranspose, Conv2D, Upsampling, Add, Dropout:
 
-    base = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(encoder.layers[-1].output)
-    dUp1 = UpSampling2D(size=(2, 2))(base)
-    d1 = Conv2DTranspose(16, (3, 3), strides=2, activation="selu", padding="same")(base)
-    c1 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d1)
-    plus1 = add([c1,dUp1])
-    act1 = Activation("selu")(plus1)
-    b1 = BatchNormalization()(act1)
-    drop1 = Dropout(0.3)(b1)
+    # base = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(encoder.layers[-1].output)
+    # dUp1 = UpSampling2D(size=(2, 2))(base)
+    # d1 = Conv2DTranspose(16, (3, 3), strides=2, activation="selu", padding="same")(base)
+    # c1 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d1)
+    # plus1 = add([c1,dUp1])
+    # act1 = Activation("selu")(plus1)
+    # b1 = BatchNormalization()(act1)
+    # drop1 = Dropout(0.3)(b1)
 
-    dUp2 = UpSampling2D(size=(2, 2))(drop1)
-    d2 = Conv2DTranspose(32, (3, 3), strides=2, activation="selu", padding="same")(drop1)
-    c2 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d2)
-    plus2 = add([c2,dUp2])
-    act2 = Activation("selu")(plus2)
-    b2 = BatchNormalization()(act2)
-    drop2 = Dropout(0.3)(b2)
+    # dUp2 = UpSampling2D(size=(2, 2))(drop1)
+    # d2 = Conv2DTranspose(32, (3, 3), strides=2, activation="selu", padding="same")(drop1)
+    # c2 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d2)
+    # plus2 = add([c2,dUp2])
+    # act2 = Activation("selu")(plus2)
+    # b2 = BatchNormalization()(act2)
+    # drop2 = Dropout(0.3)(b2)
     
-    dUp3 = UpSampling2D(size=(2, 2))(drop2)
-    d3 = Conv2DTranspose(64, (3, 3), strides=2, activation="selu", padding="same")(drop2)
-    c3 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d3)
-    plus3 = add([c3,dUp3])
-    act3 = Activation("selu")(plus3)
-    b3 = BatchNormalization()(act3)
-    drop3 = Dropout(0.3)(b3)
+    # dUp3 = UpSampling2D(size=(2, 2))(drop2)
+    # d3 = Conv2DTranspose(64, (3, 3), strides=2, activation="selu", padding="same")(drop2)
+    # c3 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d3)
+    # plus3 = add([c3,dUp3])
+    # act3 = Activation("selu")(plus3)
+    # b3 = BatchNormalization()(act3)
+    # drop3 = Dropout(0.3)(b3)
     
-    dUp4 = UpSampling2D(size=(2, 2))(drop3)
-    d4 = Conv2DTranspose(128, (3, 3), strides=2, activation="selu", padding="same")(drop3)
-    c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
-    plus4 = add([c4,dUp4])
-    act4 = Activation("selu")(plus4)
-    b4 = BatchNormalization()(act4)
-    drop4 = Dropout(0.3)(b4)
+    # dUp4 = UpSampling2D(size=(2, 2))(drop3)
+    # d4 = Conv2DTranspose(128, (3, 3), strides=2, activation="selu", padding="same")(drop3)
+    # c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
+    # plus4 = add([c4,dUp4])
+    # act4 = Activation("selu")(plus4)
+    # b4 = BatchNormalization()(act4)
+    # drop4 = Dropout(0.3)(b4)
     
-    d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(drop4)
-    #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
-    output = c5
+    # d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(drop4)
+    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # output = c5
 
 
-    model = Model(inputs=encoder.inputs, outputs=output)
+    # model = Model(inputs=encoder.inputs, outputs=output)
 
 ##################################
 # KERAS-Sample Structure Approach:
 
     # base = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(encoder.layers[-1].output)
-    ######################## Kernel Size rausnehmen?!?!?
-    # t1 = Conv2DTranspose(16, 3, strides=2, activation="selu", padding="same")(base)
+    # t1 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(base)
     # act11 = Activation("selu")(t1)
     # b12 = BatchNormalization()(act11)
     # dUp1 = UpSampling2D(size=(2, 2))(b12)
@@ -289,7 +288,7 @@ def generate_model(img_size):
     # b12 = BatchNormalization()(act12)
     # drop1 = Dropout(0.3)(b12)
 
-    # t2 = Conv2DTranspose(32, 3, strides=2, activation="selu", padding="same")(drop1)
+    # t2 = Conv2DTranspose(16,(3, 3),activation="selu", padding="same")(drop1)
     # act21 = Activation("selu")(t2)
     # b22 = BatchNormalization()(act21)
     # dUp2 = UpSampling2D(size=(2, 2))(b22)
@@ -300,7 +299,7 @@ def generate_model(img_size):
     # b22 = BatchNormalization()(act22)
     # drop2 = Dropout(0.3)(b22)
 
-    # t3 = Conv2DTranspose(64, 3, strides=2, activation="selu", padding="same")(drop2)
+    # t3 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(drop2)
     # act31 = Activation("selu")(t3)
     # b32 = BatchNormalization()(act31)
     # dUp3 = UpSampling2D(size=(2, 2))(b32)
@@ -311,7 +310,7 @@ def generate_model(img_size):
     # b32 = BatchNormalization()(act32)
     # drop3 = Dropout(0.3)(b32)
    
-    # t4 = Conv2DTranspose(128, 3, strides=2, activation="selu", padding="same")(drop3)
+    # t4 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(drop3)
     # act41 = Activation("selu")(t4)
     # b42 = BatchNormalization()(act41)
     # dUp4 = UpSampling2D(size=(2, 2))(b42)
