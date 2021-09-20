@@ -192,8 +192,68 @@ class CustomDataGenerator(Sequence):
             
         for ax in axs:
             ax.axis("off")
+        axs[0][0].set_title('Real Image')
+        axs[0][1].set_title('Mask')
+        axs[0][2].set_title(str(predictions))
         plt.tight_layout()
+######### NEW PRED-PLOT FUNCTION FOR A COMP. OF $ DIFF. MODELS ##############
+    def plot_several_prediction(self, idx, pred1, pred2, pred3, pred4):
+        img, mask = self.__getrawitem__(idx)
+        fig,axs = plt.subplots(self.batch_size,6, figsize=(30, self.batch_size*5))
+        axs[0][0].set_title('Real Image')
+        axs[0][1].set_title('Mask')
+        axs[0][2].set_title('Transposed Layer')
+        axs[0][3].set_title('Upsampling Layer')
+        axs[0][4].set_title('Dropout Layer')
+        axs[0][5].set_title('Keras Model')
+        axs = axs.flatten()
 
+        for i in range(self.batch_size):
+            axs[6*i].imshow(img[i])
+            axs[6*i+1].imshow(mask[i], vmin=0, vmax = len(self.classes))
+            if pred1[i].shape[2] > 1:
+                class_0 = pred1[i][:,:,0]
+                class_1 = pred1[i][:,:,1]
+                class_2 = pred1[i][:,:,2]
+                result1 = 0*(np.where(class_1>class_2,class_1,class_2) < class_0) +  1*(np.where(class_0>class_2,class_0,class_2) < class_1) +  2*(np.where(class_1>class_0,class_1,class_0) < class_2)
+            else:
+                result1 = pred1[i].reshape(self.mask_size)
+            
+            axs[6*i+2].imshow(result1, vmin=0, vmax = len(self.classes))
+            ###################################
+            if pred2[i].shape[2] > 1:
+                class_0 = pred2[i][:,:,0]
+                class_1 = pred2[i][:,:,1]
+                class_2 = pred2[i][:,:,2]
+                result2 = 0*(np.where(class_1>class_2,class_1,class_2) < class_0) +  1*(np.where(class_0>class_2,class_0,class_2) < class_1) +  2*(np.where(class_1>class_0,class_1,class_0) < class_2)
+            else:
+                result2 = pred2[i].reshape(self.mask_size)
+            
+            axs[6*i+3].imshow(result2, vmin=0, vmax = len(self.classes))
+            ###################################
+            if pred3[i].shape[2] > 1:
+                class_0 = pred3[i][:,:,0]
+                class_1 = pred3[i][:,:,1]
+                class_2 = pred3[i][:,:,2]
+                result3 = 0*(np.where(class_1>class_2,class_1,class_2) < class_0) +  1*(np.where(class_0>class_2,class_0,class_2) < class_1) +  2*(np.where(class_1>class_0,class_1,class_0) < class_2)
+            else:
+                result3 = pred3[i].reshape(self.mask_size)
+            
+            axs[6*i+4].imshow(result3, vmin=0, vmax = len(self.classes))
+            ####################################
+            if pred4[i].shape[2] > 1:
+                class_0 = pred4[i][:,:,0]
+                class_1 = pred4[i][:,:,1]
+                class_2 = pred4[i][:,:,2]
+                result4 = 0*(np.where(class_1>class_2,class_1,class_2) < class_0) +  1*(np.where(class_0>class_2,class_0,class_2) < class_1) +  2*(np.where(class_1>class_0,class_1,class_0) < class_2)
+            else:
+                result4 = pred4[i].reshape(self.mask_size)
+            
+            axs[6*i+5].imshow(result4, vmin=0, vmax = len(self.classes))
+        for ax in axs:
+            ax.axis("off")
+        plt.tight_layout()
+        return fig
 
 if __name__ == "__main__":
     from custom import *
