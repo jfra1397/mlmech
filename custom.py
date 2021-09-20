@@ -62,7 +62,8 @@ loss = losses.SparseCategoricalCrossentropy()
 
 epochs=50
 steps_per_epoch=20
-# from tensorflow.keras.callbacks import EarlyStopping
+callback = None
+from tensorflow.keras.callbacks import EarlyStopping
 # callback = EarlyStopping(monitor="loss",
 #      min_delta=0.01,
 #      patience=5,

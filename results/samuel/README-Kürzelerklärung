@@ -3,8 +3,11 @@ nS = no shift in data generator used
 BN = Batch Normalization used
 MC = Mulit-class Segmentation
 SC = Single-class Segmentation
+ES = EarlyStopping
 2xConv2D = Tow Convolutional Layers in row used
 Conv2DTranspose = Convolutional Transpose used instead of Upsampling
 AddUpsampling = Added an Upsampling-layer to a Upsampling + Conv2D 
 AddTranspose = Added an Upsampling-layer to a Transpose + Conv2D
 AddDropout = Using the AddTranspose-Structure but with 30%-Dropout between the stages applied
+KerasModel = Approach similar the example in computer vision at the keras-homepage
+---> https://keras.io/examples/vision/oxford_pets_image_segmentation/
