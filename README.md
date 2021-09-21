@@ -35,7 +35,7 @@ Very simple only `UpSampling2D` and `Conv2D`
 
 ### Other Stuff:
 #### VGG16:
-- vgg16_5 all trainable
+- results/julian/vgg16_5 all trainable
 
 ### 2. Simple Segmentation Architectures
 - U-Net (self build architecture) (Julian) <br>
