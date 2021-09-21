@@ -25,13 +25,26 @@
  - B: results\lena\mobilenetV2\multiLabel\standard
  - C: results\lena\mobilenetV2\oneLabel\withoutShift\noEarlyStopping\epochs100_validationSplit0-1
  - D: results\lena\mobilenetV2\multiLabel\withoutShift\noEarlyStopping_epochs100_validationSplit0-1
+###### Results VGG16
+- A: results/julian/vgg16_1
+- B: results/julian/vgg16_3
+- C: results/julian/vgg16_7
+- D. results/julian/vgg16_6
 #### Decoder:
 Very simple only `UpSampling2D` and `Conv2D`
+
+### Other Stuff:
+#### VGG16:
+- vgg16_5 all trainable
 
 ### 2. Simple Segmentation Architectures
 - U-Net (self build architecture) (Julian) <br>
   no shifts, early stopping applied (?), epochs=? <br>
-  * Single Class
+  * Single Class: 
+    * results/julian/unet_4; 256x256; epochs: 50; complexity: 4; EarlyStopping: false
+    * results/julian/unet_256x3072; 256x3072; epochs: 20; complexity: 4; EarlyStopping: false
+    * results/julian/unet_256x3072_2; 256x3072; epochs: 20; complexity: 3; EarlyStopping: false
+    * results/julian/unet_256x3072_3; 256x3072; epochs: 20; complexity: 5; EarlyStopping: false
   * Multiclass
 - SegNet (self build architecture) (Lena) <br>
   no shifts, early stopping applied (?), epochs=? <br>
