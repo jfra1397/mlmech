@@ -175,6 +175,9 @@ class CustomDataGenerator(Sequence):
     def plot_prediction(self, idx, predictions):
         img, mask = self.__getrawitem__(idx)
         fig,axs = plt.subplots(self.batch_size,3, figsize=(15, self.batch_size*5))
+        axs[0][0].set_title('Real Image')
+        axs[0][1].set_title('Mask')
+        axs[0][2].set_title('Predictions')
         axs = axs.flatten()
 
         for i in range(self.batch_size):
@@ -192,9 +195,6 @@ class CustomDataGenerator(Sequence):
             
         for ax in axs:
             ax.axis("off")
-        axs[0][0].set_title('Real Image')
-        axs[0][1].set_title('Mask')
-        axs[0][2].set_title(str(predictions))
         plt.tight_layout()
 ######### NEW PRED-PLOT FUNCTION FOR A COMP. OF $ DIFF. MODELS ##############
     def plot_several_prediction(self, idx, pred1, pred2, pred3, pred4):

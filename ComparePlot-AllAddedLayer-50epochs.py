@@ -1,11 +1,11 @@
 import json
 import matplotlib.pyplot as plt
 
-paths = ['results\samuel\MobileNetV2_AddUpsampling\history.json','results\samuel\MobileNetV2_AddTranspose\history.json','results\samuel\MobileNetV2_AddDropout\history.json','results\samuel\MobileNetV2_KerasModel\history.json']
+paths = ['results\samuel\MobileNetV2_MC_AddUpsampling\history.json','results\samuel\MobileNetV2_MC_AddTranspose\history.json','results\samuel\MobileNetV2_MC_AddDropout\history.json','results\samuel\MobileNetV2_MC_KerasModel\history.json']
 titles = ['Comparison of All Added layers Models']
 losslabels = ['Loss -with Upsampling', 'Loss -with Transpose','Loss -with Dropout', 'Loss -similiar to Keras-example']
 val_losslabels = ['Val_Loss -with Upsamling', 'Val.Loss -with Transpose','Val_Loss -with Dropout', 'Val.Loss -similiar to Keras-example']
-savetitles = ["results\samuel\MobileNetV2_AllAddedLayers-50epochs.png", "results\samuel\MobileNetV2_AllAddedLayers-50epochs.pdf"]
+savetitles = ["results\samuel\MobileNetV2_MC_AllAddedLayers-50epochs.png", "results\samuel\MobileNetV2_MC_AllAddedLayers-50epochs.pdf"]
 max_loss = 0.15
 max_epochs = 50
 min_epochs = 0

@@ -12,13 +12,13 @@ horizontal_split = 12 #1
 vertical_split = 1
 
 seed = 42
-onelabel = False
-shift = 0
+onelabel = True
+shift = True
 single_img = False
 
 #PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
-from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
-#from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
+#from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
+from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
@@ -53,8 +53,8 @@ def jaccard_distance(y_true, y_pred, smooth=100):
 
 
 import tensorflow.keras.losses as losses
-loss = losses.SparseCategoricalCrossentropy()
-#loss = losses.BinaryCrossentropy()
+#loss = losses.SparseCategoricalCrossentropy()
+loss = losses.BinaryCrossentropy()
 #loss = jaccard_distance
 #loss = IoULoss()
 
@@ -62,17 +62,17 @@ loss = losses.SparseCategoricalCrossentropy()
 
 epochs=50
 steps_per_epoch=20
-callback = None
+#callback = None
 from tensorflow.keras.callbacks import EarlyStopping
-# callback = EarlyStopping(monitor="loss",
-#      min_delta=0.01,
-#      patience=5,
-#      verbose=1,
-#      mode="auto",
-#      baseline=None,
-#      restore_best_weights=False)
+callback = EarlyStopping(monitor="loss",
+     min_delta=0.01,
+     patience=5,
+     verbose=1,
+     mode="auto",
+     baseline=None,
+     restore_best_weights=False)
 
 
 
 #RESULTS
-dir_name = "results/samuel/MobileNetV2_KerasModel"
+dir_name = "results/samuel/ResNet50V2_wS_SC_50epochs"

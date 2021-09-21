@@ -1,11 +1,11 @@
 import json
 import matplotlib.pyplot as plt
 
-paths = [['results\samuel\MobileNetV2\history.json','results\samuel\MobileNetV2_BN\history.json'],
-        ['results\samuel\MobileNetV2_2xConv2D\history.json','results\samuel\MobileNetV2_BN_2xConv2D\history.json'],
-        ['results\samuel\MobileNetV2_Conv2DTranspose\history.json','results\samuel\MobileNetV2_BN_Conv2DTranspose\history.json'],
-        ['results\samuel\MobileNetV2_AddUpsampling\history.json','results\samuel\MobileNetV2_AddTranspose\history.json'],
-        ['results\samuel\MobileNetV2_AddDropout\history.json','results\samuel\MobileNetV2_KerasModel\history.json']
+paths = [['results\samuel\MobileNetV2_MC\history.json','results\samuel\MobileNetV2_MC_BN\history.json'],
+        ['results\samuel\MobileNetV2_MC_2xConv2D\history.json','results\samuel\MobileNetV2_MC_BN_2xConv2D\history.json'],
+        ['results\samuel\MobileNetV2_MC_Conv2DTranspose\history.json','results\samuel\MobileNetV2_MC_BN_Conv2DTranspose\history.json'],
+        ['results\samuel\MobileNetV2_MC_AddUpsampling\history.json','results\samuel\MobileNetV2_MC_AddTranspose\history.json'],
+        ['results\samuel\MobileNetV2_MC_AddDropout\history.json','results\samuel\MobileNetV2_MC_KerasModel\history.json']
 ]
 titles = [['Comparison with & without Batch \n Normalization for a Mobile Net V2'],
             ['Comparison With & Without Batch \nNormalization for a Mobile Net V2 \nwith two Convolutional Layers'],
@@ -25,11 +25,11 @@ val_losslabels = [['Val_Loss -without BN', 'Val.Loss -with BN'],
             ['Val_Loss -withUpsampling', 'Val.Loss -with Transpose'],
             ['Val_Loss -with Dropout', 'Val.Loss -similiar to Keras-example']
 ]
-savetitles = [["results\samuel\MobileNetV2_BN_comparison-50epochs.png", "results\samuel\MobileNetV2_BN_comparison-50epochs.pdf"],
-            ["results\samuel\MobileNetV2_BN_2xConv2D_comparison-50epochs.png","results\samuel\MobileNetV2_BN_2xConv2D_comparison-50epochs.pdf"],
-            ["results\samuel\MobileNetV2_BN_Conv2DTranspose_comparison-50epochs.png","results\samuel\MobileNetV2_BN_Conv2DTranspose_comparison-50epochs.pdf"],
-            ["results\samuel\MobileNetV2_AddUpsampligTranspose-50epochs.png", "results\samuel\MobileNetV2_AddUpsampligTranspose-50epochs.pdf"],
-            ["results\samuel\MobileNetV2_AddDropoutKerasModel-50epochs.png", "results\samuel\MobileNetV2_AddDropoutKerasModel-50epochs.pdf"]
+savetitles = [["results\samuel\MobileNetV2_MC_BN_comparison-50epochs.png", "results\samuel\MobileNetV2_MC_BN_comparison-50epochs.pdf"],
+            ["results\samuel\MobileNetV2_MC_BN_2xConv2D_comparison-50epochs.png","results\samuel\MobileNetV2_MC_BN_2xConv2D_comparison-50epochs.pdf"],
+            ["results\samuel\MobileNetV2_MC_BN_Conv2DTranspose_comparison-50epochs.png","results\samuel\MobileNetV2_MC_BN_Conv2DTranspose_comparison-50epochs.pdf"],
+            ["results\samuel\MobileNetV2_MC_AddUpsampligTranspose-50epochs.png", "results\samuel\MobileNetV2_MC_AddUpsampligTranspose-50epochs.pdf"],
+            ["results\samuel\MobileNetV2_MC_AddDropoutKerasModel-50epochs.png", "results\samuel\MobileNetV2_MC_AddDropoutKerasModel-50epochs.pdf"]
 ]
 max_loss = 0.25
 max_epochs = 50
