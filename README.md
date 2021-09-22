@@ -30,6 +30,11 @@
 - B: results/julian/vgg16_3
 - C: results/julian/vgg16_7
 - D. results/julian/vgg16_6
+###### Results REsNEt50V2
+- A: results/samuel/ResNet50V2_wS_SC_ES_50epochs
+- B: results/samuel/ResNet50V2_wS_MC_ES_50epochs
+- C: results/samuel/ResNet50V2_nS_SC_100epochs
+- D. results/samuel/ResNet50V2_nS_MC_100epochs
 #### Decoder:
 Very simple only `UpSampling2D` and `Conv2D`
 
