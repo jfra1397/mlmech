@@ -1,6 +1,6 @@
 __pycache__
-model.py
-custom.py
-training.ipynb
+./model.py
+./custom.py
+./training.ipynb
 Assignments/
 predict.ipynb
