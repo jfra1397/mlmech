@@ -21,10 +21,10 @@
   with 100 epochs 
 
 ###### Results MobileNet_v2
- - A: results\lena\mobilenetV2\oneLabel\standard_V2
- - B: results\lena\mobilenetV2\multiLabel\standard
- - C: results\lena\mobilenetV2\oneLabel\withoutShift\noEarlyStopping\epochs100_validationSplit0-1
- - D: results\lena\mobilenetV2\multiLabel\withoutShift\noEarlyStopping_epochs100_validationSplit0-1
+ - A: results/lena/mobilenetV2/oneLabel/standard_V2
+ - B: results/lena/mobilenetV2/multiLabel/standard
+ - C: results/lena/mobilenetV2/oneLabel/withoutShift/noEarlyStopping/epochs100_validationSplit0-1
+ - D: results/lena/mobilenetV2/multiLabel/withoutShift/noEarlyStopping_epochs100_validationSplit0-1
 ###### Results VGG16
 - A: results/julian/vgg16_1
 - B: results/julian/vgg16_3
