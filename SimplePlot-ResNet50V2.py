@@ -3,8 +3,8 @@ import matplotlib.pyplot as plt
 
 paths = [['results\samuel\ResNet50V2_nS_MC_100epochs\history.json'],
         ['results\samuel\ResNet50V2_nS_SC_100epochs\history.json'],
-        ['results\samuel\ResNet50V2_wS_MC_50epochs\history.json'],
-        ['results\samuel\ResNet50V2_wS_SC_50epochs\history.json'],
+        ['results\samuel\ResNet50V2_wS_MC_ES_50epochs\history.json'],
+        ['results\samuel\ResNet50V2_wS_SC_ES_50epochs\history.json'],
         ['results\samuel\ResNet50V2_bB_MC\history.json'],
         ['results\samuel\ResNet50V2_bB_SC2\history.json']
 ]
@@ -31,8 +31,8 @@ val_losslabels = [['Val_Loss'],
 ]
 savetitles = [['results\samuel\ResNet50V2_nS_MC_100epochs.pdf','results\samuel\ResNet50V2_nS_MC_100epochs.png'],
         ['results\samuel\ResNet50V2_nS_SC_100epochs.pdf','results\samuel\ResNet50V2_nS_SC_100epochs.png'],
-        ['results\samuel\ResNet50V2_wS_MC_50epochs.pdf','results\samuel\ResNet50V2_wS_MC_50epochs.png'],
-        ['results\samuel\ResNet50V2_wS_SC_50epochs.pdf','results\samuel\ResNet50V2_wS_SC_50epochs.png'],
+        ['results\samuel\ResNet50V2_wS_MC_ES_50epochs.pdf','results\samuel\ResNet50V2_wS_MC_50epochs.png'],
+        ['results\samuel\ResNet50V2_wS_SC_ES_50epochs.pdf','results\samuel\ResNet50V2_wS_SC_50epochs.png'],
         ['results\samuel\ResNet50V2_bB_MC.pdf','results\samuel\ResNet50V2_bB_MC.png'],
         ['results\samuel\ResNet50V2_bB_SC.pdf','results\samuel\ResNet50V2_bB_SC.png']
 ]
