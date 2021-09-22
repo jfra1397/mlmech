@@ -46,6 +46,8 @@ Very simple only `UpSampling2D` and `Conv2D`
     * results/julian/unet_256x3072_2; 256x3072; epochs: 20; complexity: 3; EarlyStopping: false
     * results/julian/unet_256x3072_3; 256x3072; epochs: 20; complexity: 5; EarlyStopping: false
   * Multiclass
+    * results/julian/unet_5; 256x256; epochs: 50; complexity: 5; EarlyStopping: false
+    * results/julian/unet_256x3072_4; 256x3072; epochs: 50; complexity: 5; EarlyStopping: false
 - SegNet (self build architecture) (Lena) <br>
   no shifts, early stopping applied (?), epochs=? <br>
   * Single Class

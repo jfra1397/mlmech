@@ -60,7 +60,7 @@ loss = losses.BinaryCrossentropy()
 
 
 
-epochs=50
+epochs=25
 steps_per_epoch=20
 #callback = None
 from tensorflow.keras.callbacks import EarlyStopping

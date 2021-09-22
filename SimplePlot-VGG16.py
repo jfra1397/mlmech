@@ -28,7 +28,7 @@ val_losslabels = [['Val_Loss'],
 savetitles = [['results\julian\VGG16_nS_MC_100epochs.pdf','results\julian\VGG16_nS_MC_100epochs.png'],
         ['results\julian\VGG16_nS_SC_100epochs.pdf','results\julian\VGG16_nS_SC_100epochs.png'],
         ['results\julian\VGG16_wS_MC_50epochs.pdf','results\julian\VGG16_wS_MC_50epochs.png'],
-        ['results\julian\VGG16_wS_MC_50epochs.pdf','results\julian\VGG16_wS_MC_50epochs.png']
+        ['results\julian\VGG16_wS_SC_50epochs.pdf','results\julian\VGG16_wS_SC_50epochs.png']
 ]
 for i in range(0,len(paths)):
     with open(paths[i][0]) as f:

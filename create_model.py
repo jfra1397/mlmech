@@ -65,8 +65,8 @@ def generate_model(img_size):
     # c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
     # b4 = BatchNormalization()(c4)
     # d5 = Conv2DTranspose(16, (3, 3), strides=2, activation="relu", padding="same")(b4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
@@ -182,9 +182,9 @@ def generate_model(img_size):
     # b4 = BatchNormalization()(act4)
     
     # d5 = UpSampling2D(size=(2, 2))(b4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
-    # output = c5
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # # output = c5
 
 
     # model = Model(inputs=encoder.inputs, outputs=output)
@@ -222,15 +222,15 @@ def generate_model(img_size):
     # b4 = BatchNormalization()(act4)
     
     # d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="relu", padding="same")(b4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
     # model = Model(inputs=encoder.inputs, outputs=output)
 
-#################################################### AddDropout
-# Conv2DTranspose, Conv2D, Upsampling, Add, Dropout:
+################################################### AddDropout
+#Conv2DTranspose, Conv2D, Upsampling, Add, Dropout:
 
     # base = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(encoder.layers[-1].output)
     # dUp1 = UpSampling2D(size=(2, 2))(base)
@@ -266,8 +266,8 @@ def generate_model(img_size):
     # drop4 = Dropout(0.3)(b4)
     
     # d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(drop4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
@@ -322,8 +322,8 @@ def generate_model(img_size):
     # drop4 = Dropout(0.3)(b42)
 
     # d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="relu", padding="same")(drop4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
