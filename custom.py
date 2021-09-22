@@ -13,7 +13,7 @@ vertical_split = 1
 
 seed = 42
 onelabel = True
-shift = True
+shift = False
 single_img = False
 
 #PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
@@ -60,7 +60,7 @@ loss = losses.BinaryCrossentropy()
 
 
 
-epochs=50
+epochs=25
 steps_per_epoch=20
 #callback = None
 from tensorflow.keras.callbacks import EarlyStopping
@@ -75,4 +75,4 @@ callback = EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/samuel/ResNet50V2_wS_SC_50epochs"
+dir_name = "results/samuel/MobileNetV2_SC_KerasModel"

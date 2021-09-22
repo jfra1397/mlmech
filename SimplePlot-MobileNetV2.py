@@ -28,7 +28,7 @@ val_losslabels = [['Val_Loss'],
 savetitles = [['results\lena\mobilenetV2\multiLabel\MobileNetV2_nS_MC_100epochs.pdf','results\lena\mobilenetV2\multiLabel\MobileNetV2_nS_MC_100epochs.png'],
         ['results\lena\mobilenetV2\oneLabel\MobileNetV2_nS_SC_100epochs.pdf','results\lena\mobilenetV2\oneLabel\MobileNetV2_nS_SC_100epochs.png'],
         ['results\lena\mobilenetV2\multiLabel\MobileNetV2_wS_MC_50epochs.pdf','results\lena\mobilenetV2\multiLabel\MobileNetV2_wS_MC_50epochs.png'],
-        ['results\lena\mobilenetV2\oneLabel\MobileNetV2_wS_MC_50epochs.pdf','results\lena\mobilenetV2\oneLabel\MobileNetV2_wS_MC_50epochs.png']
+        ['results\lena\mobilenetV2\oneLabel\MobileNetV2_wS_SC_50epochs.pdf','results\lena\mobilenetV2\oneLabel\MobileNetV2_wS_SC_50epochs.png']
 ]
 for i in range(0,len(paths)):
     with open(paths[i][0]) as f:

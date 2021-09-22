@@ -196,6 +196,7 @@ class CustomDataGenerator(Sequence):
         for ax in axs:
             ax.axis("off")
         plt.tight_layout()
+        return fig
 ######### NEW PRED-PLOT FUNCTION FOR A COMP. OF $ DIFF. MODELS ##############
     def plot_several_prediction(self, idx, pred1, pred2, pred3, pred4):
         img, mask = self.__getrawitem__(idx)

@@ -8,9 +8,9 @@ from tensorflow.python.keras.backend import conv3d_transpose
 
 def generate_model(img_size):
     
-    #encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(img_size), classifier_activation=None)
-    # encoder = tf.keras.applications.VGG16(include_top=False, weights="imagenet", input_tensor=None, input_shape=(img_size), pooling=None, classifier_activation= None)
-    encoder = tf.keras.applications.ResNet50V2(include_top=False, weights="imagenet", input_tensor=None, input_shape=(img_size), pooling=None, classifier_activation= None)
+    encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(img_size), classifier_activation=None)
+    #encoder = tf.keras.applications.VGG16(include_top=False, weights="imagenet", input_tensor=None, input_shape=(img_size), pooling=None, classifier_activation= None)
+    #encoder = tf.keras.applications.ResNet50V2(include_top=False, weights="imagenet", input_tensor=None, input_shape=(img_size), pooling=None, classifier_activation= None)
     encoder.trainable = False
 
     d1 = UpSampling2D(size=(2, 2))(encoder.layers[-1].output)
@@ -65,8 +65,8 @@ def generate_model(img_size):
     # c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
     # b4 = BatchNormalization()(c4)
     # d5 = Conv2DTranspose(16, (3, 3), strides=2, activation="relu", padding="same")(b4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
@@ -182,9 +182,9 @@ def generate_model(img_size):
     # b4 = BatchNormalization()(act4)
     
     # d5 = UpSampling2D(size=(2, 2))(b4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
-    # output = c5
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # # output = c5
 
 
     # model = Model(inputs=encoder.inputs, outputs=output)
@@ -222,15 +222,15 @@ def generate_model(img_size):
     # b4 = BatchNormalization()(act4)
     
     # d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="relu", padding="same")(b4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
     # model = Model(inputs=encoder.inputs, outputs=output)
 
-#################################################### AddDropout
-# Conv2DTranspose, Conv2D, Upsampling, Add, Dropout:
+################################################### AddDropout
+#Conv2DTranspose, Conv2D, Upsampling, Add, Dropout:
 
     # base = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(encoder.layers[-1].output)
     # dUp1 = UpSampling2D(size=(2, 2))(base)
@@ -266,8 +266,8 @@ def generate_model(img_size):
     # drop4 = Dropout(0.3)(b4)
     
     # d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(drop4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
@@ -322,8 +322,8 @@ def generate_model(img_size):
     # drop4 = Dropout(0.3)(b42)
 
     # d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="relu", padding="same")(drop4)
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    # c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    # #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     # output = c5
 
 
@@ -331,46 +331,46 @@ def generate_model(img_size):
 ########################################################
 ########## U-NET ARCHITECUTRE ##########################
     
-    complexity = 5
+    # complexity = 5
 
-    x = Input((img_size))
-    inputs = x
+    # x = Input((img_size))
+    # inputs = x
 
-    #down sampling 
-    f = 8
-    layers = []
+    # #down sampling 
+    # f = 8
+    # layers = []
 
-    for i in range(0, complexity):
-        x = Conv2D(f, 3, activation='relu', padding='same') (x)
-        x = Conv2D(f, 3, activation='relu', padding='same') (x)
-        layers.append(x)
-        x = MaxPooling2D() (x)
-        f = f*2
-    ff2 = 64 
+    # for i in range(0, complexity):
+    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    #     layers.append(x)
+    #     x = MaxPooling2D() (x)
+    #     f = f*2
+    # ff2 = 64 
 
-    #bottleneck 
-    j = len(layers) - 1
-    x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
-    x = Concatenate(axis=3)([x, layers[j]])
-    j = j -1 
+    # #bottleneck 
+    # j = len(layers) - 1
+    # x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    # x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    # x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    # x = Concatenate(axis=3)([x, layers[j]])
+    # j = j -1 
 
-    #upsampling 
-    for i in range(0, complexity-1):
-        ff2 = ff2//2
-        f = f // 2 
-        x = Conv2D(f, 3, activation='relu', padding='same') (x)
-        x = Conv2D(f, 3, activation='relu', padding='same') (x)
-        x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
-        x = Concatenate(axis=3)([x, layers[j]])
-        j = j -1 
+    # #upsampling 
+    # for i in range(0, complexity-1):
+    #     ff2 = ff2//2
+    #     f = f // 2 
+    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    #     x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    #     x = Concatenate(axis=3)([x, layers[j]])
+    #     j = j -1 
 
-    #classification 
-    outputs = Conv2D(3, 1, activation='softmax') (x)
+    # #classification 
+    # outputs = Conv2D(3, 1, activation='softmax') (x)
 
-    #model creation 
-    model = Model(inputs=[inputs], outputs=[outputs])
+    # #model creation 
+    # model = Model(inputs=[inputs], outputs=[outputs])
 
 
     return model

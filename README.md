@@ -21,15 +21,20 @@
   with 100 epochs 
 
 ###### Results MobileNet_v2
- - A: results\lena\mobilenetV2\oneLabel\standard_V2
- - B: results\lena\mobilenetV2\multiLabel\standard
- - C: results\lena\mobilenetV2\oneLabel\withoutShift\noEarlyStopping\epochs100_validationSplit0-1
- - D: results\lena\mobilenetV2\multiLabel\withoutShift\noEarlyStopping_epochs100_validationSplit0-1
+ - A: results/lena/mobilenetV2/oneLabel/standard_V2
+ - B: results/lena/mobilenetV2/multiLabel/standard
+ - C: results/lena/mobilenetV2/oneLabel/withoutShift/noEarlyStopping/epochs100_validationSplit0-1
+ - D: results/lena/mobilenetV2/multiLabel/withoutShift/noEarlyStopping_epochs100_validationSplit0-1
 ###### Results VGG16
 - A: results/julian/vgg16_1
 - B: results/julian/vgg16_3
 - C: results/julian/vgg16_7
 - D. results/julian/vgg16_6
+###### Results REsNEt50V2
+- A: results/samuel/ResNet50V2_wS_SC_ES_50epochs
+- B: results/samuel/ResNet50V2_wS_MC_ES_50epochs
+- C: results/samuel/ResNet50V2_nS_SC_100epochs
+- D. results/samuel/ResNet50V2_nS_MC_100epochs
 #### Decoder:
 Very simple only `UpSampling2D` and `Conv2D`
 
@@ -46,6 +51,8 @@ Very simple only `UpSampling2D` and `Conv2D`
     * results/julian/unet_256x3072_2; 256x3072; epochs: 20; complexity: 3; EarlyStopping: false
     * results/julian/unet_256x3072_3; 256x3072; epochs: 20; complexity: 5; EarlyStopping: false
   * Multiclass
+    * results/julian/unet_5; 256x256; epochs: 50; complexity: 5; EarlyStopping: false
+    * results/julian/unet_256x3072_4; 256x3072; epochs: 50; complexity: 5; EarlyStopping: false
 - SegNet (self build architecture) (Lena) <br>
   no shifts, early stopping applied (?), epochs=? <br>
   * Single Class
