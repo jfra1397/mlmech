@@ -5,6 +5,7 @@ from tensorflow.keras import Model
 from tensorflow.keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampling2D, Flatten, Concatenate
 from tensorflow.keras.layers import BatchNormalization, Conv2DTranspose, add, Activation, Dropout
 import visualkeras
+#from visualkeras_.layered import layered_view
 from PIL import ImageFont
 font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited!
 
@@ -68,3 +69,41 @@ elif model_type == "advanced_decoder":
     model = Model(inputs=x, outputs=c5)
     font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
     visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0]).show()
+elif model_type == "segnet":
+    x = Input((256,256,3))
+    conv_1 = Conv2D(32, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(x)
+    conv_1 = BatchNormalization()(conv_1)
+    conv_1 = Activation("relu")(conv_1)
+    pool_1 = MaxPooling2D()(conv_1)
+    conv_2 = Conv2D(64, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(pool_1)
+    conv_2 = BatchNormalization()(conv_2)
+    conv_2 = Activation("relu")(conv_2)
+    pool_2 = MaxPooling2D()(conv_2)
+    conv_3 = Conv2D(64, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(pool_2)
+    conv_3 = BatchNormalization()(conv_3)
+    conv_3 = Activation("relu")(conv_3)
+    pool_3 = MaxPooling2D()(conv_3)
+    conv_4 = Conv2D(128, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(pool_3)
+    conv_4 = BatchNormalization()(conv_4)
+    conv_4 = Activation("relu")(conv_4)
+    pool_4 = MaxPooling2D()(conv_4)
+    unpool_1 = Conv2DTranspose(64,kernel_size=(2, 2), strides=(2,2))(pool_4)
+    conv_5 = Conv2D(64, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(unpool_1)
+    conv_5 = BatchNormalization()(conv_5)
+    conv_5 = Activation("relu")(conv_5)
+    unpool_2 = Conv2DTranspose(64, kernel_size=(2, 2), strides=(2,2))(conv_5)
+    conv_6 = Conv2D(64, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(unpool_2)
+    conv_6 = BatchNormalization()(conv_6)
+    conv_6 = Activation("relu")(conv_6)
+    unpool_3 = Conv2DTranspose(32, kernel_size=(2, 2), strides=(2,2))(conv_6)
+    conv_7 = Conv2D(32, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(unpool_3)
+    conv_7 = BatchNormalization()(conv_7)
+    conv_7 = Activation("relu")(conv_7)
+    unpool_4 = Conv2DTranspose(3, kernel_size=(2, 2), strides=(2,2))(conv_7)
+    conv_8 = Conv2D(3, kernel_size=(1, 1), padding="same", kernel_initializer='he_normal')(unpool_4)
+    conv_8 = BatchNormalization()(conv_8)
+    outputs = Activation("softmax")(conv_8)
+    model = Model(inputs=x, outputs=outputs)
+    font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
+
+    layered_view(model, legend=True, font=font, scale_xy = 1, to_file="plots/models/segnet.png", scale_z = 0.01).show()
