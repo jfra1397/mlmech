@@ -1,0 +1,15 @@
+Edge TPU Compiler version 16.0.384591198
+Input: model.tflite
+Output: model_edgetpu.tflite
+
+Operator                       Count      Status
+
+REDUCE_MAX                     1          Operation is working on an unsupported data type
+TRANSPOSE_CONV                 5          Operation is working on an unsupported data type
+CONV_2D                        21         Operation is working on an unsupported data type
+SUB                            1          Operation is working on an unsupported data type
+CONCATENATION                  5          Operation is working on an unsupported data type
+EXP                            1          Operation is working on an unsupported data type
+SUM                            1          Operation is working on an unsupported data type
+MAX_POOL_2D                    5          Operation is working on an unsupported data type
+DIV                            1          Operation is working on an unsupported data type

@@ -1,0 +1,13 @@
+U-Net big:
+3934.7ms
+3374.1ms
+3345.5ms
+3341.5ms
+3330.9ms
+U-Net sliced:
+343.3ms
+296.3ms
+291.1ms
+295.6ms
+296.0ms
+
