@@ -5,15 +5,15 @@ import numpy as np
 vmax = 2 # 1 ####single(1) oder multiclass(2)
 figure_width = 5.5
 latex_export = True
-output_path = "plots/predictions/advanced_decoder/MNV2_MC_Dropout-KerasModel.pgf"
+output_path = "plots/predictions/advanced_decoder/MC/MNV2_MC_AddedLayer.pgf"
 
-img_path = "plots/predictions/advanced_decoder"
-#nets = ["MobileNetV2_SC_AddUpsampling", "MobileNetV2_SC_AddTranspose"]
-nets = ["MobileNetV2_MC_AddDropout", "MobileNetV2_MC_KerasModel"]
+img_path = "plots/predictions/advanced_decoder/MC"
+
+nets = ["MobileNetV2_MC_AddDropout", "MobileNetV2_MC_KerasModel","MobileNetV2_MC_AddTranspose"]
 imgs = [0,1,2]
 
 
-titles = ["Image", "Mask"] + ["With Dropout", "Keras Model"]#["With Upsampling", "With Conv2DTranspose"]
+titles = ["Image", "Mask"] + ["Dropout", "KerasModel","Transpose"]
 
 
 if latex_export:
