@@ -1,0 +1,5 @@
+--gsdev=png256
+--res=600
+--out=tmp2.png
+--verbose
+--tex2ps=latex $(base).tex; dvips -D $(res) -E -o $(base).ps $(base).dvi

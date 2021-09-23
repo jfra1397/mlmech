@@ -82,3 +82,25 @@ Implement the best (or the fastes?) encoder in the best architecture (Unet/Segne
    to use the real picture size and also adjust the decoder for <br>
    the real sized pictures. --> More parameters to learn with!
 
+
+
+# Presentation
+## Requirements
+GPL Ghostscript: https://www.ghostscript.com/download/gsdnld.html
+
+pstoedit: http://www.calvina.de/pstoedit/
+
+## Worklfow
+1. Open ```MyTeXPoint.exe``` you can fin it [here](presentation/MyTexPointv202) (a small window will open).
+2. Open Presentation
+3. Click on a text box (The window will increase)
+4. Edit text
+5. Compile (Strg + Shift + Enter)
+6. Maybe you have to configurate then browse for the asked packages They should be found normally here:
+    - ```gwin32c.exe```:  "C:\Prpgramm Files (x86)\gs\gs9.xx\bin\gswin32c.exe"
+    - ``pstoedit.exe``: "C:\Prpgramm Files\pstoedit\pstoedit.exe"
+7. Then just click `scan` and afterwars `save`
+
+## Issues
+- If there is an error during compiling you have to close the temrinal before you can compile again
+

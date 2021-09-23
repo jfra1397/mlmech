@@ -1,0 +1,5 @@
+--gsdev=bmp256
+--res=600
+--out=tmp2.bmp
+--verbose
+--tex2ps=latex $(base).tex; dvips -D $(res) -E -o $(base).ps $(base).dvi

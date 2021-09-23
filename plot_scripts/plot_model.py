@@ -2,12 +2,31 @@
 import tensorflow as tf
 from tensorflow.keras import Model
 from tensorflow.keras import Model
-from tensorflow.keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampling2D, Flatten, Concatenate
-from tensorflow.keras.layers import BatchNormalization, Conv2DTranspose, add, Activation, Dropout
+#from tensorflow.keras.layers import add, Input
 import visualkeras
 #from visualkeras_.layered import layered_view
 from PIL import ImageFont
 font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited!
+
+from tensorflow.keras.layers import Dense, Conv2D, Flatten, Dropout, MaxPooling2D, ZeroPadding2D, UpSampling2D, InputLayer, BatchNormalization, ReLU, DepthwiseConv2D, Add, Activation, Conv2DTranspose, Concatenate, Input
+from collections import defaultdict
+
+color_map = defaultdict(dict)
+color_map[Conv2D]['fill'] = 'lightskyblue'
+color_map[ZeroPadding2D]['fill'] = 'gray'
+color_map[Dropout]['fill'] = 'lightgray'
+color_map[MaxPooling2D]['fill'] = 'darkred'
+color_map[Dense]['fill'] = 'coral'
+color_map[Flatten]['fill'] = 'darkorange'
+color_map[UpSampling2D]['fill'] = 'olive'
+color_map[InputLayer]['fill'] = 'black'
+color_map[BatchNormalization]['fill'] = 'teal'
+color_map[ReLU]['fill'] = 'green'
+color_map[DepthwiseConv2D]['fill'] = 'darkseagreen'
+color_map[Add]['fill'] = 'crimson'
+color_map[Activation]['fill'] = 'navy'
+color_map[Conv2DTranspose]['fill'] = 'indigo'
+color_map[Concatenate]['fill'] = 'cornsik'
 
 
 model_type = "simple_decoder" # "vgg", mobilenetv2", "resnet", "simple_decoder", "unet", "advanced_decoder"
@@ -21,12 +40,12 @@ elif model_type == "mobilenetv2":
     encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(256,256,3), classifier_activation=None)
     model = Model(inputs=encoder.inputs, outputs=encoder.output)
     font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/mobilenet_v2.png", scale_z=0.0001, max_z=0.1).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/mobilenet_v2.png", scale_z=0.0001, max_z=0.1, color_map=color_map).show()
 elif model_type == "resnet":
     encoder = tf.keras.applications.ResNet50V2(include_top=False, weights="imagenet", input_tensor=None, input_shape=(256,256,3), pooling=None, classifier_activation= None)
     model = Model(inputs=encoder.inputs, outputs=encoder.output)
     font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/resnet.png", scale_z=0.0001, max_z=0.1).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/resnet.png", scale_z=0.0001, max_z=0.1, color_map=color_map).show()
 elif model_type == "simple_decoder":
     x = Input((256,256,3))
     d1 = UpSampling2D(size=(2, 2))(x)
@@ -43,11 +62,11 @@ elif model_type == "simple_decoder":
     output = c5
     model = Model(inputs=x, outputs=output)
     font = ImageFont.truetype("arial.ttf", 24*3)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0]).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0], color_map=color_map).show()
 elif model_type == "unet":
     model = tf.keras.models.load_model("results/julian/unet_4/model.tf")
     font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, scale_xy = 1, font=font, to_file="plots/models/unet.png").show()
+    visualkeras.layered_view(model, legend=True, scale_xy = 1, font=font, to_file="plots/models/unet.png", color_map=color_map).show()
 elif model_type == "advanced_decoder":
     x = Input((256,256,3))
     base = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(x)
@@ -68,7 +87,7 @@ elif model_type == "advanced_decoder":
     c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
     model = Model(inputs=x, outputs=c5)
     font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0]).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0], color_map=color_map).show()
 elif model_type == "segnet":
     x = Input((256,256,3))
     conv_1 = Conv2D(32, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(x)
@@ -106,4 +125,4 @@ elif model_type == "segnet":
     model = Model(inputs=x, outputs=outputs)
     font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
 
-    layered_view(model, legend=True, font=font, scale_xy = 1, to_file="plots/models/segnet.png", scale_z = 0.01).show()
+    layered_view(model, legend=True, font=font, scale_xy = 1, to_file="plots/models/segnet.png", scale_z = 0.01, color_map=color_map).show()

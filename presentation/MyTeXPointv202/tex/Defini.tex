@@ -1,0 +1,2705 @@
+%\newcommand {\bm}{\bf{m}}
+%\usepackage{eurosym}
+\newcommand {\alphahattheta}{\alpha^{\alpha}_{\theta}}
+\newcommand {\alphahbttheta}{\alpha^{\beta}_{\theta}}
+\newcommand {\alphahFtbwtFS}{\alpha^{\rm{F}}_{\bf{w}_{\rm{FS}}}}
+\newcommand {\alphahGtbwtGS}{\alpha^{\rm{G}}_{\bf{w}_{\rm{GS}}}}
+\newcommand {\alphahLtbwtLS}{\alpha^{\rm{L}}_{\bf{w}_{\rm{LS}}}}
+\newcommand {\alphahSttheta}{\alpha^{\rm{S}}_{\theta}}
+\newcommand {\alphattheta}{\alpha_{\theta}}
+\newcommand {\alphatthetahS}{\alpha_{\theta^{\rm{S}}}}
+%\newcommand {\�}{\"a}
+%\newcommand {\�}{\"A}
+\newcommand {\ba}{\begin{array}}
+%\newcommand {\dfrac}{\displaystyle\frac}
+\newcommand {\barbutS}{\bar{\bf{u}}_{\rm{S}}}
+\newcommand {\bata}{\bf{a}_{\alpha}}
+\newcommand {\batab}{\bf{a}_{\alpha\beta}}
+\newcommand {\bataG}{\bf{a}_{\alpha\rm{G}}}
+\newcommand {\bataL}{\bf{a}_{\alpha\rm{L}}}
+\newcommand {\bataS}{\bf{a}_{\alpha\rm{S}}}
+\newcommand {\batAS}{\bf{a}_{\rm{AS}}}
+\newcommand {\batb}{\bf{a}_{\beta}}
+\newcommand {\batG}{\bf{a}_{\rm{G}}}
+\newcommand {\batGa}{\bf{a}_{\rm{G}\alpha}}
+\newcommand {\batGb}{\bf{a}_{\rm{G}\beta}}
+\newcommand {\batGL}{\bf{a}_{\rm{GL}}}
+\newcommand {\batGS}{\bf{a}_{\rm{GS}}}
+\newcommand {\batL}{\bf{a}_{\rm{L}}}
+\newcommand {\batLa}{\bf{a}_{\rm{L}\alpha}}
+\newcommand {\batLb}{\bf{a}_{\rm{L}\beta}}
+\newcommand {\batLG}{\bf{a}_{\rm{LG}}}
+\newcommand {\batLS}{\bf{a}_{\rm{LS}}}
+\newcommand {\batOS}{\bf{a}_{\rm{OS}}}
+\newcommand {\batS}{\bf{a}_{\rm{S}}}
+\newcommand {\batSa}{\bf{a}_{\rm{S}\alpha}}
+\newcommand {\batSb}{\bf{a}_{\rm{S}\beta}}
+\newcommand {\batSG}{\bf{a}_{\rm{SG}}}
+\newcommand {\batSL}{\bf{a}_{\rm{SL}}}
+\newcommand {\bb}{\bf{b}}
+\newcommand {\bbha}{\bf{b}^{\alpha}}
+\newcommand {\bbhs}{\bf{b}^{\rm S}}
+\newcommand {\bbhfl}{\bf{b}^{\rm FL}}
+\newcommand {\bbhl}{\bf{b}^{\rm L}}
+\newcommand {\bbhn}{\bf{b}^{\rm N}}
+\newcommand {\bbhb}{\bf{b}^{\beta}}
+\newcommand {\bbhG}{\bf{b}^{\rm{G}}}
+\newcommand {\bbhL}{\bf{b}^{\rm{L}}}
+\newcommand {\bbhN}{\bf{b}^{\rm{N}}}
+\newcommand {\bbhS}{\bf{b}^{\rm{S}}}
+\newcommand {\bB}{\bf{B}}
+\newcommand {\bBta}{\bf{B}_{\alpha}}
+\newcommand {\bAta}{\bf{A}_{\alpha}}
+\newcommand {\bBtB}{\bB_{\rm{B}}}
+\newcommand {\bBtBTr}{(\bB_{\rm{B}})^{\rm{T}}}
+\newcommand {\bBtE}{\bB_{\rm{E}}}
+\newcommand {\bBtETr}{(\bB_{\rm{E}})^{\rm{T}}}
+\newcommand {\bBtG}{\bB_{\rm{G}}}
+\newcommand {\bBtGhT}{(\bB_{\rm{G}})^{\rm{T}}}
+\newcommand {\bBtGTr}{(\bB_{\rm{G}})^{\rm{T}}}
+\newcommand {\bBtL}{\bB_{\rm{L}}}
+\newcommand {\bBtLhT}{(\bB_{\rm{L}})^{\rm{T}}}
+\newcommand {\bBtS}{\bB_{\rm{S}}}
+\newcommand {\bBtShT}{(\bB_{\rm{S}})^{\rm{T}}}
+\newcommand {\bBtSTr}{(\bB_{\rm{S}})^{\rm{T}}}
+\newcommand {\bBttheta}{\bB_{\theta}}
+\newcommand {\bBtthetaTr}{(\bB_{\theta})^{\rm{T}}}
+\newcommand {\bBtu}{\bB_{\rm{u}}}
+\newcommand {\bBtuTr}{(\bB_{\rm{u}})^{\rm{T}}}
+\newcommand {\bc}{\begin{center}}
+\newcommand {\bC}{\bf{C}}
+\newcommand {\bCbta}{\breve{\bf{C}}_{\alpha}}
+\newcommand {\bCbtapa}{\breve{(\bf{C}}_{\alpha})'_{\alpha}}
+\newcommand {\bCbtA}{\breve{\bf{C}}_{\rm{A}}}
+\newcommand {\bCbtb}{\breve{\bf{C}}_{\beta}}
+\newcommand {\bCbtbpb}{\breve{(\bf{C}}_{\beta})'_{\beta}}
+\newcommand {\bCbtG}{\breve{\bf{C}}_{\rm{G}}}
+\newcommand {\bCbtGpG}{(\bCbtG)'_{\rm{G}}}
+\newcommand {\bCbtL}{\breve{\bf{C}}_{\rm{L}}}
+\newcommand {\bCbtLpL}{(\bCbtL)'_{\rm{L}}}
+\newcommand {\bCbtO}{\breve{\bf{C}}_{\rm{O}}}
+\newcommand {\bCbtS}{\breve{\bf{C}}_{\rm{S}}}
+\newcommand {\bCbtSpS}{(\bCbtS)'_{\rm{S}}}
+\newcommand {\bCcta}{\check{\bf{C}}_{\alpha}}
+\newcommand {\bCctA}{\check{\bf{C}}_{\rm{A}}}
+\newcommand {\bCctb}{\check{\bf{C}}_{\beta}}
+\newcommand {\bCctG}{\check{\bf{C}}_{\rm{G}}}
+\newcommand {\bCctL}{\check{\bf{C}}_{\rm{L}}}
+\newcommand {\bCctO}{\check{\bf{C}}_{\rm{O}}}
+\newcommand {\bCctS}{\check{\bf{C}}_{\rm{S}}}
+\newcommand {\bCha}{\bf{C}^{\alpha}}
+\newcommand {\bChb}{\bf{C}^{\beta}}
+\newcommand {\bChG}{\bf{C}^{\rm{G}}}
+\newcommand {\bChL}{\bf{C}^{\rm{L}}}
+\newcommand {\bChS}{\bf{C}^{\rm{S}}}
+\newcommand {\bChTinv}{\bf{C}^{\rm{T-1}}}
+\newcommand {\bCinv}{\bf{C}^{\rm{-1}}}
+\newcommand {\bCsta}{\tilde{\bf{C}}_{\alpha}}
+\newcommand {\bCstA}{\tilde{\bf{C}}_{\rm{A}}}
+\newcommand {\bCstb}{\tilde{\bf{C}}_{\beta}}
+\newcommand {\bCstG}{\tilde{\bf{C}}_{\rm{G}}}
+\newcommand {\bCstL}{\tilde{\bf{C}}_{\rm{L}}}
+\newcommand {\bCstO}{\tilde{\bf{C}}_{\rm{O}}}
+\newcommand {\bCstS}{\tilde{\bf{C}}_{\rm{S}}}
+\newcommand {\bCta}{\bf{C}_{\alpha}}
+\newcommand {\bCtavol}{\rm {\tilde{\bf{C}}_{\alpha}}}
+\newcommand {\bCtSvol}{\rm {\tilde{\bf{C}}_{\rm S}}}
+\newcommand {\bCtAvol}{\rm {\tilde{\bf{C}}_{\rm A}}}
+\newcommand {\bCtadev}{\rm {\breve{{\bf{C}}}_{\alpha}}}
+\newcommand {\bCtadevpa}{(\rm {\breve{{\bf{C}}}_{\alpha}})'_{\alpha}}
+\newcommand {\bCtSdev}{\rm {\breve{{\bf{C}}}_{\rm S}}}
+\newcommand {\bCtAdev}{\rm {\breve{{\bf{C}}}_{\rm A}}}
+\newcommand {\bCtAdevpA}{\rm ({\breve{{\bf{C}}}_{\rm A}})'_{\rm A}}
+\newcommand {\bCtSdevpS}{\rm ({\breve{{\bf{C}}}_{\rm S}})'_{\rm S}}
+\newcommand {\bCtAdevpS}{\rm ({\breve{{\bf{C}}}_{\rm A}})'_{\rm S}}
+\newcommand {\bCtahTinv}{\bf{C}_{\alpha}^{\rm{T-1}}}
+\newcommand {\bCtainv}{\bf{C}_{\alpha}^{\rm{-1}}}
+\newcommand {\bCtapa}{(\bf{C}_{\alpha})'_{\alpha}}
+\newcommand {\bFtnAS}{\bf{F}_{\rm{0AS}}}
+\newcommand {\bFtsigmaS}{\bf{F}_{\sigma\rm{S}}}
+\newcommand {\bFtsigma}{\bf{F}_{\sigma}}
+\newcommand {\bFtnASinv}{\bf{F}_{\rm{0AS}}^{\rm -1}}
+\newcommand {\bFtnASinvhT}{\bf{F}_{\rm{0AS}}^{\rm T-1}}
+\newcommand {\bFtnAShT}{\bf{F}_{\rm{0AS}}^{\rm T}}
+\newcommand {\bCtnAS}{\bf{C}_{\rm{0AS}}}
+\newcommand {\bCtnASinv}{\bf{C}_{\rm{0AS}}^{\rm -1}}
+\newcommand {\bCtA}{\bf{C}_{\rm{A}}}
+\newcommand {\bCtsig}{\bf{C}_{\sigma}}
+\newcommand {\bCtnA}{\bf{C}_{\rm{0A}}}
+\newcommand {\bCtb}{\bf{C}_{\beta}}
+\newcommand {\bCtbhTinv}{\bf{C}_{\beta}^{\rm{T-1}}}
+\newcommand {\bCtbinv}{\bf{C}_{\beta}^{\rm{-1}}}
+\newcommand {\bCtG}{\bf{C}_{\rm{G}}}
+\newcommand {\bCtGhTinv}{\bf{C}_{\rm{G}}^{\rm{T-1}}}
+\newcommand {\bCtGinv}{\bf{C}_{\rm{G}}^{\rm{-1}}}
+\newcommand {\bCtL}{\bf{C}_{\rm{L}}}
+\newcommand {\bCtLhTinv}{\bf{C}_{\rm{L}}^{\rm{T-1}}}
+\newcommand {\bCtLinv}{\bf{C}_{\rm{L}}^{\rm{-1}}}
+\newcommand {\bCtO}{\bf{C}_{\rm{O}}}
+\newcommand {\bCtS}{\bf{C}_{\rm{S}}}
+\newcommand {\bCtSe}{\bf{C}_{\rm{Se}}}
+\newcommand {\bCtShTinv}{\bf{C}_{\rm{S}}^{\rm{T-1}}}
+\newcommand {\bCtSinv}{\bf{C}_{\rm{S}}^{\rm{-1}}}
+\newcommand {\bCtAinv}{\bf{C}_{\rm{A}}^{\rm{-1}}}
+\newcommand {\bCtSpS}{(\bf{C}_{\rm{S}})'_{\rm{S}}}
+\newcommand {\bCtApA}{(\bf{C}_{\rm{A}})'_{\rm{A}}}
+\newcommand {\bddttpleins}{\bdd_{\rm{t}+1}}
+\newcommand {\bDta}{\bf{D}_{\alpha}}
+\newcommand {\bDtahD}{\bf{D}_{\alpha}^{\rm{D}}}
+\newcommand {\bDtahDpa}{(\bf{D}_{\alpha}^{\rm{D}})'_{\alpha}}
+\newcommand {\bDtapa}{(\bf{D}_{\alpha})'_{\alpha}}
+\newcommand {\bDtA}{\bf{D}_{\rm{A}}}
+\newcommand {\bDtAhD}{\bf{D}_{\rm{A}}^{\rm{D}}}
+\newcommand {\bDtAhDpA}{(\bf{D}_{\rm{A}}^{\rm{D}})'_{\rm{A}}}
+\newcommand {\bDtApA}{(\bf{D}_{\rm{A}})'_{\rm{A}}}
+\newcommand {\bDtb}{\bf{D}_{\beta}}
+\newcommand {\bDts}{\bf{D}_{\rm S}}
+\newcommand {\bDtbhD}{\bf{D}_{\beta}^{\rm{D}}}
+\newcommand {\bDtbhDpb}{(\bf{D}_{\beta}^{\rm{D}})'_{\beta}}
+\newcommand {\bDtbpb}{(\bf{D}_{\beta})'_{\beta}}
+\newcommand {\bDtF}{\bf{D}_{\rm{F}}}
+\newcommand {\bDtLb}{\bf{D}_{\rm{L \beta}}}
+\newcommand {\bDtFL}{\bf{D}_{\rm{FL}}}
+\newcommand {\bDtG}{\bf{D}_{\rm{G}}}
+\newcommand {\bDtGhD}{\bf{D}_{\rm{G}}^{\rm{D}}}
+\newcommand {\bDtGhDpG}{(\bf{D}_{\rm{G}}^{\rm{D}})'_{\rm{G}}}
+\newcommand {\bDtGpG}{(\bf{D}_{\rm{G}})'_{\rm{G}}}
+\newcommand {\bDtL}{\bf{D}_{\rm{L}}}
+\newcommand {\bDtLhD}{\bf{D}_{\rm{L}}^{\rm{D}}}
+\newcommand {\bDtLhDpL}{(\bf{D}_{\rm{L}}^{\rm{D}})'_{\rm{L}}}
+\newcommand {\bDtLpL}{(\bf{D}_{\rm{L}})'_{\rm{L}}}
+\newcommand {\bDtN}{\bf{D}_{\rm{N}}}
+\newcommand {\bDtO}{\bf{D}_{\rm{O}}}
+\newcommand {\bDtOhD}{\bf{D}_{\rm{O}}^{\rm{D}}}
+\newcommand {\bDtOhDpO}{(\bf{D}_{\rm{O}}^{\rm{D}})'_{\rm{O}}}
+\newcommand {\bDtOpO}{(\bf{D}_{\rm{O}})'_{\rm{O}}}
+\newcommand {\bDtS}{\bf{D}_{\rm{S}}}
+\newcommand {\bDtShD}{\bf{D}_{\rm{S}}^{\rm{D}}}
+\newcommand {\bDtShDpS}{(\bf{D}_{\rm{S}}^{\rm{D}})'_{\rm{S}}}
+\newcommand {\bDtSpS}{(\bf{D}_{\rm{S}})'_{\rm{S}}}
+\newcommand {\be}{\begin{equation}}       % mit Gleichungsnummer
+\newcommand {\bea}{\begin{eqnarray}}
+\newcommand {\ben}{\begin{displaymath}}   % ohne Gleichungsnummer
+\newcommand {\betahatbwtGS}{\beta^{\alpha}_{\bwtGS}}
+\newcommand {\betahatbwtLS}{\beta^{\alpha}_{\bwtLS}}
+\newcommand {\betahGtbwtGS}{\beta^{\rm{G}}_{\bwtGS}}
+\newcommand {\betahGtbwtLS}{\beta^{\rm{G}}_{\bwtLS}}
+\newcommand {\betahLtbwtGS}{\beta^{\rm{L}}_{\bwtGS}}
+\newcommand {\betahLtbwtLS}{\beta^{\rm{L}}_{\bwtLS}}
+\newcommand {\betahNtbwtNS}{\beta^{\rm{N}}_{\bwtNS}}
+\newcommand {\bE}{\bf{E}}
+\newcommand {\bEd}{\dot{\bf{E}}}
+\newcommand {\bEta}{\bf{E}_{\alpha}}
+\newcommand {\bEtatLin}{\bf{E}_{\alpha\>\rm{Lin}}}
+\newcommand {\bEtb}{\bf{E}_{\beta}}
+\newcommand {\bEtbtLin}{\bf{E}_{\beta}_{\rm{Lin}}}
+\newcommand {\bEtG}{\bf{E}_{\rm{G}}}
+\newcommand {\bEtGtLin}{\bf{E}_{\rm{G}}_{\rm{Lin}}}
+\newcommand {\bEtL}{\bf{E}_{\rm{L}}}
+\newcommand {\bEtLin}{\bf{E}_{\rm{Lin}}}
+\newcommand {\bEtLtLin}{\bf{E}_{\rm{L}}_{\rm{Lin}}}
+\newcommand {\bEtS}{\bf{E}_{\rm{S}}}
+\newcommand {\bEtSpS}{(\bf{E}_{\rm{S}})'_{\rm{S}}}
+\newcommand {\bEtStLin}{\bf{E}_{\rm{S}}_{\rm{Lin}}}
+\newcommand {\bF}{\bf{F}}
+\newcommand {\bFad}{\stackrel{\hspace{-0.5mm} +}{{\bf F}_{}}}
+\newcommand {\bFbta}{\breve{\hspace{0.5mm}\bf{F}}_{\alpha}}
+\newcommand {\bFbtahT}{{\breve{\bf{F}}_{\alpha}}^{\rm{T}}}
+\newcommand {\bFbtAhT}{{\breve{\bf{F}}_{\rm{A}}}^{\rm{T}}}
+\newcommand {\bFbtb}{\breve{\hspace{0.5mm}\bf{F}}_{\beta}}
+\newcommand {\bFbtbhT}{{\breve{\bf{F}}_{\beta}^{\rm{T}}}}
+\newcommand {\bFbtG}{\breve{\hspace{0.5mm}\bf{F}}_{\rm{G}}}
+\newcommand {\bFbtGhT}{{\breve{\bf{F}}_{\rm{G}}}^{\rm{T}}}
+\newcommand {\bFbtL}{\breve{\hspace{0.5mm}\bf{F}}_{\rm{L}}}
+\newcommand {\bFbtLhT}{{\breve{\bf{F}}_{\rm{L}}}^{\rm{T}}}
+\newcommand {\bFbtS}{\breve{\hspace{0.5mm}\bf{F}}_{\rm{S}}}
+\newcommand {\bFbtShT}{{\breve{\bf{F}}_{\rm{S}}}^{\rm{T}}}
+\newcommand {\bFha}{\bf{F}^{\alpha}}
+\newcommand {\bFhb}{\bf{F}^{\beta}}
+\newcommand {\bFhG}{\bf{F}^{\rm{G}}}
+\newcommand {\bFhL}{\bf{F}^{\rm{L}}}
+\newcommand {\bFhS}{\bf{F}^{\rm{S}}}
+\newcommand {\bFhTinv}{\bf{F}^{\rm{T}-1}}
+\newcommand {\bFinv}{\bf{F}^{\rm{-1}}}
+\newcommand {\bFsta}{\tilde{\bf{F}}_{\alpha}}
+\newcommand {\bFstb}{\tilde{\bf{F}}_{\beta}}
+\newcommand {\bFstG}{\tilde{\bf{F}}_{\rm{G}}}
+\newcommand {\bFstL}{\tilde{\bf{F}}_{\rm{L}}}
+\newcommand {\bFstS}{\tilde{\bf{F}}_{\rm{S}}}
+\newcommand {\bFta}{\bf{F}_{\alpha}}
+\newcommand {\bFtaad}{\stackrel{\hspace{-2.3mm} +}{\bf{F}_{\alpha}}}
+\newcommand {\bFtad}{\dot{\bf{F}}_{\alpha}}
+\newcommand {\bFtahT}{\bf{F}_{\alpha}^{\rm{T}}}
+\newcommand {\bFtsighT}{\bf{F}_{\sigma}^{\rm{T}}}
+\newcommand {\bFtnsighT}{\bf{F}_{\rm 0 \sigma}^{\rm{T}}}
+\newcommand {\bFtahTinv}{\bf{F}_{\alpha}^{\rm{T}-1}}
+\newcommand {\bFtainv}{\bf{F}_{\alpha}^{\rm{-1}}}
+\newcommand {\bFtapa}{(\bf{F}_{\alpha})'_{\alpha}}
+\newcommand {\bFtapS}{(\bf{F}_{\alpha})'_{\rm{S}}}
+\newcommand {\bFtb}{\bf{F}_{\beta}}
+\newcommand {\bFtbad}{\stackrel{\hspace{-2.3mm} +}{\bf{F}_{\beta}}}
+\newcommand {\bFtbd}{\dot{\bf{F}}_{\beta}}
+\newcommand {\bFtbhT}{\bf{F}_{\beta}^{\rm{T}}}
+\newcommand {\bFtbhTinv}{\bf{F}_{\beta}^{\rm{T}-1}}
+\newcommand {\bFtbinv}{\bf{F}_{\beta}^{\rm{-1}}}
+\newcommand {\bFtbpS}{(\bf{F}_{\beta})'_{\rm{S}}}
+\newcommand {\bFtG}{\bf{F}_{\rm{G}}}
+\newcommand {\bFtGad}{\stackrel{\hspace{-2.3mm} +}{\bf{F}_{\rm{G}}}}
+\newcommand {\bFtGd}{\dot{\bf{F}}_{\rm{G}}}
+\newcommand {\bFtGhT}{\bf{F}_{\rm{G}}^{\rm{T}}}
+\newcommand {\bFtGhTinv}{\bf{F}_{\rm{G}}^{\rm{T}-1}}
+\newcommand {\bFtGinv}{\bf{F}_{\rm{G}}^{\rm{-1}}}
+\newcommand {\bFtGpS}{(\bf{F}_{\rm{G}})'_{\rm{S}}}
+\newcommand {\bFtL}{\bf{F}_{\rm{L}}}
+\newcommand {\bFtLad}{\stackrel{\hspace{-2.3mm} +}{\bf{F}_{\rm{L}}}}
+\newcommand {\bFtLd}{\dot{\bf{F}}_{\rm{L}}}
+\newcommand {\bFtLhT}{\bf{F}_{\rm{L}}^{\rm{T}}}
+\newcommand {\bFtLhTinv}{\bf{F}_{\rm{L}}^{\rm{T}-1}}
+\newcommand {\bFtLinv}{\bf{F}_{\rm{L}}^{\rm{-1}}}
+\newcommand {\bFtLpS}{(\bf{F}_{\rm{L}})'_{\rm{S}}}
+\newcommand {\bFtS}{\bf{F}_{\rm{S}}}
+\newcommand {\bFtSe}{\bf{F}_{\rm{Se}}}
+\newcommand {\bFtSg}{\bf{F}_{\rm{Sg}}}
+\newcommand {\bFtsig}{\bf{F}_{\sigma}}
+\newcommand {\bFtA}{\bf{F}_{\rm{A}}}
+\newcommand {\bFtAhT}{\bf{F}_{\rm{A}}^{\rm{T}}}
+\newcommand {\bFtnA}{\bf{F}_{\rm{0A}}}
+\newcommand {\bFtnsig}{\bf{F}_{\rm{0}\sigma}}
+\newcommand {\bFtsigS}{\bf{F}_{\sigma\rm{S}}}
+\newcommand {\bFtsigShT}{\bf{F}_{\sigma\rm{S}}^{\rm{T}}}
+\newcommand {\bFtsigSinv}{\bf{F}_{\sigma\rm{S}}^{\rm{-1}}}
+\newcommand {\bFtsigShTinv}{\bf{F}_{\sigma\rm{S}}^{\rm{T-1}}}
+\newcommand {\bFtnAhT}{\bf{F}_{\rm{0A}}^{\rm{T}}}
+\newcommand {\bFtnAinv}{\bf{F}_{\rm{0A}}^{\rm -1}}
+\newcommand {\bFtSad}{\stackrel{\hspace{-2.3mm} +}{\bf{F}_{\rm{S}}}}
+\newcommand {\bFtSd}{\dot{\bf{F}}_{\rm{S}}}
+\newcommand {\bFtShT}{\bf{F}_{\rm{S}}^{\rm{T}}}
+\newcommand {\bFhT}{{\bf{F}}^{\rm{T}}}
+\newcommand {\bFtShTinv}{\bf{F}_{\rm{S}}^{\rm{T}-1}}
+\newcommand {\bFtSinv}{\bf{F}_{\rm{S}}^{\rm{-1}}}
+\newcommand {\bFtSpS}{(\bf{F}_{\rm{S}})'_{\rm{S}}}
+\newcommand {\bGhMexttB}{\bf{G}^{\rm{M\>ext}}_{\rm{B}}}
+\newcommand {\bGhMinttB}{\bf{G}^{\rm{M\>int}}_{\rm{B}}}
+\newcommand {\bGhMtB}{\bf{G}^{\rm{M}}_{\rm{B}}}
+\newcommand {\bh}{{\bf h}}
+\newcommand {\bhdhatn}{\rm{\hat{\bf{h}}}^{\alpha}_{(\rm{0})}}
+\newcommand {\bhha}{\bf{h}^{\alpha}}
+\newcommand {\bhhatn}{\bf{h}^{\alpha}_{(\rm{0})}}
+\newcommand {\bhhatnpa}{(\bf{h}^{\alpha}_{(\rm{0})})'_{\alpha}}
+\newcommand {\bI}{{\bf I}\rm}
+\newcommand {\bIC}{{\rm\kern.24em\vrule width.02em height1.4ex depth-.09ex\kern-.26em \bf{C}}}
+\newcommand {\bjhN}{\bf{j}^{\rm{N}}}
+\newcommand {\bkha}{\bf{k}^{\alpha}}
+\newcommand {\bK}{{\bf K}}
+\newcommand {\bKta}{\bK_{\alpha}}
+\newcommand {\bKtb}{\bK_{\beta}}
+\newcommand {\bKtbs}{\tilde{{\bK}}_{\beta}}
+\newcommand {\bKtF}{\bK_{\rm{F}}}
+\newcommand {\bKtG}{\bK_{\rm{G}}}
+\newcommand {\bKtGq}{\bar{\bK}_{\rm{G}}}
+\newcommand {\bKtGs}{\tilde{{\bK}}_{\rm{G}}}
+\newcommand {\bKtL}{\bK_{\rm{L}}}
+\newcommand {\bKtLq}{\bar{\bK}_{\rm{L}}}
+\newcommand {\bKtLs}{\tilde{{\bK}}_{\rm{L}}}
+\newcommand {\bKtS}{\bK_{\rm{S}}}
+\newcommand {\blha}{\bf{l}^{\alpha}}
+\newcommand {\blhapa}{(\bf{l}^{\alpha})'_{\alpha}}
+\newcommand {\bL}{\bf{L}}
+\newcommand {\bLhT}{\bf{L}^{\rm{T}}}
+\newcommand {\bLta}{\bf{L}_{\alpha}}
+\newcommand {\bLtahT}{\bf{L}_{\alpha}^{\rm{T}}}
+\newcommand {\bLtA}{\bf{L}_{\rm{A}}}
+\newcommand {\bLtAhT}{\bf{L}_{\rm{A}}^{\rm{T}}}
+\newcommand {\bLtb}{\bf{L}_{\beta}}
+\newcommand {\bLtbhT}{\bf{L}_{\beta}^{\rm{T}}}
+\newcommand {\bLtG}{\bf{L}_{\rm{G}}}
+\newcommand {\bLtGhT}{\bf{L}_{\rm{G}}^{\rm{T}}}
+\newcommand {\bLtL}{\bf{L}_{\rm{L}}}
+\newcommand {\bLtLhT}{\bf{L}_{\rm{L}}^{\rm{T}}}
+\newcommand {\bLtS}{\bf{L}_{\rm{S}}}
+\newcommand {\bLtShT}{\bf{L}_{\rm{S}}^{\rm{T}}}
+\newcommand {\bmha}{\bf{m}^{\alpha}}
+\newcommand {\bmhatn}{\bf{m}^{\alpha}_{(\rm{0})}}
+\newcommand {\bn}{\bf{n}}
+\newcommand {\bntn}{\bf{n}_{\rm{0}}}
+\newcommand {\bntnull}{\bf{n}_{\rm{0}}}
+\newcommand {\bN}{\bf{N}}
+\newcommand {\bNtB}{\bN_{\rm{B}}}
+\newcommand {\bNtBTr}{(\bN_{\rm{B}})^{\rm{T}}}
+\newcommand {\bNtE}{\bN_{\rm{E}}}
+\newcommand {\bNtETr}{(\bN_{\rm{E}})^{\rm{T}}}
+\newcommand {\bNtG}{\bN_{\rm{G}}}
+\newcommand {\bNtGhT}{(\bN_{\rm{G}})^{\rm{T}}}
+\newcommand {\bNtL}{\bN_{\rm{L}}}
+\newcommand {\bNtLhT}{(\bN_{\rm{L}})^{\rm{T}}}
+\newcommand {\bNtS}{\bN_{\rm{S}}}
+\newcommand {\bNtShT}{(\bN_{\rm{S}})^{\rm{T}}}
+\newcommand {\bNttheta}{\bN_{\theta}}
+\newcommand {\bNtthetaTr}{(\bN_{\theta})^{\rm{T}}}
+\newcommand {\bNtu}{\bN_{\rm{u}}}
+\newcommand {\bNtuTr}{(\bN_{\rm{u}})^{\rm{T}}}
+\newcommand {\bpdha}{\rm{\hat{\bf{p}}}^{\alpha}}
+\newcommand {\bpdhs}{\rm{\hat{\bf{p}}}^{\rm S}}
+\newcommand {\bpdhsb}{\rm{\hat{\bf{p}}}^{\rm S \beta}}
+\newcommand {\bpdhfl}{\rm{\hat{\bf{p}}}^{\rm FL}}
+\newcommand {\bpdhflb}{\rm{\hat{\bf{p}}}^{\rm FL \beta}}
+\newcommand {\bpdhl}{\rm{\hat{\bf{p}}}^{\rm L}}
+\newcommand {\bpdhlb}{\rm{\hat{\bf{p}}}^{\rm L \beta}}
+\newcommand {\bpdhn}{\rm{\hat{\bf{p}}}^{\rm N}}
+\newcommand {\bpdhab}{\rm{\hat{\bf{p}}}^{\alpha \beta}}
+\newcommand {\bpdhatE}{\hat{\bf{p}}^{\alpha}_{\rm{E}}}
+\newcommand {\bpdhA}{\rm{\hat{\bf{p}}}^{\rm{A}}}
+\newcommand {\bpdhb}{\rm{\hat{\bf{p}}}^{\beta}}
+\newcommand {\bpdhbtE}{\hat{\bf{p}}^{\beta}_{\rm{E}}}
+\newcommand {\bpdhF}{\rm{\hat{\bf{p}}}^{\rm{F}}}
+\newcommand {\bpdhG}{\rm{\hat{\bf{p}}}^{\rm{G}}}
+\newcommand {\bpdhGtE}{\hat{\bf{p}}^{\rm{G}}_{\rm{E}}}
+\newcommand {\bpdhL}{\rm{\hat{\bf{p}}}^{\rm{L}}}
+\newcommand {\bpdhLtE}{\hat{\bf{p}}^{\rm{L}}_{\rm{E}}}
+\newcommand {\bpdhN}{\rm{\hat{\bf{p}}}^{\rm{N}}}
+\newcommand {\bpdhO}{\rm{\hat{\bf{p}}}^{\rm{O}}}
+\newcommand {\bpdhS}{\rm{\hat{\bf{p}}}^{\rm{S}}}
+\newcommand {\bpdhSA}{\rm{\hat{\bf{p}}}^{\rm{SA}}}
+\newcommand {\bpdhStE}{\hat{\bf{p}}^{\rm{S}}_{\rm{E}}}
+\newcommand {\bphatE}{{\bf{p}}^{\alpha}_{\rm{E}}}
+\newcommand {\bphbtE}{{\bf{p}}^{\beta}_{\rm{E}}}
+\newcommand {\bphGtE}{{\bf{p}}^{\rm{G}}_{\rm{E}}}
+\newcommand {\bphLtE}{{\bf{p}}^{\rm{L}}_{\rm{E}}}
+\newcommand {\bphStE}{{\bf{p}}^{\rm{S}}_{\rm{E}}}
+\newcommand {\bP}{\bf{P}}
+\newcommand {\bPha}{\bf{P}^{\alpha}}
+\newcommand {\bPhatE}{\bf{P}^{\alpha}_{\rm{E}}}
+\newcommand {\bPhb}{\bf{P}^{\beta}}
+\newcommand {\bPhbtE}{\bf{P}^{\beta}_{\rm{E}}}
+\newcommand {\bPhG}{\bf{P}^{\rm{G}}}
+\newcommand {\bPhGtE}{\bf{P}^{\rm{G}}_{\rm{E}}}
+\newcommand {\bPhL}{\bf{P}^{\rm{L}}}
+\newcommand {\bPhLtE}{\bf{P}^{\rm{L}}_{\rm{E}}}
+\newcommand {\bPhS}{\bf{P}^{\rm{S}}}
+\newcommand {\bPhStE}{\bf{P}^{\rm{S}}_{\rm{E}}}
+\newcommand {\bPtE}{\bf{P}_{\rm{E}}}
+\newcommand {\bq}{\bf{q}}
+\newcommand {\bqha}{\bf{q}^{\alpha}}
+\newcommand {\bqhA}{\bf{q}^{\rm{A}}}
+\newcommand {\bqhb}{\bf{q}^{\beta}}
+\newcommand {\bqhF}{\bf{q}^{\rm{F}}}
+\newcommand {\bqhG}{\bf{q}^{\rm{G}}}
+\newcommand {\bqhL}{\bf{q}^{\rm{L}}}
+\newcommand {\bqhN}{\bf{q}^{\rm{N}}}
+\newcommand {\bqhO}{\bf{q}^{\rm{O}}}
+\newcommand {\bqhS}{\bf{q}^{\rm{S}}}
+\newcommand {\bqtnull}{\bf{q}_{0}}
+\newcommand {\bS}{\bf{S}}
+\newcommand {\bSha}{\bf{S}^{\alpha}}
+\newcommand {\bShatE}{\bf{S}^{\alpha}_{\rm{E}}}
+\newcommand {\bShb}{\bf{S}^{\beta}}
+\newcommand {\bShbtE}{\bf{S}^{\beta}_{\rm{E}}}
+\newcommand {\bShG}{\bf{S}^{\rm{G}}}
+\newcommand {\bShGtE}{\bf{S}^{\rm{G}}_{\rm{E}}}
+\newcommand {\bShL}{\bf{S}^{\rm{L}}}
+\newcommand {\bShLtE}{\bf{S}^{\rm{L}}_{\rm{E}}}
+\newcommand {\bShOtE}{\bf{S}^{\rm{O}}_{\rm{E}}}
+\newcommand {\bShS}{\bf{S}^{\rm{S}}}
+\newcommand {\bShA}{\bf{S}^{\rm{A}}\rm}
+\newcommand {\bShStE}{\bf{S}^{\rm{S}}_{\rm{E}}}
+\newcommand {\bSta}{\bS_{\alpha}}
+\newcommand {\bStb}{\bS_{\beta}}
+\newcommand {\bStbs}{\tilde{{\bS}}_{\beta}}
+\newcommand {\bStE}{\bf{S}_{\rm{E}}}
+\newcommand {\bStF}{\bf{S}_{\rm{F}}}
+\newcommand {\bStG}{\bf{S}_{\rm{G}}}
+\newcommand {\bStGq}{\bar{\bS}_{\rm{G}}}
+\newcommand {\bStGs}{\tilde{{\bS}}_{\rm{G}}}
+\newcommand {\bStL}{\bS_{\rm{L}}}
+\newcommand {\bStLq}{\bar{\bS}_{\rm{L}}}
+\newcommand {\bStLs}{\tilde{{\bS}}_{\rm{L}}}
+\newcommand {\bStN}{\bS_{\rm{N}}}
+\newcommand {\bStS}{\bS_{\rm{S}}}
+\newcommand {\btab}{\begin{tabular}}
+\newcommand {\btau}{\mbox{\boldmath$\tau$}}
+\newcommand {\btdhLG}{\hat{\bf{t}}^{\rm{LG}}}
+\newcommand {\btdhSL}{\hat{\bf{t}}^{\rm{SL}}}
+\newcommand {\btdhSLc}{\rm{\bf{\hat{t}}^{\rm{SL}}}}
+\newcommand {\btha}{\bf{t}^{\alpha}}
+\newcommand {\bT}{\bf{T}}
+\newcommand {\bTha}{\bf{T}^{\alpha}}
+\newcommand {\bThaD}{\bf{T}^{\alpha\rm{D}}}
+\newcommand {\bThahT}{(\bf{T}^{\alpha})^{\rm{T}}}
+\newcommand {\bThatE}{{\bf{T}}^{\alpha}_{{\rm{E}}}}
+\newcommand {\bThA}{\bf{T}^{\rm{A}}}
+\newcommand {\bThAD}{\bf{T}^{\rm{A}\rm{D}}}
+\newcommand {\bThb}{\bf{T}^{\beta}}
+\newcommand {\bThbD}{\bf{T}^{\beta\rm{D}}}
+\newcommand {\bThbtE}{{\bf{T}}^{\beta}_{{\rm{E}}}}
+\newcommand {\bThD}{\bf{T}^{\rm{D}}}
+\newcommand {\bThF}{\bf{T}^{\rm{F}}}
+\newcommand {\bThFtE}{{\bf{T}}^{\rm {F}}_{{\rm{E}}}}
+\newcommand {\bThg}{\bf{T}^{\gamma}}
+\newcommand {\bThgD}{\bf{T}^{\gamma\rm{D}}}
+\newcommand {\bThG}{\bf{T}^{\rm{G}}}
+\newcommand {\bThGD}{\bf{T}^{\rm{G}\rm{D}}}
+\newcommand {\bThGtE}{{\bf{T}}^{\rm {G}}_{{\rm{E}}}}
+\newcommand {\bThL}{\bf{T}^{\rm{L}}}
+\newcommand {\bThLD}{\bf{T}^{\rm{L}\rm{D}}}
+\newcommand {\bThLtE}{{\bf{T}}^{\rm {L}}_{{\rm{E}}}}
+\newcommand {\bThN}{\bf{T}^{\rm{N}}}
+\newcommand {\bThO}{\bf{T}^{\rm{O}}}
+\newcommand {\bThOD}{\bf{T}^{\rm{O}\rm{D}}}
+\newcommand {\bThOtE}{{\bf{T}}^{\rm {O}}_{{\rm{E}}}}
+\newcommand {\bThS}{\bf{T}^{\rm{S}}}
+\newcommand {\bThFL}{\bf{T}^{\rm{FL}}}
+\newcommand {\bThSD}{\bf{T}^{\rm{S}\rm{D}}}
+\newcommand {\bThSO}{\bf{T}^{\rm{SO}}}
+\newcommand {\bThSOD}{\bf{T}^{\rm{SO}\rm{D}}}
+\newcommand {\bThSOtE}{{\bf{T}}^{\rm {SO}}_{{\rm{E}}}}
+\newcommand {\bThStE}{{\bf{T}}^{\rm {S}}_{{\rm{E}}}}
+\newcommand {\bThsigtE}{{{\bf{T}}}^{\rm {\sigma}}_{{\rm{E}}}}
+\newcommand {\bThs}{{{\bf{T}}}^{\rm S}}
+\newcommand {\bThfl}{{{\bf{T}}}^{\rm FL}}
+\newcommand {\bThl}{{{\bf{T}}}^{\rm L}}
+\newcommand {\bThsb}{{{\bf{T}}}^{\rm S \beta}}
+\newcommand {\bThflb}{{{\bf{T}}}^{\rm FL \beta}}
+\newcommand {\bThlb}{{{\bf{T}}}^{\rm L \beta}}
+\newcommand {\bThn}{{{\bf{T}}}^{\rm N}}
+\newcommand {\bu}{\bf{u}}
+\newcommand {\buta}{\bf{u}_{\alpha}}
+\newcommand {\butF}{\bf{u}_{\rm{F}}}
+\newcommand {\butG}{\bf{u}_{\rm{G}}}
+\newcommand {\butI}{\bf{u}_{\rm{I}}}
+\newcommand {\butL}{\bf{u}_{\rm{L}}}
+\newcommand {\butO}{\bf{u}_{\rm{O}}}
+\newcommand {\butS}{\bf{u}_{\rm{S}}}
+\newcommand {\butsig}{\bf{u}_{\sigma}}
+\newcommand {\butA}{\bf{u}_{\rm{A}}}
+\newcommand {\bw}{\bf{w}}
+\newcommand {\bwp}{\bf{w}^{\prime}}
+\newcommand {\bwpa}{\bf{w}^{\prime}_{\alpha}}
+\newcommand {\bwpb}{\bf{w}^{\prime}_{\beta}}
+\newcommand {\bwpG}{\bf{w}^{\prime}_{\rm{G}}}
+\newcommand {\bwpL}{\bf{w}^{\prime}_{\rm{L}}}
+\newcommand {\bwpS}{\bf{w}^{\prime}_{\rm{S}}}
+\newcommand {\bwta}{\bf{w}_{\alpha}}
+\newcommand {\bwtaG}{\bf{w}_{\alpha\rm{G}}}
+\newcommand {\bwtaL}{\bf{w}_{\alpha\rm{L}}}
+\newcommand {\bwtaS}{\bf{w}_{\alpha\rm{S}}}
+\newcommand {\bwtAS}{\bf{w}_{\rm{AS}}}
+\newcommand {\bwtb}{\bf{w}_{\beta}}
+\newcommand {\bwtbG}{\bf{w}_{\beta\rm{G}}}
+\newcommand {\bwtbL}{\bf{w}_{\beta\rm{L}}}
+\newcommand {\bwtbS}{\bf{w}_{\beta\rm{S}}}
+\newcommand {\bwtFS}{\bf{w}_{\rm{FS}}}
+\newcommand {\bwtab}{\bf{w}_{\alpha\beta}}
+\newcommand {\bwtsigb}{\bf{w}_{\sigma\beta}}
+\newcommand {\bwtG}{\bf{w}_{\rm{G}}}
+\newcommand {\bwtGa}{\bf{w}_{\rm{G}\alpha}}
+\newcommand {\bwtGb}{\bf{w}_{\rm{G}\beta}}
+\newcommand {\bwtGL}{\bf{w}_{\rm{GL}}}
+\newcommand {\bwtGS}{\bf{w}_{\rm{GS}}}
+\newcommand {\bwtL}{\bf{w}_{\rm{L}}}
+\newcommand {\bwtLa}{\bf{w}_{\rm{L}\alpha}}
+\newcommand {\bwtLb}{\bf{w}_{\rm{L}\beta}}
+\newcommand {\bwtLG}{\bf{w}_{\rm{LG}}}
+\newcommand {\bwtLN}{\bf{w}_{\rm{LN}}}
+\newcommand {\bwtLS}{\bf{w}_{\rm{LS}}}
+\newcommand {\bwtNS}{\bf{w}_{\rm{NS}}}
+\newcommand {\bwtOS}{\bf{w}_{\rm{OS}}}
+\newcommand {\bwtS}{\bf{w}_{\rm{S}}}
+\newcommand {\bwtSa}{\bf{w}_{\rm{S}\alpha}}
+\newcommand {\bwtSb}{\bf{w}_{\rm{S}\beta}}
+\newcommand {\bwtSG}{\bf{w}_{\rm{SG}}}
+\newcommand {\bwtSL}{\bf{w}_{\rm{SL}}}
+\newcommand {\bWta}{\bf{W}_{\alpha}}
+\newcommand {\bWtb}{\bf{W}_{\beta}}
+\newcommand {\bWtG}{\bf{W}_{\rm{G}}}
+\newcommand {\bWtL}{\bf{W}_{\rm{L}}}
+\newcommand {\bWtS}{\bf{W}_{\rm{S}}}
+\newcommand {\bx}{\bf{x}}
+\newcommand {\bxg}{\bf{x}_{\rm{g}}}
+\newcommand {\bxp}{\bf{x}^{\prime}}
+\newcommand {\bxps}{\bf{x}^{\prime}_{\rm S}}
+\newcommand {\bxpl}{\bf{x}^{\prime}_{\rm L}}
+\newcommand {\bxplb}{\bf{x}^{\prime}_{\rm L \beta}}
+\newcommand {\bxpn}{\bf{x}^{\prime}_{\rm N}}
+\newcommand {\bxpa}{\bf{x}^{\prime}_{\alpha}}
+\newcommand {\bvha}{\bf{v}^{\alpha}}
+\newcommand {\bvhb}{\bf{v}^{\beta}}
+\newcommand {\bvhsigma}{\bf{v}^{\sigma}}
+\newcommand {\bvhS}{\bf{v}^{\rm S}}
+\newcommand {\bvtS}{\bf{v}_{\rm S}}
+\newcommand {\bvtA}{\bf{v}_{\rm A}}
+\newcommand {\bxpA}{\bf{x}^{\prime}_{\rm{A}}}
+\newcommand {\bxpb}{\bf{x}^{\prime}_{\beta}}
+\newcommand {\bXpb}{\bf{X}^{\prime}_{\beta}}
+\newcommand {\bxpF}{\bf{x}^{\prime}_{\rm{F}}}
+\newcommand {\bxpG}{\bf{x}^{\prime}_{\rm{G}}}
+\newcommand {\bxpL}{\bf{x}^{\prime}_{\rm{L}}}
+\newcommand {\bxpN}{\bf{x}^{\prime}_{\rm{N}}}
+\newcommand {\bxpO}{\bf{x}^{\prime}_{\rm{O}}}
+\newcommand {\bxppa}{\bf{x}^{\prime\prime}_{\alpha}}
+\newcommand {\bxppA}{\bf{x}^{\prime\prime}_{\rm{A}}}
+\newcommand {\bxppb}{\bf{x}^{\prime\prime}_{\beta}}
+\newcommand {\bxppF}{\bf{x}^{\prime\prime}_{\rm{F}}}
+\newcommand {\bxppG}{\bf{x}^{\prime\prime}_{\rm{G}}}
+\newcommand {\bxppI}{\bf{x}^{\prime\prime}_{\rm{I}}}
+\newcommand {\bxppL}{\bf{x}^{\prime\prime}_{\rm{L}}}
+\newcommand {\bxppN}{\bf{x}^{\prime\prime}_{\rm{N}}}
+\newcommand {\bxppO}{\bf{x}^{\prime\prime}_{\rm{O}}}
+\newcommand {\bxppS}{\bf{x}^{\prime\prime}_{\rm{S}}}
+\newcommand {\bxpS}{\bf{x}^{\prime}_{\rm{S}}}
+\newcommand {\bxta}{\bf{x}_{\alpha}}
+\newcommand {\bxtF}{\bf{x}_{\rm{F}}}
+\newcommand {\bxtG}{\bf{x}_{\rm{G}}}
+\newcommand {\bxtL}{\bf{x}_{\rm{L}}}
+\newcommand {\bxtS}{\bf{x}_{\rm{S}}}
+\newcommand {\bxtsig}{\bf{x}_{\sigma}}
+\newcommand {\bdX}{\rm \Delta\bf{X}}
+\newcommand {\bdx}{\rm \Delta\bf{x}}
+\newcommand {\bxtsigma}{\bf{x}_{\sigma}}
+\newcommand {\bX}{\bf{X}}
+\newcommand {\bXI}{\mbox{\boldmath$\chi$}}
+\newcommand {\bXIta}{\mbox{\boldmath$\chi$}_{\alpha}}
+\newcommand {\bXItag}{\mbox{\boldmath$\chi$}_{{\rm{g}}\alpha}}
+\newcommand {\bXItae}{\mbox{\boldmath$\chi$}_{{\rm{e}}\alpha}}
+\newcommand {\bXItsigma}{\mbox{\boldmath$\chi$}_{\sigma}}
+\newcommand {\bXItainv}{\mbox{\boldmath$\chi$}_{\alpha}^{\rm{-1}}}
+\newcommand {\bXItb}{\mbox{\boldmath$\chi$}_{\beta}}
+\newcommand {\bXItF}{\mbox{\boldmath$\chi$}_{\rm{F}}}
+\newcommand {\bXItG}{\mbox{\boldmath$\chi$}_{\rm{G}}}
+\newcommand {\bXItL}{\mbox{\boldmath$\chi$}_{\rm{L}}}
+\newcommand {\bXItS}{\mbox{\boldmath$\chi$}_{\rm{S}}}
+\newcommand {\bXItsig}{\mbox{\boldmath$\chi$}_{\sigma}}
+\newcommand {\bXItA}{\mbox{\boldmath$\chi$}_{\rm{A}}}
+\newcommand {\bXta}{\bf{X}_{\alpha}}
+\newcommand {\bXtb}{\bf{X}_{\beta}}
+\newcommand {\bXtF}{\bf{X}_{\rm{F}}}
+\newcommand {\bXtG}{\bf{X}_{\rm{G}}}
+\newcommand {\bXtL}{\bf{X}_{\rm{L}}}
+\newcommand {\bXtS}{\bf{X}_{\rm{S}}}
+\newcommand {\bXtsig}{\bf{X}_{\sigma}}
+\newcommand {\bXtA}{\bf{X}_{\rm{A}}}
+\newcommand {\bzerohdrei}{\stackrel{\hspace{-0.1mm} \rm{3}}{\bf{0}}}
+\newcommand {\Btnull}{\rm{B}_{0}}
+\newcommand {\cdhN}{\rm{\hat{c}}^{\rm{N}}}
+\newcommand {\cha}{\rm{c}^{\alpha}}
+\newcommand {\chatp}{\rm{c}^{\alpha}_{\rm{p}}}
+\newcommand {\chb}{\rm{c}^{\beta}}
+\newcommand {\chbtp}{\rm{c}^{\beta}_{\rm{p}}}
+\newcommand {\chG}{\rm{c}^{\rm{G}}}
+\newcommand {\chGtp}{\rm{c}^{\rm{G}}_{\rm{p}}}
+\newcommand {\chL}{\rm{c}^{\rm{L}}}
+\newcommand {\chMN}{\rm{c}^{\rm{MN}}}
+\newcommand {\chN}{\rm{c}^{\rm{N}}}
+\newcommand {\chNM}{\rm{c}^{\rm{NM}}}
+\newcommand {\chNpN}{(\rm{c}^{\rm{N}})'_{\rm{N}}}
+\newcommand {\chabpab}{(\rm{c}^{\alpha \beta})'_{\alpha \beta}}
+\newcommand {\chsbpsb}{(\rm{c}^{\rm S \beta})'_{\rm S \beta}}
+\newcommand {\chlbplb}{(\rm{c}^{\rm L \beta})'_{\rm L \beta}}
+\newcommand {\chflbpflb}{(\rm{c}^{\rm FL \beta})'_{\rm FL \beta}}
+\newcommand {\chsb}{\rm{c}^{\rm S \beta}}
+\newcommand {\chlb}{\rm{c}^{\rm L \beta}}
+\newcommand {\chflb}{\rm{c}^{\rm FL \beta}}
+\newcommand {\chNpS}{(\rm{c}^{\rm{N}})'_{\rm{S}}}
+\newcommand {\chNtn}{\rm{c}^{\rm N}_{\rm{0}}}
+\newcommand {\chNV}{\rm{c}^{\rm{NV}}}
+\newcommand {\chO}{\rm{c}^{\rm{O}}}
+\newcommand {\chS}{\rm{c}^{\rm{S}}}
+\newcommand {\ctb}{\rm{c}_{\beta}}
+\newcommand {\ctG}{\rm{c}_{\rm{G}}}
+\newcommand {\ctL}{\rm{c}_{\rm{L}}}
+\newcommand {\dbchi}{\Delta\bchi}
+\newcommand {\dbchid}{\Delta\bchid}
+\newcommand {\dbd}{\Delta\bd}
+\newcommand {\dbdtB}{\Delta\bdtB}
+\newcommand {\dbdtE}{\Delta\bdtE}
+\newcommand {\dbdtG}{\Delta\bf{d}_{\rm{G}}}
+\newcommand {\dbdtL}{\Delta\bf{d}_{\rm{L}}}
+\newcommand {\dbdtS}{\Delta\bf{d}_{\rm{S}}}
+\newcommand {\dbdttheta}{\Delta\bdttheta}
+\newcommand {\dbdtu}{\Delta\bdtu}
+\newcommand {\dbeps}{\Delta\beps}
+\newcommand {\dbepsd}{\Delta\bepsd}
+\newcommand {\dbesig}{\Delta\bsigd}
+\newcommand {\dbE}{\Delta\bf{E}}
+\newcommand {\dbEd}{\Delta\dot{\bf{E}}}
+\newcommand {\dbEta}{\Delta\bf{E}_{\alpha}}
+\newcommand {\dbEtb}{\Delta\bf{E}_{\beta}}
+\newcommand {\dbEtG}{\Delta\bf{E}_{\rm{G}}}
+\newcommand {\dbEtL}{\Delta\bf{E}_{\rm{L}}}
+\newcommand {\dbEtS}{\Delta\bf{E}_{\rm{S}}}
+\newcommand {\dbF}{\Delta\bf{F}}
+\newcommand {\dbFha}{\Delta\bf{F}^{\alpha}}
+\newcommand {\dbFhb}{\Delta\bf{F}^{\beta}}
+\newcommand {\dbFhG}{\Delta\bf{F}^{\rm{G}}}
+\newcommand {\dbFhL}{\Delta\bf{F}^{\rm{L}}}
+\newcommand {\dbFhS}{\Delta\bf{F}^{\rm{S}}}
+\newcommand {\dbFta}{\Delta\bf{F}_{\alpha}}
+\newcommand {\dbFtad}{\Delta\dot{\bf{F}}_{\alpha}}
+\newcommand {\dbFtapS}{\Delta(\bf{F}_{\alpha})'_{\rm{S}}}
+\newcommand {\dbFtb}{\Delta\bf{F}_{\beta}}
+\newcommand {\dbFtbd}{\Delta\dot{\bf{F}}_{\beta}}
+\newcommand {\dbFtbpS}{\Delta(\bf{F}_{\beta})'_{\rm{S}}}
+\newcommand {\dbFtG}{\Delta\bf{F}_{\rm{G}}}
+\newcommand {\dbFtGd}{\Delta\dot{\bf{F}}_{\rm{G}}}
+\newcommand {\dbFtGpS}{\Delta(\bf{F}_{\rm{G}})'_{\rm{S}}}
+\newcommand {\dbFtL}{\Delta\bf{F}_{\rm{L}}}
+\newcommand {\dbFtLd}{\Delta\dot{\bf{F}}_{\rm{L}}}
+\newcommand {\dbFtLpS}{\Delta(\bf{F}_{\rm{L}})'_{\rm{S}}}
+\newcommand {\dbFtS}{\Delta\bf{F}_{\rm{S}}}
+\newcommand {\dbFtSd}{\Delta\dot{\bf{F}}_{\rm{S}}}
+\newcommand {\dbFtSpS}{\Delta(\bf{F}_{\rm{S}})'_{\rm{S}}}
+\newcommand {\dbP}{\Delta\bf{P}}
+\newcommand {\dbPha}{\Delta\bf{P}^{\alpha}}
+\newcommand {\dbPhb}{\Delta\bf{P}^{\beta}}
+\newcommand {\dbPhG}{\Delta\bf{P}^{\rm{G}}}
+\newcommand {\dbPhL}{\Delta\bf{P}^{\rm{L}}}
+\newcommand {\dbPhS}{\Delta\bf{P}^{\rm{S}}}
+\newcommand {\dbsig}{\Delta\bsig}
+\newcommand {\dbS}{\Delta\bf{S}}
+\newcommand {\dbSha}{\Delta\bf{S}^{\alpha}}
+\newcommand {\dbShb}{\Delta\bf{S}^{\beta}}
+\newcommand {\dbShG}{\Delta\bf{S}^{\rm{G}}}
+\newcommand {\dbShL}{\Delta\bf{S}^{\rm{L}}}
+\newcommand {\dbShS}{\Delta\bf{S}^{\rm{S}}}
+\newcommand {\dbShStE}{\Delta\bf{S}^{\rm{S}}_{\rm E}}
+\newcommand {\dbu}{\Delta\bf{u}}
+\newcommand {\dbuta}{\Delta\bf{u}_{\alpha}}
+\newcommand {\dbutb}{\Delta\bf{u}_{\beta}}
+\newcommand {\dbutG}{\Delta\bf{u}_{\rm{G}}}
+\newcommand {\dbutL}{\Delta\bf{u}_{\rm{L}}}
+\newcommand {\dbutS}{\Delta\bf{u}_{\rm{S}}}
+\newcommand {\dbx}{\Delta\bf{x}}
+\newcommand {\dbxta}{\Delta\bf{x}_{\alpha}}
+\newcommand {\dbxtb}{\Delta\bf{x}_{\beta}}
+\newcommand {\dbxtG}{\Delta\bf{x}_{\rm{G}}}
+\newcommand {\dbxtL}{\Delta\bf{x}_{\rm{L}}}
+\newcommand {\dbxtS}{\Delta\bf{x}_{\rm{S}}}
+\newcommand {\deps}{\Delta\eps}
+\newcommand {\dive}{\rm{div}\>}
+\newcommand {\dnha}{\Delta\rm{n}^{\alpha}}
+\newcommand {\dnhapa}{(\Delta\rm{n}^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\dnhb}{\Delta\rm{n}^{\beta}}
+\newcommand {\dnhbpb}{(\Delta\rm{n}^{\beta})^{\prime}_{\beta}}
+\newcommand {\dnhG}{\Delta\rm{n}^{\rm{G}}}
+\newcommand {\dnhGpG}{(\Delta\rm{n}^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\dnhGpS}{(\Delta\rm{n}^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\dnhL}{\Delta\rm{n}^{\rm{L}}}
+\newcommand {\dnhLpL}{(\Delta\rm{n}^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\dnhLpS}{(\Delta\rm{n}^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\dnhS}{\Delta\rm{n}^{\rm{S}}}
+\newcommand {\dphaR}{{\Delta\rm{p}}^{\alpha\rm{R}}}
+\newcommand {\dphaRpS}{\Delta({\rm{p}}^{\alpha\rm{R}})'_{\rm{S}}}
+\newcommand {\dphbR}{{\Delta\rm{p}}^{\beta\rm{R}}}
+\newcommand {\dphbRpS}{\Delta({\rm{p}}^{\beta\rm{R}})'_{\rm{S}}}
+\newcommand {\dphFR}{\Delta\phFR}
+\newcommand {\dphGR}{\Delta\phGR}
+\newcommand {\ktS}{\rm k_S}
+\newcommand {\ktA}{\rm k_A}
+\newcommand {\dphGRpS}{\Delta(\phGR)'_{\rm{S}}}
+\newcommand {\dphLR}{\Delta\phLR}
+\newcommand {\deltap}{\Delta\rm p}
+\newcommand {\dphLRpS}{\Delta(\phLR)'_{\rm{S}}}
+\newcommand {\dphNR}{\Delta\rm{p}^{\rm{NR}}}
+\newcommand {\dphSR}{\Delta\phSR}
+\newcommand {\dJtaTnJtS}{\ds{\frac{\partial\JtaT}{\partial\JtS}}}
+\newcommand {\dJtSTnJtS}{\ds{\frac{\partial\JtST}{\partial\JtS}}}
+\newcommand {\dJtATnJtS}{\ds{\frac{\partial\JtAT}{\partial\JtS}}}
+\newcommand {\dphSRpS}{\triangle(\phSR)'_{\rm{S}}}
+\newcommand {\dpsidhGnrhohA}{\frac{\partial{\psidhG}}{\partial\rhohA}}
+\newcommand {\dpsidhGnrhohG}{\frac{\partial{\psidhG}}{\partial\rhohG}}
+\newcommand {\dpsidhGnrhohL}{\frac{\partial{\psidhG}}{\partial\rhohL}}
+\newcommand {\dpsidhGnrhohS}{\frac{\partial{\psidhG}}{\partial\rhohS}}
+\newcommand {\dpsidhLnrhohA}{\frac{\partial\psidhL}{\partial\rhohA}}
+\newcommand {\dpsidhLnrhohG}{\frac{\partial\psidhL}{\partial\rhohG}}
+\newcommand {\dpsidhLnrhohL}{\frac{\partial\psidhL}{\partial\rhohL}}
+\newcommand {\dpsidhLnrhohS}{\frac{\partial\psidhL}{\partial\rhohS}}
+\newcommand {\dpsidhSnrhohA}{\frac{\partial\psidhS}{\partial\rhohA}}
+\newcommand {\dpsidhSnrhohG}{\frac{\partial\psidhS}{\partial\rhohG}}
+\newcommand {\dpsidhSnrhohL}{\frac{\partial\psidhS}{\partial\rhohL}}
+\newcommand {\dpsidhSnrhohS}{\frac{\partial\psidhS}{\partial\rhohS}}
+\newcommand {\dpsihanbCtS}{\ds{\frac{\partial\psiha}{\partial\bCtS}}}
+\newcommand {\dpsihanbDtG}{\ds{\frac{\partial\psiha}{\partial\bDtG}}}
+\newcommand {\dpsihanbDtL}{\ds{\frac{\partial\psiha}{\partial\bDtL}}}
+\newcommand {\dpsihanbwtGS}{\frac{\partial\psiha}{\partial\bf{w}_{\rm{GS}}}}
+\newcommand {\dpsihanbwtLS}{\frac{\partial\psiha}{\partial\bf{w}_{\rm{LS}}}}
+\newcommand {\dpsihangradJtG}{\ds{\frac{\partial\psiha}{\partial\gradJtG}}}
+\newcommand {\dpsihangradJtL}{\ds{\frac{\partial\psiha}{\partial\gradJtL}}}
+\newcommand {\dpsihangradrhoha}{\frac{\partial\psiha}{\partial\gradrhoha}}
+\newcommand {\dpsihanJtG}{\ds{\frac{\partial\psiha}{\partial\JtG}}}
+\newcommand {\dpsihanJtL}{\ds{\frac{\partial\psiha}{\partial\JtL}}}
+\newcommand {\dpsihannha}{\frac{\partial\psiha}{\partial\nha}}
+\newcommand {\dpsihanrhohA}{\frac{\partial\psiha}{\partial\rhohA}}
+\newcommand {\dpsihanrhohG}{\frac{\partial\psiha}{\partial\rhohG}}
+\newcommand {\dpsihanrhohL}{\frac{\partial\psiha}{\partial\rhohL}}
+\newcommand {\dpsihanrhohLR}{\frac{\partial\psiha}{\partial\rhohLR}}
+\newcommand {\dpsihanrhohS}{\frac{\partial\psiha}{\partial\rhohS}}
+\newcommand {\dpsihanthetahA}{\frac{\partial\psiha}{\partial\thetahA}}
+\newcommand {\dpsihanthetahG}{\frac{\partial\psiha}{\partial\thetahG}}
+\newcommand {\dpsihanthetahL}{\frac{\partial\psiha}{\partial\thetahL}}
+\newcommand {\dpsihanthetahS}{\frac{\partial\psiha}{\partial\thetahS}}
+\newcommand {\dpsihAnbCbtS}{\frac{\partial\psihA}{\partial\bCbtS}}
+\newcommand {\dpsihAnbCtS}{\frac{\partial\psihA}{\partial\bCtS}}
+\newcommand {\dpsihAnbDtL}{\ds{\frac{\partial\psihA}{\partial\bDtL}}}
+\newcommand {\dpsihAnbDtLhD}{\ds{\frac{\partial\psihA}{\partial\bDtLhD}}}
+\newcommand {\dpsihAnbwtGS}{\frac{\partial\psihA}{\partial\bf{w}_{\rm{GS}}}}
+\newcommand {\dpsihAnbwtLS}{\frac{\partial\psihA}{\partial\bf{w}_{\rm{LS}}}}
+\newcommand {\dpsihAngradrhoha}{\frac{\partial\psihA}{\partial\gradrhoha}}
+\newcommand {\dpsihAngradrhohA}{\frac{\partial\psihA}{\partial\gradrhohA}}
+\newcommand {\dpsihAngradrhohG}{\frac{\partial\psihA}{\partial\gradrhohG}}
+\newcommand {\dpsihAngradrhohL}{\frac{\partial\psihA}{\partial\gradrhohL}}
+\newcommand {\dpsihAngradrhohS}{\frac{\partial\psihA}{\partial\gradrhohS}}
+\newcommand {\dpsihAngradthetaha}{\frac{\partial\psihA}{\partial\gradthetaha}}
+\newcommand {\dpsihAngradthetahapa}{\frac{\partial\psihA}{\partial\gradthetahapa}}
+\newcommand {\dpsihAngradthetahA}{\frac{\partial\psihA}{\partial\gradthetahA}}
+\newcommand {\dpsihAngradthetahApS}{\frac{\partial\psihA}{\partial\gradthetahApS}}
+\newcommand {\dpsihAngradthetahG}{\frac{\partial\psihA}{\partial\gradthetahG}}
+\newcommand {\dpsihAngradthetahGpG}{\frac{\partial\psihA}{\partial\gradthetahGpG}}
+\newcommand {\dpsihAngradthetahL}{\frac{\partial\psihA}{\partial\gradthetahL}}
+\newcommand {\dpsihAngradthetahLpL}{\frac{\partial\psihA}{\partial\gradthetahLpL}}
+\newcommand {\dpsihAngradthetahS}{\frac{\partial\psihA}{\partial\gradthetahS}}
+\newcommand {\dpsihAngradthetahSpS}{\frac{\partial\psihA}{\partial\gradthetahSpS}}
+\newcommand {\dpsihAnnhA}{\frac{\partial\psihA}{\partial\nhA}}
+\newcommand {\dpsihAnnhS}{\frac{\partial\psihA}{\partial\nhS}}
+\newcommand {\dpsihAnrhoha}{\frac{\partial\psihA}{\partial\rhoha}}
+\newcommand {\dpsihAnrhohapa}{\frac{\partial\psihA}{\partial\rhohapa}}
+\newcommand {\dpsihAnrhohA}{\frac{\partial\psihA}{\partial\rhohA}}
+\newcommand {\dpsihAnrhohApS}{\frac{\partial\psihA}{\partial\rhohApS}}
+\newcommand {\dpsihAnrhohAR}{\frac{\partial\psihA}{\partial\rhohAR}}
+\newcommand {\dpsihAnrhohG}{\frac{\partial\psihA}{\partial\rhohG}}
+\newcommand {\dpsihAnrhohGpG}{\frac{\partial\psihA}{\partial\rhohGpG}}
+\newcommand {\dpsihAnrhohGR}{\frac{\partial\psihA}{\partial\rhohGR}}
+\newcommand {\dpsihAnrhohL}{\frac{\partial\psihA}{\partial\rhohL}}
+\newcommand {\dpsihAnrhohLpL}{\frac{\partial\psihA}{\partial\rhohLpL}}
+\newcommand {\dpsihAnrhohS}{\frac{\partial\psihA}{\partial\rhohS}}
+\newcommand {\dpsihAnrhohSpS}{\frac{\partial\psihA}{\partial\rhohSpS}}
+\newcommand {\dpsihAnrhohSR}{\frac{\partial\psihA}{\partial\rhohSR}}
+\newcommand {\dpsihAnthetaha}{\frac{\partial\psihA}{\partial\thetaha}}
+\newcommand {\dpsihAnthetahapa}{\frac{\partial\psihA}{\partial\thetahapa}}
+\newcommand {\dpsihAnthetahA}{\frac{\partial\psihA}{\partial\thetahA}}
+\newcommand {\dpsihAnthetahApS}{\frac{\partial\psihA}{\partial\thetahApS}}
+\newcommand {\dpsihAnthetahG}{\frac{\partial\psihA}{\partial\thetahG}}
+\newcommand {\dpsihAnthetahGpG}{\frac{\partial\psihA}{\partial\thetahGpG}}
+\newcommand {\dpsihAnthetahL}{\frac{\partial\psihA}{\partial\thetahL}}
+\newcommand {\dpsihAnthetahLpL}{\frac{\partial\psihA}{\partial\thetahLpL}}
+\newcommand {\dpsihAnthetahS}{\frac{\partial\psihA}{\partial\thetahS}}
+\newcommand {\dpsihAnthetahSpS}{\frac{\partial\psihA}{\partial\thetahSpS}}
+\newcommand {\dpsihbngradrhohb}{\frac{\partial\psihb}{\partial\gradrhohb}}
+\newcommand {\dpsihbnrhohLR}{\frac{\partial\psihb}{\partial\rhohLR}}
+\newcommand {\dpsihFnJtF}{\frac{\partial\psihF}{\partial\JtF}}
+\newcommand {\dpsihFnnhF}{\frac{\partial\psihF}{\partial{\rm{n}^{\rm{F}}}}}
+\newcommand {\dpsihGnbCbtS}{\frac{\partial\psihG}{\partial\bCbtS}}
+\newcommand {\dpsihGnbCtS}{\frac{\partial\psihG}{\partial\bCtS}}
+\newcommand {\dpsihGnbDtL}{\ds{\frac{\partial\psihG}{\partial\bDtL}}}
+\newcommand {\dpsihGnbDtLhD}{\ds{\frac{\partial\psihG}{\partial\bDtLhD}}}
+\newcommand {\dpsihGnbwtGS}{\frac{\partial\psihG}{\partial\bf{w}_{\rm{GS}}}}
+\newcommand {\dpsihGnbwtLS}{\frac{\partial\psihG}{\partial\bf{w}_{\rm{LS}}}}
+\newcommand {\dpsihGngradrhoha}{\frac{\partial\psihG}{\partial\gradrhoha}}
+\newcommand {\dpsihGngradrhohA}{\frac{\partial\psihG}{\partial\gradrhohA}}
+\newcommand {\dpsihGngradrhohG}{\frac{\partial\psihG}{\partial\gradrhohG}}
+\newcommand {\dpsihGngradrhohL}{\frac{\partial\psihG}{\partial\gradrhohL}}
+\newcommand {\dpsihGngradrhohS}{\frac{\partial\psihG}{\partial\gradrhohS}}
+\newcommand {\dpsihGngradthetaha}{\frac{\partial\psihG}{\partial\gradthetaha}}
+\newcommand {\dpsihGngradthetahapa}{\frac{\partial\psihG}{\partial\gradthetahapa}}
+\newcommand {\dpsihGngradthetahA}{\frac{\partial\psihG}{\partial\gradthetahA}}
+\newcommand {\dpsihGngradthetahApS}{\frac{\partial\psihG}{\partial\gradthetahApS}}
+\newcommand {\dpsihGngradthetahG}{\frac{\partial\psihG}{\partial\gradthetahG}}
+\newcommand {\dpsihGngradthetahGpG}{\frac{\partial\psihG}{\partial\gradthetahGpG}}
+\newcommand {\dpsihGngradthetahL}{\frac{\partial\psihG}{\partial\gradthetahL}}
+\newcommand {\dpsihGngradthetahLpL}{\frac{\partial\psihG}{\partial\gradthetahLpL}}
+\newcommand {\dpsihGngradthetahS}{\frac{\partial\psihG}{\partial\gradthetahS}}
+\newcommand {\dpsihGngradthetahSpS}{\frac{\partial\psihG}{\partial\gradthetahSpS}}
+\newcommand {\dpsihGnnhA}{\frac{\partial\psihG}{\partial\nhA}}
+\newcommand {\dpsihGnnhS}{\frac{\partial\psihG}{\partial\nhS}}
+\newcommand {\dpsihGnrhoha}{\frac{\partial\psihG}{\partial\rhoha}}
+\newcommand {\dpsihGnrhohapa}{\frac{\partial\psihG}{\partial\rhohapa}}
+\newcommand {\dpsihGnrhohA}{\frac{\partial\psihG}{\partial\rhohA}}
+\newcommand {\dpsihGnrhohApS}{\frac{\partial\psihG}{\partial\rhohApS}}
+\newcommand {\dpsihGnrhohAR}{\frac{\partial\psihG}{\partial\rhohAR}}
+\newcommand {\dpsihGnrhohG}{\frac{\partial\psihG}{\partial\rhohG}}
+\newcommand {\dpsihGnrhohGpG}{\frac{\partial\psihG}{\partial\rhohGpG}}
+\newcommand {\dpsihGnrhohGR}{\frac{\partial\psihG}{\partial\rhohGR}}
+\newcommand {\dpsihGnrhohL}{\frac{\partial\psihG}{\partial\rhohL}}
+\newcommand {\dpsihGnrhohLpL}{\frac{\partial\psihG}{\partial\rhohLpL}}
+\newcommand {\dpsihGnrhohS}{\frac{\partial\psihG}{\partial\rhohS}}
+\newcommand {\dpsihGnrhohSpS}{\frac{\partial\psihG}{\partial\rhohSpS}}
+\newcommand {\dpsihGnrhohSR}{\frac{\partial\psihG}{\partial\rhohSR}}
+\newcommand {\dpsihGnthetaha}{\frac{\partial\psihG}{\partial\thetaha}}
+\newcommand {\dpsihGnthetahapa}{\frac{\partial\psihG}{\partial\thetahapa}}
+\newcommand {\dpsihGnthetahA}{\frac{\partial\psihG}{\partial\thetahA}}
+\newcommand {\dpsihGnthetahApS}{\frac{\partial\psihG}{\partial\thetahApS}}
+\newcommand {\dpsihGnthetahG}{\frac{\partial\psihG}{\partial\thetahG}}
+\newcommand {\dpsihGnthetahGpG}{\frac{\partial\psihG}{\partial\thetahGpG}}
+\newcommand {\dpsihGnthetahL}{\frac{\partial\psihG}{\partial\thetahL}}
+\newcommand {\dpsihGnthetahLpL}{\frac{\partial\psihG}{\partial\thetahLpL}}
+\newcommand {\dpsihGnthetahS}{\frac{\partial\psihG}{\partial\thetahS}}
+\newcommand {\dpsihGnthetahSpS}{\frac{\partial\psihG}{\partial\thetahSpS}}
+\newcommand {\dpsihLnbCbtS}{\frac{\partial\psihL}{\partial\bCbtS}}
+\newcommand {\dpsihLnbCtS}{\frac{\partial\psihL}{\partial\bCtS}}
+\newcommand {\dpsihLnbDtL}{\ds{\frac{\partial\psihL}{\partial\bDtL}}}
+\newcommand {\dpsihLnbDtLhD}{\ds{\frac{\partial\psihL}{\partial\bDtLhD}}}
+\newcommand {\dpsihLnbwtGS}{\frac{\partial\psihL}{\partial\bf{w}_{\rm{GS}}}}
+\newcommand {\dpsihLnbwtLS}{\frac{\partial\psihL}{\partial\bf{w}_{\rm{LS}}}}
+\newcommand {\dpsihLngradrhoha}{\frac{\partial\psihL}{\partial\gradrhoha}}
+\newcommand {\dpsihLngradrhohA}{\frac{\partial\psihL}{\partial\gradrhohA}}
+\newcommand {\dpsihLngradrhohG}{\frac{\partial\psihL}{\partial\gradrhohG}}
+\newcommand {\dpsihLngradrhohL}{\frac{\partial\psihL}{\partial\gradrhohL}}
+\newcommand {\dpsihLngradrhohS}{\frac{\partial\psihL}{\partial\gradrhohS}}
+\newcommand {\dpsihLngradthetaha}{\frac{\partial\psihL}{\partial\gradthetaha}}
+\newcommand {\dpsihLngradthetahapa}{\frac{\partial\psihL}{\partial\gradthetahapa}}
+\newcommand {\dpsihLngradthetahA}{\frac{\partial\psihL}{\partial\gradthetahA}}
+\newcommand {\dpsihLngradthetahApS}{\frac{\partial\psihL}{\partial\gradthetahApS}}
+\newcommand {\dpsihLngradthetahG}{\frac{\partial\psihL}{\partial\gradthetahG}}
+\newcommand {\dpsihLngradthetahGpG}{\frac{\partial\psihL}{\partial\gradthetahGpG}}
+\newcommand {\dpsihLngradthetahL}{\frac{\partial\psihL}{\partial\gradthetahL}}
+\newcommand {\dpsihLngradthetahLpL}{\frac{\partial\psihL}{\partial\gradthetahLpL}}
+\newcommand {\dpsihLngradthetahS}{\frac{\partial\psihL}{\partial\gradthetahS}}
+\newcommand {\dpsihLngradthetahSpS}{\frac{\partial\psihL}{\partial\gradthetahSpS}}
+\newcommand {\dpsihLnJtL}{\frac{\partial\psihL}{\partial\JtL}}
+\newcommand {\dpsihLnnhA}{\frac{\partial\psihL}{\partial\nhA}}
+\newcommand {\dpsihLnnhL}{\frac{\partial\psihL}{\partial\nhL}}
+\newcommand {\dpsihLnnhS}{\frac{\partial\psihL}{\partial\nhS}}
+\newcommand {\dpsihLnrhoha}{\frac{\partial\psihL}{\partial\rhoha}}
+\newcommand {\dpsihLnrhohapa}{\frac{\partial\psihL}{\partial\rhohapa}}
+\newcommand {\dpsihLnrhohA}{\frac{\partial\psihL}{\partial\rhohA}}
+\newcommand {\dpsihLnrhohApS}{\frac{\partial\psihL}{\partial\rhohApS}}
+\newcommand {\dpsihLnrhohAR}{\frac{\partial\psihL}{\partial\rhohAR}}
+\newcommand {\dpsihLnrhohG}{\frac{\partial\psihL}{\partial\rhohG}}
+\newcommand {\dpsihLnrhohGpG}{\frac{\partial\psihL}{\partial\rhohGpG}}
+\newcommand {\dpsihLnrhohGR}{\frac{\partial\psihL}{\partial\rhohGR}}
+\newcommand {\dpsihLnrhohL}{\frac{\partial\psihL}{\partial\rhohL}}
+\newcommand {\dpsihLnrhohLpL}{\frac{\partial\psihL}{\partial\rhohLpL}}
+\newcommand {\dpsihLnrhohS}{\frac{\partial\psihL}{\partial\rhohS}}
+\newcommand {\dpsihLnrhohSpS}{\frac{\partial\psihL}{\partial\rhohSpS}}
+\newcommand {\dpsihLnrhohSR}{\frac{\partial\psihL}{\partial\rhohSR}}
+\newcommand {\dpsihLnthetaha}{\frac{\partial\psihL}{\partial\thetaha}}
+\newcommand {\dpsihLnthetahapa}{\frac{\partial\psihL}{\partial\thetahapa}}
+\newcommand {\dpsihLnthetahA}{\frac{\partial\psihL}{\partial\thetahA}}
+\newcommand {\dpsihLnthetahApS}{\frac{\partial\psihL}{\partial\thetahApS}}
+\newcommand {\dpsihLnthetahG}{\frac{\partial\psihL}{\partial\thetahG}}
+\newcommand {\dpsihLnthetahGpG}{\frac{\partial\psihL}{\partial\thetahGpG}}
+\newcommand {\dpsihLnthetahL}{\frac{\partial\psihL}{\partial\thetahL}}
+\newcommand {\dpsihLnthetahLpL}{\frac{\partial\psihL}{\partial\thetahLpL}}
+\newcommand {\dpsihLnthetahS}{\frac{\partial\psihL}{\partial\thetahS}}
+\newcommand {\dpsihLnthetahSpS}{\frac{\partial\psihL}{\partial\thetahSpS}}
+\newcommand {\dpsihNnJtN}{\frac{\partial\psihN}{\partial\JtN}}
+\newcommand {\dpsihNnnhN}{\frac{\partial\psihN}{\partial\nhN}}
+\newcommand {\dpsihNnrhohN}{\frac{\partial\psihN}{\partial\rhohN}}
+\newcommand {\dpsihNnthetahN}{\frac{\partial\psihN}{\partial\thetahN}}
+\newcommand {\dpsihSnbCbtS}{\frac{\partial\psihS}{\partial\bCbtS}}
+\newcommand {\dpsihSnbCtS}{\frac{\partial\psihS}{\partial\bCtS}}
+\newcommand {\dpsihAnbCtA}{\frac{\partial\psihA}{\partial\bCtA}}
+\newcommand {\dpsihSdevnbCtSdev}{\frac{\partial\psihSdev}{\partial\bCtSdev}}
+\newcommand {\dpsihAdevnbCtSdev}{\frac{\partial\psihAdev}{\partial\bCtSdev}}
+\newcommand {\dpsihSnbCtSdev}{\frac{\partial\psihS}{\partial\bCtSdev}}
+\newcommand {\dpsihAnbCtSdev}{\frac{\partial\psihA}{\partial\bCtSdev}}
+\newcommand {\dpsihAnbCtAdev}{\frac{\partial\psihA}{\partial\bCtAdev}}
+\newcommand {\dpsihSnbDtL}{\ds{\frac{\partial\psihS}{\partial\bDtL}}}
+\newcommand {\dpsihSnbDtLhD}{\ds{\frac{\partial\psihS}{\partial\bDtLhD}}}
+\newcommand {\dpsihSnbwtGS}{\frac{\partial\psihS}{\partial\bf{w}_{\rm{GS}}}}
+\newcommand {\dpsihSnbwtLS}{\frac{\partial\psihS}{\partial\bf{w}_{\rm{LS}}}}
+\newcommand {\dpsihSngradrhoha}{\frac{\partial\psihS}{\partial\gradrhoha}}
+\newcommand {\dpsihSngradrhohA}{\frac{\partial\psihS}{\partial\gradrhohA}}
+\newcommand {\dpsihSngradrhohG}{\frac{\partial\psihS}{\partial\gradrhohG}}
+\newcommand {\dpsihSngradrhohL}{\frac{\partial\psihS}{\partial\gradrhohL}}
+\newcommand {\dpsihSngradrhohS}{\frac{\partial\psihS}{\partial\gradrhohS}}
+\newcommand {\dpsihSngradthetaha}{\frac{\partial\psihS}{\partial\gradthetaha}}
+\newcommand {\dpsihSngradthetahapa}{\frac{\partial\psihS}{\partial\gradthetahapa}}
+\newcommand {\dpsihSngradthetahA}{\frac{\partial\psihS}{\partial\gradthetahA}}
+\newcommand {\dpsihSngradthetahApS}{\frac{\partial\psihS}{\partial\gradthetahApS}}
+\newcommand {\dpsihSngradthetahG}{\frac{\partial\psihS}{\partial\gradthetahG}}
+\newcommand {\dpsihSngradthetahGpG}{\frac{\partial\psihS}{\partial\gradthetahGpG}}
+\newcommand {\dpsihSngradthetahL}{\frac{\partial\psihS}{\partial\gradthetahL}}
+\newcommand {\dpsihSngradthetahLpL}{\frac{\partial\psihS}{\partial\gradthetahLpL}}
+\newcommand {\dpsihSngradthetahS}{\frac{\partial\psihS}{\partial\gradthetahS}}
+\newcommand {\dpsihSngradthetahSpS}{\frac{\partial\psihS}{\partial\gradthetahSpS}}
+\newcommand {\dpsihSnJtS}{\frac{\partial\psihS}{\partial\JtS}}
+\newcommand {\dpsihAnJtS}{\frac{\partial\psihA}{\partial\JtS}}
+\newcommand {\dpsihSnJtST}{\frac{\partial\psihS}{\partial\JtST}}
+\newcommand {\dpsihSnJtAT}{\frac{\partial\psihS}{\partial\JtAT}}
+\newcommand {\dpsihAnJtST}{\frac{\partial\psihA}{\partial\JtST}}
+\newcommand {\dpsihAnJtAT}{\frac{\partial\psihA}{\partial\JtAT}}
+\newcommand {\dpsihSnnhA}{\frac{\partial\psihS}{\partial\nhA}}
+\newcommand {\dpsihSnnhS}{\frac{\partial\psihS}{\partial\nhS}}
+\newcommand {\dpsihSdevnJtS}{\frac{\partial\psihSdev}{\partial\JtS}}
+\newcommand {\dpsihAdevnJtS}{\frac{\partial\psihAdev}{\partial\JtS}}
+\newcommand {\dpsihSnrhoha}{\frac{\partial\psihS}{\partial\rhoha}}
+\newcommand {\dpsihSnrhohapa}{\frac{\partial\psihS}{\partial\rhohapa}}
+\newcommand {\dpsihSnrhohA}{\frac{\partial\psihS}{\partial\rhohA}}
+\newcommand {\dpsihSnrhohApS}{\frac{\partial\psihS}{\partial\rhohApS}}
+\newcommand {\dpsihSnrhohAR}{\frac{\partial\psihS}{\partial\rhohAR}}
+\newcommand {\dpsihSnrhohAT}{\frac{\partial\psihS}{\partial\rhohAT}}
+\newcommand {\dpsihAnrhohAT}{\frac{\partial\psihA}{\partial\rhohAT}}
+\newcommand {\dpsihSnrhohG}{\frac{\partial\psihS}{\partial\rhohG}}
+\newcommand {\dpsihSnrhohGpG}{\frac{\partial\psihS}{\partial\rhohGpG}}
+\newcommand {\dpsihSnrhohGR}{\frac{\partial\psihS}{\partial\rhohGR}}
+\newcommand {\dpsihSnrhohL}{\frac{\partial\psihS}{\partial\rhohL}}
+\newcommand {\dpsihSnrhohLpL}{\frac{\partial\psihS}{\partial\rhohLpL}}
+\newcommand {\dpsihSnrhohS}{\frac{\partial\psihS}{\partial\rhohS}}
+\newcommand {\dpsihSnrhohSpS}{\frac{\partial\psihS}{\partial\rhohSpS}}
+\newcommand {\dpsihSnrhohSR}{\frac{\partial\psihS}{\partial\rhohSR}}
+\newcommand {\dpsihSnthetaha}{\frac{\partial\psihS}{\partial\thetaha}}
+\newcommand {\dpsihSnthetahapa}{\frac{\partial\psihS}{\partial\thetahapa}}
+\newcommand {\dpsihSnthetahA}{\frac{\partial\psihS}{\partial\thetahA}}
+\newcommand {\dpsihSnthetahApS}{\frac{\partial\psihS}{\partial\thetahApS}}
+\newcommand {\dpsihSnthetahG}{\frac{\partial\psihS}{\partial\thetahG}}
+\newcommand {\dpsihSnthetahGpG}{\frac{\partial\psihS}{\partial\thetahGpG}}
+\newcommand {\dpsihSnthetahL}{\frac{\partial\psihS}{\partial\thetahL}}
+\newcommand {\dpsihSnthetahLpL}{\frac{\partial\psihS}{\partial\thetahLpL}}
+\newcommand {\dpsihSnthetahS}{\frac{\partial\psihS}{\partial\thetahS}}
+\newcommand {\dpsihSnthetahSpS}{\frac{\partial\psihS}{\partial\thetahSpS}}
+\newcommand {\drhoha}{\triangle\rho^{\alpha}}
+\newcommand {\drhohapa}{(\triangle\rho^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\drhohaRnbCtS}{\ds{\frac{\partial\rhohaR}{\partial\bCtS}}}
+\newcommand {\drhohaRnbDtG}{\ds{\frac{\partial\rhohaR}{\partial\bDtG}}}
+\newcommand {\drhohaRnbDtL}{\ds{\frac{\partial\rhohaR}{\partial\bDtL}}}
+\newcommand {\drhohaRnbwtGS}{\ds{\frac{\partial\rhohaR}{\partial\bf{w}_{\rm{GS}}}}}
+\newcommand {\drhohaRnbwtLS}{\ds{\frac{\partial\rhohaR}{\partial\bf{w}_{\rm{LS}}}}}
+\newcommand {\drhohaRngradJtG}{\ds{\frac{\partial\rhohaR}{\partial\gradJtG}}}
+\newcommand {\drhohaRngradJtL}{\ds{\frac{\partial\rhohaR}{\partial\gradJtL}}}
+\newcommand {\drhohaRngradrhoha}{\frac{\partial\rhohaR}{\partial\gradrhoha}}
+\newcommand {\drhohaRnJtG}{\ds{\frac{\partial\rhohaR}{\partial\JtG}}}
+\newcommand {\drhohaRnJtL}{\ds{\frac{\partial\rhohaR}{\partial\JtL}}}
+\newcommand {\drhohAngradthetaha}{\frac{\partial\rhohA}{\partial\gradthetaha}}
+\newcommand {\drhohAngradthetahA}{\frac{\partial\rhohA}{\partial\gradthetahA}}
+\newcommand {\drhohAngradthetahG}{\frac{\partial\rhohA}{\partial\gradthetahG}}
+\newcommand {\drhohAngradthetahL}{\frac{\partial\rhohA}{\partial\gradthetahL}}
+\newcommand {\drhohAngradthetahS}{\frac{\partial\rhohA}{\partial\gradthetahS}}
+\newcommand {\drhohARnbCtS}{\ds{\frac{\partial\rhohAR}{\partial\bCtS}}}
+\newcommand {\drhohARnbwtGS}{\ds{\frac{\partial\rhohAR}{\partial\bf{w}_{\rm{GS}}}}}
+\newcommand {\drhohARnbwtLS}{\ds{\frac{\partial\rhohAR}{\partial\bf{w}_{\rm{LS}}}}}
+\newcommand {\drhohARngradrhoha}{\frac{\partial\rhohAR}{\partial\gradrhoha}}
+\newcommand {\drhohARngradrhohA}{\frac{\partial\rhohAR}{\partial\gradrhohA}}
+\newcommand {\drhohARngradrhohG}{\frac{\partial\rhohAR}{\partial\gradrhohG}}
+\newcommand {\drhohARngradrhohL}{\frac{\partial\rhohAR}{\partial\gradrhohL}}
+\newcommand {\drhohARngradrhohS}{\frac{\partial\rhohAR}{\partial\gradrhohS}}
+\newcommand {\drhohARngradthetaha}{\frac{\partial\rhohAR}{\partial\gradthetaha}}
+\newcommand {\drhohARngradthetahA}{\frac{\partial\rhohAR}{\partial\gradthetahA}}
+\newcommand {\drhohARngradthetahG}{\frac{\partial\rhohAR}{\partial\gradthetahG}}
+\newcommand {\drhohARngradthetahL}{\frac{\partial\rhohAR}{\partial\gradthetahL}}
+\newcommand {\drhohARngradthetahS}{\frac{\partial\rhohAR}{\partial\gradthetahS}}
+\newcommand {\drhohARnrhoha}{\ds{\frac{\partial\rhohAR}{\partial\rhoha}}}
+\newcommand {\drhohARnrhohapa}{\ds{\frac{\partial\rhohAR}{\partial\rhohapa}}}
+\newcommand {\drhohARnrhohApS}{\ds{\frac{\partial\rhohAR}{\partial\rhohApS}}}
+\newcommand {\drhohARnrhohAR}{\ds{\frac{\partial\rhohAR}{\partial\rhohAR}}}
+\newcommand {\drhohARnrhohGpG}{\ds{\frac{\partial\rhohAR}{\partial\rhohGpG}}}
+\newcommand {\drhohARnrhohGR}{\ds{\frac{\partial\rhohAR}{\partial\rhohGR}}}
+\newcommand {\drhohARnrhohLpL}{\ds{\frac{\partial\rhohAR}{\partial\rhohLpL}}}
+\newcommand {\drhohARnrhohLR}{\ds{\frac{\partial\rhohAR}{\partial\rhohLR}}}
+\newcommand {\drhohARnrhohSpS}{\ds{\frac{\partial\rhohAR}{\partial\rhohSpS}}}
+\newcommand {\drhohARnrhohSR}{\ds{\frac{\partial\rhohAR}{\partial\rhohSR}}}
+\newcommand {\drhohARnthetaha}{\ds{\frac{\partial\rhohAR}{\partial\thetaha}}}
+\newcommand {\drhohARnthetahapa}{\ds{\frac{\partial\rhohAR}{\partial\thetahapa}}}
+\newcommand {\drhohARnthetahA}{\ds{\frac{\partial\rhohAR}{\partial\thetahA}}}
+\newcommand {\drhohARnthetahApS}{\ds{\frac{\partial\rhohAR}{\partial\thetahApS}}}
+\newcommand {\drhohARnthetahG}{\ds{\frac{\partial\rhohAR}{\partial\thetahG}}}
+\newcommand {\drhohARnthetahGpG}{\ds{\frac{\partial\rhohAR}{\partial\thetahGpG}}}
+\newcommand {\drhohARnthetahL}{\ds{\frac{\partial\rhohAR}{\partial\thetahL}}}
+\newcommand {\drhohARnthetahLpL}{\ds{\frac{\partial\rhohAR}{\partial\thetahLpL}}}
+\newcommand {\drhohARnthetahS}{\ds{\frac{\partial\rhohAR}{\partial\thetahS}}}
+\newcommand {\drhohARnthetahSpS}{\ds{\frac{\partial\rhohAR}{\partial\thetahSpS}}}
+\newcommand {\drhohb}{\triangle\rho^{\beta}}
+\newcommand {\drhohbpb}{(\triangle\rho^{\beta})^{\prime}_{\beta}}
+\newcommand {\drhohbRnbCtS}{\ds{\frac{\partial\rhohbR}{\partial\bCtS}}}
+\newcommand {\drhohbRnbDtG}{\ds{\frac{\partial\rhohbR}{\partial\bDtG}}}
+\newcommand {\drhohbRnbDtL}{\ds{\frac{\partial\rhohbR}{\partial\bDtL}}}
+\newcommand {\drhohbRnbwtGS}{\ds{\frac{\partial\rhohbR}{\partial\bf{w}_{\rm{GS}}}}}
+\newcommand {\drhohbRnbwtLS}{\ds{\frac{\partial\rhohbR}{\partial\bf{w}_{\rm{LS}}}}}
+\newcommand {\drhohbRngradrhohb}{\frac{\partial\rhohbR}{\partial\gradrhohb}}
+\newcommand {\drhohbRnJtG}{\ds{\frac{\partial\rhohbR}{\partial\JtG}}}
+\newcommand {\drhohbRnJtL}{\ds{\frac{\partial\rhohbR}{\partial\JtL}}}
+\newcommand {\drhohbRnrhohA}{\frac{\partial\rhohbR}{\partial\rhohA}}
+\newcommand {\drhohbRnrhohG}{\frac{\partial\rhohbR}{\partial\rhohG}}
+\newcommand {\drhohbRnrhohL}{\frac{\partial\rhohbR}{\partial\rhohL}}
+\newcommand {\drhohbRnrhohLR}{\frac{\partial\rhohbR}{\partial\rhohLR}}
+\newcommand {\drhohbRnrhohS}{\frac{\partial\rhohbR}{\partial\rhohS}}
+\newcommand {\drhohbRnthetahA}{\ds{\frac{\partial\rhohbR}{\partial\thetahA}}}
+\newcommand {\drhohbRnthetahG}{\ds{\frac{\partial\rhohbR}{\partial\thetahG}}}
+\newcommand {\drhohbRnthetahL}{\ds{\frac{\partial\rhohbR}{\partial\thetahL}}}
+\newcommand {\drhohbRnthetahS}{\ds{\frac{\partial\rhohbR}{\partial\thetahS}}}
+\newcommand {\drhohG}{\triangle\rho^{\rm{G}}}
+\newcommand {\drhohGngradthetaha}{\frac{\partial\rhohG}{\partial\gradthetaha}}
+\newcommand {\drhohGngradthetahA}{\frac{\partial\rhohG}{\partial\gradthetahA}}
+\newcommand {\drhohGngradthetahG}{\frac{\partial\rhohG}{\partial\gradthetahG}}
+\newcommand {\drhohGngradthetahL}{\frac{\partial\rhohG}{\partial\gradthetahL}}
+\newcommand {\drhohGngradthetahS}{\frac{\partial\rhohG}{\partial\gradthetahS}}
+\newcommand {\drhohGpG}{(\triangle\rho^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\drhohGpS}{(\triangle\rho^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\drhohGR}{\triangle\rho^{\rm{GR}}}
+\newcommand {\drhohGRnbCtS}{\ds{\frac{\partial\rhohGR}{\partial\bCtS}}}
+\newcommand {\drhohGRnbwtGS}{\ds{\frac{\partial\rhohGR}{\partial\bf{w}_{\rm{GS}}}}}
+\newcommand {\drhohGRnbwtLS}{\ds{\frac{\partial\rhohGR}{\partial\bf{w}_{\rm{LS}}}}}
+\newcommand {\drhohGRngradrhoha}{\frac{\partial\rhohGR}{\partial\gradrhoha}}
+\newcommand {\drhohGRngradrhohA}{\frac{\partial\rhohGR}{\partial\gradrhohA}}
+\newcommand {\drhohGRngradrhohG}{\frac{\partial\rhohGR}{\partial\gradrhohG}}
+\newcommand {\drhohGRngradrhohL}{\frac{\partial\rhohGR}{\partial\gradrhohL}}
+\newcommand {\drhohGRngradrhohS}{\frac{\partial\rhohGR}{\partial\gradrhohS}}
+\newcommand {\drhohGRngradthetaha}{\frac{\partial\rhohGR}{\partial\gradthetaha}}
+\newcommand {\drhohGRngradthetahA}{\frac{\partial\rhohGR}{\partial\gradthetahA}}
+\newcommand {\drhohGRngradthetahG}{\frac{\partial\rhohGR}{\partial\gradthetahG}}
+\newcommand {\drhohGRngradthetahL}{\frac{\partial\rhohGR}{\partial\gradthetahL}}
+\newcommand {\drhohGRngradthetahS}{\frac{\partial\rhohGR}{\partial\gradthetahS}}
+\newcommand {\drhohGRnrhoha}{\ds{\frac{\partial\rhohGR}{\partial\rhoha}}}
+\newcommand {\drhohGRnrhohapa}{\ds{\frac{\partial\rhohGR}{\partial\rhohapa}}}
+\newcommand {\drhohGRnrhohApS}{\ds{\frac{\partial\rhohGR}{\partial\rhohApS}}}
+\newcommand {\drhohGRnrhohAR}{\ds{\frac{\partial\rhohGR}{\partial\rhohAR}}}
+\newcommand {\drhohGRnrhohGpG}{\ds{\frac{\partial\rhohGR}{\partial\thetahGpG}}}
+\newcommand {\drhohGRnrhohGR}{\ds{\frac{\partial\rhohGR}{\partial\rhohGR}}}
+\newcommand {\drhohGRnrhohLpL}{\ds{\frac{\partial\rhohGR}{\partial\rhohLpL}}}
+\newcommand {\drhohGRnrhohLR}{\ds{\frac{\partial\rhohGR}{\partial\rhohLR}}}
+\newcommand {\drhohGRnrhohSpS}{\ds{\frac{\partial\rhohGR}{\partial\rhohSpS}}}
+\newcommand {\drhohGRnrhohSR}{\ds{\frac{\partial\rhohGR}{\partial\rhohSR}}}
+\newcommand {\drhohGRnthetaha}{\ds{\frac{\partial\rhohGR}{\partial\thetaha}}}
+\newcommand {\drhohGRnthetahapa}{\ds{\frac{\partial\rhohGR}{\partial\thetahapa}}}
+\newcommand {\drhohGRnthetahA}{\ds{\frac{\partial\rhohGR}{\partial\thetahA}}}
+\newcommand {\drhohGRnthetahApS}{\ds{\frac{\partial\rhohGR}{\partial\thetahApS}}}
+\newcommand {\drhohGRnthetahG}{\ds{\frac{\partial\rhohGR}{\partial\thetahG}}}
+\newcommand {\drhohGRnthetahGpG}{\ds{\frac{\partial\rhohGR}{\partial\thetahGpG}}}
+\newcommand {\drhohGRnthetahL}{\ds{\frac{\partial\rhohGR}{\partial\thetahL}}}
+\newcommand {\drhohGRnthetahLpL}{\ds{\frac{\partial\rhohGR}{\partial\thetahLpL}}}
+\newcommand {\drhohGRnthetahS}{\ds{\frac{\partial\rhohGR}{\partial\thetahS}}}
+\newcommand {\drhohGRnthetahSpS}{\ds{\frac{\partial\rhohGR}{\partial\thetahSpS}}}
+\newcommand {\drhohGRpG}{(\triangle\rho^{\rm{GR}})'_G}
+\newcommand {\drhohL}{\triangle\rho^{\rm{L}}}
+\newcommand {\drhohLngradthetaha}{\frac{\partial\rhohL}{\partial\gradthetaha}}
+\newcommand {\drhohLngradthetahA}{\frac{\partial\rhohL}{\partial\gradthetahA}}
+\newcommand {\drhohLngradthetahG}{\frac{\partial\rhohL}{\partial\gradthetahG}}
+\newcommand {\drhohLngradthetahL}{\frac{\partial\rhohL}{\partial\gradthetahL}}
+\newcommand {\drhohLngradthetahS}{\frac{\partial\rhohL}{\partial\gradthetahS}}
+\newcommand {\drhohLpL}{(\triangle\rho^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\drhohLpS}{(\triangle\rho^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\drhohLR}{\triangle\rho^{\rm{LR}}}
+\newcommand {\drhohLRnbCtS}{\ds{\frac{\partial\rhohLR}{\partial\bCtS}}}
+\newcommand {\drhohLRnbwtGS}{\ds{\frac{\partial\rhohLR}{\partial\bf{w}_{\rm{GS}}}}}
+\newcommand {\drhohLRnbwtLS}{\ds{\frac{\partial\rhohLR}{\partial\bf{w}_{\rm{LS}}}}}
+\newcommand {\drhohLRngradrhoha}{\frac{\partial\rhohLR}{\partial\gradrhoha}}
+\newcommand {\drhohLRngradrhohA}{\frac{\partial\rhohLR}{\partial\gradrhohA}}
+\newcommand {\drhohLRngradrhohG}{\frac{\partial\rhohLR}{\partial\gradrhohG}}
+\newcommand {\drhohLRngradrhohL}{\frac{\partial\rhohLR}{\partial\gradrhohL}}
+\newcommand {\drhohLRngradrhohS}{\frac{\partial\rhohLR}{\partial\gradrhohS}}
+\newcommand {\drhohLRngradthetaha}{\frac{\partial\rhohLR}{\partial\gradthetaha}}
+\newcommand {\drhohLRngradthetahA}{\frac{\partial\rhohLR}{\partial\gradthetahA}}
+\newcommand {\drhohLRngradthetahG}{\frac{\partial\rhohLR}{\partial\gradthetahG}}
+\newcommand {\drhohLRngradthetahL}{\frac{\partial\rhohLR}{\partial\gradthetahL}}
+\newcommand {\drhohLRngradthetahS}{\frac{\partial\rhohLR}{\partial\gradthetahS}}
+\newcommand {\drhohLRnrhohapa}{\ds{\frac{\partial\rhohLR}{\partial\rhohapa}}}
+\newcommand {\drhohLRnrhohApS}{\ds{\frac{\partial\rhohLR}{\partial\rhohApS}}}
+\newcommand {\drhohLRnrhohAR}{\ds{\frac{\partial\rhohLR}{\partial\rhohAR}}}
+\newcommand {\drhohLRnrhohGpG}{\ds{\frac{\partial\rhohLR}{\partial\rhohGpG}}}
+\newcommand {\drhohLRnrhohGR}{\ds{\frac{\partial\rhohLR}{\partial\rhohGR}}}
+\newcommand {\drhohLRnrhohLpL}{\ds{\frac{\partial\rhohLR}{\partial\rhohLpL}}}
+\newcommand {\drhohLRnrhohLR}{\ds{\frac{\partial\rhohLR}{\partial\rhohLR}}}
+\newcommand {\drhohLRnrhohSpS}{\ds{\frac{\partial\rhohLR}{\partial\rhohSpS}}}
+\newcommand {\drhohLRnrhohSR}{\ds{\frac{\partial\rhohLR}{\partial\rhohSR}}}
+\newcommand {\drhohLRnthetaha}{\ds{\frac{\partial\rhohLR}{\partial\thetaha}}}
+\newcommand {\drhohLRnthetahapa}{\ds{\frac{\partial\rhohLR}{\partial\thetahapa}}}
+\newcommand {\drhohLRnthetahA}{\ds{\frac{\partial\rhohLR}{\partial\thetahA}}}
+\newcommand {\drhohLRnthetahApS}{\ds{\frac{\partial\rhohLR}{\partial\thetahApS}}}
+\newcommand {\drhohLRnthetahG}{\ds{\frac{\partial\rhohLR}{\partial\thetahG}}}
+\newcommand {\drhohLRnthetahGpG}{\ds{\frac{\partial\rhohLR}{\partial\thetahGpG}}}
+\newcommand {\drhohLRnthetahL}{\ds{\frac{\partial\rhohLR}{\partial\thetahL}}}
+\newcommand {\drhohLRnthetahLpL}{\ds{\frac{\partial\rhohLR}{\partial\thetahLpL}}}
+\newcommand {\drhohLRnthetahS}{\ds{\frac{\partial\rhohLR}{\partial\thetahS}}}
+\newcommand {\drhohLRnthetahSpS}{\ds{\frac{\partial\rhohLR}{\partial\thetahSpS}}}
+\newcommand {\drhohLRpL}{(\triangle\rho^{\rm{LR}})'_L}
+\newcommand {\drhohS}{\triangle\rho^{\rm{S}}}
+\newcommand {\drhohSngradthetaha}{\frac{\partial\rhohS}{\partial\gradthetaha}}
+\newcommand {\drhohSngradthetahA}{\frac{\partial\rhohS}{\partial\gradthetahA}}
+\newcommand {\drhohSngradthetahG}{\frac{\partial\rhohS}{\partial\gradthetahG}}
+\newcommand {\drhohSngradthetahL}{\frac{\partial\rhohS}{\partial\gradthetahL}}
+\newcommand {\drhohSngradthetahS}{\frac{\partial\rhohS}{\partial\gradthetahS}}
+\newcommand {\drhohSRnbCtS}{\ds{\frac{\partial\rhohSR}{\partial\bCtS}}}
+\newcommand {\drhohSRnbwtGS}{\ds{\frac{\partial\rhohSR}{\partial\bf{w}_{\rm{GS}}}}}
+\newcommand {\drhohSRnbwtLS}{\ds{\frac{\partial\rhohSR}{\partial\bf{w}_{\rm{LS}}}}}
+\newcommand {\drhohSRngradrhoha}{\frac{\partial\rhohSR}{\partial\gradrhoha}}
+\newcommand {\drhohSRngradrhohA}{\frac{\partial\rhohSR}{\partial\gradrhohA}}
+\newcommand {\drhohSRngradrhohG}{\frac{\partial\rhohSR}{\partial\gradrhohG}}
+\newcommand {\drhohSRngradrhohL}{\frac{\partial\rhohSR}{\partial\gradrhohL}}
+\newcommand {\drhohSRngradrhohS}{\frac{\partial\rhohSR}{\partial\gradrhohS}}
+\newcommand {\drhohSRngradthetaha}{\frac{\partial\rhohSR}{\partial\gradthetaha}}
+\newcommand {\drhohSRngradthetahA}{\frac{\partial\rhohSR}{\partial\gradthetahA}}
+\newcommand {\drhohSRngradthetahG}{\frac{\partial\rhohSR}{\partial\gradthetahG}}
+\newcommand {\drhohSRngradthetahL}{\frac{\partial\rhohSR}{\partial\gradthetahL}}
+\newcommand {\drhohSRngradthetahS}{\frac{\partial\rhohSR}{\partial\gradthetahS}}
+\newcommand {\drhohSRnrhoha}{\ds{\frac{\partial\rhohSR}{\partial\rhoha}}}
+\newcommand {\drhohSRnrhohapa}{\ds{\frac{\partial\rhohSR}{\partial\rhohapa}}}
+\newcommand {\drhohSRnrhohApS}{\ds{\frac{\partial\rhohSR}{\partial\rhohApS}}}
+\newcommand {\drhohSRnrhohAR}{\ds{\frac{\partial\rhohSR}{\partial\rhohAR}}}
+\newcommand {\drhohSRnrhohGpG}{\ds{\frac{\partial\rhohSR}{\partial\rhohGpG}}}
+\newcommand {\drhohSRnrhohGR}{\ds{\frac{\partial\rhohSR}{\partial\rhohGR}}}
+\newcommand {\drhohSRnrhohLpL}{\ds{\frac{\partial\rhohSR}{\partial\rhohLpL}}}
+\newcommand {\drhohSRnrhohLR}{\ds{\frac{\partial\rhohSR}{\partial\rhohLR}}}
+\newcommand {\drhohSRnrhohSpS}{\ds{\frac{\partial\rhohSR}{\partial\rhohSpS}}}
+\newcommand {\drhohSRnrhohSR}{\ds{\frac{\partial\rhohSR}{\partial\rhohSR}}}
+\newcommand {\drhohSRnthetaha}{\ds{\frac{\partial\rhohSR}{\partial\thetaha}}}
+\newcommand {\drhohSRnthetahapa}{\ds{\frac{\partial\rhohSR}{\partial\thetahapa}}}
+\newcommand {\drhohSRnthetahA}{\ds{\frac{\partial\rhohSR}{\partial\thetahA}}}
+\newcommand {\drhohSRnthetahApS}{\ds{\frac{\partial\rhohSR}{\partial\thetahApS}}}
+\newcommand {\drhohSRnthetahG}{\ds{\frac{\partial\rhohSR}{\partial\thetahG}}}
+\newcommand {\drhohSRnthetahGpG}{\ds{\frac{\partial\rhohSR}{\partial\thetahGpG}}}
+\newcommand {\drhohSRnthetahL}{\ds{\frac{\partial\rhohSR}{\partial\thetahL}}}
+\newcommand {\drhohSRnthetahLpL}{\ds{\frac{\partial\rhohSR}{\partial\thetahLpL}}}
+\newcommand {\drhohSRnthetahS}{\ds{\frac{\partial\rhohSR}{\partial\thetahS}}}
+\newcommand {\drhohSRnthetahSpS}{\ds{\frac{\partial\rhohSR}{\partial\thetahSpS}}}
+\newcommand {\drohha}{\triangle\rho^{\alpha}}
+\newcommand {\drohhapa}{(\triangle\rho^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\drohhb}{\triangle\rho^{\beta}}
+\newcommand {\drohhbpb}{(\triangle\rho^{\beta})^{\prime}_{\beta}}
+\newcommand {\drohhG}{\triangle\rho^{\rm{G}}}
+\newcommand {\drohhGpG}{(\triangle\rho^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\drohhGpS}{(\triangle\rho^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\drohhGR}{\triangle\rho^{\rm{GR}}}
+\newcommand {\drohhGRpG}{(\triangle\rho^{\rm{GR}})'_G}
+\newcommand {\drohhL}{\triangle\rho^{\rm{L}}}
+\newcommand {\drohhLpL}{(\triangle\rho^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\drohhLpS}{(\triangle\rho^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\drohhLR}{\triangle\rho^{\rm{LR}}}
+\newcommand {\drohhLRpL}{(\triangle\rho^{\rm{LR}})'_L}
+\newcommand {\drohhN}{\triangle\rho^{\rm{N}}}
+\newcommand {\drohhS}{\triangle\rho^{\rm{S}}}
+\newcommand {\ds}{\displaystyle}
+\newcommand {\dt}{\triangle\rm{t}}
+\newcommand {\dtheta}{\triangle\theta}
+\newcommand {\dthetad}{\triangle\dot{\theta}}
+\newcommand {\dthetaha}{\triangle\theta^{\alpha}}
+\newcommand {\dthetahb}{\triangle\theta^{\beta}}
+\newcommand {\dthetahG}{\triangle\theta^{\rm{G}}}
+\newcommand {\dthetahL}{\triangle\theta^{\rm{L}}}
+\newcommand {\dthetahS}{\triangle\theta^{\rm{S}}}
+\newcommand {\dthetapS}{\triangle\theta^{\prime}_{\rm{S}}}
+\newcommand {\dxd}{\triangle\dot{\bf{x}}}
+\newcommand {\dxdd}{\triangle\ddot{\bf{x}}}
+\newcommand {\dxpa}{\triangle\bf{x}^{\prime}_{\alpha}}
+\newcommand {\dxpb}{\triangle\bf{x}^{\prime}_{\beta}}
+\newcommand {\dxpG}{\triangle\bf{x}^{\prime}_{\rm{G}}}
+\newcommand {\dxpL}{\triangle\bf{x}^{\prime}_{\rm{L}}}
+\newcommand {\dxppa}{\triangle\bf{x}^{\prime\prime}_{\alpha}}
+\newcommand {\dxppb}{\triangle\bf{x}^{\prime\prime}_{\beta}}
+\newcommand {\dxppG}{\triangle\bf{x}^{\prime\prime}_{\rm{G}}}
+\newcommand {\dxppL}{\triangle\bf{x}^{\prime\prime}_{\rm{L}}}
+\newcommand {\dxppS}{\triangle\bf{x}^{\prime\prime}_{\rm{S}}}
+\newcommand {\dxpS}{\triangle\bf{x}^{\prime}_{\rm{S}}}
+\newcommand {\Dive}{\rm{Div}\>}
+\newcommand {\ea}{\end{array}}
+\newcommand {\ec}{\end{center}}
+\newcommand {\ed}{\rm{\hat{e}}}
+\newcommand {\edha}{\rm{\hat{e}}^{\alpha}}
+\newcommand {\edhA}{\rm{\hat{e}}^{\rm{A}}}
+\newcommand {\edhb}{\rm{\hat{e}}^{\beta}}
+\newcommand {\edhF}{\rm{\hat{e}}^{\rm{F}}}
+\newcommand {\edhG}{\rm{\hat{e}}^{\rm{G}}}
+\newcommand {\edhL}{\rm{\hat{e}}^{\rm{L}}}
+\newcommand {\edhN}{\rm{\hat{e}}^{\rm{N}}}
+\newcommand {\edhO}{\rm{\hat{e}}^{\rm{O}}}
+\newcommand {\edhS}{\rm{\hat{e}}^{\rm{S}}}
+\newcommand {\ee}{\end{equation}}
+\newcommand {\eea}{\end{eqnarray}}
+\newcommand {\een}{\end{displaymath}}
+\newcommand {\eps}{\epsilon}
+\newcommand {\epsha}{\epsilon^{\alpha}}
+\newcommand {\epshapa}{(\varepsilon^{\alpha})'_{\alpha}}
+\newcommand {\epshG}{\varepsilon^{\rm{G}}}
+\newcommand {\epshL}{\varepsilon^{\rm{L}}}
+\newcommand {\epshO}{\varepsilon^{\rm{O}}}
+\newcommand {\epshS}{\varepsilon^{\rm{S}}}
+\newcommand {\etab}{\end{tabular}}
+\newcommand {\etad}{\dot{\eta}}
+\newcommand {\etaha}{\eta^{\alpha}}
+\newcommand {\etahapa}{(\eta^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\etahA}{\eta^{\rm{A}}}
+\newcommand {\etahApA}{(\eta^{\rm{A}})^{\prime}_{\rm{A}}}
+\newcommand {\etahApS}{(\eta^{\rm{A}})^{\prime}_{\rm{S}}}
+\newcommand {\etahb}{\eta^{\beta}}
+\newcommand {\etahbpb}{(\eta^{\beta})^{\prime}_{\beta}}
+\newcommand {\etahF}{\eta^{\rm{F}}}
+\newcommand {\etahG}{\eta^{\rm{G}}}
+\newcommand {\etahGpG}{(\eta^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\etahGpS}{(\eta^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\etahL}{\eta^{\rm{L}}}
+\newcommand {\etahLpL}{(\eta^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\etahLpS}{(\eta^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\etahN}{\eta^{\rm{N}}}
+\newcommand {\etahNpN}{(\eta^{\rm{N}})^{\prime}_{\rm{N}}}
+\newcommand {\etahO}{\eta^{\rm{O}}}
+\newcommand {\etahS}{\eta^{\rm{S}}}
+\newcommand {\etahSpS}{(\eta^{\rm{S}})^{\prime}_{\rm{S}}}
+\newcommand {\Eha}{\rm{E}^{\alpha}}
+\newcommand {\Ehapa}{(\rm{E}^{\alpha})'_{\alpha}}
+\newcommand {\fiha}{\varphi^{\alpha}}
+\newcommand {\fihaP}{\varphi^{\alpha \rm P}}
+\newcommand {\fihSP}{\varphi^{\rm SP}}
+\newcommand {\fihAP}{\varphi^{\rm AP}}
+\newcommand {\fihA}{\varphi^{\rm{A}}}
+\newcommand {\fihb}{\varphi^{\beta}}
+\newcommand {\fihF}{\varphi^{\rm{F}}}
+\newcommand {\fihG}{\varphi^{\rm{G}}}
+\newcommand {\fihL}{\varphi^{\rm{L}}}
+\newcommand {\fihFL}{\varphi^{\rm{FL}}}
+\newcommand {\fihN}{\varphi^{\rm{N}}}
+\newcommand {\fihO}{\varphi^{\rm{O}}}
+\newcommand {\fihS}{\varphi^{\rm{S}}}
+\newcommand {\fihsb}{\varphi^{\rm{S \beta}}}
+\newcommand {\fihlb}{\varphi^{\rm{L \beta}}}
+\newcommand {\fihsig}{\varphi^{\sigma}}
+\newcommand {\gA}{\rm{A}}
+\newcommand {\gB}{\rm{B}}
+\newcommand {\gC}{\rm{C}}
+\newcommand {\gD}{\rm{D}}
+\newcommand {\gE}{\rm{E}}
+\newcommand {\gF}{\rm{F}}
+\newcommand {\gG}{\rm{G}}
+\newcommand {\gH}{\rm{H}}
+\newcommand {\gI}{\rm{I}}
+\newcommand {\gJ}{\rm{J}}
+\newcommand {\gK}{\rm{K}}
+\newcommand {\gL}{\rm{L}}
+\newcommand {\gM}{\rm{M}}
+\newcommand {\gN}{\rm{N}}
+\newcommand {\gO}{\rm{O}}
+\newcommand {\gP}{\rm{P}}
+\newcommand {\gQ}{\rm{Q}}
+\newcommand {\gradbCbtS}{\rm{grad}\,\bCbtS}
+\newcommand {\gradbCtS}{\rm{grad}\>\bf{C}_{\rm{S}}}
+\newcommand {\gradbDtG}{\rm{grad}\>\bf{D}_{\rm{G}}}
+\newcommand {\gradbDtGhD}{\rm{grad}\>\bf{D}_{\rm{G}}^{\rm{D}}}
+\newcommand {\gradbDtL}{\rm{grad}\>\bf{D}_{\rm{L}}}
+\newcommand {\gradbDtLhD}{\rm{grad}\>\bf{D}_{\rm{L}}^{\rm{D}}}
+\newcommand {\gradvchNM}{\rm{grad}\,\delta\rm{c}^{\rm{NM}}}
+\newcommand {\gR}{\rm{R}}
+\newcommand {\gS}{\rm{S}}
+\newcommand {\gT}{\rm{T}}
+\newcommand {\gU}{\rm{U}}
+\newcommand {\gV}{\rm{V}}
+\newcommand {\gW}{\rm{W}}
+\newcommand {\gX}{\rm{X}}
+\newcommand {\gY}{\rm{Y}}
+\newcommand {\gZ}{\rm{Z}}
+\newcommand {\GhbexttM}{\rm{G}^{\beta\rm{\>ext}}_{\rm{M}}}
+\newcommand {\GhbinttM}{\rm{G}^{\beta\rm{\>int}}_{\rm{M}}}
+\newcommand {\GhbtM}{\rm{G}^{\beta}_{\rm{M}}}
+\newcommand {\GhGexttM}{\rm{G}^{\rm{G\>ext}}_{\rm{M}}}
+\newcommand {\GhGinttM}{\rm{G}^{\rm{G\>int}}_{\rm{M}}}
+\newcommand {\GhGtM}{\rm{G}^{\rm{G}}_{\rm{M}}}
+\newcommand {\GhLexttM}{\rm{G}^{\rm{L\>ext}}_{\rm{M}}}
+\newcommand {\GhLinttM}{\rm{G}^{\rm{L\>int}}_{\rm{M}}}
+\newcommand {\GhLtM}{\rm{G}^{\rm{L}}_{\rm{M}}}
+\newcommand {\GhMexttB}{\rm{G}^{\rm{M\>ext}}_{\rm{B}}}
+\newcommand {\GhMexttM}{\rm{G}^{\rm{M\>ext}}_{\rm{M}}}
+\newcommand {\GhMinttB}{\rm{G}^{\rm{M\>int}}_{\rm{B}}}
+\newcommand {\GhMinttM}{\rm{G}^{\rm{M\>int}}_{\rm{M}}}
+\newcommand {\GhMtB}{\rm{G}^{\rm{M}}_{\rm{B}}}
+\newcommand {\GhItB}{\rm{G}^{\rm{I}}_{\rm{B}}}
+\newcommand {\GhM}{\rm{G}^{\rm{M}}}
+\newcommand {\GhMtM}{\rm{G}^{\rm{M}}_{\rm{M}}}
+\newcommand {\hs}{\hspace}
+\newcommand {\hsnf}{\hspace{0.5cm}}
+\newcommand {\IC}{{\rm\kern.24em\vrule width.02em height1.4ex depth-.09ex\kern-.26em {C}}}
+\newcommand {\ItCtS}{\rm{I}_{{\rm{C}_{\rm{S}}}}}
+\newcommand {\ka}{\rm{a}}
+\newcommand {\kappahAR}{\kappa^{\rm{AR}}}
+\newcommand {\kappahGR}{\kappa^{\rm{GR}}}
+\newcommand {\kappahLR}{\kappa^{\rm{LR}}}
+\newcommand {\kappahNR}{\kappa^{\rm{NR}}}
+\newcommand {\kappahSR}{\kappa^{\rm{SR}}}
+\newcommand {\kappahFR}{\kappa^{\rm{FR}}}
+\newcommand {\kb}{\rm{b}}
+\newcommand {\kba}{\bf{a}}
+\newcommand {\kbb}{\bf{b}}
+\newcommand {\kbc}{\bf{c}}
+\newcommand {\kbd}{\bf{d}}
+\newcommand {\kbe}{\bf{e}}
+\newcommand {\kbf}{\bf{f}}
+\newcommand {\kbg}{\bf{g}}
+\newcommand {\kbh}{\bf{h}}
+\newcommand {\kbi}{\bf{i}}
+\newcommand {\kbj}{\bf{j}}
+\newcommand {\kbk}{\bf{k}}
+\newcommand {\kbl}{\bf{l}}
+\newcommand {\kbm}{\bf{m}}
+\newcommand {\kbn}{\bf{n}}
+\newcommand {\kbo}{\bf{o}}
+\newcommand {\kbp}{\bf{p}}
+\newcommand {\kbq}{\bf{q}}
+\newcommand {\kbr}{\bf{r}}
+\newcommand {\kbs}{\bf{s}}
+\newcommand {\kbt}{\bf{t}}
+\newcommand {\kbu}{\bf{u}}
+\newcommand {\kbv}{\bf{v}}
+\newcommand {\kbw}{\bf{w}}
+\newcommand {\kbx}{\bf{x}}
+\newcommand {\kby}{\bf{y}}
+\newcommand {\kbz}{\bf{z}}
+\newcommand {\kc}{\rm{c}}
+\newcommand {\kd}{\rm{d}}
+\newcommand {\kdhG}{\hat{\rm{k}}^{G}}
+\newcommand {\kdhL}{\hat{\rm{k}}^{L}}
+\newcommand {\ke}{\rm{e}}
+\newcommand {\kf}{\rm{f}}
+\newcommand {\kg}{\rm{g}}
+\newcommand {\kh}{\rm{h}}
+\newcommand {\kha}{{\rm{k}}^{\alpha}}
+\newcommand {\khb}{{\rm{k}}^{\beta}}
+\newcommand {\khF}{{\rm{k}}^{\rm{F}}}
+\newcommand {\khG}{{\rm{k}}^{\rm{G}}}
+\newcommand {\khL}{{\rm{k}}^{\rm{L}}}
+\newcommand {\khS}{{\rm{k}}^{\rm{S}}}
+\newcommand {\ki}{\rm{i}}
+\newcommand {\kj}{\rm{j}}
+\newcommand {\kk}{\rm{k}}
+\newcommand {\kl}{\rm{l}}
+\newcommand {\km}{\rm{m}}
+\newcommand {\kn}{\rm{n}}
+\newcommand {\ko}{\rm{o}}
+\newcommand {\kp}{\rm{p}}
+\newcommand {\kq}{\rm{q}}
+\newcommand {\kr}{\rm{r}}
+\newcommand {\ks}{\rm{s}}
+\newcommand {\kt}{\rm{t}}
+\newcommand {\ktG}{\rm{k}_{\rm{G}}}
+\newcommand {\ktGn}{\rm{k}_{\rm{G0}}}
+\newcommand {\ktL}{\rm{k}_{\rm{L}}}
+\newcommand {\ktLn}{\rm{k}_{\rm{L0}}}
+\newcommand {\ktn}{\rm{k}_{\rm{0}}}
+\newcommand {\ktnull}{\rm{k}_{\rm{0}}}
+\newcommand {\ku}{\rm{u}}
+\newcommand {\kv}{\rm{v}}
+\newcommand {\kw}{\rm{w}}
+\newcommand {\kx}{\rm{x}}
+\newcommand {\ky}{\rm{y}}
+\newcommand {\kz}{\rm{z}}
+\newcommand {\Kha}{\rm{K}^{\alpha}}
+\newcommand {\Khapa}{(\rm{K}^{\alpha})'_{\alpha}}
+\newcommand {\lambdaha}{\lambda^{\alpha}}
+\newcommand {\lambdahs}{\lambda^{\rm S}}
+\newcommand {\lambdahfl}{\lambda^{\rm FL}}
+\newcommand {\lambdahl}{\lambda^{\rm L}}
+\newcommand {\lambdahn}{\lambda^{\rm N}}
+\newcommand {\lambdahsb}{\lambda^{\rm S \beta}}
+\newcommand {\lambdahflb}{\lambda^{\rm FL \beta}}
+\newcommand {\lambdahlb}{\lambda^{\rm L \beta}}
+\newcommand {\lambdahaT}{\lambda^{\alpha \rm T}}
+\newcommand {\lambdahST}{\lambda^{\rm ST}}
+\newcommand {\lambdahAT}{\lambda^{\rm AT}}
+\newcommand {\lambdahvol}{\lambda^{\rm vol}}
+\newcommand {\lambdahaR}{\lambda^{\alpha\rm{R}}}
+\newcommand {\lambdahA}{\lambda^{\rm{A}}}
+\newcommand {\lambdahAR}{\lambda^{\rm{A}\rm{R}}}
+\newcommand {\lambdahb}{\lambda^{\beta}}
+\newcommand {\lambdahbR}{\lambda^{\beta\rm{R}}}
+\newcommand {\lambdahG}{\lambda^{\rm{G}}}
+\newcommand {\lambdahGR}{\lambda^{\rm{GR}}}
+\newcommand {\lambdahL}{\lambda^{\rm{L}}}
+\newcommand {\lambdahLR}{\lambda^{\rm{LR}}}
+\newcommand {\lambdahN}{\lambda^{\rm{N}}}
+\newcommand {\lambdahO}{\lambda^{\rm{O}}}
+\newcommand {\lambdahOR}{\lambda^{\rm{OR}}}
+\newcommand {\lambdahpR}{\lambda^{\rm{pR}}}
+\newcommand {\lambdahS}{\lambda^{\rm{S}}}
+\newcommand {\lambdahSR}{\lambda^{\rm{S}\rm{R}}}
+\newcommand {\lambdahStcp}{\lambda^{\rm S}_{\rm cp}}
+\newcommand {\muha}{\mu^{\alpha}}
+\newcommand {\muhA}{\mu^{\rm{A}}}
+\newcommand {\muhAS}{\mu^{\rm{AS}}}
+\newcommand {\muhb}{\mu^{\beta}}
+\newcommand {\muhG}{\mu^{\rm{G}}}
+\newcommand {\muhGS}{\mu^{\rm{GS}}}
+\newcommand {\muhL}{\mu^{\rm{L}}}
+\newcommand {\muhn}{\mu^{\rm{N}}}
+\newcommand {\muhLS}{\mu^{\rm{LS}}}
+\newcommand {\muhO}{\mu^{\rm{O}}}
+\newcommand {\muhS}{\mu^{\rm{S}}}
+\newcommand {\M}{\rm{M}}
+\newcommand {\Mha}{\rm{M}^{\alpha}}
+\newcommand {\Mhba}{\rm{M}^{\bs \alpha}}
+\newcommand {\Mmol}{\rm {M}^{\beta}_{\rm mol}}
+\newcommand {\Msmol}{\rm {M}^{\rm S \beta}_{\rm mol}}
+\newcommand {\Mlmol}{\rm {M}^{\rm L \beta}_{\rm mol}}
+\newcommand {\Mflmol}{\rm {M}^{\rm FL \beta}_{\rm mol}}
+\newcommand {\Mhapa}{(\rm{M}^{\alpha})'_{\alpha}}
+\newcommand {\Mhatn}{\rm{M}^{\alpha}_{\rm{0}}}
+\newcommand {\Mhbatn}{\rm{M}^{\bs \alpha}_{\rm{0}}}
+\newcommand {\MhN}{\rm{M}^{\rm{N}}}
+\newcommand {\Mtn}{\rm{M}_{\rm{0}}}
+\newcommand {\nha}{\rm{n}^{\alpha}}
+\newcommand {\nhab}{\rm{n}^{\alpha \beta}}
+\newcommand {\nhba}{\rm{n}^{\bs \alpha}}
+\newcommand {\nhs}{\rm{n}^{\rm S}}
+\newcommand {\nhl}{\rm{n}^{\rm L}}
+\newcommand {\nhfl}{\rm{n}^{\rm FL}}
+\newcommand {\nhTG}{\rm{n}^{\rm TG}}
+\newcommand {\nhtg}{\rm{n}^{\rm TG}}
+\newcommand {\nhn}{\rm{n}^{\rm N}}
+\newcommand {\nhsig}{\rm{n}^{\sigma}}
+\newcommand {\nhsigpsig}{(\rm{n}^{\sigma})^{\prime}_{\sigma}}
+\newcommand {\nhapa}{(\rm{n}^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\nhflpfl}{(\rm{n}^{\rm FL})^{\prime}_{\rm FL}}
+\newcommand {\nhflps}{(\rm{n}^{\rm FL})^{\prime}_{\rm S}}
+\newcommand {\nhlpl}{(\rm{n}^{\rm L})^{\prime}_{\rm L}}
+\newcommand {\nhlps}{(\rm{n}^{\rm L})^{\prime}_{\rm S}}
+\newcommand {\nhnpn}{(\rm{n}^{\rm N})^{\prime}_{\rm N}}
+\newcommand {\nhnps}{(\rm{n}^{\rm N})^{\prime}_{\rm S}}
+\newcommand {\nhsps}{(\rm{n}^{\rm S})^{\prime}_{\rm S}}
+\newcommand {\nhapS}{(\rm{n}^{\alpha})^{\prime}_{\rm S}}
+\newcommand {\nhapb}{(\rm{n}^{\alpha})^{\prime}_{\beta}}
+\newcommand {\nhatna}{\rm{n}^{\alpha}_{\rm{0}\alpha}}
+\newcommand {\nhabtna}{\rm{n}^{\alpha \beta}_{\rm{0}\alpha}}
+\newcommand {\nhbatna}{\rm{n}^{\bs \alpha}_{\rm{0}\alpha}}
+\newcommand {\nhatnS}{\rm{n}^{\alpha}_{\rm{0S}}}
+\newcommand {\nhsigtnsig}{\rm{n}^{\sigma}_{\rm{0}\sigma}}
+\newcommand {\nhA}{\rm{n}^{\rm{A}}}
+\newcommand {\nhApA}{(\rm{n}^{\rm{A}})^{\prime}_{\rm{A}}}
+\newcommand {\nhApS}{(\rm{n}^{\rm{A}})^{\prime}_{\rm{S}}}
+\newcommand {\nhb}{\rm{n}^{\beta}}
+\newcommand {\nhbpb}{(\rm{n}^{\beta})^{\prime}_{\beta}}
+\newcommand {\nhbpS}{(\rm{n}^{\beta})^{\prime}_{\rm{S}}}
+\newcommand {\nhbtnS}{\rm{n}^{\beta}_{\rm{0S}}}
+\newcommand {\nhF}{\rm{n}^{\rm{F}}}
+\newcommand {\nhFpF}{(\rm{n}^{\rm{F}})^{\prime}_{\rm{F}}}
+\newcommand {\nhFpN}{(\rm{n}^{\rm{F}})^{\prime}_{\rm{N}}}
+\newcommand {\nhFpS}{(\rm{n}^{\rm{F}})^{\prime}_{\rm{S}}}
+\newcommand {\nhFtnS}{\rm{n}^{\rm{F}}_{\rm{0S}}}
+\newcommand {\nhG}{\rm{n}^{\rm{G}}}
+\newcommand {\nhGpG}{(\rm{n}^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\nhGpS}{(\rm{n}^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\nhGq}{\bar{\rm{n}}^{\rm{G}}}
+\newcommand {\nhGtnS}{\rm{n}^{\rm{G}}_{\rm{0S}}}
+\newcommand {\nhI}{\rm{n}^{\rm{I}}}
+\newcommand {\nhL}{\rm{n}^{\rm{L}}}
+\newcommand {\hhL}{\rm{h}^{\rm{L}}}
+\newcommand {\hhS}{\rm{h}^{\rm{S}}}
+\newcommand {\shS}{\rm{s}^{\rm{S}}}
+\newcommand {\shL}{\rm{s}^{\rm{L}}}
+\newcommand {\nhLpL}{(\rm{n}^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\nhLpN}{(\rm{n}^{\rm{L}})^{\prime}_{\rm{N}}}
+\newcommand {\nhLpS}{(\rm{n}^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\nhLq}{\bar{\rm{n}}^{\rm{L}}}
+\newcommand {\nhLtnS}{\rm{n}^{\rm{L}}_{\rm{0S}}}
+\newcommand {\nhN}{\rm{n}^{\rm{N}}}
+\newcommand {\nhNpF}{(\rm{n}^{\rm{N}})^{\prime}_{\rm{F}}}
+\newcommand {\nhNpN}{(\rm{n}^{\rm{N}})^{\prime}_{\rm{N}}}
+\newcommand {\nhNpS}{(\rm{n}^{\rm{N}})^{\prime}_{\rm{S}}}
+\newcommand {\nhO}{\rm{n}^{\rm{O}}}
+\newcommand {\nhOtnS}{\rm{n}^{\rm{O}}_{\rm{0S}}}
+\newcommand {\nhS}{\rm{n}^{\rm{S}}}
+\newcommand {\nhSg}{\rm{n}^{\rm{S}}_{\rm{g}}}
+\newcommand {\nhSpS}{(\rm{n}^{\rm{S}})^{\prime}_{\rm{S}}}
+\newcommand {\nhSpSg}{(\rm{n}^{\rm{S}}_{\rm{g}})^{\prime}_{\rm{S}}}
+\newcommand {\JtSRpS}{(\rm{J}_{\rm{SR}})^{\prime}_{\rm{S}}}
+\newcommand {\nhSq}{\bar{\rm{n}}^{\rm{S}}}
+\newcommand {\nhStnS}{\rm{n}^{\rm{S}}_{\rm{0S}}}
+\newcommand {\nhFLtnFL}{\rm{n}^{\rm{FL}}_{\rm{0FL}}}
+\newcommand {\nhLtnL}{\rm{n}^{\rm{L}}_{\rm{0L}}}
+\newcommand {\nhNtnN}{\rm{n}^{\rm{N}}_{\rm{0N}}}
+\newcommand {\nhAtnA}{\rm{n}^{\rm{A}}_{\rm{0A}}}
+\newcommand {\nhAtnS}{\rm{n}^{\rm{A}}_{\rm{0S}}}
+\newcommand {\nhW}{\rm{n}^{\rm{W}}}
+\newcommand {\nn}{\nonumber}
+\newcommand {\Nti}{\rm{N}_{i}}
+\newcommand {\Ntnull}{\rm{N}_{0}}
+%\newcommand {\�}{\"o}
+%\newcommand {\�}{\"O}
+\newcommand {\p}{{\rm{p}}}
+\newcommand {\pdha}{\hat{p}^{\alpha}}
+\newcommand {\pdhatE}{\hat{\rm{p}}^{\alpha}_{\rm{E}}}
+\newcommand {\pdhb}{\hat{p}^{\beta}}
+\newcommand {\pdhbtE}{\hat{\rm{p}}^{\beta}_{\rm{E}}}
+\newcommand {\pdhG}{\hat{p}^{{\rm{G}}}}
+\newcommand {\pdhGtE}{\hat{\rm{p}}^{\rm{G}}_{\rm{E}}}
+\newcommand {\pdhL}{\hat{p}^{{\rm{L}}}}
+\newcommand {\pdhLStE}{\hat{\rm{p}}^{\rm{S}}_{\rm{E}}}
+\newcommand {\pdhLtE}{\hat{\rm{p}}^{\rm{L}}_{\rm{E}}}
+\newcommand {\pdhS}{\hat{p}^{{\rm{S}}}}
+\newcommand {\pha}{{\rm{p}}^{\alpha}}
+\newcommand {\phaR}{{\rm{p}}^{\alpha\rm{R}}}
+\newcommand {\phaRpS}{({\rm{p}}^{\alpha\rm{R}})'_{\rm{S}}}
+\newcommand {\phatE}{{\rm{p}}^{\alpha}_{\rm{E}}}
+\newcommand {\phA}{{\rm{p}}^{\rm{A}}}
+\newcommand {\phb}{{\rm{p}}^{\beta}}
+\newcommand {\phbR}{{\rm{p}}^{\beta\rm{R}}}
+\newcommand {\phbRpS}{({\rm{p}}^{\beta\rm{R}})'_{\rm{S}}}
+\newcommand {\phbtE}{{\rm{p}}^{\beta}_{\rm{E}}}
+\newcommand {\phcb}{\rm{p}^{\rm{c}\beta}}
+\newcommand {\phcG}{\rm{p}^{\rm{cG}}}
+\newcommand {\phcL}{\rm{p}^{\rm{cL}}}
+\newcommand {\phC}{\rm{p}^{\rm{C}}}
+\newcommand {\phFR}{\rm{p}^{\rm{FR}}}
+\newcommand {\phG}{{\rm{p}}^{\rm{G}}}
+\newcommand {\phGR}{{\rm{p}}^{\rm{GR}}}
+\newcommand {\phGRpS}{({\rm{p}}^{\rm{GR}})'_{\rm{S}}}
+\newcommand {\phGtE}{{\rm{p}}^{\rm{G}}_{\rm{E}}}
+\newcommand {\phGtEq}{{\bar{\rm{p}}}^{\rm{G}}_{\rm{E}}}
+\newcommand {\phL}{{\rm{p}}^{\rm{L}}}
+\newcommand {\phLR}{\rm{p}^{\rm{LR}}}
+\newcommand {\phLRpS}{(\rm{p}^{\rm{LR}})'_{\rm{S}}}
+\newcommand {\phLtE}{{\rm{p}}^{\rm{L}}_{\rm{E}}}
+\newcommand {\phLtEq}{{\bar{\rm{p}}}^{\rm{L}}_{\rm{E}}}
+\newcommand {\phNR}{\rm{p}^{\rm{NR}}}
+\newcommand {\phNRpS}{(\rm{p}^{\rm{NR}})'_{\rm{S}}}
+\newcommand {\phS}{{\rm{p}}^{\rm{S}}}
+\newcommand {\phR}{{\rm{p}}^{\rm{R}}}
+\newcommand {\phSR}{{\rm{p}}^{\rm{SR}}}
+\newcommand {\phSRpS}{({\rm{p}}^{\rm{SR}})'_{\rm{S}}}
+\newcommand {\phStE}{{\rm{p}}^{\rm{S}}_{\rm{E}}}
+\newcommand {\psid}{\dot{\psi}}
+\newcommand {\psidhG}{\hat{\psi}^{\rm{G}}}
+\newcommand {\psidhL}{\hat{\psi}^{\rm{L}}}
+\newcommand {\psidhS}{\hat{\psi}^{\rm{S}}}
+\newcommand {\psiha}{\psi^{\alpha}}
+\newcommand {\psihab}{\psi^{\alpha \beta}}
+\newcommand {\psihad}{\hat{\psi}^{\alpha}}
+\newcommand {\psihapa}{(\psi^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\psihsps}{(\psi^{\rm S})^{\prime}_{\rm S}}
+\newcommand {\psihsbpb}{(\psi^{\rm S \beta})^{\prime}_{\beta}}
+\newcommand {\psihflpfl}{(\psi^{\rm FL})^{\prime}_{\rm FL}}
+\newcommand {\psihflbpb}{(\psi^{\rm FL \beta})^{\prime}_{\beta}}
+\newcommand {\psihlpl}{(\psi^{\rm L})^{\prime}_{\rm L}}
+\newcommand {\psihlbpb}{(\psi^{\rm L \beta})^{\prime}_{\beta}}
+\newcommand {\psihnpn}{(\psi^{\rm N})^{\prime}_{\rm N}}
+\newcommand {\psihapS}{(\psi^{\alpha})^{\prime}_{\rm S}}
+\newcommand {\psihaq}{\bar{\psi}^{\alpha}}
+\newcommand {\psihA}{\psi^{\rm{A}}}
+\newcommand {\psihs}{\psi^{\rm{S}}}
+\newcommand {\psihsb}{\psi^{\rm{S \beta}}}
+\newcommand {\psihfl}{\psi^{\rm{FL}}}
+\newcommand {\psihflb}{\psi^{\rm{FL \beta}}}
+\newcommand {\psihl}{\psi^{\rm{L}}}
+\newcommand {\psihlb}{\psi^{\rm{L \beta}}}
+\newcommand {\psihn}{\psi^{\rm{N}}}
+\newcommand {\psihApA}{(\psi^{\rm{A}})^{\prime}_{\rm{A}}}
+\newcommand {\psihApS}{(\psi^{\rm{A}})^{\prime}_{\rm{S}}}
+\newcommand {\psihb}{\psi^{\beta}}
+\newcommand {\psihbd}{\hat{\psi}^{\beta}}
+\newcommand {\psihbpb}{(\psi^{\beta})^{\prime}_{\beta}}
+\newcommand {\psihbq}{\bar{\psi}^{\beta}}
+\newcommand {\psihF}{\psi^{\rm{F}}}
+\newcommand {\psihFpF}{(\psi^{\rm{F}})^{\prime}_{\rm{F}}}
+\newcommand {\psihG}{\psi^{\rm{G}}}
+\newcommand {\psihGd}{\hat{\psi}^{\rm{G}}}
+\newcommand {\psihGpG}{(\psi^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\psihGpS}{(\psi^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\psihGq}{\bar{\psi}^{\rm{G}}}
+\newcommand {\psihL}{\psi^{\rm{L}}}
+\newcommand {\psihLd}{\hat{\psi}^{\rm{L}}}
+\newcommand {\psihLpL}{(\psi^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\psihLpS}{(\psi^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\psihLq}{\bar{\psi}^{\rm{L}}}
+\newcommand {\psihN}{\psi^{\rm{N}}}
+\newcommand {\psihNpN}{(\psi^{\rm{N}})^{\prime}_{\rm{N}}}
+\newcommand {\psihO}{\psi^{\rm{O}}}
+\newcommand {\psihS}{\psi^{\rm{S}}}
+\newcommand {\psihSbar}{\bar{\psi}^{\rm{S}}}
+\newcommand {\psihAbar}{\bar{\psi}^{\rm{A}}}
+\newcommand {\psihSdev}{\breve{\psi}^{\rm{S}}}
+\newcommand {\psihAdev}{\breve{\psi}^{\rm{A}}}
+\newcommand {\psihSd}{\hat{\psi}^{\rm{S}}}
+\newcommand {\psihSdd}{{\hat{\hat{\psi^{\rm{S}}}}}}
+\newcommand {\psihSpS}{(\psi^{\rm{S}})^{\prime}_{\rm{S}}}
+\newcommand {\psihSdevpS}{(\breve{\psi}^{\rm{S}})^{\prime}_{\rm{S}}}
+\newcommand {\psihAdevpS}{(\breve{\psi}^{\rm{A}})^{\prime}_{\rm{S}}}
+\newcommand {\psihSq}{\bar{\psi}^{\rm{S}}}
+\newcommand {\pt}{\partial\rm{t}}
+\newcommand {\ptn}{{\rm{p}_{\rm 0}}}
+\newcommand {\Psiha}{\Psi^{\alpha}}
+\newcommand {\Psihb}{\Psi^{\beta}}
+\newcommand {\PsihF}{\Psi^{\rm{F}}}
+\newcommand {\PsihG}{\Psi^{\rm{G}}}
+\newcommand {\PsihL}{\Psi^{\rm{L}}}
+\newcommand {\PsihN}{\Psi^{\rm{N}}}
+\newcommand {\PsihO}{\Psi^{\rm{O}}}
+\newcommand {\PsihS}{\Psi^{\rm{S}}}
+\newcommand {\Qha}{\rm{Q}^{\alpha}}
+\newcommand {\Qhapa}{(\rm{Q}^{\alpha})'_{\alpha}}
+\newcommand {\rha}{\rm{r}^{\alpha}}
+\newcommand {\rhA}{\rm{r}^{\rm{A}}}
+\newcommand {\rhb}{\rm{r}^{\beta}}
+\newcommand {\rhG}{\rm{r}^{\rm{G}}}
+\newcommand {\rhL}{\rm{r}^{\rm{L}}}
+\newcommand {\rhN}{\rm{r}^{\rm{N}}}
+\newcommand {\rhodha}{\hat{\rho}^{\alpha}}
+\newcommand {\rhodhab}{\hat{\rho}^{\alpha\beta}}
+\newcommand {\rhodhs}{\hat{\rho}^{\rm S}}
+\newcommand {\rhodhsb}{\hat{\rho}^{\rm S \beta}}
+\newcommand {\rhodhfl}{\hat{\rho}^{\rm FL}}
+\newcommand {\rhodhflb}{\hat{\rho}^{\rm FL \beta}}
+\newcommand {\rhodhl}{\hat{\rho}^{\rm L}}
+\newcommand {\rhodhlb}{\hat{\rho}^{\rm L \beta}}
+\newcommand {\rhodhn}{\hat{\rho}^{\rm N}}
+\newcommand {\rhodhA}{\hat{\rho}^{\rm{A}}}
+\newcommand {\rhodhb}{\hat{\rho}^{\beta}}
+\newcommand {\rhodhF}{\hat{\rho}^{\rm{F}}}
+\newcommand {\rhodhG}{\hat{\rho}^{\rm{G}}}
+\newcommand {\rhodhI}{\hat{\rho}^{\rm{I}}}
+\newcommand {\rhodhL}{\hat{\rho}^{\rm{L}}}
+\newcommand {\rhodhN}{\hat{\rho}^{\rm{N}}}
+\newcommand {\rhodhO}{\hat{\rho}^{\rm{O}}}
+\newcommand {\rhodhOtinh}{\hat{\rho}^{\rm{O}}_{\rm{inh}}}
+\newcommand {\rhodhOtmax}{\hat{\rho}^{\rm{O}}_{\rm{max}}}
+\newcommand {\rhodhOtnhO}{\hat{\rho}^{\rm{O}}_{\nhO}}
+\newcommand {\rhodhOtpH}{\hat{\rho}^{\rm{O}}_{\rm{pH}}}
+\newcommand {\rhodhOtTheta}{\hat{\rho}^{\rm{O}}_{\theta}}
+\newcommand {\rhodhS}{\hat{\rho}^{\rm{S}}}
+\newcommand {\rhodhSA}{\hat{\rho}^{\rm{SA}}}
+\newcommand {\rhodhStJtS}{\hat{\rho}^{\rm{S}}_{\JtS}}
+\newcommand {\rhodhStmax}{\hat{\rho}^{\rm{S}}_{\rm{max}}}
+\newcommand {\rhodhStnhN}{\hat{\rho}^{\rm{S}}_{\nhN}}
+\newcommand {\rhodhStPmi}{\hat{\rho}^{\rm{S}}_{\rm{P}_{\rm{mi}}}}
+\newcommand {\rhoha}{\rho^{\alpha}}
+\newcommand {\rhohba}{\rho^{\bs \alpha}}
+\newcommand {\rhohs}{\rho^{\rm S}}
+\newcommand {\rhohsb}{\rho^{\rm S \beta}}
+\newcommand {\rhohfl}{\rho^{\rm FL}}
+\newcommand {\rhohflb}{\rho^{\rm FL \beta}}
+\newcommand {\rhohl}{\rho^{\rm L}}
+\newcommand {\rhohlb}{\rho^{\rm L \beta}}
+\newcommand {\rhohn}{\rho^{\rm N}}
+\newcommand {\rhohapa}{(\rho^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\rhohsps}{(\rho^{\rm S})^{\prime}_{\rm S}}
+\newcommand {\rhohflpfl}{(\rho^{\rm FL})^{\prime}_{\rm FL}}
+\newcommand {\rhohlpl}{(\rho^{\rm L})^{\prime}_{\rm L}}
+\newcommand {\rhohnpn}{(\rho^{\rm N})^{\prime}_{\rm N}}
+\newcommand {\rhohapS}{(\rho^{\alpha})^{\prime}_{\rm S}}
+\newcommand {\rhohappa}{(\rho^{\alpha})^{\prime\prime}_{\alpha}}
+\newcommand {\rhohaR}{\rho^{\alpha\rm{R}}}
+\newcommand {\rhohbaR}{\rho^{\bs \alpha\rm{R}}}
+\newcommand {\rhohaRg}{\rho^{\alpha\rm{R}}_{\rm{g}}}
+\newcommand {\rhohaT}{\rho^{\alpha\rm{T}}}
+\newcommand {\rhohaRpa}{(\rho^{\alpha\rm{R}})^{\prime}_{\alpha}}
+\newcommand {\rhohaRtna}{\rho^{\alpha\rm{R}}_{\rm{0}\alpha}}
+\newcommand {\rhohbaRtna}{\rho^{\bs \alpha\rm{R}}_{\rm{0}\alpha}}
+\newcommand {\rhohaTtna}{\rho^{\alpha\rm{T}}_{\rm{0}\alpha}}
+\newcommand {\rhohaRtnS}{\rho^{\alpha\rm{R}}_{\rm{0S}}}
+\newcommand {\rhohatna}{\rho^{\alpha}_{\rm{0\alpha}}}
+\newcommand {\rhohbatna}{\rho^{\bs \alpha}_{\rm{0\alpha}}}
+\newcommand {\rhohatnS}{\rho^{\alpha}_{\rm{0S}}}
+\newcommand {\rhohatg}{\rho^{\alpha}_{\rm{g}}}
+\newcommand {\rhohA}{\rho^{\rm{A}}}
+\newcommand {\rhohApA}{(\rho^{\rm{A}})^{\prime}_{\rm{A}}}
+\newcommand {\rhohAppA}{(\rho^{\rm{A}})^{\prime\prime}_{\rm{A}}}
+\newcommand {\rhohAppS}{(\rho^{\rm{A}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\rhohApS}{(\rho^{\rm{A}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohAR}{\rho^{\rm{AR}}}
+\newcommand {\rhohatr}{\rho^{\alpha}_{\rm{r}}}
+\newcommand {\rhohsigmatr}{\rho^{\sigma}_{\rm{r}}}
+\newcommand {\rhohStr}{\rho^{\rm S}_{\rm{r}}}
+\newcommand {\rhohAtr}{\rho^{\rm A}_{\rm{r}}}
+\newcommand {\rhohbtr}{\rho^{\beta}_{\rm{r}}}
+\newcommand {\rhodhatr}{\hat{\rho}^{\alpha}_{\rm{r}}}
+\newcommand {\rhodhStr}{\hat{\rho}^{\rm S}_{\rm{r}}}
+\newcommand {\rhodhbtr}{\hat{\rho}^{\beta}_{\rm{r}}}
+\newcommand {\rhodhsigmatr}{\hat{\rho}^{\sigma}_{\rm{r}}}
+\newcommand {\rhohARpA}{(\rho^{\rm{AR}})^{\prime}_{\rm{A}}}
+\newcommand {\rhohARpS}{(\rho^{\rm{AR}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohARtnS}{\rho^{\rm{AR}}_{\rm{0S}}}
+\newcommand {\rhohatT}{\rho^{\alpha}_{\rm{T}}}
+\newcommand {\rhohStT}{\rho^{\rm S}_{\rm{T}}}
+\newcommand {\rhohAtT}{\rho^{\rm A}_{\rm{T}}}
+\newcommand {\rhohsig}{\rho^{\sigma}}
+\newcommand {\rhohsigT}{\rho^{\sigma\rm T}}
+\newcommand {\rhohsigTtnsig}{\rho^{\sigma\rm T}_{\rm{0}\sigma}}
+\newcommand {\rhohST}{\rho^{\rm ST}}
+\newcommand {\rhohAT}{\rho^{\rm AT}}
+\newcommand {\rhohATpS}{(\rho^{\rm AT})'_{\rm S}}
+\newcommand {\rhohb}{\rho^{\beta}}
+\newcommand {\rhohbpb}{(\rho^{\beta})^{\prime}_{\beta}}
+\newcommand {\rhohbppb}{(\rho^{\beta})^{\prime\prime}_{\beta}}
+\newcommand {\rhohbppS}{(\rho^{\beta})^{\prime\prime}_{\rm{S}}}
+\newcommand {\rhohbpS}{(\rho^{\beta})^{\prime}_{\rm{S}}}
+\newcommand {\rhohbpSs}{(\tilde{\rho}^{\beta})^{\prime}_{\rm{S}}}
+\newcommand {\rhohbR}{\rho^{\beta\rm{R}}}
+\newcommand {\rhohbRpb}{(\rho^{\beta\rm{R}})^{\prime}_{\beta}}
+\newcommand {\rhohbRs}{\tilde{\rho}^{\beta\rm{R}}}
+\newcommand {\rhohbRtnS}{\rho^{\beta\rm{R}}_{\rm{0S}}}
+\newcommand {\rhohbtnS}{\rho^{\beta}_{\rm{0S}}}
+\newcommand {\rhohF}{\rho^{\rm{F}}}
+\newcommand {\rhohFpF}{(\rho^{\rm{F}})^{\prime}_{\rm{F}}}
+\newcommand {\rhohFR}{\rho^{\rm{FR}}}
+\newcommand {\rhohFRpF}{(\rho^{\rm{FR}})^{\prime}_{\rm{F}}}
+\newcommand {\rhohFRtnF}{\rho^{\rm{FR}}_{\rm{0F}}}
+\newcommand {\rhohFRtnS}{\rho^{\rm{FR}}_{\rm{0S}}}
+\newcommand {\rhohFRtnFpF}{(\rho^{\rm{FR}}_{\rm 0F})^{\prime}_{\rm{F}}}
+\newcommand {\rhohFtnS}{\rho^{\rm{F}}_{\rm{0S}}}
+\newcommand {\rhohG}{\rho^{\rm{G}}}
+\newcommand {\rhohGpG}{(\rho^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\rhohGppG}{(\rho^{\rm{G}})^{\prime\prime}_{\rm{G}}}
+\newcommand {\rhohGppS}{(\rho^{\rm{G}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\rhohGpS}{(\rho^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohGR}{\rho^{\rm{GR}}}
+\newcommand {\rhohGRd}{\dot{\rho}^{\rm{GR}}}
+\newcommand {\rhohGRpG}{(\rho^{\rm{GR}})^{\prime}_{\rm{G}}}
+\newcommand {\rhohGRpS}{(\rho^{\rm{GR}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohGRtn}{\rho^{\rm{GR}}_{\rm{0}}}
+\newcommand {\rhohGRtnG}{\rho^{\rm{GR}}_{\rm{0G}}}
+\newcommand {\rhohGRtnS}{\rho^{\rm{GR}}_{\rm{0S}}}
+\newcommand {\rhohGRtnull}{{{\rho}^{\rm{GR}}_{\rm{0}}}}
+\newcommand {\rhohGtnS}{\rho^{\rm{G}}_{\rm{0S}}}
+\newcommand {\rhohIRpS}{(\rho^{\rm{IR}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohL}{\rho^{\rm{L}}}
+\newcommand {\rhohLpL}{(\rho^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\rhohLppL}{(\rho^{\rm{L}})^{\prime\prime}_{\rm{L}}}
+\newcommand {\rhohLppS}{(\rho^{\rm{L}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\rhohLpS}{(\rho^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohLR}{\rho^{\rm{LR}}}
+\newcommand {\rhohLRpF}{(\rho^{\rm{LR}})^{\prime}_{\rm{F}}}
+\newcommand {\rhohLRpL}{(\rho^{\rm{LR}})^{\prime}_{\rm{L}}}
+\newcommand {\rhohLRpS}{(\rho^{\rm{LR}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohLRtn}{\rho^{\rm{LR}}_{\rm{0}}}
+\newcommand {\rhohLRtnL}{\rho^{\rm{LR}}_{\rm{0L}}}
+\newcommand {\rhohLRtnLpL}{(\rho^{\rm{LR}}_{\rm 0L})^{\prime}_{\rm{L}}}
+\newcommand {\rhohLRtnS}{\rho^{\rm{LR}}_{\rm{0S}}}
+\newcommand {\rhohLtnS}{\rho^{\rm{L}}_{\rm{0S}}}
+\newcommand {\rhohN}{\rho^{\rm{N}}}
+\newcommand {\rhohNpN}{(\rho^{\rm{N}})^{\prime}_{\rm{N}}}
+\newcommand {\rhohNR}{\rho^{\rm{NR}}}
+\newcommand {\rhohNRpF}{(\rho^{\rm{NR}})^{\prime}_{\rm{F}}}
+\newcommand {\rhohNRpN}{(\rho^{\rm{NR}})^{\prime}_{\rm{N}}}
+\newcommand {\rhohNRpS}{(\rho^{\rm{NR}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohNRtnS}{\rho^{\rm{NR}}_{\rm{0S}}}
+\newcommand {\rhohO}{\rho^{\rm{O}}}
+\newcommand {\rhohOR}{\rho^{\rm{OR}}}
+\newcommand {\rhohORpS}{(\rho^{\rm{OR}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohORtnS}{\rho^{\rm{OR}}_{\rm{0S}}}
+\newcommand {\rhohOtnS}{\rho^{\rm{O}}_{\rm{0S}}}
+\newcommand {\rhohS}{\rho^{\rm{S}}}
+\newcommand {\rhohSA}{\rho^{\rm{SA}}}
+\newcommand {\rhohSppS}{(\rho^{\rm{S}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\rhohSpS}{(\rho^{\rm{S}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohSR}{\rho^{\rm{SR}}}
+\newcommand {\rhohFLR}{\rho^{\rm{FLR}}}
+\newcommand {\rhohSRpS}{(\rho^{\rm{SR}})^{\prime}_{\rm{S}}}
+\newcommand {\rhohSRtn}{\rho^{\rm{SR}}_{\rm{0}}}
+\newcommand {\rhohSRtnS}{\rho^{\rm{SR}}_{\rm{0S}}}
+\newcommand {\rhohARtnA}{\rho^{\rm{AR}}_{\rm{0A}}}
+\newcommand {\rhohATtnA}{\rho^{\rm{AT}}_{\rm{0A}}}
+\newcommand {\rhohSRtnSpS}{(\rho^{\rm{SR}}_{\rm 0S})^{\prime}_{\rm{S}}}
+\newcommand {\rhohStnS}{\rho^{\rm{S}}_{\rm{0S}}}
+\newcommand {\rhohFLtnFL}{\rho^{\rm{FL}}_{\rm{0FL}}}
+\newcommand {\rhohLtnL}{\rho^{\rm{L}}_{\rm{0L}}}
+\newcommand {\rhohNtnN}{\rho^{\rm{N}}_{\rm{0N}}}
+\newcommand {\rhohsigtnsig}{\rho^{\sigma}_{\rm{0}\sigma}}
+\newcommand {\rhohAtnA}{\rho^{\rm{A}}_{\rm{0A}}}
+\newcommand {\rhotnull}{\rho_{\rm{0}}}
+\newcommand {\rhO}{\rm{r}^{\rm{O}}}
+\newcommand {\rhS}{\rm{r}^{\rm{S}}}
+\newcommand {\rohdha}{\hat{\rho}^{\alpha}}
+\newcommand {\rohdhb}{\hat{\rho}^{\beta}}
+\newcommand {\rohdhG}{\hat{\rho}^{\rm{G}}}
+\newcommand {\rohdhL}{\hat{\rho}^{\rm{L}}}
+\newcommand {\rohdhN}{\hat{\rho}^{\rm{N}}}
+\newcommand {\rohdhS}{\hat{\rho}^{\rm{S}}}
+\newcommand {\rohha}{\rho^{\alpha}}
+\newcommand {\rohhapa}{(\rho^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\rohhaR}{\rho^{\alpha\rm{R}}}
+\newcommand {\rohhaRtnS}{\rho^{\alpha\rm{R}}_{\rm{0S}}}
+\newcommand {\rohhatnS}{\rho^{\alpha}_{\rm{0S}}}
+\newcommand {\rohhb}{\rho^{\beta}}
+\newcommand {\rohhbpb}{(\rho^{\beta})^{\prime}_{\beta}}
+\newcommand {\rohhbpS}{(\rho^{\beta})^{\prime}_{\rm{S}}}
+\newcommand {\rohhbpSs}{(\tilde{\rho}^{\beta})^{\prime}_{\rm{S}}}
+\newcommand {\rohhbR}{\rho^{\beta\rm{R}}}
+\newcommand {\rohhbRs}{\tilde{\rho}^{\beta\rm{R}}}
+\newcommand {\rohhbRtnS}{\rho^{\beta\rm{R}}_{\rm{0S}}}
+\newcommand {\rohhbtnS}{\rho^{\beta}_{\rm{0S}}}
+\newcommand {\rohhFRpF}{(\rho^{\rm{FR}})^{\prime}_{\rm{F}}}
+\newcommand {\rohhFRpS}{(\rho^{\rm{FR}})^{\prime}_{\rm{S}}}
+\newcommand {\rohhG}{\rho^{\rm{G}}}
+\newcommand {\rohhGpG}{(\rho^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\rohhGpS}{(\rho^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\rohhGR}{\rho^{\rm{GR}}}
+\newcommand {\rohhGRd}{\dot{\rho}^{\rm{GR}}}
+\newcommand {\rohhGRpG}{(\rho^{\rm{GR}})^{\prime}_{\rm{G}}}
+\newcommand {\rohhGRpS}{(\rho^{\rm{GR}})^{\prime}_{\rm{S}}}
+\newcommand {\rohhGRtn}{\rho^{\rm{GR}}_{\rm{0}}}
+\newcommand {\rohhGRtnG}{\rho^{\rm{GR}}_{\rm{0G}}}
+\newcommand {\rohhGRtnS}{\rho^{\rm{GR}}_{\rm{0S}}}
+\newcommand {\rohhGRtnull}{{{\rho}^{\rm{GR}}_{\rm{0}}}}
+\newcommand {\rohhGtnS}{\rho^{\rm{G}}_{\rm{0S}}}
+\newcommand {\rohhL}{\rho^{\rm{L}}}
+\newcommand {\rohhLpL}{(\rho^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\rohhLpS}{(\rho^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\rohhLR}{\rho^{\rm{LR}}}
+\newcommand {\rohhLRpL}{(\rho^{\rm{LR}})^{\prime}_{\rm{L}}}
+\newcommand {\rohhLRpS}{(\rho^{\rm{LR}})^{\prime}_{\rm{S}}}
+\newcommand {\rohhLRtn}{\rho^{\rm{LR}}_{\rm{0}}}
+\newcommand {\rohhLRtnL}{\rho^{\rm{LR}}_{\rm{0L}}}
+\newcommand {\rohhLRtnS}{\rho^{\rm{LR}}_{\rm{0S}}}
+\newcommand {\rohhLtnL}{\rho^{\rm{L}}_{\rm{0L}}}
+\newcommand {\rohhLtnS}{\rho^{\rm{L}}_{\rm{0S}}}
+\newcommand {\rohhN}{\rho^{\rm{N}}}
+\newcommand {\rohhNpN}{(\rho^{\rm{N}})^{\prime}_{\rm{N}}}
+\newcommand {\rohhS}{\rho^{\rm{S}}}
+\newcommand {\rohhSpS}{(\rho^{\rm{S}})^{\prime}_{\rm{S}}}
+\newcommand {\rohhSR}{\rho^{\rm{SR}}}
+\newcommand {\rohhSRtn}{\rho^{\rm{SR}}_{\rm{0}}}
+\newcommand {\rohhSRtnS}{\rho^{\rm{SR}}_{\rm{0S}}}
+\newcommand {\rohhStnS}{\rho^{\rm{S}}_{\rm{0S}}}
+\newcommand {\rohtnull}{\rho_{\rm{0}}}
+\newcommand {\Rta}{{\rm{R}}_{\alpha}}
+\newcommand {\Rtb}{{\rm{R}}_{\beta}}
+\newcommand {\RtF}{{\rm{R}}_{\rm{F}}}
+\newcommand {\RtG}{{\rm{R}}_{\rm{G}}}
+\newcommand {\RtL}{{\rm{R}}_{\rm{L}}}
+\newcommand {\RtS}{{\rm{R}}_{\rm{S}}}
+\newcommand {\sha}{\rm{s}^{\alpha}}
+\newcommand {\shb}{\rm{s}^{\beta}}
+\newcommand {\shG}{\rm{s}^{\rm{G}}}
+\newcommand {\sigmahLG}{\sigma^{\rm{LG}}}
+\newcommand {\sigmahLS}{\sigma^{\rm{LS}}}
+\newcommand {\sigmahSL}{\sigma^{\rm{SL}}}
+\newcommand {\sigmaqhLG}{\bar{\sigma}^{\rm{LG}}}
+\newcommand {\sigmaqhLS}{\bar{\sigma}^{\rm{LS}}}
+\newcommand {\sigmaqhSL}{\bar{\sigma}^{\rm{SL}}}
+\newcommand {\ste}{\rm{s}_{\rm{e}}}
+\newcommand {\Shtb}{\hat{\rm{S}}_{\beta}}
+\newcommand {\ShtF}{\hat{\rm{S}}_{\rm{F}}}
+\newcommand {\ShtG}{\hat{\rm{S}}_{\rm{G}}}
+\newcommand {\ShtL}{\hat{\rm{S}}_{\rm{L}}}
+\newcommand {\Sqta}{\bar{\rm{S}}_{\alpha}}
+\newcommand {\Sqtb}{\bar{\rm{S}}_{\beta}}
+\newcommand {\SqtG}{\bar{\rm{S}}_{\rm{G}}}
+\newcommand {\SqtL}{\bar{\rm{S}}_{\rm{L}}}
+\newcommand {\SqtS}{\bar{\rm{S}}_{\rm{S}}}
+\newcommand {\Sta}{\rm{S}_{\alpha}}
+\newcommand {\Stb}{\rm{S}_{\beta}}
+\newcommand {\Ste}{\rm{S}_{\rm{e}}}
+\newcommand {\Stf}{\rm{S}_{\rm{f}}}
+\newcommand {\StF}{\rm{S}_{\rm{F}}}
+\newcommand {\StG}{\rm{S}_{\rm{G}}}
+\newcommand {\StGi}{\rm{S}_{\rm{Gi}}}
+\newcommand {\StL}{\rm{S}_{\rm{L}}}
+\newcommand {\StLp}{\rm{S}_{\rm{Lp}}}
+\newcommand {\StS}{\rm{S}_{\rm{S}}}
+%\newcommand {\�}{\ss{}}
+\newcommand {\tdhLG}{\hat{\rm{t}}^{\rm{LG}}}
+\newcommand {\tdhSL}{\hat{\rm{t}}^{\rm{SL}}}
+\newcommand {\thetad}{\dot{\theta}}
+\newcommand {\thetaha}{\theta^{\alpha}}
+\newcommand {\thetahapa}{(\theta^{\alpha})^{\prime}_{\alpha}}
+\newcommand {\thetahapb}{(\theta^{\alpha})^{\prime}_{\beta}}
+\newcommand {\thetahappa}{(\theta^{\alpha})^{\prime\prime}_{\alpha}}
+\newcommand {\thetahappb}{(\theta^{\alpha})^{\prime\prime}_{\beta}}
+\newcommand {\thetahatnS}{\theta^{\alpha}_{\rm{0S}}}
+\newcommand {\thetahA}{\theta^{\rm{A}}}
+\newcommand {\thetahApA}{(\theta^{\rm{A}})^{\prime}_{\rm{A}}}
+\newcommand {\thetahAppA}{(\theta^{\rm{A}})^{\prime\prime}_{\rm{A}}}
+\newcommand {\thetahAppS}{(\theta^{\rm{A}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\thetahApS}{(\theta^{\rm{A}})^{\prime}_{\rm{S}}}
+\newcommand {\thetahAS}{\theta^{\rm{AS}}}
+\newcommand {\thetahb}{\theta^{\beta}}
+\newcommand {\thetahbpb}{(\theta^{\beta})^{\prime}_{\beta}}
+\newcommand {\thetahbtnS}{\theta^{\beta}_{\rm{0S}}}
+\newcommand {\thetahF}{\theta^{\rm{F}}}
+\newcommand {\thetahG}{\theta^{\rm{G}}}
+\newcommand {\thetahGpG}{(\theta^{\rm{G}})^{\prime}_{\rm{G}}}
+\newcommand {\thetahGppG}{(\theta^{\rm{G}})^{\prime\prime}_{\rm{G}}}
+\newcommand {\thetahGppS}{(\theta^{\rm{G}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\thetahGpS}{(\theta^{\rm{G}})^{\prime}_{\rm{S}}}
+\newcommand {\thetahGS}{\theta^{\rm{GS}}}
+\newcommand {\thetahGtnS}{\theta^{\rm{G}}_{\rm{0S}}}
+\newcommand {\thetahI}{\theta^{\rm{I}}}
+\newcommand {\thetahL}{\theta^{\rm{L}}}
+\newcommand {\thetahLG}{\vartheta^{\rm{LG}}}
+\newcommand {\thetahLpL}{(\theta^{\rm{L}})^{\prime}_{\rm{L}}}
+\newcommand {\thetahLppL}{(\theta^{\rm{L}})^{\prime\prime}_{\rm{L}}}
+\newcommand {\thetahLppS}{(\theta^{\rm{L}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\thetahLpS}{(\theta^{\rm{L}})^{\prime}_{\rm{S}}}
+\newcommand {\thetahLS}{\theta^{\rm{LS}}}
+\newcommand {\thetahLtnS}{\theta^{\rm{L}}_{\rm{0S}}}
+\newcommand {\thetahN}{\theta^{\rm{N}}}
+\newcommand {\thetahNpN}{(\theta^{\rm{N}})^{\prime}_{\rm{N}}}
+\newcommand {\thetahO}{\theta^{\rm{O}}}
+\newcommand {\thetahOtnS}{\theta^{\rm{O}}_{\rm{0S}}}
+\newcommand {\thetahS}{\theta^{\rm{S}}}
+\newcommand {\thetahSL}{\vartheta^{\rm{SL}}}
+\newcommand {\thetahSppS}{(\theta^{\rm{S}})^{\prime\prime}_{\rm{S}}}
+\newcommand {\thetahSpS}{(\theta^{\rm{S}})^{\prime}_{\rm{S}}}
+\newcommand {\thetahStnS}{\theta^{\rm{S}}_{\rm{0S}}}
+\newcommand {\thetap}{\theta^{\:\prime}}
+\newcommand {\thetapa}{(\theta)^{\prime}_{\alpha}}
+\newcommand {\thetapS}{\theta^{\prime}_{\rm{S}}}
+\newcommand {\thetaq}{\bar{{\theta}}}
+\newcommand {\thetatnS}{\theta_{\rm{0S}}}
+\newcommand {\thetatr}{\theta_{\rm{r}}}
+\newcommand {\thLG}{\rm{t}^{\rm{LG}}}
+\newcommand {\thSL}{\rm{t}^{\rm{SL}}}
+\newcommand {\tpleins}{\rm{t}+1}
+\newcommand {\trbDtS}{\rm{tr}\,\bf{D}_{\rm{S}}}
+\newcommand {\trbeps}{\ds{\rm{tr}\>\beps}}
+\newcommand {\trbepstS}{\rm{tr}\>\bepstS}
+\newcommand {\trbepstSpS}{(\trbepstS)'_{\rm{S}}}
+\newcommand {\ttn}{\rm{t}_{\rm{0}}}
+%\newcommand {\�}{\"u}
+%\newcommand {\�}{\"U}
+\newcommand {\vbchi}{\delta\bchi}
+\newcommand {\vbd}{\delta\bd}
+\newcommand {\vbdtB}{\delta\bdtB}
+\newcommand {\vbdtE}{\delta\bdtE}
+\newcommand {\vbdtG}{\delta\bf{d}_{\rm{G}}}
+\newcommand {\vbdtGhT}{(\delta\bf{d}_{\rm{G}})^{\rm{T}}}
+\newcommand {\vbdtL}{\delta\bf{d}_{\rm{L}}}
+\newcommand {\vbdtLhT}{(\delta\bf{d}_{\rm{L}})^{\rm{T}}}
+\newcommand {\vbdtS}{\delta\bf{d}_{\rm{S}}}
+\newcommand {\vbdtShT}{(\delta\bf{d}_{\rm{S}})^{\rm{T}}}
+\newcommand {\vbdttheta}{\delta\bdttheta}
+\newcommand {\vbdtu}{\delta\bdtu}
+\newcommand {\vbeps}{\delta\beps}
+\newcommand {\vbepshT}{\delta\beps^{\rm{T}}}
+\newcommand {\vbE}{\delta\bf{E}}
+\newcommand {\vbEta}{\delta\bf{E}_{\alpha}}
+\newcommand {\vbEtatLin}{\delta\bf{E}_{\alpha\>\rm{Lin}}}
+\newcommand {\vbEtb}{\delta\bf{E}_{\beta}}
+\newcommand {\vbEtbtLin}{\delta\bf{E}_{\beta\>\rm{Lin}}}
+\newcommand {\vbEtG}{\delta\bf{E}_{\rm{G}}}
+\newcommand {\vbEtGtLin}{\delta\bf{E}_{\rm{G}\>\rm{Lin}}}
+\newcommand {\vbEtL}{\delta\bf{E}_{\rm{L}}}
+\newcommand {\vbEtLin}{\delta\bf{E}_{\rm{Lin}}}
+\newcommand {\vbEtLtLin}{\delta\bf{E}_{\rm{L}\>\rm{Lin}}}
+\newcommand {\vbEtS}{\delta\bf{E}_{\rm{S}}}
+\newcommand {\vbEtStLin}{\delta\bf{E}_{\rm{S}\>\rm{Lin}}}
+\newcommand {\vbFta}{\delta\bf{F}_{\alpha}}
+\newcommand {\vbFtad}{\delta\dot{\bf{F}}_{\alpha}}
+\newcommand {\vbFtb}{\delta\bf{F}_{\beta}}
+\newcommand {\vbFtbd}{\delta\dot{\bf{F}}_{\beta}}
+\newcommand {\vbFtG}{\delta\bf{F}_{\rm{G}}}
+\newcommand {\vbFtGd}{\delta\dot{\bf{F}}_{\rm{G}}}
+\newcommand {\vbFtL}{\delta\bf{F}_{\rm{L}}}
+\newcommand {\vbFtLd}{\delta\dot{\bf{F}}_{\rm{L}}}
+\newcommand {\vbFtS}{\delta\bf{F}_{\rm{S}}}
+\newcommand {\vbFtSd}{\delta\dot{\bf{F}}_{\rm{S}}}
+\newcommand {\vbsig}{\delta\bsig}
+\newcommand {\vbu}{\delta\bf{u}}
+\newcommand {\vbuta}{\delta\bf{u}_{\alpha}}
+\newcommand {\vbutahT}{\delta\bf{u}_{\alpha}^{\rm{T}}}
+\newcommand {\vbutb}{\delta\bf{u}_{\beta}}
+\newcommand {\vbutbhT}{\delta\bf{u}_{\beta}^{\rm{T}}}
+\newcommand {\vbutG}{\delta\bf{u}_{\rm{G}}}
+\newcommand {\vbutGhT}{\delta\bf{u}_{\rm{G}}^{\rm{T}}}
+\newcommand {\vbutL}{\delta\bf{u}_{\rm{L}}}
+\newcommand {\vbutLhT}{\delta\bf{u}_{\rm{L}}^{\rm{T}}}
+\newcommand {\vbutS}{\delta\bf{u}_{\rm{S}}}
+\newcommand {\vbutShT}{\delta\bf{u}_{\rm{S}}^{\rm{T}}}
+\newcommand {\vbvareps}{\delta\bvareps}
+\newcommand {\vbvarepshT}{\delta\bvareps^{\rm{T}}}
+\newcommand {\vbx}{\delta\bf{x}}
+\newcommand {\vbxta}{\delta\bf{x}_{\alpha}}
+\newcommand {\vbxtb}{\delta\bf{x}_{\beta}}
+\newcommand {\vbxtG}{\delta\bf{x}_{\rm{G}}}
+\newcommand {\vbxtL}{\delta\bf{x}_{\rm{L}}}
+\newcommand {\vbxtS}{\delta\bf{x}_{\rm{S}}}
+\newcommand {\vchNM}{\delta\rm{c}^{\rm{NM}}}
+\newcommand {\veps}{\delta\eps}
+\newcommand {\vepsha}{\varepsilon^{\alpha}}
+\newcommand {\vepshapa}{(\varepsilon^{\alpha})'_{\alpha}}
+\newcommand {\vepspS}{(\varepsilon)'_{\rm{S}}}
+\newcommand {\vlambda}{\delta{\lambda}}
+\newcommand {\vnha}{\delta\rm{n}^{\alpha}}
+\newcommand {\vnhb}{\delta\rm{n}^{\beta}}
+\newcommand {\vnhG}{\delta\rm{n}^{\rm{G}}}
+\newcommand {\vnhL}{\delta\rm{n}^{\rm{L}}}
+\newcommand {\vnhN}{\delta\rm{n}^{\rm{N}}}
+\newcommand {\vnhO}{\delta\rm{n}^{\rm{O}}}
+\newcommand {\vnhS}{\delta\rm{n}^{\rm{S}}}
+\newcommand {\vp}{\delta{\rm{p}}}
+\newcommand {\vphaR}{\delta{\rm{p}}^{\alpha\rm{R}}}
+\newcommand {\vphaRpS}{\delta({\rm{p}}^{\alpha\rm{R}})'_{\rm{S}}}
+\newcommand {\vphbR}{\delta{\rm{p}}^{\beta\rm{R}}}
+\newcommand {\vphbRpS}{\delta({\rm{p}}^{\beta\rm{R}})'_{\rm{S}}}
+\newcommand {\vphGR}{\delta{\rm{p}}^{\rm{GR}}}
+\newcommand {\vphGRpS}{\delta({\rm{p}}^{\rm{GR}})'_{\rm{S}}}
+\newcommand {\vphLR}{\delta{\rm{p}}^{\rm{LR}}}
+\newcommand {\vphLRpS}{\delta(\rm{p}^{\rm{LR}})'_{\rm{S}}}
+\newcommand {\vphSR}{\delta{\rm{p}}^{\rm{SR}}}
+\newcommand {\vphSRpS}{\delta({\rm{p}}^{\rm{SR}})'_{\rm{S}}}
+\newcommand {\vrhoha}{\delta\rho^{\alpha}}
+\newcommand {\vrhohaR}{\delta\rho^{\alpha\rm{R}}}
+\newcommand {\vrhohb}{\delta\rho^{\beta}}
+\newcommand {\vrhohbR}{\delta\rho^{\beta\rm{R}}}
+\newcommand {\vrhohG}{\delta\rho^{\rm{G}}}
+\newcommand {\vrhohGR}{\delta\rho^{\rm{GR}}}
+\newcommand {\vrhohL}{\delta\rho^{\rm{L}}}
+\newcommand {\vrhohLR}{\delta\rho^{\rm{LR}}}
+\newcommand {\vrhohS}{\delta\rho^{\rm{S}}}
+\newcommand {\vrhohSR}{\delta\rho^{\rm{SR}}}
+\newcommand {\vrohha}{\delta\rho^{\alpha}}
+\newcommand {\vrohhaR}{\delta\rho^{\alpha\rm{R}}}
+\newcommand {\vrohhb}{\delta\rho^{\beta}}
+\newcommand {\vrohhbR}{\delta\rho^{\beta\rm{R}}}
+\newcommand {\vrohhG}{\delta\rho^{\rm{G}}}
+\newcommand {\vrohhGR}{\delta\rho^{\rm{GR}}}
+\newcommand {\vrohhL}{\delta\rho^{\rm{L}}}
+\newcommand {\vrohhLR}{\delta\rho^{\rm{LR}}}
+\newcommand {\vrohhS}{\delta\rho^{\rm{S}}}
+\newcommand {\vrohhSR}{\delta\rho^{\rm{SR}}}
+\newcommand {\vs}{\vspace}
+\newcommand {\vtheta}{\delta\theta}
+\newcommand {\vthetad}{\delta\dot{\theta}}
+\newcommand {\vthetaha}{\delta\theta^{\alpha}}
+\newcommand {\vthetahb}{\delta\theta^{\beta}}
+\newcommand {\vthetahG}{\delta\theta^{\rm{G}}}
+\newcommand {\vthetahL}{\delta\theta^{\rm{L}}}
+\newcommand {\vthetahS}{\delta\theta^{\rm{S}}}
+\newcommand {\vxpa}{\delta\bf{x}^{\prime}_{\alpha}}
+\newcommand {\vxpb}{\delta\bf{x}^{\prime}_{\beta}}
+\newcommand {\vxpG}{\delta\bf{x}^{\prime}_{\rm{G}}}
+\newcommand {\vxpL}{\delta\bf{x}^{\prime}_{\rm{L}}}
+\newcommand {\vxpS}{\delta\bf{x}^{\prime}_{\rm{S}}}
+\newcommand {\Vha}{\rm{V}^{\alpha}}
+\newcommand {\Vhba}{\rm{V}^{\bs \alpha}}
+\newcommand {\Vhatn}{\rm{V}^{\alpha}_{\rm{0}}}
+\newcommand {\Vhbatn}{\rm{V}^{\bs \alpha}_{\rm{0}}}
+\newcommand {\Vtn}{\rm{V}_{\rm{0}}}
+\newcommand {\Wha}{\rm{W}^{\alpha}}
+\newcommand {\Whapa}{(\rm{W}^{\alpha})'_{\alpha}}
+\newcommand {\xd}{\dot{\bf{x}}}
+\newcommand {\xdd}{\ddot{\bf{x}}}
+\newcommand {\xddtt}{\ddot{\bf{x}}_{\rm{t}}}
+\newcommand {\xddttpleins}{\ddot{\bf{x}}_{\rm{t}+1}}
+\newcommand {\xdtt}{\dot{\bf{x}}_{\rm{t}}}
+\newcommand {\xdttpleins}{\dot{\bf{x}}_{\rm{t}+1}}
+\newcommand {\xp}{\bf{x}^{\prime}}
+\newcommand {\xpa}{\bf{x}^{\prime}_{\alpha}}
+\newcommand {\xpab}{\bf{x}^{\prime}_{\alpha \beta}}
+\newcommand {\xpA}{\bf{x}^{\prime}_{\rm{A}}}
+\newcommand {\xpb}{\bf{x}^{\prime}_{\beta}}
+\newcommand {\xpG}{\bf{x}^{\prime}_{\rm{G}}}
+\newcommand {\xpL}{\bf{x}^{\prime}_{\rm{L}}}
+\newcommand {\xpLb}{\bf{x}^{\prime}_{\rm{L} \beta}}
+\newcommand {\xpN}{\bf{x}^{\prime}_{\rm{N}}}
+\newcommand {\xppa}{\bf{x}^{\prime\prime}_{\alpha}}
+\newcommand {\xppb}{\bf{x}^{\prime\prime}_{\beta}}
+\newcommand {\xppG}{\bf{x}^{\prime\prime}_{\rm{G}}}
+\newcommand {\xppL}{\bf{x}^{\prime\prime}_{\rm{L}}}
+\newcommand {\xppS}{\bf{x}^{\prime\prime}_{\rm{S}}}
+\newcommand {\xpS}{\bf{x}^{\prime}_{\rm{S}}}
+%\newcommand {\X}{X}
+\newcommand {\Xta}{X_{\alpha}}
+\newcommand {\Xtb}{X_{\beta}}
+\newcommand {\XtF}{X_{\rm{F}}}
+\newcommand {\XtG}{X_{\rm{G}}}
+\newcommand {\XtL}{X_{\rm{L}}}
+\newcommand {\XtN}{X_{\rm{N}}}
+\newcommand {\XtO}{X_{\rm{O}}}
+\newcommand {\XtS}{X_{\rm{S}}}
+\newcommand{\batF}{\bf a_{\rm F}}
+\newcommand{\batFn}{\bf a_{\rm F0}}
+\newcommand{\batn}{\bf a_{\rm 0}}
+\newcommand{\batnF}{\bf a_{\rm 0F}}
+\newcommand{\batnS}{\bf a_{\rm 0S}}
+\newcommand{\bchi}{{\mbox{\boldmath$\chi$}}}
+\newcommand{\bchits}{{\mbox{\boldmath$\chi$}_{\rm S}}}
+\newcommand{\bchitfl}{{\mbox{\boldmath$\chi$}_{\rm FL}}}
+\newcommand{\bchitl}{{\mbox{\boldmath$\chi$}_{\rm L}}}
+\newcommand{\bchitlb}{{\mbox{\boldmath$\chi$}_{\rm L \beta}}}
+\newcommand{\bchitn}{{\mbox{\boldmath$\chi$}_{\rm N}}}
+\newcommand{\bchid}{\dot{\bchi}}
+\newcommand{\bd}{\bf{d}}
+\newcommand{\bdd}{\dot{\bf{d}}}
+\newcommand{\bddd}{\ddot{\bf{d}}}
+\newcommand{\bdtB}{\bf{d}_{\rm{B}}}
+\newcommand{\bdtBTr}{(\bf{d}_{\rm{B}})^{\rm{T}}}
+\newcommand{\bdtE}{\bf{d}_{\rm{E}}}
+\newcommand{\bdtEthetar}{(\bf{d}_{\theta})^{\rm{T}}}
+\newcommand{\bdtETr}{(\bf{d}_{\rm{E}})^{\rm{T}}}
+\newcommand{\bdtG}{\bf{d}_{\rm{G}}}
+\newcommand{\bdtL}{\bf{d}_{\rm{L}}}
+\newcommand{\bdtS}{\bf{d}_{\rm{S}}}
+\newcommand{\bdtt}{\bf{d}_{\rm{t}}}
+\newcommand{\bdttheta}{\bf{d}_{\theta}}
+\newcommand{\bdttpleins}{\bf{d}_{\rm{t}+1}}
+\newcommand{\bdtu}{\bf{d}_{\rm{u}}}
+\newcommand{\bdtuTr}{(\bf{d}_{\rm{u}})^{\rm{T}}}
+\newcommand{\beps}{{\mbox{\boldmath$\varepsilon$}}}
+\newcommand{\bepsd}{\dot{\beps}}
+\newcommand{\bepsilon}{{\mbox{\boldmath$\varepsilon$}}}
+\newcommand{\bepstS}{{\mbox{\boldmath$\varepsilon$}}_{\rm{S}}}
+\newcommand{\bepstsig}{{\mbox{\boldmath$\varepsilon$}}_{\sigma}}
+\newcommand{\epstsig}{{\varepsilon}_{\sigma}}
+\newcommand{\betahLNtbpd}{\beta^{\rm LN}_{\bpd}}
+\newcommand{\betahLtbpd}{\beta^{\rm L}_{\bpd}}
+\newcommand{\betahNtbpd}{\beta^{\rm N}_{\bpd}}
+\newcommand{\betatF}{\beta_{\rm F}}
+\newcommand{\bgamma}{{\mbox{\boldmath$\gamma$}}}
+\newcommand{\bMtF}{\bf M_{\rm F}}
+\newcommand{\bMtn}{\bf M_{\rm 0}}
+\newcommand{\bMtnF}{\bf M_{\rm 0F}}
+\newcommand{\bMtnS}{\bf M_{\rm 0S}}
+\newcommand{\bMtS}{\bf M_{\rm S}}
+\newcommand{\bpd}{\rm \hat{\bf p}}
+\newcommand{\bptn}{\bf p_{\rm 0}}
+\newcommand{\bqhSOG}{\bf{q}^{\rm{SOG}}}
+\newcommand{\bQ}{\bf{Q}}
+\newcommand{\bQhT}{\bf{Q}^{\rm{T}}}
+\newcommand{\bQta}{\bf{Q}_{\alpha}}
+\newcommand{\bQtG}{\bf{Q}_{\rm{G}}}
+\newcommand{\bQtL}{\bf{Q}_{\rm{L}}}
+\newcommand{\bQtO}{\bf{Q}_{\rm{O}}}
+\newcommand{\bQtS}{\bf{Q}_{\rm{S}}}
+\newcommand{\bsig}{{\mbox{\boldmath$\sigma$}}}
+\newcommand{\bvarfi}{{\mbox{\boldmath$\varphi$}}}
+\newcommand{\bLambda}{{\mbox{\boldmath$\Lambda$}}}
+\newcommand{\bLambdahT}{{\mbox{\boldmath$\Lambda$}}^{\rm T}}
+\newcommand{\bsigd}{\dot{\bsig}}
+\newcommand{\bsigha}{{\mbox{\boldmath$\sigma$}}^{\alpha}}
+\newcommand{\bsighb}{{\mbox{\boldmath$\sigma$}}^{\beta}}
+\newcommand{\bsighF}{{\mbox{\boldmath$\sigma$}}^{\rm{F}}}
+\newcommand{\bsighG}{{\mbox{\boldmath$\sigma$}}^{\rm{G}}}
+\newcommand{\bsighL}{{\mbox{\boldmath$\sigma$}}^{\rm{L}}}
+\newcommand{\bsighS}{{\mbox{\boldmath$\sigma$}}^{\rm{S}}}
+\newcommand{\bsigma}{{\mbox{\boldmath$\sigma$}}}
+\newcommand{\bsigmab}{{\mbox{\boldmath$\bar{\sigma}$}}}
+\newcommand{\bthF}{\bf{t}^{\rm F}}
+\newcommand{\bv}{\bf{v}}
+\newcommand{\bvareps}{{\mbox{\boldmath$\varepsilon$}}}
+\newcommand{\bvarepstS}{\bvareps_{\rm S}}
+\newcommand{\bveps}{{\mbox{\boldmath$\varepsilon$}}}
+\newcommand{\bxi}{{\mbox{\boldmath$\xi$}}}
+\newcommand{\B}{\rm{B}}
+\newcommand{\Bta}{\rm{B}_{\alpha}}
+\newcommand{\Btb}{\rm{B}_{\beta}}
+\newcommand{\BtF}{\rm{B}_{\rm{F}}}
+\newcommand{\BtG}{\rm{B}_{\rm{G}}}
+\newcommand{\BtL}{\rm{B}_{\rm{L}}}
+\newcommand{\Btn}{\rm{B}_{\rm{0}}}
+\newcommand{\Btna}{\rm{B}_{\rm{0}\alpha}}
+\newcommand{\Btnb}{\rm{B}_{\rm{0}\beta}}
+\newcommand{\BtnG}{\rm{B}_{\rm{0G}}}
+\newcommand{\BtnL}{\rm{B}_{\rm{0L}}}
+\newcommand{\BtnS}{\rm{B}_{\rm{0S}}}
+\newcommand{\Btnsig}{\rm{B}_{\rm 0\sigma}}
+\newcommand{\BtnA}{\rm{B}_{\rm{0A}}}
+\newcommand{\BtS}{\rm{B}_{\rm{S}}}
+\newcommand{\Btsig}{\rm{B}_{\sigma}}
+\newcommand{\CgradrhohaCpa}{(\gradrhoha)'_{\alpha}}
+\newcommand{\CgradrhohACpS}{(\gradrhohA)'_{\rm{S}}}
+\newcommand{\CgradrhohbCpb}{(\gradrhohb)'_{\beta}}
+\newcommand{\CgradrhohGCpG}{(\gradrhohG)'_{\rm{G}}}
+\newcommand{\CgradrhohLCpL}{(\gradrhohL)'_{\rm{L}}}
+\newcommand{\CgradrhohSCpS}{(\gradrhohS)'_{\rm{S}}}
+\newcommand{\CgradthetahaCpa}{(\rm{grad}\>\thetaha)'_{\alpha}}
+\newcommand{\CgradthetahaCpb}{(\rm{grad}\>\thetaha)'_{\beta}}
+\newcommand{\CgradthetahACpS}{(\rm{grad}\>\thetahA)'_{\rm{S}}}
+\newcommand{\CgradthetahbCpb}{(\rm{grad}\>\thetahb)'_{\beta}}
+\newcommand{\CgradthetahGCpG}{(\rm{grad}\>\thetahG)'_{\rm{G}}}
+\newcommand{\CgradthetahLCpL}{(\rm{grad}\>\thetahL)'_{\rm{L}}}
+\newcommand{\CgradthetahSCpS}{(\rm{grad}\>\thetahS)'_{\rm{S}}}
+\newcommand{\da}{\rm{da}}
+\newcommand{\dA}{\rm{dA}}
+\newcommand{\dAtnS}{\rm{dA}_{\rm{0S}}}
+\newcommand{\dba}{\rm{d\bf{a}}}
+\newcommand{\dbA}{\rm{d\bf{A}}}
+\newcommand{\dbAtnS}{\rm{d\bf{A}}_{\rm{0S}}}
+\newcommand{\dbdtBTr}{(\triangle\bf{d}_{\rm{B}})^{\rm{T}}}
+\newcommand{\dbdtETr}{(\triangle\bf{d}_{\rm{E}})^{\rm{T}}}
+\newcommand{\dbdtthetaTr}{(\triangle\bf{d}_{\theta})^{\rm{T}}}
+\newcommand{\dbdtuTr}{(\triangle\bf{d}_{\rm{u}})^{\rm{T}}}
+\newcommand{\dbV}{\rm{d}\bf{V}}
+\newcommand{\dbVtnS}{\rm{d}\bf{V}_{\rm{0S}}}
+\newcommand{\dB}{\partial\rm{B}}
+\newcommand{\dBta}{\partial\rm{B}_{\alpha}}
+\newcommand{\dBtb}{\partial\rm{B}_{\beta}}
+\newcommand{\dBtG}{\partial\rm{B}_{\rm{G}}}
+\newcommand{\dBtL}{\partial\rm{B}_{\rm{L}}}
+\newcommand{\dBtn}{\partial\rm{B}_{\rm{0}}}
+\newcommand{\dBtna}{\partial\rm{B}_{\rm{0}\alpha}}
+\newcommand{\dBtnb}{\partial\rm{B}_{\rm{0}\beta}}
+\newcommand{\dBtnG}{\partial\rm{B}_{\rm{0G}}}
+\newcommand{\dBtnL}{\partial\rm{B}_{\rm{0L}}}
+\newcommand{\dBtnS}{\partial\rm{B}_{\rm{0S}}}
+\newcommand{\dBtS}{\partial\rm{B}_{\rm{S}}}
+\newcommand{\deltahLNtrhod}{\delta^{\rm LN}_{\rhod}}
+\newcommand{\deltahLtrhod}{\delta^{\rm L}_{\rhod}}
+\newcommand{\deltahNtrhod}{\delta^{\rm N}_{\rhod}}
+\newcommand{\detbFbta}{\rm{det}\>\bFbta}
+\newcommand{\detbFbtb}{\rm{det}\>\bFbtb}
+\newcommand{\detbFbtG}{\rm{det}\>\bFbtG}
+\newcommand{\detbFbtL}{\rm{det}\>\bFbtL}
+\newcommand{\detbFbtS}{\rm{det}\>\bFbtS}
+\newcommand{\detbFta}{\rm{det}\>\bFta}
+\newcommand{\detbFtainv}{\rm{det}\>\bFta^{\rm{-1}}}
+\newcommand{\detbFtb}{\rm{det}\>\bFtb}
+\newcommand{\detbFtbinv}{\rm{det}\>\bFtb^{\rm{-1}}}
+\newcommand{\detbFtG}{\rm{det}\>\bFtG}
+\newcommand{\detbFtGinv}{\rm{det}\>\bFtG^{\rm{-1}}}
+\newcommand{\detbFtL}{\rm{det}\>\bFtL}
+\newcommand{\detbFtLinv}{\rm{det}\>\bFtL^{\rm{-1}}}
+\newcommand{\detbFtS}{\rm{det}\>\bFtS}
+\newcommand{\detbFtSinv}{\rm{det}\>\bFtS^{\rm{-1}}}
+\newcommand{\detbQ}{\rm{det}\,\bf{Q}}
+\newcommand{\dGradtheta}{\triangle\rm{Grad}\>\theta}
+\newcommand{\divbP}{\rm{div}\>\bf{P}}
+\newcommand{\divbPha}{\rm{div}\>\bf{P}^{\alpha}}
+\newcommand{\divbPhb}{\rm{div}\>\bf{P}^{\beta}}
+\newcommand{\divbPhG}{\rm{div}\>\bf{P}^{\rm{G}}}
+\newcommand{\divbPhL}{\rm{div}\>\bf{P}^{\rm{L}}}
+\newcommand{\divbPhS}{\rm{div}\>\bf{P}^{\rm{S}}}
+\newcommand{\divbq}{\rm{div}\>\bf{q}}
+\newcommand{\divbqha}{\rm{div}\>\bf{q}^{\alpha}}
+\newcommand{\divbqhA}{\rm{div}\>\bf{q}^{\rm{A}}}
+\newcommand{\divbqhb}{\rm{div}\>\bf{q}^{\beta}}
+\newcommand{\divbqhG}{\rm{div}\>\bf{q}^{\rm{G}}}
+\newcommand{\divbqhL}{\rm{div}\>\bf{q}^{\rm{L}}}
+\newcommand{\divbqhN}{\rm{div}\>\bf{q}^{\rm{N}}}
+\newcommand{\divbqhO}{\rm{div}\>\bf{q}^{\rm{O}}}
+\newcommand{\divbqhS}{\rm{div}\>\bf{q}^{\rm{S}}}
+\newcommand{\divbqhSOG}{\rm{div}\>\bf{q}^{\rm{SOG}}}
+\newcommand{\divbqtnull}{\rm{div}\>\bf{q}_{0}}
+\newcommand{\divbqtnullha}{\rm{div}\>\bf{q}_{0}^{\alpha}}
+\newcommand{\divbqtnullhb}{\rm{div}\>\bf{q}_{0}^{\beta}}
+\newcommand{\divbqtnullhG}{\rm{div}\>\bf{q}_{0}^{\rm{G}}}
+\newcommand{\divbqtnullhL}{\rm{div}\>\bf{q}_{0}^{\rm{L}}}
+\newcommand{\divbqtnullhS}{\rm{div}\>\bf{q}_{0}^{\rm{S}}}
+\newcommand{\divbS}{\rm{div}\>\bf{S}}
+\newcommand{\divbSha}{\rm{div}\>\bf{S}^{\alpha}}
+\newcommand{\divbShb}{\rm{div}\>\bf{S}^{\beta}}
+\newcommand{\divbShG}{\rm{div}\>\bf{S}^{\rm{G}}}
+\newcommand{\divbShL}{\rm{div}\>\bf{S}^{\rm{L}}}
+\newcommand{\divbShS}{\rm{div}\>\bf{S}^{\rm{S}}}
+\newcommand{\divbT}{\rm{div}\>\bf{T}}
+\newcommand{\divbTha}{\rm{div}\>\bf{T}^{\alpha}}
+\newcommand{\divbThatE}{\rm{div}\>\bf{T}^{\alpha}_{\rm{E}}}
+\newcommand{\divbThA}{\rm{div}\>\bf{T}^{\rm{A}}}
+\newcommand{\divbThb}{\rm{div}\>\bf{T}^{\beta}}
+\newcommand{\divbThbtE}{\rm{div}\>\bf{T}^{\beta}_{\rm{E}}}
+\newcommand{\divbThF}{\rm{div}\>\bf{T}^{\rm{F}}}
+\newcommand{\divbThG}{\rm{div}\>\bf{T}^{\rm{G}}}
+\newcommand{\divbThGtE}{\rm{div}\>\bf{T}^{\rm{G}}_{\rm{E}}}
+\newcommand{\divbThL}{\rm{div}\>\bf{T}^{\rm{L}}}
+\newcommand{\divbThLb}{\rm{div}\>\bf{T}^{\rm{L} \beta}}
+\newcommand{\divbThLtE}{\rm{div}\>\bf{T}^{\rm{L}}_{\rm{E}}}
+\newcommand{\divbThN}{\rm{div}\>\bf{T}^{\rm{N}}}
+\newcommand{\divbThS}{\rm{div}\>\bf{T}^{\rm{S}}}
+\newcommand{\divbThSb}{\rm{div}\>\bf{T}^{\rm{S \beta}}}
+\newcommand{\divbThFL}{\rm{div}\>\bf{T}^{\rm{FL}}}
+\newcommand{\divbThSA}{\rm{div}\>\bf{T}^{\rm{SA}}}
+\newcommand{\divbThStE}{\rm{div}\>\bf{T}^{\rm{S}}_{\rm{E}}}
+\newcommand{\divbTtE}{\rm{div}\>\bf{T}}
+\newcommand{\divbxd}{\rm{div}\>\xd}
+\newcommand{\divbxpa}{\rm{div}\>\xpa}
+\newcommand{\divbxpb}{\rm{div}\>\xpb}
+\newcommand{\divbxpG}{\rm{div}\>\xpG}
+\newcommand{\divbxpL}{\rm{div}\>\xpL}
+\newcommand{\divbxpN}{\rm{div}\>\xpN}
+\newcommand{\divbxpS}{\rm{div}\>\xpS}
+\newcommand{\divxd}{\rm{div}\>\xd}
+\newcommand{\divxpa}{\rm{div}\>\xpa}
+\newcommand{\divxpA}{\rm{div}\>\xpA}
+\newcommand{\divxpb}{\rm{div}\>\xpb}
+\newcommand{\divxpF}{\rm{div}\>\bxpF}
+\newcommand{\divxpG}{\rm{div}\>\xpG}
+\newcommand{\divxpL}{\rm{div}\>\xpL}
+\newcommand{\divxpN}{\rm{div}\>\xpN}
+\newcommand{\divxpS}{\rm{div}\>\xpS}
+\newcommand{\dv}{\rm{dv}}
+\newcommand{\dvha}{\rm{dv}^{\alpha}}
+\newcommand{\dvhba}{\rm{dv}^{\bs \alpha}}
+\newcommand{\dV}{\rm{dV}}
+\newcommand{\dVhatna}{\rm{dV}^{\alpha}_{\rm{0}\alpha}}
+\newcommand{\dVhbatna}{\rm{dV}^{\bs \alpha}_{\rm{0}\alpha}}
+\newcommand{\dVtna}{\rm{dV}_{\rm{0}\alpha}}
+\newcommand{\dVtnS}{\rm{dV}_{\rm{0S}}}
+\newcommand{\dVtnA}{\rm{dV}_{\rm{0A}}}
+\newcommand{\Div}{\rm{Div}}
+\newcommand{\DivbP}{\rm{Div}\>\bf{P}}
+\newcommand{\DivbPha}{\rm{Div}\>\bf{P}^{\alpha}}
+\newcommand{\DivbPhb}{\rm{Div}\>\bf{P}^{\beta}}
+\newcommand{\DivbPhG}{\rm{Div}\>\bf{P}^{\rm{G}}}
+\newcommand{\DivbPhL}{\rm{Div}\>\bf{P}^{\rm{L}}}
+\newcommand{\DivbPhS}{\rm{Div}\>\bf{P}^{\rm{S}}}
+\newcommand{\Divbq}{\rm{Div}\>\bf{q}}
+\newcommand{\Divbqha}{\rm{Div}\>\bf{q}^{\alpha}}
+\newcommand{\Divbqhb}{\rm{Div}\>\bf{q}^{\beta}}
+\newcommand{\DivbqhG}{\rm{Div}\>\bf{q}^{\rm{G}}}
+\newcommand{\DivbqhL}{\rm{Div}\>\bf{q}^{\rm{L}}}
+\newcommand{\DivbqhN}{\rm{Div}\>\bf{q}^{\rm{N}}}
+\newcommand{\DivbqhS}{\rm{Div}\>\bf{q}^{\rm{S}}}
+\newcommand{\Divbqtnull}{\rm{Div}\>\bf{q}_{0}}
+\newcommand{\Divbqtnullha}{\rm{Div}\>\bf{q}_{0}^{\alpha}}
+\newcommand{\Divbqtnullhb}{\rm{Div}\>\bf{q}_{0}^{\beta}}
+\newcommand{\DivbqtnullhG}{\rm{Div}\>\bf{q}_{0}^{\rm{G}}}
+\newcommand{\DivbqtnullhL}{\rm{Div}\>\bf{q}_{0}^{\rm{L}}}
+\newcommand{\DivbqtnullhS}{\rm{Div}\>\bf{q}_{0}^{\rm{S}}}
+\newcommand{\DivbS}{\rm{Div}\>\bf{S}}
+\newcommand{\DivbSha}{\rm{Div}\>\bf{S}^{\alpha}}
+\newcommand{\DivbShatE}{\rm{Div}\>\bf{S}^{\alpha}_{\rm{E}}}
+\newcommand{\DivbShb}{\rm{Div}\>\bf{S}^{\beta}}
+\newcommand{\DivbShbtE}{\rm{Div}\>\bf{S}^{\beta}_{\rm{E}}}
+\newcommand{\DivbShG}{\rm{Div}\>\bf{S}^{\rm{G}}}
+\newcommand{\DivbShGtE}{\rm{Div}\>\bf{S}^{\rm{G}}_{\rm{E}}}
+\newcommand{\DivbShL}{\rm{Div}\>\bf{S}^{\rm{L}}}
+\newcommand{\DivbShLtE}{\rm{Div}\>\bf{S}^{\rm{L}}_{\rm{E}}}
+\newcommand{\DivbShS}{\rm{Div}\>\bf{S}^{\rm{S}}}
+\newcommand{\DivbShStE}{\rm{Div}\>\bf{S}^{\rm{S}}_{\rm{E}}}
+\newcommand{\DivbStE}{\rm{Div}\>\bf{S}_{\rm{E}}}
+\newcommand{\Divbxd}{\rm{Div}\>\xd}
+\newcommand{\Divbxpa}{\rm{Div}\>\xpa}
+\newcommand{\Divbxpb}{\rm{Div}\>\xpb}
+\newcommand{\DivbxpG}{\rm{Div}\>\xpG}
+\newcommand{\DivbxpL}{\rm{Div}\>\xpL}
+\newcommand{\DivbxpS}{\rm{Div}\>\xpS}
+\newcommand{\etF}{\rm{e}_{\rm F}}
+\newcommand{\ehF}{\rm{e}^{\rm F}}
+\newcommand{\euler}[1]{{\usefont{U}{eur}{m}{n}#1}}
+\newcommand{\eulerbold}[1]{{\usefont{U}{eur}{b}{n}#1}}
+\newcommand{\galpha}{\mbox{\euler{\char11}}}
+\newcommand{\gammahLted}{\gamma^{\rm L}_{\ed}}
+\newcommand{\gammahNted}{\gamma^{\rm N}_{\ed}}
+\newcommand{\gammahLtwls}{\gamma^{\rm L}_{\rm w_{\rm LS}}}
+\newcommand{\gammahLtwlbs}{\gamma^{\rm L}_{\rm w_{\rm L \beta S}}}
+\newcommand{\gammahNtwns}{\gamma^{\rm N}_{\rm w_{\rm NS}}}
+\newcommand{\gbeta}{\mbox{\euler{\char12}}}
+\newcommand{\gchi}{\mbox{\euler{\char31}}}
+\newcommand{\gdelta}{\mbox{\euler{\char14}}}
+\newcommand{\geps}{\mbox{\euler{\char15}}}
+\newcommand{\geta}{\mbox{\euler{\char17}}}
+\newcommand{\gfi}{\mbox{\euler{\char30}}}
+\newcommand{\ggamma}{\mbox{\euler{\char13}}}
+\newcommand{\gkappa}{\mbox{\euler{\char20}}}
+\newcommand{\glambda}{\mbox{\euler{\char21}}}
+\newcommand{\gmue}{\mbox{\euler{\char22}}}
+\newcommand{\gnue}{\mbox{\euler{\char23}}}
+\newcommand{\gomega}{\mbox{\euler{\char33}}}
+\newcommand{\gpi}{\mbox{\euler{\char25}}}
+\newcommand{\gpsi}{\mbox{\euler{\char32}}}
+\newcommand{\gPsi}{\mbox{\euler{\char9}}}
+\newcommand{\grad}{\rm{grad}}
+\newcommand{\gradbu}{\rm{grad}\>\bf{u}}
+\newcommand{\gradbwtGS}{\rm{grad}\>\bwtGS}
+\newcommand{\gradbwtLS}{\rm{grad}\>\bwtLS}
+\newcommand{\gradbxpa}{\rm{grad}\>\xpa}
+\newcommand{\gradbxpb}{\rm{grad}\>\xpb}
+\newcommand{\gradbxpG}{\rm{grad}\>\xpG}
+\newcommand{\gradbxpL}{\rm{grad}\>\xpL}
+\newcommand{\gradbxpS}{\rm{grad}\>\xpS}
+\newcommand{\gradbXta}{\rm{grad}\>\bXta}
+\newcommand{\gradbXtb}{\rm{grad}\>\bXtb}
+\newcommand{\gradbXtG}{\rm{grad}\>\bXtG}
+\newcommand{\gradbXtL}{\rm{grad}\>\bXtL}
+\newcommand{\gradbXtS}{\rm{grad}\>\bXtS}
+\newcommand{\gradchN}{\rm{grad}\>\chN}
+\newcommand{\gradCrhohaCpa}{\rm{grad}\>\rhohapa}
+\newcommand{\gradCrhohACpS}{\rm{grad}\>\rhohApS}
+\newcommand{\gradCrhohbCpb}{\rm{grad}\>\rhohbpb}
+\newcommand{\gradCrhohGCpG}{\rm{grad}\>\rhohGpG}
+\newcommand{\gradCrhohLCpL}{\rm{grad}\>\rhohLpL}
+\newcommand{\gradCrhohSCpS}{\rm{grad}\>\rhohSpS}
+\newcommand{\gradCthetahaCpa}{\rm{grad}\>\thetahapa}
+\newcommand{\gradCthetahaCpb}{\rm{grad}\>\thetahapb}
+\newcommand{\gradCthetahbCpb}{\rm{grad}\>\thetahbpb}
+\newcommand{\gradgradrhoha}{\rm{grad}\>\rm{grad}\>\rhoha}
+\newcommand{\gradgradrhohA}{\rm{grad}\>\rm{grad}\>\rhohA}
+\newcommand{\gradgradrhohb}{\rm{grad}\>\rm{grad}\>\rhohb}
+\newcommand{\gradgradrhohG}{\rm{grad}\>\rm{grad}\>\rhohG}
+\newcommand{\gradgradrhohL}{\rm{grad}\>\rm{grad}\>\rhohL}
+\newcommand{\gradgradrhohS}{\rm{grad}\>\rm{grad}\>\rhohS}
+\newcommand{\gradgradthetaha}{\rm{grad}\>\rm{grad}\>\thetaha}
+\newcommand{\gradgradthetahA}{\rm{grad\>grad}\>\thetahA}
+\newcommand{\gradgradthetahG}{\rm{grad\>grad}\>\thetahG}
+\newcommand{\gradgradthetahL}{\rm{grad\>grad}\>\thetahL}
+\newcommand{\gradgradthetahS}{\rm{grad\>grad}\>\thetahS}
+\newcommand{\gradJtG}{\rm{grad\>J}_{\rm{G}}}
+\newcommand{\gradJtL}{\rm{grad\>J}_{\rm{L}}}
+\newcommand{\gradlambda}{\rm{grad}\>\lambda}
+\newcommand{\gradnha}{\rm{grad}\>\nha}
+\newcommand{\gradnhA}{\rm{grad}\>\nhA}
+\newcommand{\gradnhb}{\rm{grad}\>\nhb}
+\newcommand{\gradnhF}{\rm{grad}\>{\rm{n}^{\rm{F}}}}
+\newcommand{\gradnhG}{\rm{grad}\>\nhG}
+\newcommand{\gradnhL}{\rm{grad}\>\nhL}
+\newcommand{\gradnhN}{\rm{grad}\>\nhN}
+\newcommand{\gradnhO}{\rm{grad}\>\nhO}
+\newcommand{\gradnhS}{\rm{grad}\>\nhS}
+\newcommand{\gradpha}{\rm{grad}\>\pha}
+\newcommand{\gradphaR}{\rm{grad}\>\phaR}
+\newcommand{\gradphb}{\rm{grad}\>\phb}
+\newcommand{\gradphbR}{\rm{grad}\>\phbR}
+\newcommand{\gradphG}{\rm{grad}\>\phG}
+\newcommand{\gradphGR}{\rm{grad}\>\phGR}
+\newcommand{\gradphL}{\rm{grad}\>\phL}
+\newcommand{\gradphLR}{\rm{grad}\>\phLR}
+\newcommand{\gradp}{\rm{grad}\>\rm p}
+\newcommand{\gradphN}{\rm{grad}\>\phN}
+\newcommand{\gradphS}{\rm{grad}\>\phS}
+\newcommand{\gradphSR}{\rm{grad}\>\phSR}
+\newcommand{\gradrhoha}{\rm{grad}\>\rhoha}
+\newcommand{\gradrhohaR}{\rm{grad}\>\rhohaR}
+\newcommand{\gradrhohaRpa}{\rm{grad}\>\rhohaRpa}
+\newcommand{\gradrhohA}{\rm{grad}\>\rhohA}
+\newcommand{\gradrhohAR}{\rm{grad}\>\rhohAR}
+\newcommand{\gradrhohARpS}{\rm{grad}\>\rhohARpA}
+\newcommand{\gradrhohb}{\rm{grad}\>\rhohb}
+\newcommand{\gradrhohbR}{\rm{grad}\>\rhohbR}
+\newcommand{\gradrhohbRpb}{\rm{grad}\>\rhohbRpb}
+\newcommand{\gradrhohG}{\rm{grad}\>\rhohG}
+\newcommand{\gradrhohGR}{\rm{grad}\>\rhohGR}
+\newcommand{\gradrhohGRpG}{\rm{grad}\>\rhohGRpG}
+\newcommand{\gradrhohL}{\rm{grad}\>\rhohL}
+\newcommand{\gradrhohLR}{\rm{grad}\>\rhohLR}
+\newcommand{\gradrhohLRpL}{\rm{grad}\>\rhohLRpL}
+\newcommand{\gradrhohO}{\rm{grad}\>\rhohO}
+\newcommand{\gradrhohS}{\rm{grad}\>\rhohS}
+\newcommand{\gradrhohSR}{\rm{grad}\>\rhohSR}
+\newcommand{\gradrhohSRpS}{\rm{grad}\>\rhohSRpS}
+\newcommand{\gradrohha}{\rm{grad}\>\rohha}
+\newcommand{\gradrohhaR}{\rm{grad}\>\rohhaR}
+\newcommand{\gradrohhb}{\rm{grad}\>\rohhb}
+\newcommand{\gradrohhbR}{\rm{grad}\>\rohhbR}
+\newcommand{\gradrohhG}{\rm{grad}\>\rohhG}
+\newcommand{\gradrohhGR}{\rm{grad}\>\rohhGR}
+\newcommand{\gradrohhL}{\rm{grad}\>\rohhL}
+\newcommand{\gradrohhLR}{\rm{grad}\>\rohhLR}
+\newcommand{\gradrohhS}{\rm{grad}\>\rohhS}
+\newcommand{\gradrohhSR}{\rm{grad}\>\rohhSR}
+\newcommand{\gradtheta}{\rm{grad}\>\theta}
+\newcommand{\gradthetaha}{\rm{grad}\>\thetaha}
+\newcommand{\gradthetahA}{\rm{grad}\>\thetahA}
+\newcommand{\gradthetahApS}{\rm{grad}\>\thetahApS}
+\newcommand{\gradthetahb}{\rm{grad}\>\thetahb}
+\newcommand{\gradthetahG}{\rm{grad}\>\thetahG}
+\newcommand{\gradthetahGpG}{\rm{grad}\>\thetahGpG}
+\newcommand{\gradthetahL}{\rm{grad}\>\thetahL}
+\newcommand{\gradthetahLpL}{\rm{grad}\>\thetahLpL}
+\newcommand{\gradthetahN}{\rm{grad}\>\thetahN}
+\newcommand{\gradthetahO}{\rm{grad}\>\thetahO}
+\newcommand{\gradthetahS}{\rm{grad}\>\thetahS}
+\newcommand{\gradthetahSpS}{\rm{grad}\>\thetahSpS}
+\newcommand{\gradtSvbutF}{\rm{grad}_{\rm{S}}\>\vbutF}
+\newcommand{\gradtSvbutG}{\rm{grad}_{\rm{S}}\>\vbutG}
+\newcommand{\gradtSvbutL}{\rm{grad}_{\rm{S}}\>\vbutL}
+\newcommand{\gradtSvbutS}{\rm{grad}_{\rm{S}}\>\vbutS}
+\newcommand{\gradu}{\rm{grad}\>\bf{u}}
+\newcommand{\gradvbu}{\rm{grad}\>\vu}
+\newcommand{\gradvbutF}{\rm{grad}\>\vbutF}
+\newcommand{\gradvbutG}{\rm{grad}\>\vbutG}
+\newcommand{\gradvbutL}{\rm{grad}\>\vbutL}
+\newcommand{\gradvbutS}{\rm{grad}\>\vbutS}
+\newcommand{\gradvlambda}{\rm{grad}\>\vlambda}
+\newcommand{\Gradvlambda}{\rm{Grad}\>\vlambda}
+\newcommand{\bntnS}{\bf{n}_{\rm 0S}}
+\newcommand{\gradvnha}{\rm{grad}\>\vnha}
+\newcommand{\gradvnhA}{\rm{grad}\>\vnhA}
+\newcommand{\gradvnhb}{\rm{grad}\>\vnhb}
+\newcommand{\gradvnhG}{\rm{grad}\>\vnhG}
+\newcommand{\gradvnhL}{\rm{grad}\>\vnhL}
+\newcommand{\gradvnhN}{\rm{grad}\>\vnhN}
+\newcommand{\gradvnhO}{\rm{grad}\>\vnhO}
+\newcommand{\gradvnhS}{\rm{grad}\>\vnhS}
+\newcommand{\gradvphaR}{\rm{grad}\>\vphaR}
+\newcommand{\gradvphbR}{\rm{grad}\>\vphbR}
+\newcommand{\gradvphGR}{\rm{grad}\>\vphGR}
+\newcommand{\gradvp}{\rm{grad}\>\vp}
+\newcommand{\gradvphLR}{\rm{grad}\>\vphLR}
+\newcommand{\gradvphSR}{\rm{grad}\>\vphSR}
+\newcommand{\gradvtheta}{\rm{grad}\>\vtheta}
+\newcommand{\gradvthetaha}{\rm{grad}\>\vthetaha}
+\newcommand{\gradvthetahb}{\rm{grad}\>\vthetahb}
+\newcommand{\gradvthetahG}{\rm{grad}\>\vthetahG}
+\newcommand{\gradvthetahL}{\rm{grad}\>\vthetahL}
+\newcommand{\gradvthetahS}{\rm{grad}\>\vthetahS}
+\newcommand{\gradvu}{\rm{grad}\>\vu}
+\newcommand{\gradvxpa}{\rm{grad}\>\vxpa}
+\newcommand{\gradvxpb}{\rm{grad}\>\vxpb}
+\newcommand{\gradvxpG}{\rm{grad}\>\vxpG}
+\newcommand{\gradvxpL}{\rm{grad}\>\vxpL}
+\newcommand{\gradvxpS}{\rm{grad}\>\vxpS}
+\newcommand{\gradxd}{\rm{grad}\>\xd}
+\newcommand{\gradxpa}{\rm{grad}\>\xpa}
+\newcommand{\gradxpb}{\rm{grad}\>\xpb}
+\newcommand{\gradxpG}{\rm{grad}\>\xpG}
+\newcommand{\gradxpL}{\rm{grad}\>\xpL}
+\newcommand{\gradxpS}{\rm{grad}\>\xpS}
+\newcommand{\groh}{\mbox{\euler{\char26}}}
+\newcommand{\gsigma}{\mbox{\euler{\char27}}}
+\newcommand{\gtau}{\mbox{\euler{\char28}}}
+\newcommand{\gtheta}{\mbox{\euler{\char18}}}
+\newcommand{\gvareps}{\mbox{\euler{\char34}}}
+\newcommand{\gvarfi}{\mbox{\euler{\char39}}}
+\newcommand{\gvartheta}{\mbox{\euler{\char35}}}
+\newcommand{\gvarXi}{\mbox{\euler{\char31}}}
+\newcommand{\gxi}{\mbox{\euler{\char24}}}
+\newcommand{\gzeta}{\mbox{\euler{\char16}}}
+\newcommand{\Grad}{\rm{Grad}}
+\newcommand{\GradhTvbutF}{\rm{Grad}^{\rm{T}}\>\vbutF}
+\newcommand{\GradhTvbutG}{\rm{Grad}^{\rm{T}}\>\vbutG}
+\newcommand{\GradhTvbutL}{\rm{Grad}^{\rm{T}}\>\vbutL}
+\newcommand{\GradhTvbutS}{\rm{Grad}^{\rm{T}}\>\vbutS}
+\newcommand{\GradhTvphaR}{\rm{Grad}^{\rm{T}}\vphaR}
+\newcommand{\GradhTvphbR}{\rm{Grad}^{\rm{T}}\vphbR}
+\newcommand{\GradhTvphGR}{\rm{Grad}^{\rm{T}}\vphGR}
+\newcommand{\GradhTvphLR}{\rm{Grad}^{\rm{T}}\vphLR}
+\newcommand{\GradhTvp}{\rm{Grad}^{\rm{T}}\vp}
+\newcommand{\GradhTvphSR}{\rm{Grad}^{\rm{T}}\vphSR}
+\newcommand{\Gradp}{\rm{Grad}\>\rm p}
+\newcommand{\GradphaR}{\rm{Grad}\>\phaR}
+\newcommand{\GradphbR}{\rm{Grad}\>\phbR}
+\newcommand{\GradphGR}{\rm{Grad}\>\phGR}
+\newcommand{\GradphLR}{\rm{Grad}\>\phLR}
+\newcommand{\GradphSR}{\rm{Grad}\>\phSR}
+\newcommand{\Gradta}{\rm{Grad}_{\alpha}}
+\newcommand{\Gradtadxpa}{\rm{Grad}_{\alpha}\>\triangle\xpa}
+\newcommand{\Gradtadxpb}{\rm{Grad}_{\alpha}\>\triangle\xpb}
+\newcommand{\Gradtavxpa}{\rm{Grad}_{\alpha}\>\delta\xpa}
+\newcommand{\Gradtavxpb}{\rm{Grad}_{\alpha}\>\delta\xpb}
+\newcommand{\Gradtax}{\rm{Grad}_{\alpha}\>\bx}
+\newcommand{\Gradtaxpa}{\rm{Grad}_{\alpha}\>\xpa}
+\newcommand{\Gradtaxpb}{\rm{Grad}_{\alpha}\>\xpb}
+\newcommand{\GradtGdxpG}{\rm{Grad}_{\rm{G}}\>\triangle\xpG}
+\newcommand{\GradtGvxpG}{\rm{Grad}_{\rm{G}}\>\delta\xpG}
+\newcommand{\GradtGxpG}{\rm{Grad}_{\rm{G}}\>\xpG}
+\newcommand{\Gradtheta}{\rm{Grad}\>\theta}
+\newcommand{\Gradthetaha}{\rm{Grad}\>\thetaha}
+\newcommand{\Gradthetahb}{\rm{Grad}\>\thetahb}
+\newcommand{\GradthetahG}{\rm{Grad}\>\thetahG}
+\newcommand{\GradthetahL}{\rm{Grad}\>\thetahL}
+\newcommand{\GradthetahS}{\rm{Grad}\>\thetahS}
+\newcommand{\GradtLdxpL}{\rm{Grad}_{\rm{L}}\>\triangle\xpL}
+\newcommand{\GradtLvxpL}{\rm{Grad}_{\rm{L}}\>\delta\xpL}
+\newcommand{\GradtLxpL}{\rm{Grad}_{\rm{L}}\>\xpL}
+\newcommand{\GradtSbxtS}{\rm{Grad}_{\rm{S}}\>\bf{x}_{\rm{S}}}
+\newcommand{\GradtSdbxtS}{\rm{Grad}_{\rm{S}}\>\triangle\bf{x}_{\rm{S}}}
+\newcommand{\GradtSdphaR}{\rm{Grad}_{\rm{S}}\>\dphaR}
+\newcommand{\GradtSdphbR}{\rm{Grad}_{\rm{S}}\>\dphbR}
+\newcommand{\GradtSdphGR}{\rm{Grad}_{\rm{S}}\>\dphGR}
+\newcommand{\GradtSdphLR}{\rm{Grad}_{\rm{S}}\>\dphLR}
+\newcommand{\GradtSdphSR}{\rm{Grad}_{\rm{S}}\>\dphSR}
+\newcommand{\GradtSdxpS}{\rm{Grad}_{\rm{S}}\>\triangle\xpS}
+\newcommand{\GradtShTvbutF}{\rm{Grad}^{\rm{T}}_{\rm{S}}\>\vbutF}
+\newcommand{\GradtShTvbutG}{\rm{Grad}^{\rm{T}}_{\rm{S}}\>\vbutG}
+\newcommand{\GradtShTvbutL}{\rm{Grad}^{\rm{T}}_{\rm{S}}\>\vbutL}
+\newcommand{\GradtShTvbutS}{\rm{Grad}^{\rm{T}}_{\rm{S}}\>\vbutS}
+\newcommand{\GradtSpha}{\rm{Grad}_{\rm{S}}\>\pha}
+\newcommand{\GradtSphaR}{\rm{Grad}_{\rm{S}}\>\phaR}
+\newcommand{\GradtSphb}{\rm{Grad}_{\rm{S}}\>\phb}
+\newcommand{\GradtSphbR}{\rm{Grad}_{\rm{S}}\>\phbR}
+\newcommand{\GradtSphG}{\rm{Grad}_{\rm{S}}\>\phG}
+\newcommand{\GradtSphGR}{\rm{Grad}_{\rm{S}}\>\phGR}
+\newcommand{\GradtSphL}{\rm{Grad}_{\rm{S}}\>\phL}
+\newcommand{\GradtSphLR}{\rm{Grad}_{\rm{S}}\>\phLR}
+\newcommand{\GradtSphS}{\rm{Grad}_{\rm{S}}\>\phS}
+\newcommand{\GradtSphSR}{\rm{Grad}_{\rm{S}}\>\phSR}
+\newcommand{\GradtSrhohaR}{\rm{Grad}_{\rm{S}}\>\rhohaR}
+\newcommand{\GradtSrhohbR}{\rm{Grad}_{\rm{S}}\>\rhohbR}
+\newcommand{\GradtSrhohGR}{\rm{Grad}_{\rm{S}}\>\rhohGR}
+\newcommand{\GradtSrhohLR}{\rm{Grad}_{\rm{S}}\>\rhohLR}
+\newcommand{\GradtSrhohSR}{\rm{Grad}_{\rm{S}}\>\rhohSR}
+\newcommand{\GradtSrohhaR}{\rm{Grad}_{\rm{S}}\>\rohhaR}
+\newcommand{\GradtSrohhbR}{\rm{Grad}_{\rm{S}}\>\rohhbR}
+\newcommand{\GradtSrohhGR}{\rm{Grad}_{\rm{S}}\>\rohhGR}
+\newcommand{\GradtSrohhLR}{\rm{Grad}_{\rm{S}}\>\rohhLR}
+\newcommand{\GradtSrohhSR}{\rm{Grad}_{\rm{S}}\>\rohhSR}
+\newcommand{\GradtSvbutF}{\rm{Grad}_{\rm{S}}\>\vbutF}
+\newcommand{\GradtSvbutG}{\rm{Grad}_{\rm{S}}\>\vbutG}
+\newcommand{\GradtSvbutL}{\rm{Grad}_{\rm{S}}\>\vbutL}
+\newcommand{\GradtSvbutS}{\rm{Grad}_{\rm{S}}\>\vbutS}
+\newcommand{\GradtSvbxtS}{\rm{Grad}_{\rm{S}}\>\delta\bf{x}_{\rm{S}}}
+\newcommand{\GradtSvphaR}{\rm{Grad}_{\rm{S}}\>\vphaR}
+\newcommand{\GradtSvphbR}{\rm{Grad}_{\rm{S}}\>\vphbR}
+\newcommand{\GradtSvphGR}{\rm{Grad}_{\rm{S}}\>\vphGR}
+\newcommand{\GradtSvphLR}{\rm{Grad}_{\rm{S}}\>\vphLR}
+\newcommand{\GradtSvphSR}{\rm{Grad}_{\rm{S}}\>\vphSR}
+\newcommand{\GradtSvxpS}{\rm{Grad}_{\rm{S}}\>\delta\xpS}
+\newcommand{\GradtSxpS}{\rm{Grad}_{\rm{S}}\>\xpS}
+\newcommand{\Gradu}{\rm{Grad}\>\bf{u}}
+\newcommand{\Graduta}{\rm{Grad}\>\bf{u}_{\alpha}}
+\newcommand{\GradutS}{\rm{Grad}\>\bf{u}_{\rm{S}}}
+\newcommand{\GradvbutF}{\rm{Grad}\>\vbutF}
+\newcommand{\GradvbutG}{\rm{Grad}\>\vbutG}
+\newcommand{\GradvbutL}{\rm{Grad}\>\vbutL}
+\newcommand{\GradvbutS}{\rm{Grad}\>\vbutS}
+\newcommand{\GradvphaR}{\rm{Grad}\>\vphaR}
+\newcommand{\GradvphbR}{\rm{Grad}\>\vphbR}
+\newcommand{\GradvphGR}{\rm{Grad}\>\vphGR}
+\newcommand{\GradvphLR}{\rm{Grad}\>\vphLR}
+\newcommand{\GradvphSR}{\rm{Grad}\>\vphSR}
+\newcommand{\Gradvtheta}{\rm{Grad}\>\vtheta}
+\newcommand{\Gradvthetaha}{\rm{Grad}\>\vthetaha}
+\newcommand{\Gradvthetahb}{\rm{Grad}\>\vthetahb}
+\newcommand{\GradvthetahG}{\rm{Grad}\>\vthetahG}
+\newcommand{\GradvthetahL}{\rm{Grad}\>\vthetahL}
+\newcommand{\GradvthetahS}{\rm{Grad}\>\vthetahS}
+\newcommand{\Gradvu}{\rm{Grad}\>\vbu}
+\newcommand{\Gradx}{\rm{Grad}\>\bf{x}}
+\newcommand{\Gradxd}{\rm{Grad}\>\xd}
+\newcommand{\Gradxpa}{\rm{Grad}\>\xpa}
+\newcommand{\Gradxpb}{\rm{Grad}\>\xpb}
+\newcommand{\GradxpG}{\rm{Grad}\>\xpG}
+\newcommand{\GradxpL}{\rm{Grad}\>\xpL}
+\newcommand{\GradxpS}{\rm{Grad}\>\xpS}
+\newcommand{\Hha}{\rm{H}^{\alpha}}
+\newcommand{\Hhapa}{(\rm{H}^{\alpha})'_{\alpha}}
+\newcommand{\intl}{\int\limits}
+\newcommand{\J}{\rm{J}}
+\newcommand{\Jbta}{\breve{\hspace{-0.5mm}\rm{J}}_{\alpha}}
+\newcommand{\JbtG}{\breve{\hspace{-0.5mm}\rm{J}}_{\rm{G}}}
+\newcommand{\JbtL}{\breve{\hspace{-0.5mm}\rm{J}}_{\rm{L}}}
+\newcommand{\JbtS}{\breve{\hspace{-0.5mm}\rm{J}}_{\rm{S}}}
+\newcommand{\JhStcp}{\rm{J}^{\rm{S}}_{\rm cp}}
+\newcommand{\Jta}{\rm{J}_{\alpha}}
+\newcommand{\JtaT}{\rm{J}_{\alpha \rm T}}
+\newcommand{\JtaTpS}{(\rm{J}_{\alpha \rm T})'_{\rm S}}
+\newcommand{\DV}{\rm \Delta V}
+\newcommand{\DVinv}{\rm (\Delta V)^{\rm -1}}
+\newcommand{\Jtna}{\rm{J}_{\rm 0\alpha}}
+\newcommand{\Jtapa}{(\rm{J}_{\alpha})'_{\alpha}}
+\newcommand{\JtapS}{(\rm{J}_{\alpha})'_{\rm S}}
+\newcommand{\JtF}{\rm{J}_{\rm{F}}}
+\newcommand{\JtA}{\rm{J}_{\rm{A}}}
+\newcommand{\JtnA}{\rm{J}_{\rm{0A}}}
+\newcommand{\JtG}{\rm{J}_{\rm{G}}}
+\newcommand{\JtGpG}{(\rm{J}_{\rm{G}})'_{\rm{G}}}
+\newcommand{\JtL}{\rm{J}_{\rm{L}}}
+\newcommand{\JtLpL}{(\rm{J}_{\rm{L}})'_{\rm{L}}}
+\newcommand{\JtN}{\rm{J}_{\rm{N}}}
+\newcommand{\JtNpN}{(\rm{J}_{\rm{N}})'_{\rm{N}}}
+\newcommand{\JtS}{\rm{J}_{\rm{S}}}
+\newcommand{\Jtsig}{\rm{J}_{\sigma}}
+\newcommand{\Jtsiginv}{\rm{J}_{\sigma}^{\rm -1}}
+\newcommand{\JtsigSinv}{\rm{J}_{\sigma\rm S}^{\rm -1}}
+\newcommand{\JtsigS}{\rm{J}_{\sigma\rm S}}
+\newcommand{\JtsigR}{\rm{J}_{\sigma\rm{R}}}
+\newcommand{\JtsigT}{\rm{J}_{\sigma\rm{T}}}
+\newcommand{\JtSR}{\rm{J}_{\rm{SR}}}
+\newcommand{\JtAR}{\rm{J}_{\rm{AR}}}
+\newcommand{\JtST}{\rm{J}_{\rm{ST}}}
+\newcommand{\JtAT}{\rm{J}_{\rm{AT}}}
+\newcommand{\JtSTpS}{(\rm{J}_{\rm{ST}})'_{\rm S}}
+\newcommand{\JtATpS}{(\rm{J}_{\rm{AT}})'_{\rm S}}
+\newcommand{\JtSinv}{\rm{J}_{\rm{S}}^{-1}}
+\newcommand{\JtSpS}{(\rm{J}_{\rm{S}})'_{\rm{S}}}
+\newcommand{\JtApA}{(\rm{J}_{\rm{A}})'_{\rm{A}}}
+\newcommand{\JtApS}{(\rm{J}_{\rm{A}})'_{\rm{S}}}
+\newcommand{\muhs}{\mu^{\rm S}}
+\newcommand{\muhsb}{\mu^{\rm S \beta}}
+\newcommand{\muhlb}{\mu^{\rm L \beta}}
+\newcommand{\muhfl}{\mu^{\rm FL}}
+\newcommand{\muhflb}{\mu^{\rm FL \beta}}
+\newcommand{\muhab}{\mu^{\alpha \beta}}
+\newcommand{\muhFR}{\mu^{\rm FR}}
+\newcommand{\muhLR}{\mu^{\rm LR}}
+\newcommand{\muhNR}{\mu^{\rm NR}}
+\newcommand{\muhNRtn}{\mu^{\rm NR}_{0}}
+\newcommand{\pBtbsig}{\partial\rm{B}_{\bsig}}
+\newcommand{\pBtbT}{\partial\rm{B}_{\bf{T}}}
+\newcommand{\pBtbu}{\partial\rm{B}_{\bf{u}}}
+\newcommand{\pBtbw}{\partial\rm{B}_{\bf w}}
+\newcommand{\pBtF}{\partial\rm{B}_{\rm{F}}}
+\newcommand{\pBtlambda}{\partial\rm{B}_{\lambda}}
+\newcommand{\pBtS}{\partial\rm{B}_{\rm{S}}}
+\newcommand{\pBtu}{\partial\rm{B}_{\rm{u}}}
+\newcommand{\qab}{\hspace{2.0mm}}
+\newcommand{\rhod}{\hat{\rho}}
+\newcommand{\rt}{\rm R \varTheta}
+\newcommand{\vbdtBTr}{(\delta\bf{d}_{\rm{B}})^{\rm{T}}}
+\newcommand{\vbdtETr}{(\delta\bf{d}_{\rm{E}})^{\rm{T}}}
+\newcommand{\vbdtthetaTr}{(\delta\bf{d}_{\theta})^{\rm{T}}}
+\newcommand{\vbdtuTr}{(\delta\bf{d}_{\rm{u}})^{\rm{T}}}
+\newcommand{\vGradtheta}{\delta\rm{Grad}\>\theta}
+\newcommand{\xihS}{\xi^{\rm S}}
+\newcommand{\wtabs}{\bf w_{\rm \alpha \beta S}}
+\newcommand{\wtlbs}{\bf {w}_{\rm L\beta S}}
+\newcommand{\wtnbs}{\bf w_{\rm N \beta S}}
+\newcommand{\wtls}{\bf {w}_{\rm LS}}
+\newcommand{\wtns}{\bf w_{\rm NS}}
+\newcommand{\wtsbs}{\bf w_{\rm S\beta S}}
+\newcommand{\wtflbs}{\bf w_{\rm FL\beta S}}
+
+
+
+
+
