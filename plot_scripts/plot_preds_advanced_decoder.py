@@ -5,16 +5,15 @@ import numpy as np
 vmax = 2 # 1 ####single(1) oder multiclass(2)
 figure_width = 5.5
 latex_export = True
-output_path = "plots/predictions/encoder_mC/Prediction_encoder_MC.pgf"
-#output_path = "plots/predictions/encoder_sC/Prediction_encoder_SC.pgf"
+output_path = "plots/predictions/advanced_decoder/MC/MNV2_MC_AddedLayer.pgf"
 
-img_path = "plots/predictions/encoder_mC"
-#img_path = "plots/predictions/encoder_sC"
-nets = ["MobileNetV2", "VGG16", "ResNet50V2"]
+img_path = "plots/predictions/advanced_decoder/MC"
+
+nets = ["MobileNetV2_MC_AddDropout", "MobileNetV2_MC_KerasModel","MobileNetV2_MC_AddTranspose"]
 imgs = [0,1,2]
 
 
-titles = ["Image", "Mask"] + ["MobileNetV2", "VGG16", "Reset50V2"]
+titles = ["Image", "Mask"] + ["Dropout", "KerasModel","Transpose"]
 
 
 if latex_export:
