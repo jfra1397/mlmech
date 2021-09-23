@@ -4,7 +4,7 @@ import json
 import sys
 
 ######## Settings ########
-max_los = 0.3
+max_los = 0.3 # 1.2
 latex_export = True
 line_style = ["-", ":"]
 color = ["steelblue", "coral", "C2", "C3"]
@@ -136,6 +136,14 @@ for plot_type in plot_types:
         label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Keras Model']
         loc1 = 1
         loc2 = 3
+
+    elif plot_type == "Segnet":
+        path_list = ["results/lena/segnet02/OC_nS_vs01", 
+                        "results/lena/segnet02/MC_wS_vs01"]
+        output_path = "plots/losses/segnet_nS_SC_MC_50epochs.pgf"
+        label = ["Single-Class", "Multi-Class"]
+        loc1 = 3
+        loc2 = 1
 
     if latex_export:
         import matplotlib
