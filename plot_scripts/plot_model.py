@@ -10,7 +10,7 @@ from PIL import ImageFont
 font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited!
 
 
-model_type = "simple_decoder" # "vgg", mobilenetv2", "resnet", "simple_decoder", "unet", "advanced_decoder"
+model_type = "advanced_decoder" # "vgg", mobilenetv2", "resnet", "simple_decoder", "unet", "advanced_decoder"
 
 if model_type == "vgg":
     encoder = tf.keras.applications.VGG16(include_top=False, weights="imagenet", input_tensor=None, input_shape=(256,256,3), pooling=None, classifier_activation= None)
@@ -61,11 +61,45 @@ elif model_type == "advanced_decoder":
     act12 = Activation("selu")(plus1)
     b12 = BatchNormalization()(act12)
     drop1 = Dropout(0.3)(b12)
-    #Layer 2, 3 and 4 are built similar
-    #....
-    #Output layer, containing a layer for Multi or Single Class
-    d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="relu", padding="same")(drop1)                      
+
+    t2 = Conv2DTranspose(16,(3, 3),activation="selu", padding="same")(drop1)
+    act21 = Activation("selu")(t2)
+    b22 = BatchNormalization()(act21)
+    dUp2 = UpSampling2D(size=(2, 2))(b22)
+    d2 = UpSampling2D(size=(2, 2))(b22)
+    c2 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d2)
+    plus2 = add([c2,dUp2])
+    act22 = Activation("selu")(plus2)
+    b22 = BatchNormalization()(act22)
+    drop2 = Dropout(0.3)(b22)
+
+    t3 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(drop2)
+    act31 = Activation("selu")(t3)
+    b32 = BatchNormalization()(act31)
+    dUp3 = UpSampling2D(size=(2, 2))(b32)
+    d3 = UpSampling2D(size=(2, 2))(b32)
+    c3 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d3)
+    plus3 = add([c3,dUp3])
+    act32 = Activation("selu")(plus3)
+    b32 = BatchNormalization()(act32)
+    drop3 = Dropout(0.3)(b32)
+   
+    t4 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(drop3)
+    act41 = Activation("selu")(t4)
+    b42 = BatchNormalization()(act41)
+    dUp4 = UpSampling2D(size=(2, 2))(b42)
+    d4 = UpSampling2D(size=(2, 2))(b42)
+    c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
+    plus4 = add([c4,dUp4])
+    act42 = Activation("selu")(plus4)
+    b42 = BatchNormalization()(act42)
+    drop4 = Dropout(0.3)(b42)
+
+    d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="relu", padding="same")(drop4)
     c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    output = c5
+
     model = Model(inputs=x, outputs=c5)
     font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
     visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0]).show()
