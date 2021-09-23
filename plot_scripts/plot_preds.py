@@ -2,17 +2,19 @@ import matplotlib.pyplot as plt
 from matplotlib import image
 import numpy as np
 
-vmax = 1 # 1 ####single oder multiclass
+vmax = 2 # 1 ####single(1) oder multiclass(2)
 figure_width = 5.5
 latex_export = True
-output_path = "plots/predictions/unet_sliced_sC.pgf"
+output_path = "plots/predictions/encoder_mC/Prediction_encoder_MC.pgf"
+#output_path = "plots/predictions/encoder_sC/Prediction_encoder_SC.pgf"
 
-img_path = "plots/predictions/unet/plot1"
-nets = ["Complexity=2", "Complexity=4", "Complexity=6"]
+img_path = "plots/predictions/encoder_mC"
+#img_path = "plots/predictions/encoder_sC"
+nets = ["MobileNetV2", "VGG16", "ResNet50V2"]
 imgs = [0,1,2]
 
 
-titles = ["Image", "Mask"] + ["Compl=2", "Compl=4", "Compl=6"]
+titles = ["Image", "Mask"] + ["MobileNetV2", "VGG16", "Reset50V2"]
 
 
 if latex_export:

@@ -1,0 +1,138 @@
+%% Creator: Matplotlib, PGF backend
+%%
+%% To include the figure in your LaTeX document, write
+%%   \input{<filename>.pgf}
+%%
+%% Make sure the required packages are loaded in your preamble
+%%   \usepackage{pgf}
+%%
+%% Figures using additional raster images can only be included by \input if
+%% they are in the same directory as the main LaTeX file. For loading figures
+%% from other directories you can use the `import` package
+%%   \usepackage{import}
+%%
+%% and then include the figures with
+%%   \import{<path to file>}{<filename>.pgf}
+%%
+%% Matplotlib used the following preamble
+%%
+\begingroup%
+\makeatletter%
+\begin{pgfpicture}%
+\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{4.624261in}{3.556034in}}%
+\pgfusepath{use as bounding box, clip}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetmiterjoin%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.000000pt}%
+\definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.624261in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.624261in}{3.556034in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{3.556034in}}%
+\pgfpathclose%
+\pgfusepath{fill}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{2.283672in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{2.283672in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img0.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=0.596289in,y=3.359583in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Image}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.165625in}{2.283672in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.165625in}{2.283672in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img1.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=1.661914in,y=3.359583in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Mask}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.231250in}{2.283672in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.231250in}{2.283672in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img2.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=2.727539in,y=3.359583in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont With Upsampling}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.296875in}{2.283672in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.296875in}{2.283672in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img3.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=3.793164in,y=3.359583in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont With Conv2DTranspose}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{1.191836in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{1.191836in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img4.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.165625in}{1.191836in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.165625in}{1.191836in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img5.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.231250in}{1.191836in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.231250in}{1.191836in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img6.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.296875in}{1.191836in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.296875in}{1.191836in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img7.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{0.100000in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img8.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.165625in}{0.100000in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.165625in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img9.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.231250in}{0.100000in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.231250in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img10.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.296875in}{0.100000in}}{\pgfqpoint{0.992578in}{0.992578in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.296875in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.000000in,height=1.000000in]{MNV2_SC_Upsampling-Transpose-img11.png}}%
+\end{pgfscope}%
+\end{pgfpicture}%
+\makeatother%
+\endgroup%
