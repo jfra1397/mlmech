@@ -10,12 +10,13 @@ line_style = ["-", ":"]
 color = ["steelblue", "coral", "C2", "C3"]
 lw = 1
 
+##plot all
 #plot_types = ["EncoderA", "EncoderB", "EncoderC", "EncoderD", "UnetA", "UnetB", "UnetC", "UnetD", "DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 ##plot single
-#plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
-plot_types = ["EncoderA","EncoderB","EncoderC","EncoderD"] #A, B, C or D
+plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
+#plot_types = ["EncoderD"] #A, B, C or D
 #plot_type = ["UnetD"] #A, B, C or D
-#plot_types = ["DecoderA", "DecoderC"] #A, B, C or D
+#plot_types = ["DecoderE"] #A, B, C or D
 
 
 for plot_type in plot_types:
@@ -158,7 +159,7 @@ for plot_type in plot_types:
     ######## Plot #########
 
     fig, ax = plt.subplots()
-    fig.set_size_inches(w=5, h=3) #USE h=3 ---If two plots should be place on one side...
+    fig.set_size_inches(w=5, h=3.5)
     ax.set_xlabel(r'Epochs', fontsize=10)
     ax.set_ylabel(r'Loss', fontsize=10)
     custom_lines = []
@@ -191,7 +192,7 @@ for plot_type in plot_types:
     except NameError:
         max_epochs= None
     if max_epochs is not None:
-        ax.set_xlim(0,max_epochs)
+        ax.set_xlim(0,max_epochs-1)
     ax.add_artist(legend1)
     ax.add_artist(legend2)
     ax.grid()
