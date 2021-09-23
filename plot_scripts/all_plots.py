@@ -4,17 +4,19 @@ import json
 import sys
 
 ######## Settings ########
-max_los = 0.3
+max_los = 0.3 # 1.2
 latex_export = True
 line_style = ["-", ":"]
-color = ["steelblue", "coral", "C2"]
+color = ["steelblue", "coral", "C2", "C3"]
 lw = 1
 
 ##plot all
-plot_types = ["EncoderA", "EncoderB", "EncoderC", "EncoderD", "UnetA", "UnetB", "UnetC", "UnetD"]
+#plot_types = ["EncoderA", "EncoderB", "EncoderC", "EncoderD", "UnetA", "UnetB", "UnetC", "UnetD", "DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 ##plot single
+plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 #plot_types = ["EncoderD"] #A, B, C or D
 #plot_type = ["UnetD"] #A, B, C or D
+#plot_types = ["DecoderE"] #A, B, C or D
 
 
 for plot_type in plot_types:
@@ -88,7 +90,60 @@ for plot_type in plot_types:
         loc1 = 3
         loc2 = 1
 
+    elif plot_type == "DecoderA":
+        path_list = ["results/samuel/MobileNetV2_MC",
+                        "results/samuel/MobileNetV2_MC_BN"]
+        output_path = "plots/losses/Decoder_nS_MC_BN_50epochs.pgf"
+        label = ['without BN', 'with BN']
+        loc1 = 1
+        loc2 = 3
+    
+    elif plot_type == "DecoderB":
+        path_list = ["results/samuel/MobileNetV2_MC_2xConv2D",
+                        "results/samuel/MobileNetV2_MC_BN_2xConv2D"]
+        output_path = "plots/losses/Decoder_nS_MC_BN_2xConv2D_50epochs.pgf"
+        label = ['without BN', 'with BN']
+        loc1 = 1
+        loc2 = 3
 
+    elif plot_type == "DecoderC":
+        path_list = ["results/samuel/MobileNetV2_MC_Conv2DTranspose",
+                        "results/samuel/MobileNetV2_MC_BN_Conv2DTranspose",
+                        "results/samuel/MobileNetV2_SC_BN_Conv2DTranspose"]
+        output_path = "plots/losses/Decoder_nS_MCSC_BN_Conv2DTranspose_50epochs.pgf"
+        label = ['Multi-Class without BN', 'Multi-Class with BN', 'Single-Class with BN']
+        loc1 = 1
+        loc2 = 3
+
+
+    elif plot_type == "DecoderD":
+        path_list = ["results/samuel/MobileNetV2_MC_AddUpsampling",
+                        "results/samuel/MobileNetV2_MC_AddTranspose",
+                        "results/samuel/MobileNetV2_MC_AddDropout",
+                        "results/samuel/MobileNetV2_MC_KerasModel"]
+        output_path = "plots/losses/Decoder_nS_MC_AddedLayer_50epochs.pgf"
+        label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Keras Model']
+        loc1 = 1
+        loc2 = 3
+
+    elif plot_type == "DecoderE":
+        max_epochs = 25
+        path_list = ["results/samuel/MobileNetV2_SC_AddUpsampling",
+                        "results/samuel/MobileNetV2_SC_AddTranspose",
+                        "results/samuel/MobileNetV2_SC_AddDropout",
+                        "results/samuel/MobileNetV2_SC_KerasModel"]
+        output_path = "plots/losses/Decoder_nS_SC_AddedLayer_50epochs.pgf"
+        label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Keras Model']
+        loc1 = 1
+        loc2 = 3
+
+    elif plot_type == "Segnet":
+        path_list = ["results/lena/segnet02/OC_nS_vs01", 
+                        "results/lena/segnet02/MC_wS_vs01"]
+        output_path = "plots/losses/segnet_nS_SC_MC_50epochs.pgf"
+        label = ["Single-Class", "Multi-Class"]
+        loc1 = 3
+        loc2 = 1
 
     if latex_export:
         import matplotlib
@@ -112,9 +167,17 @@ for plot_type in plot_types:
     for path in path_list:
         with open(path + "/history.json") as f:
             hist =  json.load(f)
-
-        ax.plot(list(hist["loss"].values()), lw=lw, color=color[i], ls = line_style[0])
-        ax.plot(list(hist["val_loss"].values()), lw=lw, color=color[i], ls = line_style[1])
+        loss_list = list(hist["loss"].values())
+        val_loss_list = list(hist["val_loss"].values())
+        try:
+            max_epochs
+        except NameError:
+            max_epochs= None
+        if max_epochs is not None:
+            loss_list = loss_list[:max_epochs]
+            val_loss_list = val_loss_list[:max_epochs]
+        ax.plot(loss_list, lw=lw, color=color[i], ls = line_style[0])
+        ax.plot(val_loss_list, lw=lw, color=color[i], ls = line_style[1])
         custom_lines.append(Line2D([0], [0], color=color[i], lw=lw))
         i+=1
 
@@ -124,6 +187,12 @@ for plot_type in plot_types:
                     Line2D([0], [0], color="black", lw=lw, ls = line_style[1])]
     legend2 = plt.legend(custom_lines, ["loss", "val_loss"],loc=loc2)
     ax.set_ylim(0,max_los)
+    try:
+        max_epochs
+    except NameError:
+        max_epochs= None
+    if max_epochs is not None:
+        ax.set_xlim(0,max_epochs-1)
     ax.add_artist(legend1)
     ax.add_artist(legend2)
     ax.grid()
