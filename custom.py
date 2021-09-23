@@ -12,7 +12,7 @@ horizontal_split = 12 #1
 vertical_split = 1
 
 seed = 42
-onelabel = True
+onelabel = False
 shift = False
 single_img = False
 
@@ -53,8 +53,8 @@ def jaccard_distance(y_true, y_pred, smooth=100):
 
 
 import tensorflow.keras.losses as losses
-#loss = losses.SparseCategoricalCrossentropy()
-loss = losses.BinaryCrossentropy()
+loss = losses.SparseCategoricalCrossentropy()
+#loss = losses.BinaryCrossentropy()
 #loss = jaccard_distance
 #loss = IoULoss()
 
@@ -75,4 +75,4 @@ callback = EarlyStopping(monitor="loss",
 
 
 #RESULTS
-dir_name = "results/samuel/MobileNetV2_SC_KerasModel"
+dir_name = "results/coral_chip/MobileNetV2"
