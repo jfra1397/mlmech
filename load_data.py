@@ -175,19 +175,20 @@ class CustomDataGenerator(Sequence):
     def plot_prediction(self, idx, predictions):
         img, mask = self.__getrawitem__(idx)
         fig,axs = plt.subplots(self.batch_size,3, figsize=(15, self.batch_size*5))
-        axs[0][0].set_title('Real Image')
-        axs[0][1].set_title('Mask')
-        axs[0][2].set_title('Predictions')
         axs = axs.flatten()
 
         for i in range(self.batch_size):
             axs[3*i].imshow(img[i])
             axs[3*i+1].imshow(mask[i], vmin=0, vmax = len(self.classes))
-            if predictions[i].shape[2] > 1:
+            if predictions[i].shape[2] == 3:
                 class_0 = predictions[i][:,:,0]
                 class_1 = predictions[i][:,:,1]
                 class_2 = predictions[i][:,:,2]
                 result = 0*(np.where(class_1>class_2,class_1,class_2) < class_0) +  1*(np.where(class_0>class_2,class_0,class_2) < class_1) +  2*(np.where(class_1>class_0,class_1,class_0) < class_2)
+            elif predictions[i].shape[2] == 2:
+                class_0 = predictions[i][:,:,0]
+                class_1 = predictions[i][:,:,1]
+                result = 0*(class_0 > class_1) + 1*(class_1 > class_0) 
             else:
                 result = predictions[i].reshape(self.mask_size)
             
@@ -196,7 +197,6 @@ class CustomDataGenerator(Sequence):
         for ax in axs:
             ax.axis("off")
         plt.tight_layout()
-        return fig
 ######### NEW PRED-PLOT FUNCTION FOR A COMP. OF $ DIFF. MODELS ##############
     def plot_several_prediction(self, idx, pred1, pred2, pred3, pred4):
         img, mask = self.__getrawitem__(idx)
