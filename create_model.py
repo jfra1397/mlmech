@@ -5,7 +5,7 @@ from tensorflow.keras.layers import Input, Dense, Conv2D, MaxPooling2D, UpSampli
 from tensorflow.keras.layers import BatchNormalization, Conv2DTranspose, add, Activation, Dropout
 #from tensorflow.keras.backend import conv3d_transpose
 
-def generate_model(img_size):
+def generate_model(img_size): #,onelabel):
     
     # encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(img_size), classifier_activation=None)
     # #encoder = tf.keras.applications.VGG16(include_top=False, weights="imagenet", input_tensor=None, input_shape=(img_size), pooling=None, classifier_activation= None)
@@ -280,7 +280,7 @@ def generate_model(img_size):
     # b12 = BatchNormalization()(t1)
     # act11 = Activation("selu")(b12)
     # dUp1 = UpSampling2D(size=(2, 2))(act11)
-    # d1 = UpSampling2D(size=(2, 2))(b12)
+    # d1 = UpSampling2D(size=(2, 2))(act11)
     # c1 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d1)
     # plus1 = add([c1,dUp1])
     # b12 = BatchNormalization()(plus1)
@@ -291,7 +291,7 @@ def generate_model(img_size):
     # b22 = BatchNormalization()(t2)
     # act21 = Activation("selu")(b22)
     # dUp2 = UpSampling2D(size=(2, 2))(act21)
-    # d2 = UpSampling2D(size=(2, 2))(b22)
+    # d2 = UpSampling2D(size=(2, 2))(act21)
     # c2 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d2)
     # plus2 = add([c2,dUp2])
     # b22 = BatchNormalization()(plus2)
@@ -302,7 +302,7 @@ def generate_model(img_size):
     # b32 = BatchNormalization()(t3)
     # act31 = Activation("selu")(b32)
     # dUp3 = UpSampling2D(size=(2, 2))(act31)
-    # d3 = UpSampling2D(size=(2, 2))(b32)
+    # d3 = UpSampling2D(size=(2, 2))(act31)
     # c3 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d3)
     # plus3 = add([c3,dUp3])
     # b32 = BatchNormalization()(plus3)
@@ -313,7 +313,7 @@ def generate_model(img_size):
     # b42 = BatchNormalization()(t4)
     # act41 = Activation("selu")(b42)
     # dUp4 = UpSampling2D(size=(2, 2))(act41)
-    # d4 = UpSampling2D(size=(2, 2))(b42)
+    # d4 = UpSampling2D(size=(2, 2))(act41)
     # c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
     # plus4 = add([c4,dUp4])
     # b42 = BatchNormalization()(plus4)
@@ -326,6 +326,30 @@ def generate_model(img_size):
     # output = c5
 
 
+    # model = Model(inputs=encoder.inputs, outputs=output)
+########################################################
+################################## KerasModel
+# Adanced Decoder Structure Approach:
+    # x = encoder.layers[-1].output
+    # f = [16,32,64,128,256]
+    # ####### Layer i #######
+    # for i in range(len(f)):
+    #     dUp = UpSampling2D(size=(2, 2))(x)
+    #     dUp = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(dUp)
+    #     dUp = BatchNormalization()(dUp)
+    #     dUp = Activation("selu")(dUp)
+
+    #     x = Conv2DTranspose(f[i], (3, 3), strides=2, activation="selu", padding="same")(x)
+    #     x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
+    #     x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
+    #     x = BatchNormalization()(x)
+    #     x = add([x,dUp])
+    #     x = Activation("selu")(x)
+    #     x = Dropout(0.3)(x)
+        
+    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(x)
+    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(x)
+    # output =c5
     # model = Model(inputs=encoder.inputs, outputs=output)
 ########################################################
 ########## U-NET ARCHITECUTRE ##########################
