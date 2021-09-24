@@ -61,7 +61,7 @@ loss = losses.SparseCategoricalCrossentropy()
 
 
 
-epochs=100
+epochs=50
 steps_per_epoch=20
 callback = None
 from tensorflow.keras.callbacks import EarlyStopping
@@ -76,4 +76,4 @@ from tensorflow.keras.callbacks import EarlyStopping
 
 
 #RESULTS
-dir_name = "results/lena/mobilenetV2/multiLabel/MobileNetV2_MC_nS_100epochs"
+dir_name = "results/samuel/MobileNetV2_MC_KerasModel_2"
