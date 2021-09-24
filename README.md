@@ -99,7 +99,7 @@ pstoedit: http://www.calvina.de/pstoedit/
 6. Maybe you have to configurate then browse for the asked packages They should be found normally here:
     - ```gwin32c.exe```:  "C:\Prpgramm Files (x86)\gs\gs9.xx\bin\gswin32c.exe"
     - ``pstoedit.exe``: "C:\Prpgramm Files\pstoedit\pstoedit.exe"
-7. Then just click `scan` and afterwars `save`
+7. Then just click `test` and afterwars `save`
 
 ## Issues
 - If there is an error during compiling you have to close the temrinal before you can compile again
