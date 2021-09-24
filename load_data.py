@@ -6,11 +6,10 @@ from traceback import print_tb
 
 import matplotlib.pyplot as plt
 
-from tensorflow.keras.utils import Sequence
-
 import numpy as np
+import tensorflow as tf
 from tensorflow.keras.preprocessing.image import load_img
-
+from tensorflow.keras.utils import Sequence
 
 class CustomDataGenerator(Sequence):
     """Helper to iterate over the data (as Numpy arrays)."""
