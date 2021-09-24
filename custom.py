@@ -10,18 +10,18 @@ image_extension = ".png"
 mask_extension = ".png"
 img_size = (256, 256, 3)
 batch_size = 16
-horizontal_split = 12 #1
+horizontal_split = 12
 vertical_split = 1
 val_split = 0.1
 seed = 42
-onelabel = True
+onelabel = False
 shift = False
 single_img = False
 
 #PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
-#from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
-from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
+#from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
 
@@ -57,14 +57,14 @@ def dice_metric(y_pred, y_true):
     return 2*intersection / union
 
 import tensorflow.keras.losses as losses
-#loss = losses.SparseCategoricalCrossentropy()
-loss = losses.BinaryCrossentropy()
+loss = losses.SparseCategoricalCrossentropy()
+#oss = losses.BinaryCrossentropy()
 #loss = jaccard_distance
 #loss = jaccard_distance_loss
 
 
 
-epochs=50
+epochs=30
 steps_per_epoch=20
 callback = None
 #from tensorflow.keras.callbacks import EarlyStopping
@@ -79,4 +79,4 @@ callback = None
 
 
 #RESULTS
-dir_name = "results/julian/unet_mobilenet"
+dir_name = "results/samuel/MobileNetV2_MC_advanced_decoder_2"

@@ -165,21 +165,24 @@ elif model_type == "advanced_decoder2":
     inp = Input((256,256,3))
     x = inp
     f = [16,32,64,128,256]
+    d = [16,16,32,48,64]
     ####### Layer i #######
     for i in range(len(f)):
         dUp = UpSampling2D(size=(2, 2))(x)
-        dUp = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(dUp)
+        dUp = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(dUp)
         dUp = BatchNormalization()(dUp)
         dUp = Activation("selu")(dUp)
 
         x = Conv2DTranspose(f[i], (3, 3), strides=2, activation="selu", padding="same")(x)
-        x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
-        x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(x)
         x = BatchNormalization()(x)
+
         x = add([x,dUp])
         x = Activation("selu")(x)
         x = Dropout(0.3)(x)
         
+    
     c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(x)
     output =c5
     model = Model(inputs=inp, outputs=output)
