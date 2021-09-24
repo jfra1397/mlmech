@@ -30,7 +30,7 @@ color_map[Conv2DTranspose]['fill'] = 'indigo'
 color_map[Concatenate]['fill'] = 'cornsik'
 
 
-model_type = "segnet" # "vgg", mobilenetv2", "resnet", "simple_decoder", "unet", "advanced_decoder"
+model_type = "advanced_decoder" # "vgg", mobilenetv2", "resnet", "simple_decoder", "unet", "advanced_decoder"
 
 if model_type == "vgg":
     encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(256,256,3), classifier_activation=None)
@@ -86,8 +86,8 @@ elif model_type == "advanced_decoder":
     c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
     model = Model(inputs=x, outputs=c5)
     font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0]).show()
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/simple_decoder.png", scale_z = 10, index_ignore=[0], color_map=color_map).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/advanced_decoder.png", scale_z = 10, index_ignore=[0]).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/advanced_decoder.png", scale_z = 10, index_ignore=[0], color_map=color_map).show()
 elif model_type == "segnet":
     x = Input((256,256,3))
     conv_1 = Conv2D(32, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(x)
