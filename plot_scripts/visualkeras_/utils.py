@@ -85,7 +85,7 @@ class ColorWheel:
 
     def __init__(self, colors: list = None):
         self._cache = dict()
-        self.colors = colors if colors is not None else ["#ffd166", "#ef476f", "#8fce00", "#118ab2", "#073b4c", "#999999", "#7f6000"]
+        self.colors = colors if colors is not None else ["#ffd166", "#ef476f", "#06d6a0", "#118ab2", "#073b4c"]
 
     def get_color(self, class_type: type):
         if class_type not in self._cache.keys():
