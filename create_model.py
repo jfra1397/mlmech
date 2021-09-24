@@ -326,7 +326,7 @@ def generate_model(img_size):
     # output = c5
 
 
-    model = Model(inputs=encoder.inputs, outputs=output)
+    # model = Model(inputs=encoder.inputs, outputs=output)
 ########################################################
 ########## U-NET ARCHITECUTRE ##########################
     
@@ -374,33 +374,68 @@ def generate_model(img_size):
 
 
     ######## UNET + MOBILENET #########
+    # inputs = Input(shape=(256, 256, 3), name="input_image")
+    # ### Encoder ###
+    # encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_tensor=inputs, classifier_activation=None)
+    # encoder.trainable = False
+    # skip_connection_names = ["input_image", "block_1_expand_relu", "block_3_expand_relu", "block_6_expand_relu", "block_13_expand_relu"]
+    # encoder_output = encoder.get_layer("out_relu").output
+    # ### Decoder ###
+    # f = [16, 32, 48, 64, 64]
+    # x = encoder_output
+    # for i in range(1, len(skip_connection_names)+1, 1):
+    #     x_skip = encoder.get_layer(skip_connection_names[-i]).output
+    #     #print(skip_connection_names[-i])
+    #     x = UpSampling2D((2, 2))(x)
+    #     x = Concatenate()([x, x_skip])
+        
+    #     x = Conv2D(f[-i], (3, 3), padding="same")(x)
+    #     x = BatchNormalization()(x)
+    #     x = Activation("relu")(x)
+        
+    #     x = Conv2D(f[-i], (3, 3), padding="same")(x)
+    #     x = BatchNormalization()(x)
+    #     x = Activation("relu")(x)
+        
+    # x = Conv2D(1, (1, 1), padding="same")(x)
+    # x = Activation("sigmoid")(x)
+    
+    # model = Model(encoder.inputs, x)
+
+
+    ######## UNET + MOBILENET ATTEMPT 2 #########
     inputs = Input(shape=(256, 256, 3), name="input_image")
     ### Encoder ###
     encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_tensor=inputs, classifier_activation=None)
     encoder.trainable = False
-    skip_connection_names = ["input_image", "block_1_expand_relu", "block_3_expand_relu", "block_6_expand_relu", "block_13_expand_relu"]
-    encoder_output = encoder.get_layer("out_relu").output
+    skip_connection_names = ["input_image", "block_1_expand_relu", "block_3_expand_relu", "block_6_expand_relu"]
+    encoder_output = encoder.get_layer("block_13_expand_relu").output
     ### Decoder ###
-    f = [16, 32, 48, 64, 64]
     x = encoder_output
-    for i in range(1, len(skip_connection_names)+1, 1):
+    f = 64
+    ff2 = 8
+    #bottleneck 
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    x_skip = encoder.get_layer(skip_connection_names[-1]).output
+    x = Concatenate(axis=3)([x, x_skip])
+
+    #upsampling 
+    for i in range(2, 5):
+        ff2 = ff2 * 2
+        f = f // 2 
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
         x_skip = encoder.get_layer(skip_connection_names[-i]).output
-        #print(skip_connection_names[-i])
-        x = UpSampling2D((2, 2))(x)
-        x = Concatenate()([x, x_skip])
-        
-        x = Conv2D(f[-i], (3, 3), padding="same")(x)
-        x = BatchNormalization()(x)
-        x = Activation("relu")(x)
-        
-        x = Conv2D(f[-i], (3, 3), padding="same")(x)
-        x = BatchNormalization()(x)
-        x = Activation("relu")(x)
-        
-    x = Conv2D(1, (1, 1), padding="same")(x)
-    x = Activation("sigmoid")(x)
-    
-    model = Model(encoder.inputs, x)
+        x = Concatenate(axis=3)([x, x_skip])
+
+    #classification 
+    outputs = Conv2D(1, 1, activation='sigmoid') (x)
+
+    #model creation 
+    model = Model(inputs=[inputs], outputs=[outputs])
 
 
     return model

@@ -144,7 +144,7 @@ class CustomDataGenerator(Sequence):
             x.append(image_array_split)
             y.append(mask_array_split)
         
-        return x,y
+        return x,y, batch_paths
 
     def _count_classes(self, files):
         for file in files:

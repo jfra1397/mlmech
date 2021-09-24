@@ -19,9 +19,9 @@ shift = False
 single_img = False
 
 #PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
-#from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
-from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
+#from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
 
@@ -79,4 +79,4 @@ callback = None
 
 
 #RESULTS
-dir_name = "results/julian/unet_mobilenet"
+dir_name = "results/julian/unet_mobilenet_sC"
