@@ -2,15 +2,15 @@ import matplotlib.pyplot as plt
 from matplotlib import image
 import numpy as np
 
-vmax = 2 # 1 ####single(1) oder multiclass(2)
+vmax = 1 # 1 ####single(1) oder multiclass(2)
 figure_width = 5.5
 latex_export = True
-output_path = "plots/predictions/encoder_mC/Prediction_encoder_MC.pgf"
-#output_path = "plots/predictions/encoder_sC/Prediction_encoder_SC.pgf"
+#output_path = "plots/predictions/encoder_mC/Prediction_encoder_MC.pgf"
+output_path = "plots/predictions/encoder_sC/Prediction_encoder_SC.pgf"
 
-img_path = "plots/predictions/encoder_mC"
-#img_path = "plots/predictions/encoder_sC"
-nets = ["MobileNetV2", "VGG16", "ResNet50V2"]
+#img_path = "plots/predictions/encoder_mC"
+img_path = "plots/predictions/encoder_sC"
+nets = ["MNV2", "VGG16", "ResNet50V2"]
 imgs = [0,1,2]
 
 
