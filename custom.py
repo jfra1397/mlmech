@@ -7,6 +7,7 @@ img_dir = "images/"
 mask_dir = "labels/"
 image_extension = ".png"
 mask_extension = ".png"
+img_size = (256, 256, 3)
 batch_size = 16
 horizontal_split = 12 #1
 vertical_split = 1
@@ -17,8 +18,8 @@ shift = False
 single_img = False
 
 #PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
-#from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
-from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
+#from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.vgg16 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
@@ -60,19 +61,19 @@ loss = losses.SparseCategoricalCrossentropy()
 
 
 
-epochs=25
+epochs=100
 steps_per_epoch=20
-#callback = None
+callback = None
 from tensorflow.keras.callbacks import EarlyStopping
-callback = EarlyStopping(monitor="loss",
-     min_delta=0.01,
-     patience=5,
-     verbose=1,
-     mode="auto",
-     baseline=None,
-     restore_best_weights=False)
+# callback = EarlyStopping(monitor="loss",
+#      min_delta=0.01,
+#      patience=5,
+#      verbose=1,
+#      mode="auto",
+#      baseline=None,
+#      restore_best_weights=False)
 
 
 
 #RESULTS
-dir_name = "results/coral_chip/MobileNetV2"
+dir_name = "results/lena/mobilenetV2/multiLabel/MobileNetV2_MC_nS_100epochs"
