@@ -12,7 +12,7 @@ img_size = (256, 256, 3)
 batch_size = 16
 horizontal_split = 12 #1
 vertical_split = 1
-
+val_split = 0.1
 seed = 42
 onelabel = True
 shift = False

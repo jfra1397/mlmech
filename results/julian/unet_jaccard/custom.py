@@ -12,16 +12,16 @@ img_size = (256, 256, 3)
 batch_size = 16
 horizontal_split = 12 #1
 vertical_split = 1
-
+val_split = 0.1
 seed = 42
 onelabel = True
 shift = False
 single_img = False
 
 #PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
-#from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
-from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
+#from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
 

@@ -12,16 +12,16 @@ img_size = (256, 256, 3)
 batch_size = 16
 horizontal_split = 12 #1
 vertical_split = 1
-
+val_split = 0.1
 seed = 42
 onelabel = True
 shift = False
 single_img = False
 
 #PREPROCESS FUNCTION OF THE PRETRAINED ENCODER
-#from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input as preprocess
 #from tensorflow.keras.applications.resnet_v2 import preprocess_input as preprocess
-from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
+#from tensorflow.python.keras.applications.vgg16 import preprocess_input as preprocess
 preprocess_fcn = preprocess
 
 
@@ -41,21 +41,20 @@ def jaccard_distance_loss(y_true, y_pred, smooth=100):
     @url: https://gist.github.com/wassname/f1452b748efcbeb4cb9b1d059dce6f96
     @author: wassname
     """
-    y_true = tf.keras.layers.Flatten()(y_true)
-    y_pred = tf.keras.layers.Flatten()(y_pred)
+    # y_true = tf.keras.layers.Flatten()(y_true)
+    # y_pred = tf.keras.layers.Flatten()(y_pred)
     intersection = K.sum(K.abs(y_true * y_pred), axis=-1)
     sum_ = K.sum(K.abs(y_true) + K.abs(y_pred), axis=-1)
     jac = (intersection + smooth) / (sum_ - intersection + smooth)
     return (1 - jac) * smooth
 
-def mean_iou(y_true, y_pred):
-    th = 0.5
-    y_pred_ = tf.compat.v1.to_int32(y_pred > th)
-    score, up_opt = tf.metrics.mean_iou(y_true, y_pred_, 2)
-    K.get_session().run(tf.local_variables_initializer())
-    with tf.control_dependencies([up_opt]):
-        score = tf.identity(score)
-    return score
+def dice_metric(y_pred, y_true):
+    intersection = K.sum(K.sum(K.abs(y_true * y_pred), axis=-1))
+    union = K.sum(K.sum(K.abs(y_true) + K.abs(y_pred), axis=-1))
+    # if y_pred.sum() == 0 and y_pred.sum() == 0:
+    #     return 1.0
+
+    return 2*intersection / union
 
 import tensorflow.keras.losses as losses
 #loss = losses.SparseCategoricalCrossentropy()
@@ -65,7 +64,7 @@ loss = losses.BinaryCrossentropy()
 
 
 
-epochs=20
+epochs=50
 steps_per_epoch=20
 callback = None
 #from tensorflow.keras.callbacks import EarlyStopping
@@ -80,4 +79,4 @@ callback = None
 
 
 #RESULTS
-dir_name = "results/julian/unet_binary"
+dir_name = "results/julian/unet_mobilenet_binary"
