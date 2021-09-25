@@ -58,9 +58,9 @@ def dice_metric(y_pred, y_true):
 
 import tensorflow.keras.losses as losses
 #loss = losses.SparseCategoricalCrossentropy()
-loss = losses.BinaryCrossentropy()
+#loss = losses.BinaryCrossentropy()
 #loss = jaccard_distance
-#loss = jaccard_distance_loss
+loss = jaccard_distance_loss
 
 
 
@@ -79,4 +79,4 @@ callback = None
 
 
 #RESULTS
-dir_name = "results/julian/unet_mobilenet_sC"
+dir_name = "results/julian/unet_jaccard"

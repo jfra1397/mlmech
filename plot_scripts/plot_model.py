@@ -27,23 +27,28 @@ color_map[DepthwiseConv2D]['fill'] = 'darkseagreen'
 color_map[Add]['fill'] = 'crimson'
 color_map[Activation]['fill'] = 'navy'
 color_map[Conv2DTranspose]['fill'] = 'indigo'
-color_map[Concatenate]['fill'] = 'cornsik'
+color_map[Concatenate]['fill'] = 'cornsilk'
 
 
-model_type = "advanced_decoder2" # "vgg", mobilenetv2", "resnet", "simple_decoder", "unet", "advanced_decoder"
+model_type = "resnet" # "vgg", mobilenetv2", "resnet", "simple_decoder", "unet", "advanced_decoder"
 
 if model_type == "vgg":
+    encoder = tf.keras.applications.VGG16(include_top=False, weights='imagenet', input_shape=(256,256,3), classifier_activation=None)
+    model = Model(inputs=encoder.inputs, outputs=encoder.output)
+    font = ImageFont.truetype("arial.ttf", 36)  # using comic sans is strictly prohibited!
+    #visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/vgg16.png", scale_z=1, max_z=1).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy=1, to_file="plots/models/vgg16.png", scale_z=1, max_z=40, color_map=color_map).show()
+elif model_type == "mobilenetv2":
     encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(256,256,3), classifier_activation=None)
     model = Model(inputs=encoder.inputs, outputs=encoder.output)
-    font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/mobilenet_v2.png", scale_z=0.0001, max_z=0.1).show()
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/mobilenet_v2.png", scale_z=0.0001, max_z=0.1, color_map=color_map).show()
+    font = ImageFont.truetype("arial.ttf", int(24*3))  # using comic sans is strictly prohibited!
+    #visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/mobilenet_v2.png", scale_z=0.0001, max_z=0.1).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy=6, to_file="plots/models/mobilenet_v2.png", scale_z=0.001, max_z=10, max_xy=900, color_map=color_map).show()
 elif model_type == "resnet":
     encoder = tf.keras.applications.ResNet50V2(include_top=False, weights="imagenet", input_tensor=None, input_shape=(256,256,3), pooling=None, classifier_activation= None)
     model = Model(inputs=encoder.inputs, outputs=encoder.output)
-    font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/resnet.png", scale_z=0.0001, max_z=0.1).show()
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy=3, to_file="plots/models/resnet.png", scale_z=0.0001, max_z=0.1, color_map=color_map).show()
+    font = ImageFont.truetype("arial.ttf", int(24*3))  # using comic sans is strictly prohibited!
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy=10, to_file="plots/models/resnet.png", scale_z=0.001, max_z=10, max_xy=1500, color_map=color_map).show()
 elif model_type == "simple_decoder":
     x = Input((256,256,3))
     d1 = UpSampling2D(size=(2, 2))(x)
@@ -68,60 +73,61 @@ elif model_type == "unet":
     visualkeras.layered_view(model, legend=True, scale_xy = 1, font=font, to_file="plots/models/unet.png", color_map=color_map).show()
 elif model_type == "advanced_decoder":
     x = Input((256,256,3))
-    
     base = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(x)
     t1 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(base)
-    b12 = BatchNormalization()(t1)
-    act11 = Activation("selu")(b12)
-    dUp1 = UpSampling2D(size=(2, 2))(act11)
-    d1 = UpSampling2D(size=(2, 2))(act11)
+    act11 = Activation("selu")(t1)
+    b12 = BatchNormalization()(act11)
+    dUp1 = UpSampling2D(size=(2, 2))(b12)
+    d1 = UpSampling2D(size=(2, 2))(b12)
     c1 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d1)
     plus1 = add([c1,dUp1])
-    b12 = BatchNormalization()(plus1)
-    act12 = Activation("selu")(b12)
-    drop1 = Dropout(0.3)(act12)
+    act12 = Activation("selu")(plus1)
+    b12 = BatchNormalization()(act12)
+    drop1 = Dropout(0.3)(b12)
 
     t2 = Conv2DTranspose(16,(3, 3),activation="selu", padding="same")(drop1)
-    b22 = BatchNormalization()(t2)
-    act21 = Activation("selu")(b22)
-    dUp2 = UpSampling2D(size=(2, 2))(act21)
-    d2 = UpSampling2D(size=(2, 2))(act21)
+    act21 = Activation("selu")(t2)
+    b22 = BatchNormalization()(act21)
+    dUp2 = UpSampling2D(size=(2, 2))(b22)
+    d2 = UpSampling2D(size=(2, 2))(b22)
     c2 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d2)
     plus2 = add([c2,dUp2])
-    b22 = BatchNormalization()(plus2)
-    act22 = Activation("selu")(b22)
-    drop2 = Dropout(0.3)(act22)
+    act22 = Activation("selu")(plus2)
+    b22 = BatchNormalization()(act22)
+    drop2 = Dropout(0.3)(b22)
 
     t3 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(drop2)
-    b32 = BatchNormalization()(t3)
-    act31 = Activation("selu")(b32)
-    dUp3 = UpSampling2D(size=(2, 2))(act31)
-    d3 = UpSampling2D(size=(2, 2))(act31)
+    act31 = Activation("selu")(t3)
+    b32 = BatchNormalization()(act31)
+    dUp3 = UpSampling2D(size=(2, 2))(b32)
+    d3 = UpSampling2D(size=(2, 2))(b32)
     c3 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d3)
     plus3 = add([c3,dUp3])
-    b32 = BatchNormalization()(plus3)
-    act32 = Activation("selu")(b32)
-    drop3 = Dropout(0.3)(act32)
+    act32 = Activation("selu")(plus3)
+    b32 = BatchNormalization()(act32)
+    drop3 = Dropout(0.3)(b32)
    
     t4 = Conv2DTranspose(16, (3, 3), activation="selu", padding="same")(drop3)
-    b42 = BatchNormalization()(t4)
-    act41 = Activation("selu")(b42)
-    dUp4 = UpSampling2D(size=(2, 2))(act41)
-    d4 = UpSampling2D(size=(2, 2))(act41)
+    act41 = Activation("selu")(t4)
+    b42 = BatchNormalization()(act41)
+    dUp4 = UpSampling2D(size=(2, 2))(b42)
+    d4 = UpSampling2D(size=(2, 2))(b42)
     c4 = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(d4)
     plus4 = add([c4,dUp4])
-    b42 = BatchNormalization()(plus4)
-    act42 = Activation("selu")(b42)
-    drop4 = Dropout(0.3)(act42)
+    act42 = Activation("selu")(plus4)
+    b42 = BatchNormalization()(act42)
+    drop4 = Dropout(0.3)(b42)
 
     d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(drop4)
     #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
     c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
     output = c5
+
+
     model = Model(inputs=x, outputs=output)
-    font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/advanced_decoder.png", scale_z=0.0001, max_z=0.1, index_ignore=[0]).show()
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.07, to_file="plots/models/advanced_decoder.png", scale_z=0.01, max_z=0.1, index_ignore=[0], color_map=color_map).show()
+    font = ImageFont.truetype("arial.ttf", 24*2)  # using comic sans is strictly prohibited!
+    # visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/advanced_decoder.png", scale_z=0.0001, max_z=0.1, index_ignore=[0]).show()
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.07, to_file="plots/models/advanced_decoder.png", scale_z=1, max_z=25, index_ignore=[0], color_map=color_map).show()
 elif model_type == "segnet":
     x = Input((256,256,3))
     conv_1 = Conv2D(32, kernel_size=(3, 3), padding="same", kernel_initializer='he_normal')(x)
@@ -161,28 +167,39 @@ elif model_type == "segnet":
 
     layered_view(model, legend=True, font=font, scale_xy = 1, to_file="plots/models/segnet.png", scale_z = 0.01).show()
     layered_view(model, legend=True, font=font, scale_xy = 1, to_file="plots/models/segnet.png", scale_z = 0.01, color_map=color_map).show()
-elif model_type == "advanced_decoder2":
-    inp = Input((256,256,3))
-    x = inp
-    f = [16,32,64,128,256]
-    ####### Layer i #######
-    for i in range(len(f)):
-        dUp = UpSampling2D(size=(2, 2))(x)
-        dUp = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(dUp)
-        dUp = BatchNormalization()(dUp)
-        dUp = Activation("selu")(dUp)
 
-        x = Conv2DTranspose(f[i], (3, 3), strides=2, activation="selu", padding="same")(x)
-        x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
-        x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
-        x = BatchNormalization()(x)
-        x = add([x,dUp])
-        x = Activation("selu")(x)
-        x = Dropout(0.3)(x)
-        
-    c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(x)
-    output =c5
-    model = Model(inputs=inp, outputs=output)
-    font = ImageFont.truetype("arial.ttf", 24)  # using comic sans is strictly prohibited!
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.1, to_file="plots/models/advanced_decoder2.png", scale_z=0.0001, max_z=0.1, index_ignore=[0]).show()
-    visualkeras.layered_view(model, legend=True, font=font, scale_xy = 0.07, to_file="plots/models/advanced_decoder2.png", scale_z=0.01, max_z=0.1, index_ignore=[0], color_map=color_map).show()
+elif model_type == "unet+mobilenetv2":
+    inputs = Input(shape=(256, 256, 3), name="input_image")
+    ### Encoder ###
+    encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_tensor=inputs, classifier_activation=None)
+    encoder.trainable = False
+    skip_connection_names = ["input_image", "block_1_expand_relu", "block_3_expand_relu", "block_6_expand_relu"]
+    encoder_output = encoder.get_layer("block_13_expand_relu").output
+    ### Decoder ###
+    x = encoder_output
+    f = 64
+    ff2 = 8
+    #bottleneck 
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    x_skip = encoder.get_layer(skip_connection_names[-1]).output
+    x = Concatenate(axis=3)([x, x_skip])
+
+    #upsampling 
+    for i in range(2, 5):
+        ff2 = ff2 * 2
+        f = f // 2 
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+        x_skip = encoder.get_layer(skip_connection_names[-i]).output
+        x = Concatenate(axis=3)([x, x_skip])
+
+    #classification 
+    outputs = Conv2D(1, 1, activation='sigmoid') (x)
+
+    #model creation 
+    model = Model(inputs=[inputs], outputs=[outputs])
+    font = ImageFont.truetype("arial.ttf", int(24*3))  # using comic sans is strictly prohibited!
+    visualkeras.layered_view(model, legend=True, font=font, scale_xy=4, to_file="plots/models/unet_mobilenet_v2.png", scale_z=0.001, max_z=10, max_xy=600,  color_map=color_map).show()

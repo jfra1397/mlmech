@@ -354,46 +354,46 @@ def generate_model(img_size): #,onelabel):
 ########################################################
 ########## U-NET ARCHITECUTRE ##########################
     
-    # complexity = 5
+    complexity = 5
 
-    # x = Input((img_size))
-    # inputs = x
+    x = Input((img_size))
+    inputs = x
 
-    # #down sampling 
-    # f = 8
-    # layers = []
+    #down sampling 
+    f = 8
+    layers = []
 
-    # for i in range(0, complexity):
-    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    #     layers.append(x)
-    #     x = MaxPooling2D() (x)
-    #     f = f*2
-    # ff2 = 64 
+    for i in range(0, complexity):
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        layers.append(x)
+        x = MaxPooling2D() (x)
+        f = f*2
+    ff2 = 64 
 
-    # #bottleneck 
-    # j = len(layers) - 1
-    # x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    # x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    # x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
-    # x = Concatenate(axis=3)([x, layers[j]])
-    # j = j -1 
+    #bottleneck 
+    j = len(layers) - 1
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    x = Concatenate(axis=3)([x, layers[j]])
+    j = j -1 
 
-    # #upsampling 
-    # for i in range(0, complexity-1):
-    #     ff2 = ff2//2
-    #     f = f // 2 
-    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    #     x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
-    #     x = Concatenate(axis=3)([x, layers[j]])
-    #     j = j -1 
+    #upsampling 
+    for i in range(0, complexity-1):
+        ff2 = ff2//2
+        f = f // 2 
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+        x = Concatenate(axis=3)([x, layers[j]])
+        j = j -1 
 
-    # #classification 
-    # outputs = Conv2D(1, 1, activation='sigmoid') (x)
+    #classification 
+    outputs = Conv2D(1, 1, activation='sigmoid') (x)
 
-    # #model creation 
-    # model = Model(inputs=[inputs], outputs=[outputs])
+    #model creation 
+    model = Model(inputs=[inputs], outputs=[outputs])
 
 
 
@@ -428,38 +428,38 @@ def generate_model(img_size): #,onelabel):
 
 
     ######## UNET + MOBILENET ATTEMPT 2 #########
-    inputs = Input(shape=(256, 256, 3), name="input_image")
-    ### Encoder ###
-    encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_tensor=inputs, classifier_activation=None)
-    encoder.trainable = False
-    skip_connection_names = ["input_image", "block_1_expand_relu", "block_3_expand_relu", "block_6_expand_relu"]
-    encoder_output = encoder.get_layer("block_13_expand_relu").output
-    ### Decoder ###
-    x = encoder_output
-    f = 64
-    ff2 = 8
-    #bottleneck 
-    x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    x = Conv2D(f, 3, activation='relu', padding='same') (x)
-    x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
-    x_skip = encoder.get_layer(skip_connection_names[-1]).output
-    x = Concatenate(axis=3)([x, x_skip])
+    # inputs = Input(shape=(256, 256, 3), name="input_image")
+    # ### Encoder ###
+    # encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_tensor=inputs, classifier_activation=None)
+    # encoder.trainable = False
+    # skip_connection_names = ["input_image", "block_1_expand_relu", "block_3_expand_relu", "block_6_expand_relu"]
+    # encoder_output = encoder.get_layer("block_13_expand_relu").output
+    # ### Decoder ###
+    # x = encoder_output
+    # f = 64
+    # ff2 = 8
+    # #bottleneck 
+    # x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    # x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    # x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    # x_skip = encoder.get_layer(skip_connection_names[-1]).output
+    # x = Concatenate(axis=3)([x, x_skip])
 
-    #upsampling 
-    for i in range(2, 5):
-        ff2 = ff2 * 2
-        f = f // 2 
-        x = Conv2D(f, 3, activation='relu', padding='same') (x)
-        x = Conv2D(f, 3, activation='relu', padding='same') (x)
-        x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
-        x_skip = encoder.get_layer(skip_connection_names[-i]).output
-        x = Concatenate(axis=3)([x, x_skip])
+    # #upsampling 
+    # for i in range(2, 5):
+    #     ff2 = ff2 * 2
+    #     f = f // 2 
+    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    #     x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    #     x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    #     x_skip = encoder.get_layer(skip_connection_names[-i]).output
+    #     x = Concatenate(axis=3)([x, x_skip])
 
-    #classification 
-    outputs = Conv2D(1, 1, activation='sigmoid') (x)
+    # #classification 
+    # outputs = Conv2D(3, 1, activation='softmax') (x)
 
-    #model creation 
-    model = Model(inputs=[inputs], outputs=[outputs])
+    # #model creation 
+    # model = Model(inputs=[inputs], outputs=[outputs])
 
 
     return model
