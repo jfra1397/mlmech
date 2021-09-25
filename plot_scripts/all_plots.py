@@ -15,7 +15,7 @@ lw = 1
 ylabel = r'Loss'
 
 ##plot all
-plot_types = ["EncoderA", "EncoderB", "UnetA", "UnetB", "UnetC", "UnetD", "DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE", "Segnet"]
+#plot_types = ["EncoderA", "EncoderB", "UnetA", "UnetB", "UnetC", "UnetD", "DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE", "Segnet"]
 ##plot single
 #plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 #plot_types = ["EncoderA","EncoderB","EncoderC","EncoderD"] #A, B, C or D
@@ -155,6 +155,29 @@ for plot_type in plot_types:
                         "results/samuel/MobileNetV2_SC_KerasModel"]
         output_path = "plots/losses/Decoder_nS_SC_AddedLayer_50epochs"
         label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Keras Model']
+        hist_type = ["loss", "val_loss"]
+        loc1 = 1
+        loc2 = 3
+
+    elif plot_type == "DecoderF":
+        path_list = ["results/samuel/MobileNetV2_MC_AddUpsampling",
+                        "results/samuel/MobileNetV2_MC_AddTranspose",
+                        "results/samuel/MobileNetV2_MC_AddDropout",
+                        "results/samuel/MobileNetV2_MC_advanced_decoder_2"]
+        output_path = "plots/losses/Decoder_nS_MC_AddedLayer2_50epochs"
+        label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Advanced Decoder']
+        hist_type = ["loss", "val_loss"]
+        loc1 = 1
+        loc2 = 3
+
+    elif plot_type == "DecoderG":
+        max_epochs = 30
+        path_list = ["results/samuel/MobileNetV2_SC_AddUpsampling",
+                        "results/samuel/MobileNetV2_SC_AddTranspose",
+                        "results/samuel/MobileNetV2_SC_AddDropout",
+                        "results/samuel/MobileNetV2_SC_advanced_decoder_2"]
+        output_path = "plots/losses/Decoder_nS_SC_AddedLayer2_30epochs"
+        label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Advanced Decoder']
         hist_type = ["loss", "val_loss"]
         loc1 = 1
         loc2 = 3

@@ -3,15 +3,15 @@ from matplotlib import image
 import numpy as np
 
 figure_width = 5.5
-latex_export = True
-pdf_export = False
+latex_export = False
+pdf_export = True
 test = latex_export and pdf_export
 assert(not test)
 
 
 imgs = [0,1,2]
-plot_types = ["Encoder_sC", "Encoder_mC", "AdvancedDecoder", "BigUnet", "UnetJaccard"]
-plot_types = ["UnetJaccard"]
+#plot_types = ["Encoder_sC", "Encoder_mC", "AdvancedDecoder", "BigUnet", "UnetJaccard"]
+plot_types = ["AdvancedDecoder_SC", "AdvancedDecoder_MC"]
 
 for plot_type in plot_types:
 
@@ -29,12 +29,19 @@ for plot_type in plot_types:
         nets = ["MNV2", "VGG16", "ResNet50V2"]
         titles = ["Image", "Mask"] + ["MobileNetV2", "VGG16", "Reset50V2"]
 
-    elif plot_type == "AdvancedDecoder":
+    elif plot_type == "AdvancedDecoder_MC":
         vmax = [2,2,2,2]
-        output_path = "plots/predictions/advanced_decoder/MC/MNV2_MC_AddedLayer"
+        output_path = "plots/predictions/advanced_decoder/MC/MNV2_MC_AddedLayer2"
         img_path = "plots/predictions/advanced_decoder/MC"
-        nets = ["MobileNetV2_MC_AddDropout", "MobileNetV2_MC_KerasModel","MobileNetV2_MC_AddTranspose"]
-        titles = ["Image", "Mask"] + ["Dropout", "KerasModel","Transpose"]
+        nets = ["MobileNetV2_MC_AddDropout", "MobileNetV2_MC_AddTranspose", "MobileNetV2_MC_advanced_decoder_2"]
+        titles = ["Image", "Mask"] + ["Dropout", "Transpose", "Advanced"]
+    
+    elif plot_type == "AdvancedDecoder_SC":
+        vmax = [1,1,1,1]
+        output_path = "plots/predictions/advanced_decoder/SC/MNV2_SC_AddedLayer2"
+        img_path = "plots/predictions/advanced_decoder/SC"
+        nets = ["MobileNetV2_SC_AddDropout", "MobileNetV2_SC_AddTranspose", "MobileNetV2_SC_advanced_decoder_2"]
+        titles = ["Image", "Mask"] + ["Dropout", "Transpose", "Advanced"]
     
     elif plot_type == "BigUnet_mC":
         vmax = [2,2,2,2]

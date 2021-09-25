@@ -14,7 +14,7 @@ horizontal_split = 12
 vertical_split = 1
 val_split = 0.1
 seed = 42
-onelabel = False
+onelabel = True
 shift = False
 single_img = False
 
@@ -58,13 +58,13 @@ def dice_metric(y_pred, y_true):
 
 import tensorflow.keras.losses as losses
 #loss = losses.SparseCategoricalCrossentropy()
-#loss = losses.BinaryCrossentropy()
+loss = losses.BinaryCrossentropy()
 #loss = jaccard_distance
-loss = jaccard_distance_loss
+#loss = jaccard_distance_loss
 
 
 
-epochs=30
+epochs=50
 steps_per_epoch=20
 callback = None
 #from tensorflow.keras.callbacks import EarlyStopping
@@ -79,4 +79,4 @@ callback = None
 
 
 #RESULTS
-dir_name = "results/julian/unet_jaccard"
+dir_name = "results/samuel/MobileNetV2_SC_advanced_decoder_2"
