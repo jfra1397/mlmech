@@ -221,7 +221,10 @@ for plot_type in plot_types:
     ######## Plot #########
 
     fig, ax = plt.subplots()
-    fig.set_size_inches(w=5, h=3)
+    if latex_export:
+        fig.set_size_inches(w=5, h=3)
+    if pdf_export:
+        fig.set_size_inches(w=5, h=3)
     ax.set_xlabel(r'Epochs')
     ax.set_ylabel(ylabel)
     custom_lines = []
