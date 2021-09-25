@@ -166,8 +166,9 @@ for plot_type in plot_types:
                         "results/samuel/MobileNetV2_MC_AddTranspose",
                         "results/samuel/MobileNetV2_MC_AddDropout",
                         "results/samuel/MobileNetV2_MC_advanced_decoder_2"]
-        output_path = "plots/losses/Decoder_nS_MC_AddedLayer2_50epochs.pgf"
+        output_path = "plots/losses/Decoder_nS_MC_AddedLayer2_50epochs"
         label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Advanced Decoder']
+        hist_type = ["loss", "val_loss"]
         loc1 = 1
         loc2 = 3
 
@@ -177,8 +178,9 @@ for plot_type in plot_types:
                         "results/samuel/MobileNetV2_SC_AddTranspose",
                         "results/samuel/MobileNetV2_SC_AddDropout",
                         "results/samuel/MobileNetV2_SC_advanced_decoder_2"]
-        output_path = "plots/losses/Decoder_nS_SC_AddedLayer2_30epochs.pgf"
+        output_path = "plots/losses/Decoder_nS_SC_AddedLayer2_30epochs"
         label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Advanced Decoder']
+        hist_type = ["loss", "val_loss"]
         loc1 = 1
         loc2 = 3
 
