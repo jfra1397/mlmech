@@ -2,8 +2,8 @@ import matplotlib.pyplot as plt
 
 latex_export = True
 
-labels_encoder = ["MobileNetV2", "VGG16", "ResNet50V2", "U-Net"]
-speed_encoder = [16.13, 62.94, 72.84, 14.56]
+labels_encoder = ["MobileNetV2", "VGG16", "ResNet50V2", "U-Net", "Final-Net"]
+speed_encoder = [16.13, 62.94, 72.84, 14.56, 57.77]
 
 labels_unet = ["big images", "sliced images", "sliced images\nnot optimized"]
 speed_unet = [2934.48, 14.56, 255.24]

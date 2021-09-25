@@ -19,7 +19,7 @@ plot_types = ["EncoderA", "EncoderB", "UnetA", "UnetB", "UnetC", "UnetD", "Decod
 ##plot single
 #plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 #plot_types = ["EncoderA","EncoderB","EncoderC","EncoderD"] #A, B, C or D
-plot_types = ["UnetJaccard"] #A, B, C or D
+plot_types = ["UnetD", "FinalNet", "FinalNetFineTuning"] #A, B, C or D
 #plot_types = ["UnetA", "UnetB", "UnetD"] #A, B, C or D
 
 for plot_type in plot_types:
@@ -102,7 +102,7 @@ for plot_type in plot_types:
         path_list = ["results/julian/unet_5",
                         "results/julian/unet_256x3072_4"]
         output_path = "plots/losses/unet_wS_nS_MC_50epochs"
-        label = ['sliced images', 'big images']
+        label = ['Sliced images', 'Big images']
         hist_type = ["loss", "val_loss"]
         loc1 = 3
         loc2 = 1
@@ -174,7 +174,7 @@ for plot_type in plot_types:
         output_path = "plots/losses/unet_jaccard"
         label = ["Jaccard Distance", "Binary Crossentropy"]
         hist_type = ["dice_metric", "val_dice_metric"]
-        ylabel = r'metric'
+        ylabel = r'Metric'
         loc1 = 4
         loc2 = 5
         max_los = 1
@@ -183,7 +183,7 @@ for plot_type in plot_types:
         path_list = ["results/julian/unet_mobilenet_sC", 
                         "results/julian/unet_mobilenet_mC"]
         output_path = "plots/losses/final_net"
-        label = ["single class", "multiple class"]
+        label = ["Single-Class", "Multi-Class"]
         hist_type = ["loss", "val_loss"]
         loc1 = 1
         loc2 = 5
@@ -192,7 +192,7 @@ for plot_type in plot_types:
         path_list = ["results/julian/unet_mobilenet_sC_fine_tuning", 
                         "results/julian/unet_mobilenet_mC_fine_tuning"]
         output_path = "plots/losses/final_net_fine_tuning"
-        label = ["single class", "multiple class"]
+        label = ["Single-Class", "Multi-Class"]
         hist_type = ["loss", "val_loss"]
         loc1 = 2
         loc2 = 1

@@ -833,10 +833,10 @@
 \pgfsetstrokeopacity{0.800000}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.720371in}{0.569136in}}%
-\pgfpathlineto{\pgfqpoint{1.953397in}{0.569136in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{1.981175in}{0.569136in}}{\pgfqpoint{1.981175in}{0.596913in}}%
-\pgfpathlineto{\pgfqpoint{1.981175in}{0.970370in}}%
-\pgfpathquadraticcurveto{\pgfqpoint{1.981175in}{0.998148in}}{\pgfqpoint{1.953397in}{0.998148in}}%
+\pgfpathlineto{\pgfqpoint{1.975774in}{0.569136in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{2.003551in}{0.569136in}}{\pgfqpoint{2.003551in}{0.596913in}}%
+\pgfpathlineto{\pgfqpoint{2.003551in}{0.970370in}}%
+\pgfpathquadraticcurveto{\pgfqpoint{2.003551in}{0.998148in}}{\pgfqpoint{1.975774in}{0.998148in}}%
 \pgfpathlineto{\pgfqpoint{0.720371in}{0.998148in}}%
 \pgfpathquadraticcurveto{\pgfqpoint{0.692593in}{0.998148in}}{\pgfqpoint{0.692593in}{0.970370in}}%
 \pgfpathlineto{\pgfqpoint{0.692593in}{0.596913in}}%
@@ -859,7 +859,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.137038in,y=0.845370in,left,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont sliced images}%
+\pgftext[x=1.137038in,y=0.845370in,left,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Sliced images}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -876,7 +876,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.137038in,y=0.651697in,left,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont big images}%
+\pgftext[x=1.137038in,y=0.651697in,left,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Big images}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
