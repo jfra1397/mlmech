@@ -10,11 +10,11 @@ image_extension = ".png"
 mask_extension = ".png"
 img_size = (256, 256, 3)
 batch_size = 16
-horizontal_split = 12 #1
+horizontal_split = 12
 vertical_split = 1
 val_split = 0.1
 seed = 42
-onelabel = True
+onelabel = False
 shift = False
 single_img = False
 
@@ -64,7 +64,7 @@ loss = jaccard_distance_loss
 
 
 
-epochs=50
+epochs=30
 steps_per_epoch=20
 callback = None
 #from tensorflow.keras.callbacks import EarlyStopping

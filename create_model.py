@@ -330,27 +330,33 @@ def generate_model(img_size): #,onelabel):
 ########################################################
 ################################## KerasModel
 # Adanced Decoder Structure Approach:
-    # x = encoder.layers[-1].output
-    # f = [16,32,64,128,256]
-    # ####### Layer i #######
-    # for i in range(len(f)):
-    #     dUp = UpSampling2D(size=(2, 2))(x)
-    #     dUp = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(dUp)
-    #     dUp = BatchNormalization()(dUp)
-    #     dUp = Activation("selu")(dUp)
+    encoder = tf.keras.applications.MobileNetV2(include_top=False, weights='imagenet', input_shape=(img_size), classifier_activation=None)
+    encoder.trainable = False
+    skip_connection_names = ["input_image", "block_1_expand_relu", "block_3_expand_relu", "block_6_expand_relu", "block_13_expand_relu"]
+    # x = encoder.get_layer(skip_connection_names[4]).output
+    # f = [32,64,128,256]
+    # d = [16,16,32,48]
+    x = encoder.layers[-1].output
+    f = [16,32,64,128,256]
+    d = [16,16,32,48,64]
+    ####### Layer i #######
+    for i in range(len(f)):
+        dUp = UpSampling2D(size=(2, 2))(x)
+        dUp = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(dUp)
+        dUp = BatchNormalization()(dUp)
 
-    #     x = Conv2DTranspose(f[i], (3, 3), strides=2, activation="selu", padding="same")(x)
-    #     x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
-    #     x = Conv2D(16, kernel_size=(3, 3),activation='selu',padding='same')(x)
-    #     x = BatchNormalization()(x)
-    #     x = add([x,dUp])
-    #     x = Activation("selu")(x)
-    #     x = Dropout(0.3)(x)
+        x = Conv2DTranspose(f[i], (3, 3), strides=2, activation="selu", padding="same")(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(x)
+        x = BatchNormalization()(x)
+
+        x = add([x,dUp])
+        x = Activation("selu")(x)
         
-    # #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(x)
-    # c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(x)
-    # output =c5
-    # model = Model(inputs=encoder.inputs, outputs=output)
+    #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(x)
+    c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(x)
+    output =c5
+    model = Model(inputs=encoder.inputs, outputs=output)
 ########################################################
 ########## U-NET ARCHITECUTRE ##########################
     
