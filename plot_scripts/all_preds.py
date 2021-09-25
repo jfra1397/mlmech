@@ -2,16 +2,16 @@ import matplotlib.pyplot as plt
 from matplotlib import image
 import numpy as np
 
-figure_width = 5.5*2
-latex_export = False
-pdf_export = True
+figure_width = 5.5
+latex_export = True
+pdf_export = False
 test = latex_export and pdf_export
 assert(not test)
 
 
 imgs = [0,1,2]
 plot_types = ["Encoder_sC", "Encoder_mC", "AdvancedDecoder", "BigUnet", "UnetJaccard"]
-plot_types = ["FinalNet"]
+plot_types = ["UnetJaccard"]
 
 for plot_type in plot_types:
 

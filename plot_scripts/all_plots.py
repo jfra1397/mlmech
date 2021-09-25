@@ -5,7 +5,7 @@ import sys
 
 ######## Settings ########
 max_los = 0.3 # 1.2
-latex_export = False
+latex_export = True
 pdf_export = False
 test = latex_export and pdf_export
 assert(not test)
@@ -19,7 +19,7 @@ plot_types = ["EncoderA", "EncoderB", "UnetA", "UnetB", "UnetC", "UnetD", "Decod
 ##plot single
 #plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 #plot_types = ["EncoderA","EncoderB","EncoderC","EncoderD"] #A, B, C or D
-plot_types = ["FinalNet", "FinalNetFineTuning"] #A, B, C or D
+plot_types = ["UnetJaccard"] #A, B, C or D
 #plot_types = ["UnetA", "UnetB", "UnetD"] #A, B, C or D
 
 for plot_type in plot_types:
@@ -175,8 +175,8 @@ for plot_type in plot_types:
         label = ["Jaccard Distance", "Binary Crossentropy"]
         hist_type = ["dice_metric", "val_dice_metric"]
         ylabel = r'metric'
-        loc1 = 3
-        loc2 = 1
+        loc1 = 4
+        loc2 = 5
         max_los = 1
     
     elif plot_type == "FinalNet":
