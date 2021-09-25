@@ -2,18 +2,18 @@ import matplotlib.pyplot as plt
 from matplotlib import image
 import numpy as np
 
-vmax = 2 # 1 ####single(1) oder multiclass(2)
+vmax = 1 # 1 ####single(1) oder multiclass(2)
 figure_width = 5.5
-latex_export = True
-output_path = "plots/predictions/advanced_decoder/MC/MNV2_MC_AddedLayer.pgf"
+latex_export = False
+output_path = "plots/predictions/advanced_decoder/SC/MNV2_MC_AddedLayer2.pgf"
 
-img_path = "plots/predictions/advanced_decoder/MC"
+img_path = "plots/predictions/advanced_decoder/SC"
 
-nets = ["MobileNetV2_MC_AddDropout", "MobileNetV2_MC_KerasModel","MobileNetV2_MC_AddTranspose"]
+nets = ["MobileNetV2_SC_AddDropout","MobileNetV2_SC_AddTranspose", "MobileNetV2_SC_advanced_decoder_2"]
 imgs = [0,1,2]
 
 
-titles = ["Image", "Mask"] + ["Dropout", "KerasModel","Transpose"]
+titles = ["Image", "Mask"] + ["Dropout","Transpose","Advanced"]
 
 
 if latex_export:

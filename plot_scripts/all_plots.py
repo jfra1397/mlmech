@@ -14,12 +14,18 @@ lw = 1
 #plot_types = ["EncoderA", "EncoderB", "EncoderC", "EncoderD", "UnetA", "UnetB", "UnetC", "UnetD", "DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 ##plot single
 #plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
-plot_types = ["EncoderA","EncoderB","EncoderC","EncoderD"] #A, B, C or D
+#plot_types = ["EncoderA","EncoderB","EncoderC","EncoderD"] #A, B, C or D
 #plot_type = ["UnetD"] #A, B, C or D
-#plot_types = ["DecoderE"] #A, B, C or D
+plot_types = ["DecoderF","DecoderG"] #A, B, C or D
 
 
 for plot_type in plot_types:
+    try:
+        max_epochs
+    except NameError:
+        max_epochs= None
+    if max_epochs is not None:
+        max_epochs = None
     if plot_type == "EncoderA":
         path_list = ["results/lena/mobilenetV2/multiLabel/standard",
                     "results/julian/vgg16_1",
@@ -134,6 +140,27 @@ for plot_type in plot_types:
                         "results/samuel/MobileNetV2_SC_KerasModel"]
         output_path = "plots/losses/Decoder_nS_SC_AddedLayer_50epochs.pgf"
         label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Keras Model']
+        loc1 = 1
+        loc2 = 3
+
+    elif plot_type == "DecoderF":
+        path_list = ["results/samuel/MobileNetV2_MC_AddUpsampling",
+                        "results/samuel/MobileNetV2_MC_AddTranspose",
+                        "results/samuel/MobileNetV2_MC_AddDropout",
+                        "results/samuel/MobileNetV2_MC_advanced_decoder_2"]
+        output_path = "plots/losses/Decoder_nS_MC_AddedLayer2_50epochs.pgf"
+        label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Advanced Decoder']
+        loc1 = 1
+        loc2 = 3
+
+    elif plot_type == "DecoderG":
+        max_epochs = 30
+        path_list = ["results/samuel/MobileNetV2_SC_AddUpsampling",
+                        "results/samuel/MobileNetV2_SC_AddTranspose",
+                        "results/samuel/MobileNetV2_SC_AddDropout",
+                        "results/samuel/MobileNetV2_SC_advanced_decoder_2"]
+        output_path = "plots/losses/Decoder_nS_SC_AddedLayer2_30epochs.pgf"
+        label = ['Add Upsampling', 'Add Conv2DTranspose', 'Add Dropout', 'Advanced Decoder']
         loc1 = 1
         loc2 = 3
 

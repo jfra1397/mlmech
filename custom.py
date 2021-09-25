@@ -14,7 +14,7 @@ horizontal_split = 12
 vertical_split = 1
 val_split = 0.1
 seed = 42
-onelabel = False
+onelabel = True
 shift = False
 single_img = False
 
@@ -57,8 +57,8 @@ def dice_metric(y_pred, y_true):
     return 2*intersection / union
 
 import tensorflow.keras.losses as losses
-loss = losses.SparseCategoricalCrossentropy()
-#oss = losses.BinaryCrossentropy()
+#loss = losses.SparseCategoricalCrossentropy()
+loss = losses.BinaryCrossentropy()
 #loss = jaccard_distance
 #loss = jaccard_distance_loss
 
@@ -79,4 +79,4 @@ callback = None
 
 
 #RESULTS
-dir_name = "results/samuel/MobileNetV2_MC_advanced_decoder_2"
+dir_name = "results/samuel/MobileNetV2_SC_advanced_decoder_2"

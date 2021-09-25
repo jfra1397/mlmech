@@ -342,19 +342,23 @@ def generate_model(img_size): #,onelabel):
     ####### Layer i #######
     for i in range(len(f)):
         dUp = UpSampling2D(size=(2, 2))(x)
-        dUp = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(dUp)
+        dUp = Conv2D(d[-i], kernel_size=(3, 3),padding='same')(dUp)
         dUp = BatchNormalization()(dUp)
+        dUp = Activation("selu")(dUp)
 
         x = Conv2DTranspose(f[i], (3, 3), strides=2, activation="selu", padding="same")(x)
-        x = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(x)
-        x = Conv2D(d[-i], kernel_size=(3, 3),activation='selu',padding='same')(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),padding='same')(x)
         x = BatchNormalization()(x)
+        x = Activation("selu")(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),padding='same')(x)
+        x = BatchNormalization()(x)
+        x = Activation("selu")(x)
 
         x = add([x,dUp])
         x = Activation("selu")(x)
         
-    #c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(x)
-    c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(x)
+    c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(x)
+    #c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(x)
     output =c5
     model = Model(inputs=encoder.inputs, outputs=output)
 ########################################################
