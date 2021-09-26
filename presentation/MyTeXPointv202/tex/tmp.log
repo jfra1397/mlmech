@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2021.3.12)  26 SEP 2021 12:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2021.3.12)  26 SEP 2021 23:18
 entering extended mode
 **./tmp.tex
 (tmp.tex
@@ -172,12 +172,12 @@ LaTeX Font Info:    ... okay on input line 3.
 ]
 (tmp.aux) ) 
 Here is how much of TeX's memory you used:
- 2088 strings out of 493313
- 26177 string characters out of 3138931
+ 2086 strings out of 493313
+ 26151 string characters out of 3138931
  86571 words of memory out of 3000000
- 5646 multiletter control sequences out of 15000+200000
- 4237 words of font info for 16 fonts, out of 3000000 for 9000
+ 5643 multiletter control sequences out of 15000+200000
+ 4544 words of font info for 17 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,5n,26p,245b,134s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,5n,26p,245b,130s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on tmp.dvi (1 page, 444 bytes).
+Output written on tmp.dvi (1 page, 416 bytes).
