@@ -19,7 +19,7 @@ ylabel = r'Loss'
 ##plot single
 #plot_types = ["DecoderA", "DecoderB", "DecoderC", "DecoderD", "DecoderE"]
 #plot_types = ["EncoderA","EncoderB","EncoderC","EncoderD"] #A, B, C or D
-plot_types = ["UnetD", "FinalNet", "FinalNetFineTuning"] #A, B, C or D
+plot_types = ["FinalNetFineTuning"] #A, B, C or D
 #plot_types = ["UnetA", "UnetB", "UnetD"] #A, B, C or D
 
 for plot_type in plot_types:
@@ -245,7 +245,7 @@ for plot_type in plot_types:
 
     fig, ax = plt.subplots()
     if latex_export:
-        fig.set_size_inches(w=5, h=3)
+        fig.set_size_inches(w=5, h=2)
     if pdf_export:
         fig.set_size_inches(w=5, h=3)
     ax.set_xlabel(r'Epochs')

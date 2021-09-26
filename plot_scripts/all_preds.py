@@ -4,13 +4,14 @@ import numpy as np
 
 figure_width = 5.5
 latex_export = False
-pdf_export = False
+pdf_export = True
 test = latex_export and pdf_export
 assert(not test)
 
 
 imgs = [0,1,2]
 plot_types = ["Encoder_sC", "Encoder_mC", "AdvancedDecoder_SC", "AdvancedDecoder_MC", "BigUnet", "UnetJaccard"]
+plot_types = ["BigUnet_mC"]
 #plot_types = ["AdvancedDecoder_SC", "AdvancedDecoder_MC"]
 
 for plot_type in plot_types:
@@ -48,7 +49,7 @@ for plot_type in plot_types:
         output_path = "plots/predictions/unet_sliced_big_mC"
         img_path = "plots/predictions/unet/plot2"
         nets = ["Big_images_mC", "Sliced_images"]
-        titles = ["Image", "Mask"] + ["big images", "sliced images"]
+        titles = ["Image", "Mask"] + ["big\nimages", "sliced\nimages"]
         horizontal = [3,7,1]
     
     elif plot_type == "UnetJaccard":
