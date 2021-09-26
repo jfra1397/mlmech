@@ -1,136 +1,116 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7200 64-bit) (preloaded format=latex 2021.2.8)  18 FEB 2021 12:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2021.3.12)  26 SEP 2021 09:11
 entering extended mode
 **./tmp.tex
 (tmp.tex
-LaTeX2e <2019-10-01> patch level 1
-(Main.tex
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\a
-rticle.cls"
-Document Class: article 2019/08/27 v1.4j Standard LaTeX document class
-
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/base\s
-ize12.clo"
-File: size12.clo 2019/08/27 v1.4j Standard LaTeX file (size option)
+LaTeX2e <2017-04-15>
+Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
+(Main.tex ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count80
-\c@section=\count81
-\c@subsection=\count82
-\c@subsubsection=\count83
-\c@paragraph=\count84
-\c@subparagraph=\count85
-\c@figure=\count86
-\c@table=\count87
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babe
-l\babel.sty"
-Package: babel 2019/10/15 3.35 The Babel package
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2017/11/03 3.15 The Babel package
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babe
-l\switch.def"
-File: switch.def 2019/10/15 3.35 Babel switching mechanism
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
+File: switch.def 2017/11/03 3.15 Babel switching mechanism
 )
 *************************************
 * Local config file bblopts.cfg used
 *
-
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/arabi\
-bblopts.cfg"
+(C:\Users\Sam\AppData\Roaming\MiKTeX\2.9\tex\latex\arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-
-german\german.ldf"
-Language: german 2018/12/08 v2.11 German support for babel (pre-1996 orthograph
-y)
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\german.ldf"
+Language: german 2016/11/02 v2.9 German support for babel (traditional orthogra
+phy)
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/babel-
-german\germanb.ldf"
-Language: germanb 2018/12/08 v2.11 German support for babel (pre-1996 orthograp
-hy)
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\germanb.ldf"
+Language: germanb 2016/11/02 v2.9 German support for babel (traditional orthogr
+aphy)
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babe
-l\babel.def"
-File: babel.def 2019/10/15 3.35 Babel common definitions
-\babel@savecnt=\count88
-\U@D=\dimen103
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2017/11/03 3.15 Babel common definitions
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/generic/babe
-l\txtbabel.def")
-\bbl@dirlevel=\count89
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
+File: switch.def 2017/11/03 3.15 Babel switching mechanism
 )
-Package babel Info: Making " an active character on input line 135.
+\babel@savecnt=\count87
+\U@D=\dimen103
+)
+Package babel Info: Making " an active character on input line 139.
 )))
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/cancel
-\cancel.sty"
+(C:\Users\Sam\AppData\Roaming\MiKTeX\2.9\tex\latex\cancel\cancel.sty
 Package: cancel 2013/04/12 v2.2 Cancel math terms
 )
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfon
-ts\amssymb.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsfon
-ts\amsfonts.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks14
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmat
-h\amsmath.sty"
-Package: amsmath 2019/04/01 v2.17c AMS math features
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmat
-h\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
 Package: amstext 2000/06/29 v2.01 AMS text
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmat
-h\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen104
 ))
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmat
-h\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen105
 )
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/amsmat
-h\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count90
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count91
-\leftroot@=\count92
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count93
-\DOTSCASE@=\count94
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box27
-\strutbox@=\box28
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
 \big@size=\dimen106
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count95
-\c@MaxMatrixCols=\count96
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
 \dotsspace@=\muskip10
-\c@parentequation=\count97
-\dspbrk@lvl=\count98
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
 \tag@help=\toks16
-\row@=\count99
-\column@=\count100
-\maxfields@=\count101
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
 \andhelp@=\toks17
 \eqnshift@=\dimen107
 \alignsep@=\dimen108
@@ -142,41 +122,33 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \multlinegap=\skip44
 \multlinetaggap=\skip45
 \mathdisplay@stack=\toks19
-LaTeX Info: Redefining \[ on input line 2855.
-LaTeX Info: Redefining \] on input line 2856.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphi
-cs\color.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\color.sty"
 Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphi
-cs-cfg\color.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package color Info: Driver file: dvips.def on input line 147.
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphi
-cs-def\dvips.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\dvips.def"
 File: dvips.def 2017/06/20 v3.1d Graphics/color driver for dvips
 )
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/graphi
-cs\dvipsnam.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\dvipsnam.def"
 File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ))
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/colort
-bl\colortbl.sty"
-Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+(C:\Users\Sam\AppData\Roaming\MiKTeX\2.9\tex\latex\colortbl\colortbl.sty
+Package: colortbl 2020/01/04 v1.0e Color table columns (DPC)
 
-("C:\Users\Julian Franquinet\AppData\Local\Programs\MiKTeX 2.9\tex/latex/tools\
-array.sty"
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2016/10/06 v2.4d Tabular extension package (FMi)
 \col@sep=\dimen113
-\ar@mcellbox=\box29
 \extrarowheight=\dimen114
 \NC@list=\toks20
 \extratabsurround=\skip46
 \backup@length=\skip47
-\ar@cellbox=\box30
 )
 \everycr=\toks21
 \minrowclearance=\skip48
@@ -195,16 +167,33 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
- [1
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <24.88> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+[]\OT1/cmr/m/n/24.88 Wrong clas-si-fi-
+ []
+
+
+Underfull \hbox (badness 2452) in paragraph at lines 10--11
+\OT1/cmr/m/n/24.88 ca-ti-on of back-
+ []
+
+[1
 
 ] (tmp.aux) ) 
 Here is how much of TeX's memory you used:
- 2372 strings out of 492454
- 30456 string characters out of 3114497
- 100654 words of memory out of 3000000
- 6739 multiletter control sequences out of 15000+200000
- 4237 words of font info for 16 fonts, out of 3000000 for 9000
+ 2102 strings out of 493313
+ 26436 string characters out of 3138931
+ 86571 words of memory out of 3000000
+ 5657 multiletter control sequences out of 15000+200000
+ 4494 words of font info for 17 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 33i,5n,33p,236b,126s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,5n,26p,245b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on tmp.dvi (1 page, 428 bytes).
+Output written on tmp.dvi (1 page, 588 bytes).
