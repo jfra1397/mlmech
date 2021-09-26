@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 
-latex_export = True
+latex_export = False
+pdf_export = True
 
 labels_encoder = ["MobileNetV2", "VGG16", "ResNet50V2", "U-Net", "Final-Net"]
 speed_encoder = [16.13, 62.94, 72.84, 14.56, 57.77]
@@ -21,6 +22,15 @@ if latex_export:
         'pgf.rcfonts': False,
     })
 
+if pdf_export:
+        import matplotlib
+        matplotlib.rcParams.update({
+            'font.family': 'serif',
+            #'text.usetex': True,
+            'font.size': 12,
+                    })
+
+
 fig, ax = plt.subplots()
 fig.set_size_inches(w=5, h=2)
 #ax.set_ylabel(r'Speed [ms]', fontsize=10)
@@ -33,6 +43,8 @@ ax.invert_yaxis()
 ax.xaxis.grid(zorder=0)
 if latex_export:
     plt.savefig("plots/speed/encoder.pgf",bbox_inches='tight')
+if pdf_export:
+    plt.savefig("plots/speed/encoder.svg" + ".svg",bbox_inches='tight', transparent=True)
 else:
     plt.show()
 
@@ -47,5 +59,7 @@ ax.xaxis.grid(zorder=0)
 ax.legend()
 if latex_export:
     plt.savefig("plots/speed/unet.pgf",bbox_inches='tight')
+if pdf_export:
+    plt.savefig("plots/speed/unet.svg" + ".svg",bbox_inches='tight', transparent=True)
 else:
     plt.show()
