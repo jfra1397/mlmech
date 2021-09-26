@@ -4,14 +4,14 @@ import numpy as np
 
 figure_width = 5.5
 latex_export = False
-pdf_export = True
+pdf_export = False
 test = latex_export and pdf_export
 assert(not test)
 
 
 imgs = [0,1,2]
-#plot_types = ["Encoder_sC", "Encoder_mC", "AdvancedDecoder", "BigUnet", "UnetJaccard"]
-plot_types = ["AdvancedDecoder_SC", "AdvancedDecoder_MC"]
+plot_types = ["Encoder_sC", "Encoder_mC", "AdvancedDecoder_SC", "AdvancedDecoder_MC", "BigUnet", "UnetJaccard"]
+#plot_types = ["AdvancedDecoder_SC", "AdvancedDecoder_MC"]
 
 for plot_type in plot_types:
 

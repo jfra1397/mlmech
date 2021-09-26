@@ -1,13 +1,14 @@
 \input{Main.tex}
 \pagestyle{empty}
-\begin{document}  
-\begin{minipage}[t]{7cm}
-\rm
-\color{sblue}
-\begin{itemize}
-\Huge
-\item \color{black}
-Wrong classification of background
-\end{itemize}
-\end{minipage}
+\begin{document}
+\begin{tabular}{|l||c|} 
+ \hline
+ Loss & SCCE \\
+ Shift & False \\
+ MultiClass & Ture \\
+ EarlyStopping & False \\
+ Epochs & 50 \\
+ ImageSize & sliced \\
+ \hline
+\end{tabular}
 \end{document}

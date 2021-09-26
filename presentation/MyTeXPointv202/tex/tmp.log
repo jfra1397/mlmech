@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2021.3.12)  26 SEP 2021 09:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=latex 2021.3.12)  26 SEP 2021 11:18
 entering extended mode
 **./tmp.tex
 (tmp.tex
@@ -167,33 +167,25 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
 LaTeX Font Info:    ... okay on input line 3.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 9.
+LaTeX Font Info:    Try loading font information for U+msa on input line 4.
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <24.88> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 9.
+LaTeX Font Info:    Try loading font information for U+msb on input line 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 10--11
-[]\OT1/cmr/m/n/24.88 Wrong clas-si-fi-
- []
-
-
-Underfull \hbox (badness 2452) in paragraph at lines 10--11
-\OT1/cmr/m/n/24.88 ca-ti-on of back-
- []
-
-[1
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 ] (tmp.aux) ) 
 Here is how much of TeX's memory you used:
- 2102 strings out of 493313
- 26436 string characters out of 3138931
- 86571 words of memory out of 3000000
- 5657 multiletter control sequences out of 15000+200000
- 4494 words of font info for 17 fonts, out of 3000000 for 9000
+ 2124 strings out of 493313
+ 26708 string characters out of 3138931
+ 87571 words of memory out of 3000000
+ 5664 multiletter control sequences out of 15000+200000
+ 8285 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 29i,5n,26p,245b,246s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,7n,26p,245b,124s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on tmp.dvi (1 page, 588 bytes).
+Output written on tmp.dvi (1 page, 908 bytes).
