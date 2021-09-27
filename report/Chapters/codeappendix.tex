@@ -1,0 +1,368 @@
+\cleardoublepage
+\section*{Appendices}
+\addcontentsline{toc}{section}{Appendices}
+\renewcommand{\thesubsection}{\Alph{subsection}}
+\subsection{Parameter Summary of All Architectures}
+\begin{center}
+\begin{tabular}{|l||c|c|}
+ \hline
+ \makecell[c]{ Model} & Total parameter & Trainable parameter\\ 
+ \hline\hline
+ \multicolumn{3}{|c|}{\textbf{Simpler Decoder Architecture}}\\
+ \hline
+ MobileNetV2 & 2.356.011 & 98.027\\
+ VGG16 & 14.757.419 & 42.731\\ 
+ ResNet50V2 & 23.718.123 & 153.323\\ 
+ \hline
+ \multicolumn{3}{|c|}{\textbf{SegNet Architecture}}\\
+ \hline
+ SegNet & 261.263 & 260.361\\
+ \hline
+ \multicolumn{3}{|c|}{\textbf{U-Net Architecture}}\\
+ \hline
+ U-Net Complexity = 3& 141.475 & 141.475\\
+ U-Net Complexity = 4& 484.115 & 484.115\\
+ U-Net Complexity = 5& 1.757.835 & 1.757.835\\
+ U-Net Complexity = 5; big images& 1.757.835 & 1.757.835\\
+ \hline
+ \multicolumn{3}{|c|}{\textbf{Advanced Decoder Architecture}}\\
+ \hline
+ Added Upsampling & 2.451.907 & 193.795\\
+ Added Transpose & 2.549.891 & 291.779\\
+ Added Dropout & 2.549.891 & 291.779\\
+ Advanced Decoder & 3.049.139 & 790.099\\
+ \hline
+ \multicolumn{3}{|c|}{\textbf{Final Model Architecture}}\\
+ \hline
+ \makecell[l]{U-Net out of a\\MobileNetV2} & 1.095.604 & 479.348\\
+ \hline
+\end{tabular}\label{tab:ParameterSummary}
+\end{center}
+\captionof{table}{Listing of all models in this project with their total amount of parameters and the amount of trainable parameters. In this table only multi-classification models are taken into account.}
+\newpage
+\subsection{Algorithms}
+\begin{lstlisting}[caption={Simplified Decoder}, captionpos=b, label={lst:simpleDecoder}]
+def generate_model(img_size, multiclass = True):
+    
+    encoder = MobileNetV2(include_top=False, weights='imagenet',
+                                            input_shape=(img_size),
+                                            classifier_activation=None)
+    encoder.trainable = False
+
+    d1 = UpSampling2D(size=(2, 2))(encoder.layers[-1].output)
+    c1 = Conv2D(8, kernel_size=(3, 3), activation='selu',padding='same')(d1)
+    d2 = UpSampling2D(size=(2, 2))(c1)
+    c2 = Conv2D(16, kernel_size=(3, 3), activation='selu',padding='same')(d2)
+    d3 = UpSampling2D(size=(2, 2))(c2)
+    c3 = Conv2D(16, kernel_size=(3, 3), activation='selu',padding='same')(d3)
+    d4 = UpSampling2D(size=(2, 2))(c3)
+    c4 = Conv2D(16, kernel_size=(3, 3), activation='selu',padding='same')(d4)
+    d5 = UpSampling2D(size=(2, 2))(c4)
+    
+    if mutliclass:
+        c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax',padding='same')(d5)
+    else:
+        c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid',padding='same')(d5)
+    
+    output = c5
+
+    model = Model(inputs=encoder.inputs, outputs=output)
+    return model
+\end{lstlisting}
+\begin{lstlisting}[caption={Jaccard Distance },label={lst:jaccard},captionpos=b]
+def jaccard_distance_loss(y_true, y_pred, smooth=100):
+
+    intersection = K.sum(K.abs(y_true * y_pred), axis=-1)
+    sum_ = K.sum(K.abs(y_true) + K.abs(y_pred), axis=-1)
+    jac = (intersection + smooth) / (sum_ - intersection + smooth)
+    
+    return (1 - jac) * smooth
+\end{lstlisting}
+\begin{lstlisting}[caption={Dice Metric},label={lst:dice_metric},captionpos=b]
+def dice_metric(y_pred, y_true):
+    intersection = K.sum(K.sum(K.abs(y_true * y_pred), axis=-1))
+    union = K.sum(K.sum(K.abs(y_true) + K.abs(y_pred), axis=-1))
+
+    return 2*intersection / union
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[caption={Simplified SegNet}, label={lst:segnet}, captionpos=b]
+def create_segnet(img_size, num_filters, multiclass = True):
+
+    inputs = Input(shape=img_size)
+    
+    # Encoder
+    conv_1 = Convolution2D(num_filters, (3, 3), padding="same",                               kernel_initializer='he_normal')(inputs)
+    conv_1 = BatchNormalization()(conv_1)
+    conv_1 = Activation("relu")(conv_1)
+    pool_1, mask_1 = MaxPoolingWithIndices2D(pool_size=(2, 2))(conv_1)
+    ### Add two equivalent blocks ###
+    conv_4 = Convolution2D(4 * num_filters, (3, 3), padding="same", kernel_initializer='he_normal')(pool_3)
+    conv_4 = BatchNormalization()(conv_4)
+    conv_4 = Activation("relu")(conv_4)
+    pool_4, mask_4 = MaxPoolingWithIndices2D(pool_size=(2, 2))(conv_4)
+
+    # Decoder
+    unpool_1 = MaxUnpoolingWithIndices2D(size=(2, 2))([pool_4, mask_4])
+    conv_5 = Convolution2D(2 * num_filters, (3, 3), padding="same", kernel_initializer='he_normal')(unpool_1)
+    conv_5 = BatchNormalization()(conv_5)
+    conv_5 = Activation("relu")(conv_5)
+    unpool_2 = MaxUnpoolingWithIndices2D(size=(2, 2))([conv_5, mask_3])
+    ### Add two equivalent blocks ###
+    conv_8 = Convolution2D(n_labels, (1, 1), padding="same", kernel_initializer='he_normal')(unpool_4)
+    conv_8 = BatchNormalization()(conv_8)
+    outputs = Activation(output_mode)(conv_8)   
+    
+    # Classification
+    if multiclass:
+        outputs = Activation("softmax")(conv_8)
+    else:
+        outputs = Activation("sigmoid")(conv_8)
+    
+    # Model creation
+    segnet = Model(inputs=inputs, outputs=outputs)
+    
+    return segnet
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[caption={U-Net},label={lst:unet},captionpos=b]
+def generate_model(img_size, complexity, multiclass = True):
+
+    x = Input((img_size))
+    inputs = x
+
+    # Encoder
+    f = 8
+    layers = []
+
+    for i in range(0, complexity):
+        x = Conv2D(f, 3, activation='relu', padding='same')(x)
+        x = Conv2D(f, 3, activation='relu', padding='same')(x)
+        layers.append(x)
+        x = MaxPooling2D()(x)
+        f = f*2
+    ff2 = 64 
+
+    # Bottleneck 
+    j = len(layers) - 1
+    x = Conv2D(f, 3, activation='relu', padding='same')(x)
+    x = Conv2D(f, 3, activation='relu', padding='same')(x)
+    x = Conv2DTranspose(ff2, 2, strides=(2, 2),
+                        padding='same')(x)
+    x = Concatenate(axis=3)([x, layers[j]])
+    j = j -1 
+
+    # Decoder 
+    for i in range(0, complexity-1):
+        ff2 = ff2//2
+        f = f // 2 
+        x = Conv2D(f, 3, activation='relu', padding='same')(x)
+        x = Conv2D(f, 3, activation='relu', padding='same')(x)
+        x = Conv2DTranspose(ff2, 2, strides=(2, 2),
+                            padding='same')(x)
+        x = Concatenate(axis=3)([x, layers[j]])
+        j = j -1 
+
+    # Classification
+    if multiclass:
+        outputs = Conv2D(3, 1, activation='softmax')(x)
+    else:
+        outputs = Conv2D(1, 1, activation='sigmoid')(x)
+
+    # Model creation 
+    model = Model(inputs=[inputs], outputs=[outputs])
+
+    return model
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[caption={Advanced Decoder}, label={lst:Decoder-AdvancedDecoder}, captionpos=b]
+def generate_model(img_size, multiclass = True):
+    # Encoder
+    encoder = MobileNetV2(include_top=False, weights='imagenet',
+                                    input_shape=(img_size),
+                                    classifier_activation=None)
+    encoder.trainable = False
+    x = encoder.layers[-1].output
+
+    # Decoder
+    f = [16,32,64,128,256]
+    d = [16,16,32,48,64]
+    for i in range(len(f)):
+        dUp = UpSampling2D(size=(2, 2))(x)
+        dUp = Conv2D(d[-i], kernel_size=(3, 3),padding='same')(dUp)
+        dUp = BatchNormalization()(dUp)
+        dUp = Activation("selu")(dUp)
+        x = Conv2DTranspose(f[i], (3, 3), strides=2, activation="selu", padding="same")(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),padding='same')(x)
+        x = BatchNormalization()(x)
+        x = Activation("selu")(x)
+        x = Conv2D(d[-i], kernel_size=(3, 3),padding='same')(x)
+        x = BatchNormalization()(x)
+        x = Activation("selu")(x)
+        x = add([x,dUp])
+        x = Activation("selu")(x)
+    
+    # Classification
+    if multiclass == True:
+        c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax',padding='same')(x)
+    else:
+        c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid',padding='same')(x)
+    output =c5
+    
+    # Model creation
+    model = Model(inputs=encoder.inputs, outputs=output)
+    
+    return model
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[caption={Advanced Decoder with Dropout},captionpos=b, label={lst:Decoder-Dropout}]
+def generate_model(img_size, multiclass = True):
+    # Encoder
+    encoder = tf.keras.applications.MobileNetV2(include_top=False, 
+                            weights='imagenet', input_shape=(img_size),
+                            classifier_activation=None)
+    encoder.trainable = False
+    x = Conv2D(16, kernel_size=(3, 3), activation='selu',
+                            padding='same')(encoder.layers[-1].output)
+    
+    # Decoder
+    f = [16,32,64,128,256]
+    for i in range(len(f)):
+        dUp = UpSampling2D(size=(2, 2))(x)
+        x = Conv2DTranspose(16, (3, 3), strides=2, activation="selu", padding="same")(x)
+        x = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(x)
+        x = add([x,dUp])
+        x = Activation("selu")(x)
+        x = BatchNormalization()(x)
+        x = Dropout(0.3)(x)
+    d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(x)
+    
+    # Classification
+    if multiclass == True:
+        c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    else:
+        c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    output =c5
+    
+    # Model creation
+    model = Model(inputs=encoder.inputs, outputs=output)
+    
+    return model
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[caption={Advanced Decoder with Upsampling},captionpos=b, label={lst:Decoder-Upsampling}]
+def generate_model(img_size, multiclass = True):
+    # Encoder
+    encoder = tf.keras.applications.MobileNetV2(include_top=False, 
+                            weights='imagenet', input_shape=(img_size),
+                            classifier_activation=None)
+    encoder.trainable = False
+    x = Conv2D(16, kernel_size=(3, 3), activation='selu',
+                            padding='same')(encoder.layers[-1].output)
+    
+    # Decoder
+    f = [16,32,64,128,256]
+    for i in range(len(f)):
+        dUp = UpSampling2D(size=(2, 2))(x)
+        x = UpSampling2D(size=(2, 2))(x)
+        x = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(x)
+        x = add([x,dUp])
+        x = Activation("selu")(x)
+        x = BatchNormalization()(x)
+        x = Dropout(0.3)(x)
+    d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(x)
+    
+    # Classification
+    if multiclass == True:
+        c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    else:
+        c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    output =c5
+    
+    # Model creation
+    model = Model(inputs=encoder.inputs, outputs=output)
+    
+    return model
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[caption={Advanced Decoder with Transposed Layer},captionpos=b, label={lst:Decoder-Transpose}]
+def generate_model(img_size, multiclass = True):
+    # Encoder
+    encoder = tf.keras.applications.MobileNetV2(include_top=False, 
+                            weights='imagenet', input_shape=(img_size),
+                            classifier_activation=None)
+    encoder.trainable = False
+    x = Conv2D(16, kernel_size=(3, 3), activation='selu',
+                            padding='same')(encoder.layers[-1].output)
+    
+    # Decoder
+    f = [16,32,64,128,256]
+    for i in range(len(f)):
+        dUp = UpSampling2D(size=(2, 2))(x)
+        x = Conv2DTranspose(16, (3, 3), strides=2, activation="selu", padding="same")(x)
+        x = Conv2D(16, kernel_size=(3, 3), activation='selu', padding='same')(x)
+        x = add([x,dUp])
+        x = Activation("selu")(x)
+        x = BatchNormalization()(x)
+    d5 = Conv2DTranspose(256, (3, 3), strides=2, activation="selu", padding="same")(x)
+    
+    # Classification
+    if multiclass == True:
+        c5 = Conv2D(3, kernel_size=(1, 1), activation='softmax', padding='same')(d5)
+    else:
+        c5 = Conv2D(1, kernel_size=(1, 1), activation='sigmoid', padding='same')(d5)
+    output =c5
+    
+    # Model creation
+    model = Model(inputs=encoder.inputs, outputs=output)
+    
+    return model
+\end{lstlisting}
+\newpage
+\begin{lstlisting}[caption={Final combined version of U-Net with the MobileNetV2},captionpos=b, label ={lst:FinalNet}]
+def generate_model(img_size, multiclass = True):
+    inputs = Input(shape=(img_size), name="input_image")
+    
+    # Encoder
+    encoder = MobileNetV2(include_top=False,
+                            weights='imagenet',
+                            input_tensor=inputs,
+                            classifier_activation=None)
+    encoder.trainable = False
+    skip_connection_names = ["input_image",
+                                "block_1_expand_relu",
+                                "block_3_expand_relu",
+                                "block_6_expand_relu"]
+    encoder_output = encoder.get_layer("block_13_expand_relu").output
+    x = encoder_output
+
+    # Bottleneck 
+    f = 64
+    ff2 = 8
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2D(f, 3, activation='relu', padding='same') (x)
+    x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+    x_skip = encoder.get_layer(skip_connection_names[-1]).output
+    x = Concatenate(axis=3)([x, x_skip])
+
+    # Decoder
+    for i in range(2, 5):
+        ff2 = ff2 * 2
+        f = f // 2 
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2D(f, 3, activation='relu', padding='same') (x)
+        x = Conv2DTranspose(ff2, 2, strides=(2, 2), padding='same') (x)
+        x_skip = encoder.get_layer(skip_connection_names[-i]).output
+        x = Concatenate(axis=3)([x, x_skip])
+
+    # Classification
+    if multiclass:
+        outputs = Conv2D(3, 1, activation='softmax') (x)
+    else:
+        outputs = Conv2D(1, 1, activation='sigmoid') (x)
+
+    # Model creation 
+    model = Model(inputs=[inputs], outputs=[outputs])
+
+    return model
+\end{lstlisting} 

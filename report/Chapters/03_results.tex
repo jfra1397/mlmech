@@ -1,0 +1,227 @@
+\newpage
+\section{Evaluation of the Results}
+\subsection{Pre-trained Encoders with a Simple Decoder}
+In the first investigations, three pre-trained encoders were applied together with a simple decoder architecture. Only the decoder was trained. The \verb|VGG16|, the \verb|MobileNetV2| and the \verb|ResNetV2| were to be tested.\\
+The results for single- \& and multi-classification can be seen in the results plots in \cref{fig:encoder_wS_SC_ES_50} and \cref{fig:encoder_wS_MC_ES_50epochs}. The results were achieved by using an early stopping as \verb|callback| in training and with a shifting of the images in the data generation of the training data.\\
+\begin{minipage}{\textwidth}
+	\input{Images/losses/encoder_wS_SC_ES_50epochs.pgf}
+	\captionof{figure}[Losses of different pre-trained encoders for single-classification]{Losses of different pre-trained encoder for single-classification with training settings: Shift = True; Multi-Class = False; EarlyStopping = True; Epochs = 50; Image size = 256x256}
+	\label{fig:encoder_wS_SC_ES_50}
+	\vspace{5mm}
+\end{minipage}
+\begin{minipage}{\textwidth}
+	\input{Images/losses/encoder_wS_MC_ES_50epochs.pgf}
+	\captionof{figure}[Losses of different pre-trained encoders for multi-classification]{Losses of different pre-trained encoder for multi-classification with training settings: Shift = True; Multi-Class = True; EarlyStopping = True; Epochs = 50; Image size = 256x256}
+	\label{fig:encoder_wS_MC_ES_50epochs}
+	\vspace{5mm}
+\end{minipage}
+It was found that the shifting of the images for data generation could yield more training data, but hindered the CNN to achieve finer results. Also the early stopping ended the training too early, without being sure that convergence of the loss-curve was already reached.\\
+Consequently, another training of the pre-trained encoders was performed with these improvements. The loss-curves for single- ( \cref{fig:encoder_nS_SC_100epochs}) and multi-classification (\cref{fig:encoder_nS_MC_100epochs}) show this improvement of the learning regarding the previous results (\cref{fig:encoder_wS_SC_ES_50}
+\& \cref{fig:encoder_wS_MC_ES_50epochs}).\\
+As one can see in the predictions of these different encoders (in \cref{fig:Predictions_encoder_SC} and \cref{fig:Predictions_encoder_MC}), all three of them performed as weak in the segmentation task here. Although the multi-classification models in \cref{fig:Predictions_encoder_MC} found white planks and the bar-code label relatively accurate, their overall performance is not sufficient for the segmentation task.\\
+For the single-classification models in \cref{fig:Predictions_encoder_SC}, the black plank is poorly detected and the edges are largely blurred.\\
+\begin{minipage}{\textwidth}
+	\input{Images/losses/encoder_nS_SC_100epochs.pgf}
+	\captionof{figure}[Losses of different pre-trained encoder for single-classification]{ Losses of different pre-trained encoder for single-classification with training settings: Shift = False; Multi-Class = False; EarlyStopping = False; Epochs = 100;Image size = 256x256}
+	\label{fig:encoder_nS_SC_100epochs}
+	\hspace{0.6cm}
+	\inputpgf{Images/predictions/}{Prediction_encoder_SC.pgf}
+	\captionof{figure}[Predictions for different encoders for single-classification]{Predictions for different encoders for single-classification with training settings: Shift = True; Multi-Class = False; EarlyStopping = True; Epochs = 50; Image size = 256x256}
+	\label{fig:Predictions_encoder_SC}
+\end{minipage}
+\newpage
+\begin{minipage}{\textwidth}
+	\input{Images/losses/encoder_nS_MC_100epochs.pgf}
+	\captionof{figure}[Losses of different pre-trained encoder for multi-classification]{Losses of different pre-trained encoder for multi-classification with training settings: Shift = False; Multi-Class = True; EarlyStopping = False; Epochs = 100; Image size = 256x256}
+	\label{fig:encoder_nS_MC_100epochs}
+	\hspace{0.6cm}
+	\inputpgf{Images/predictions/}{Prediction_encoder_MC.pgf}
+	\captionof{figure}[Predictions for different encoders for multi-classification]{Predictions for different encoders for multi-classification with training settings: Shift = True; Multi-Class = True; EarlyStopping = True; Epochs = 50; Image size = 256x256}
+	\label{fig:Predictions_encoder_MC}
+	\vspace{5mm}
+\end{minipage}
+
+\subsection{SegNet}\label{subsec:SegNet}
+As one can see from \cref{fig:segnet_preds}, even the simplified version of the SegNet convinces with its ability to accurately detect boundaries. However, relevant boundaries in the background are detected as well, especially in the case of dark-colored planks. This causes the prediction within the homogeneous surfaces to be significantly blurred compared to other architectures considered within this project. 
+\begin{minipage}{\textwidth}
+    \hspace{0.2cm}
+    \inputpgf{Images/predictions/}{segnet.pgf}
+	\captionof{figure}[Predictions of simplified SegNet for ReLU- and SELU-activation]{Predictions of simplified SegNet for ReLU- and SELU-activation with training settings: Shift = False, Multi-Class = False; EarlyStopping = False; Epochs = 50; Image size = 256x256}
+	\label{fig:segnet_preds}
+	\vspace{5mm}
+\end{minipage}
+Despite the use of \verb|ReLU-Activation| in \cite{Badrinarayanan.2017} we considered a replacement by \verb|SELU-Activation|. The respective losses of the training in \cref{fig:segnet_relu_selu} with both activation functions do not indicate significant differences. In the presented images the detection of light-colored planks still seems to be clearer when \verb|SELU| is used.\\
+For the multi-class segmentation task the simplified SegNet does not perform as well as before. However, the loss plot in \cref{fig:segnet_SC_MC} suggests that further training might lead to better results in this case.
+
+\begin{minipage}{\textwidth}
+	\input{Images/losses/segnet_relu_selu.pgf}
+	\captionof{figure}[Loss of simplified SegNet for ReLU- and SELU-activation]{Loss of simplified SegNet for ReLU- and SELU-activation with training settings: Shift = False; Multi-Class = False, EarlyStopping = False; Epochs = 50; Image size = 256x256}
+	\label{fig:segnet_relu_selu}
+	\vspace{5mm}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+	\input{Images/losses/segnet_nS_SC_MC_50epochs.pgf}
+	\captionof{figure}[Loss of simplified SegNet for single- and multi-classification]{Loss of simplified SegNet for single- and multi-classification with ReLU-activation and training settings: Shift = False; Multi-Class = \textbf{x}, EarlyStopping = False; Epochs = 50; Image size = 256x256}
+	\label{fig:segnet_SC_MC}
+	\vspace{5mm}
+\end{minipage}
+
+
+
+
+
+\subsection{U-Net}
+The results of the U-Net architecture differ with a change in complexity regarding \cref{fig:unet_wS_SC_50epochs} and \cref{fig:unet_nS_sC_big} for single-classification. In \cref{lst:unet} it can be seen that the complexity is used as a measure for the applied layer packages in the U-Net.\\
+Small complexities like a complexity of 2 do not seem to manage the training as well as higher complexities like 4 or 5. However, higher complexities (complexity of 6 in \cref{fig:unet_wS_SC_50epochs}) also do not improve the training. So a suitable complexity had to be found. The best results were achieved while using a complexity of 5 as it can be seen in \cref{fig:unet_nS_sC_big} and in \cref{fig:unet_mC_nS_bigandsliced}. Therefore, all the predictions (\cref{fig:Preds_unet_sliced_sC} and \cref{fig:Preds_unet_sliced_big_mC}) are computed using U-Nets of a complexity of 5.\\
+\begin{minipage}{\textwidth}
+\centering
+	\input{Images/losses/unet_wS_SC_50epochs.pgf}
+	\captionof{figure}[Losses of U-Net with different complexities using sliced images for single-classification]{Losses of U-Net with different complexities using sliced images for single-classification with training settings: Shift = True; Multi-Class = False; EarlyStopping = False; Epochs = 50; Complexity = \textbf{x}; Image size = 256x256}
+	\label{fig:unet_wS_SC_50epochs}
+	\vspace{5mm}
+\end{minipage}
+
+\begin{minipage}{\textwidth}
+    \hspace{-0.8cm}
+	\input{Images/losses/unet_nS_SC_20epochs_bigimg.pgf}
+	\captionof{figure}[Losses of U-Net with different complexities using big images for single-classification]{Losses of U-Net with different complexities using big images for single-classification with training settings: Shift = False; Multi-Class = False; EarlyStopping = False; Epochs = 20; Complexity = \textbf{x}; Image size = 256x3072}
+	\label{fig:unet_nS_sC_big}
+	\vspace{5mm}
+\end{minipage}
+Regarding the predictions in \cref{fig:Preds_unet_sliced_big_mC} for multi-classification and in \cref{fig:Preds_unet_sliced_sC} for single-classification, one can see a clear reproduction of the plank, even more precise than the actual mask for the single-classification.\\
+Differences can be found when increasing the complexity. It leads to a visibly stronger consideration of other features in the image, so that is already at a complexity of 6, the U-Net found parts of the conveyor belt system in the background as plank. This may be caused by a strong dependence of the learning on white plates due to a ratio of 3:1 of white to black planks in the data. In addition it might be influenced by the darker background, reinforcing problems with segmentation of the black planks.\\
+\begin{minipage}{\textwidth}
+    \hspace{0.2cm}
+    %\import[Images/predictions]{unet_sliced_sC.pgf}
+    \inputpgf{Images/predictions/}{unet_sliced_sC.pgf}
+	\captionof{figure}[Predictions of U-Net with different complexities]{Predictions of U-Net with different complexities with training settings: Shift = True, Multi-Class = False; EarlyStopping = False; Epochs = 50; Complexity = \textbf{x}; Image size = 256x256}
+	\label{fig:Preds_unet_sliced_sC}
+	\vspace{5mm}
+\end{minipage}
+The results in the loss-curves for the single-classification U-Net in \cref{fig:unet_wS_SC_50epochs} cover the conclusions drawn before from the predictions in \cref{fig:Predictions_encoder_SC}. In the multi-classification (as well as the single-classification) U-Net the predictions are more accurate when the U-Net was trained on big-sized images compared to a U-Net trained on sliced images. This was possible here, because of the self edited architecture of the U-Net that even non-squared images could be processed as input. The additional information that was given by the context of the big-sized image might have led to the better performance of this model, as it can be found in the loss plot in \cref{fig:unet_mC_nS_bigandsliced}.\\
+Regarding the predictions in \cref{fig:Preds_unet_sliced_big_mC} 
+one can see that the segmentation is very precise if the whole big-sized images are used within the U-Net. If sliced images are considered, then the result is significantly worse. \\
+\begin{minipage}{\textwidth}
+	\input{Images/losses/unet_wS_nS_MC_50epochs.pgf}
+	\captionof{figure}[Loss of U-Net with complexity of 5 for multi-classification]{Loss of U-Net with complexity of 5 for multi-classification with training settings: Shift = False; Multi-Class = True; EarlyStopping = False; Epochs = 50; Complexity = 5; Image size = \textbf{x}}
+	\label{fig:unet_mC_nS_bigandsliced}
+	\vspace{5mm}
+\end{minipage}
+\begin{minipage}{\textwidth}
+    \hspace{0.2cm}
+    %\import[Images/predictions]{unet_sliced_sC.pgf}
+    \inputpgf{Images/predictions/}{unet_sliced_big_mC.pgf}
+	\captionof{figure}[Predictions of U-Net with different sizes of images]{Predictions of U-Net with different sizes of images with training settings: Shift = False, Multi-Class = True; EarlyStopping = False; Epochs = 50; Complexity = 5; Image size = \textbf{x}}
+	\label{fig:Preds_unet_sliced_big_mC}
+	\vspace{5mm}
+\end{minipage}
+Further the \verb|jaccard|-loss was implemented in the training of the U-Net (see \cref{lst:jaccard}) and compared to the standard loss \verb|BinaryCrossentropy| for single-classification, seen in \cref{fig:loss_unet_jaccard}. For the comparison of these losses the \verb|dice_metric| was used (seen in \cref{lst:dice_metric}). It is visible that the \verb|BinaryCrossentropy| yields better results the further the training is performed.\\
+In the predictions of these two models, shown in \cref{fig:Preds_unet_jaccard}, one can see that the model using the \verb|jaccard|-loss is not able to detect black planks at all while the other model at least finds a light shadow of this plank. Additionally, the model using the \verb|BinaryCrossentropy| could even differ the background from the plank in the small gap in the lower left corner.\\
+Regarding these results, further models will always contain the \verb|BinaryCrossentropy| when it comes to single-classification.\\
+\begin{minipage}{\textwidth}
+	\input{Images/losses/unet_jaccard.pgf}
+	\captionof{figure}[Metric of U-Net with complexity of 5 for multi-classification with different losses]{Metric of U-Net with complexity of 5 for multi-classification with different losses with training settings: Shift = False; Multi-Class = False; EarlyStopping = False; Epochs = 50; Complexity = 5; Image size = 256x256}
+	\label{fig:loss_unet_jaccard}
+	\vspace{5mm}
+\end{minipage}
+\begin{minipage}{\textwidth}
+    \hspace{0.2cm}
+    \inputpgf{Images/predictions/}{unet_jaccard.pgf}
+	\captionof{figure}[Predictions of U-Net with complexity of 5 for multi-classification with different losses]{Predictions of U-Net with complexity of 5 for multi-classification with different losses with training settings: Shift = False; Multi-Class = False; EarlyStopping = False; Epochs = 50; Complexity = 5; Image size = 256x256}
+	\label{fig:Preds_unet_jaccard}
+	\vspace{5mm}
+\end{minipage}
+
+
+
+\subsection{Advanced Decoder}
+From the results for the advanced decoder architecture one can see in \cref{fig:Decoder_nS_MCSC_Conv2DTranspose_50epochs} that the \verb|BatchNormalization| doesn't lead to a big improvement for the learning in case of single- and multi-classification. In the case of multi-classification the loss-curves with the \verb|BatchNormalization| lie even above the loss-curve without normalization.\\
+However, it must be considered that only one \verb|BatchNormalization| was used (\cref{lst:Decoder-Transpose}) and not in a reasonable position. This could disturb the result and so the conclusions. It was repaired in the advanced decoder architecture in \cref{lst:Decoder-AdvancedDecoder} later on.\\
+\begin{minipage}{\textwidth}
+	\input{Images/losses/Decoder_nS_MCSC_BN_Conv2DTranspose_50epochs.pgf}
+	\captionof{figure}[Loss for a decoder with Conv2DTranspose layers for multi- \& single-classification]{Loss for a decoder with Conv2DTranspose layers for multi- \& single-classification with training settings: Shift = False; Multi-Class = \textbf{x}; EarlyStopping = False; Epochs = 50; Image size =256x256}
+	\label{fig:Decoder_nS_MCSC_Conv2DTranspose_50epochs}
+	\vspace{5mm}
+\end{minipage}
+For the four advanced decoder structures (\cref{lst:Decoder-AdvancedDecoder}) tested here, the losses are plotted in \cref{fig:Decoder_nS_MC_AddedLayer_50epochs} together with the predictions (\cref{fig:Preds_MNV2_MC_AddedLayer}) for the multi-classification. All different decoder models perform in a similar way.\\
+In the loss-plot \cref{fig:Decoder_nS_MC_AddedLayer_50epochs} the decoder models reach a minimal loss of around 0.05 whereby the decoder with the transposed convolutional layer can be found as slightly better compared to the three other models. The predictions are nevertheless only roughly similar to the mask, the results are not usable for the segmentation purpose.\\
+A similar conclusion can be found for the single-classification task while using these four decoder architectures. There, the losses in \cref{fig:Decoder_nS_SC_AddedLayer_50epochs} end up at around 0.1. As well as with the multi-classification the predictions for the single-classification in \cref{fig:Preds_MNV2_SC_AddedLayer} are not usable for the segmentation task. At the edges the predictions are still blurry and coarse and not sharp lines as it would needed to be. Regarding this point, the multi-classification yields clearer edges although these edges are not as straight as required.\\
+\begin{minipage}{\textwidth}
+\centering
+	\input{Images/losses/Decoder_nS_MC_AddedLayer2_50epochs.pgf}
+	\captionof{figure}[Loss for different decoder with added layers for multi-classification]{Loss for different decoder with added layers for multi-classification with training settings: Shift = False; Multi-Class = True;\\ EarlyStopping = False; Epochs = 50; Image size =256x256}
+	\label{fig:Decoder_nS_MC_AddedLayer_50epochs}
+	\hspace{0.2cm}
+	\hspace{0.2cm}
+	\inputpgf{Images/predictions/}{MNV2_MC_AddedLayer2.pgf}
+	\captionof{figure}[Predictions for different decoder with added layers for multi-classification]{Predictions for different decoder with added layers for multi-classification with training settings: Shift = False; Multi-Class = True;\\ EarlyStopping = False; Epochs = 50; Image size =256x256}
+	\label{fig:Preds_MNV2_MC_AddedLayer}
+\end{minipage}
+\newpage
+\begin{minipage}{\textwidth}
+\centering
+	\input{Images/losses/Decoder_nS_SC_AddedLayer2_30epochs.pgf}
+	\captionof{figure}[Loss for different decoder with added layers for single-classification]{Loss for different decoder with added layers for single-classification with training settings: Shift = False; Multi-Class = False;\\ EarlyStopping = False; Epochs = 25; Image size =256x256}
+	\label{fig:Decoder_nS_SC_AddedLayer_50epochs}
+	\hspace{0.2cm}
+	\hspace{0.2cm}
+	\inputpgf{Images/predictions/}{MNV2_SC_AddedLayer2.pgf}
+	\captionof{figure}[Predictions for different decoder with added layers for single-classification]{Predictions for different decoder with added layers for single-classification with training settings: Shift = False; Multi-Class = False;\\ EarlyStopping = False; Epochs = 25; Image size =256x256}
+	\label{fig:Preds_MNV2_SC_AddedLayer}
+\end{minipage}
+\newpage
+\subsection{The Final Model}
+With the final model configuration a minimum loss of 0.01 for multi-classification and of even under 0.01 for single-classification could be reached as it can be seen in \cref{fig:finalnet}. In order to yield finer results a fine-tuning was performed, meaning that the pre-trained model was now included in the training for another 20 epochs. This didn't lead to greater improvements, only for the single-classification a slightly decrease can be observed in \cref{fig:finalnet_fine_tuning}.\\
+\begin{minipage}{\textwidth}
+	\input{Images/losses/final_net.pgf}
+	\captionof{figure}[Losses of final network for single- \& multi-classification]{Losses of final network for single- \& multi-classification with training settings: Shift = False; Multi-Class = \textbf{x}; EarlyStopping = False; Epochs = 50; Image size = 256x256}
+	\label{fig:finalnet}
+	\vspace{5mm}
+\end{minipage}
+\begin{minipage}{\textwidth}
+	\input{Images/losses/final_net_fine_tuning.pgf}
+	\captionof{figure}[Fine tuning of final network for single- \& multi-classification]{Fine tuning of final network for single- \& multi-classification with training settings: Shift = False; Multi-Class = \textbf{x}; EarlyStopping = False; Epochs = 20; Image size = 256x256}
+	\label{fig:finalnet_fine_tuning}
+	\vspace{5mm}
+\end{minipage}
+Regarding the prediction plots for this final model in \cref{fig:Preds_fina_net}, a very accurate segmentation of the edges of the planks can be seen for the white as well as for the black planks. The fine-tuning could improve the single-classification model in order to remove small mistakes in detection of the black planks.\\
+However, the segmentation of the bar-code-label still causes difficulties for the segmentation net. So, only the rough shape of the bar-code can be found. This may be sufficient to scan the bar-codes as the label also contains several centimeters around the code.\\
+\begin{minipage}{\textwidth}
+    \hspace{0.2cm}
+    \inputpgf{Images/predictions/}{final_net.pgf}
+	\captionof{figure}[Predictions of final network]{Predictions of final network single- \& multi-classification with training settings: Shift = False, Multi-Class = \textbf{x}; EarlyStopping = False; Epochs = 50; Image size = 256x256}
+	\label{fig:Preds_fina_net}
+	\vspace{5mm}
+\end{minipage}
+
+
+\subsection{Benchmark Studies on a Coral Chip}
+As final step, the segmentation nets are implemented on a coral chip which can later on be used with a raspberry pi 4 for real-time segmentation of wooden planks. In this report only a benchmark study is discussed.\\
+Therefore the models containing \verb|Keras| software based on the \verb|tensorflow| package are compressed into \verb|tensorflowlite|-models. For these 'lite' models only few layer-types are implemented and a nightly version of \verb|tensorflowlite| had to be used. Since the SegNet contains layer structures that are not predefined in \verb|Keras|, significantly more effort would be needed to prepare its architecture for the coral chip. Therefore, the SegNet is not considered within this benchmark study. \\
+The results are shown in \cref{fig:Benchmarktest_AllModel} for all pre-trained models, the U-Net and the SegNet. The results for different types of the U-Net are shown in \cref{fig:Benchmarktest_Unet} .\\
+\begin{minipage}{\textwidth}
+    \vspace{5mm}
+    \centering
+    \hspace{-1.2cm}
+	\input{Images/speed/encoder.pgf}
+	\captionof{figure}[Benchmark study for the Pre-trained models, the U-Net and the SegNet]{Benchmark study for the Pre-trained models, the U-Net and the SegNet}
+	\label{fig:Benchmarktest_AllModel}
+	\vspace{5mm}
+\end{minipage}
+Although the U-Net trained on big-sized images performed better (\cref{fig:Preds_unet_sliced_big_mC}), it cannot be used for fast predictions on a coral chip due to it's non-squared input. But with using bigger images with the U-Net, the more information led to better segmentation. So as further improvement, a pre-processing step could be applied which produces a usable input while containing as much information as the big-sized, but non-squared images.\\
+\begin{minipage}{\textwidth}
+    \centering
+    \hspace{-0.687cm}
+	\input{Images/speed/unet.pgf}
+	\captionof{figure}[Benchmark study for different inputs while using a U-Net]{Benchmark study for different inputs while using a U-Net: Comparing a U-Net trained with not optimized, sliced images,\\ a U-Net trained on optimized, sliced images and a U-Net trained\\ on full-scale images (256x3072).}
+	\label{fig:Benchmarktest_Unet}
+	\vspace{5mm}
+\end{minipage}
+
+
+\section{Summary \& Outlook}
+In this project different pre-trained encoders from CNNs like the \verb|MobileNetV2|, the \verb|VGG16| or the \verb|ResNet50V2| have not proven to be suitable solutions for the segmentation task of coated wooden planks. Also with different decoder architectures the results were not sufficient. Advanced segmentation architectures as the U-Net and the SegNet had been proven as better approaches for the segmentation here. The best results could be achieved with a U-Net applied on a pre-trained encoder of a \verb|MobileNetV2| with a self-designed decoder.\\
+For the further development, a lot of improvements can be realized. In the post-processing, now a threshold function could be applied to the results in order to detect the damages on the plank while controlling the damages size over a threshold value. Alternatively, another R-CNN could be used for the damage detection on the plank-segmentation.\\
+A problem that appeared in the SegNet and the U-Net predictions was the detection of black planks. This could be improved with more data of black planks and maybe with two CNNs, each trained on only white or only black planks. Also a deeper SegNet architecture as used in the first proposal of the SegNet \cite{Badrinarayanan.2017} could lead to better results. The noise in predictions of the SegNet could be suppressed using a post-processing function. Also the color and the background remain the same, so developing a pre-processing function to insert this kind of information into the images could also improve the performance.\\
+For the advanced decoder structures also deeper structures and a longer training could yield better results. Nevertheless these decoders will not perform as good as advanced architectures like the SegNet and the U-Net given the same training and data. The new findings of implementing these decoders can be used for improving the SegNet and the U-Net architecture further as already done in the final model of this project.\\

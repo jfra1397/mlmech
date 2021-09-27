@@ -1,0 +1,168 @@
+%% Creator: Matplotlib, PGF backend
+%%
+%% To include the figure in your LaTeX document, write
+%%   \input{<filename>.pgf}
+%%
+%% Make sure the required packages are loaded in your preamble
+%%   \usepackage{pgf}
+%%
+%% and, on pdftex
+%%   \usepackage[utf8]{inputenc}\DeclareUnicodeCharacter{2212}{-}
+%%
+%% or, on luatex and xetex
+%%   \usepackage{unicode-math}
+%%
+%% Figures using additional raster images can only be included by \input if
+%% they are in the same directory as the main LaTeX file. For loading figures
+%% from other directories you can use the `import` package
+%%   \usepackage{import}
+%%
+%% and then include the figures with
+%%   \import{<path to file>}{<filename>.pgf}
+%%
+%% Matplotlib used the following preamble
+%%
+\begingroup%
+\makeatletter%
+\begin{pgfpicture}%
+\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{4.404063in}{2.920784in}}%
+\pgfusepath{use as bounding box, clip}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetmiterjoin%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.000000pt}%
+\definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.404063in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.404063in}{2.920784in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{2.920784in}}%
+\pgfpathclose%
+\pgfusepath{fill}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{1.846937in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{1.846937in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img0.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=0.497031in,y=2.724333in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Image}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.952500in}{1.846937in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.952500in}{1.846937in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img1.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=1.349531in,y=2.724333in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Mask}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.805000in}{1.846937in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.805000in}{1.846937in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img2.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=2.202031in,y=2.724333in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Compl=2}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.657500in}{1.846937in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.657500in}{1.846937in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img3.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=3.054531in,y=2.724333in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Compl=4}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.510000in}{1.846937in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.510000in}{1.846937in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img4.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=3.907031in,y=2.724333in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Compl=6}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{0.973469in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{0.973469in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img5.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.952500in}{0.973469in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.952500in}{0.973469in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img6.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.805000in}{0.973469in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.805000in}{0.973469in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img7.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.657500in}{0.973469in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.657500in}{0.973469in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img8.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.510000in}{0.973469in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.510000in}{0.973469in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img9.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{0.100000in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img10.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.952500in}{0.100000in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.952500in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img11.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.805000in}{0.100000in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.805000in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img12.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.657500in}{0.100000in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.657500in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img13.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.510000in}{0.100000in}}{\pgfqpoint{0.794063in}{0.794062in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.510000in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.800000in,height=0.800000in]{unet_sliced_sC-img14.png}}%
+\end{pgfscope}%
+\end{pgfpicture}%
+\makeatother%
+\endgroup%

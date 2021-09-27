@@ -1,0 +1,56 @@
+\usepackage{graphicx}
+\usepackage{blindtext}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{tabularx}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{listings}
+%Using good captions under minipages
+\usepackage{caption}
+\captionsetup{justification=centering}
+\usepackage{cleveref}
+\usepackage{import}
+%Using python Code in LateX
+\usepackage[colorinlistoftodos]{todonotes} %todo notes
+\usepackage{xcolor}
+%Find colornames under: https://www.sciencetronics.com/greenphotons/wp-content/uploads/2016/10/xcolor_names.pdf
+\usepackage{listings}
+\definecolor{dkgreen}{RGB}{16,128,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Python,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=4
+}
+\usepackage{layouts}
+%For boxes aroung the captions:
+% \usepackage{graphicx}
+% \makeatletter
+% \long\def\@makecaption#1#2{%
+%   \vskip\abovecaptionskip
+%   \sbox\@tempboxa{\fbox{#1: #2}}%
+%   \ifdim \wd\@tempboxa >\hsize
+%     \fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{#1: #2}}\par
+%   \else
+%     \global \@minipagefalse
+%     \hb@xt@\hsize{\hfil\box\@tempboxa\hfil}%
+%   \fi
+%   \vskip\belowcaptionskip}
+% \makeatother

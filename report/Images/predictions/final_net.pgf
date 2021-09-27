@@ -1,0 +1,204 @@
+%% Creator: Matplotlib, PGF backend
+%%
+%% To include the figure in your LaTeX document, write
+%%   \input{<filename>.pgf}
+%%
+%% Make sure the required packages are loaded in your preamble
+%%   \usepackage{pgf}
+%%
+%% and, on pdftex
+%%   \usepackage[utf8]{inputenc}\DeclareUnicodeCharacter{2212}{-}
+%%
+%% or, on luatex and xetex
+%%   \usepackage{unicode-math}
+%%
+%% Figures using additional raster images can only be included by \input if
+%% they are in the same directory as the main LaTeX file. For loading figures
+%% from other directories you can use the `import` package
+%%   \usepackage{import}
+%%
+%% and then include the figures with
+%%   \import{<path to file>}{<filename>.pgf}
+%%
+%% Matplotlib used the following preamble
+%%
+\begingroup%
+\makeatletter%
+\begin{pgfpicture}%
+\pgfpathrectangle{\pgfpointorigin}{\pgfqpoint{4.413802in}{2.640031in}}%
+\pgfusepath{use as bounding box, clip}%
+\begin{pgfscope}%
+\pgfsetbuttcap%
+\pgfsetmiterjoin%
+\definecolor{currentfill}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetfillcolor{currentfill}%
+\pgfsetlinewidth{0.000000pt}%
+\definecolor{currentstroke}{rgb}{1.000000,1.000000,1.000000}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{0.000000in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.413802in}{0.000000in}}%
+\pgfpathlineto{\pgfqpoint{4.413802in}{2.640031in}}%
+\pgfpathlineto{\pgfqpoint{0.000000in}{2.640031in}}%
+\pgfpathclose%
+\pgfusepath{fill}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{1.555781in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{1.555781in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img0.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=0.430859in,y=2.300833in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Image}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.810417in}{1.555781in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.810417in}{1.555781in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img1.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=1.141276in,y=2.300833in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont Mask}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.520833in}{1.555781in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.520833in}{1.555781in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img2.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=1.851693in,y=2.300833in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont SC}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.231250in}{1.555781in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.231250in}{1.555781in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img3.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=2.292047in, y=2.443580in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont SC with }%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=2.234176in, y=2.300833in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont  fine tuning}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.941667in}{1.555781in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.941667in}{1.555781in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img4.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=3.272526in,y=2.300833in,,base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont MC}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.652083in}{1.555781in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.652083in}{1.555781in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img5.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=3.687803in, y=2.443580in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont MC with }%
+\end{pgfscope}%
+\begin{pgfscope}%
+\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
+\pgfsetstrokecolor{textcolor}%
+\pgfsetfillcolor{textcolor}%
+\pgftext[x=3.655010in, y=2.300833in, left, base]{\color{textcolor}\rmfamily\fontsize{10.000000}{12.000000}\selectfont  fine tuning}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{0.827891in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{0.827891in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img6.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.810417in}{0.827891in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.810417in}{0.827891in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img7.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.520833in}{0.827891in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.520833in}{0.827891in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img8.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.231250in}{0.827891in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.231250in}{0.827891in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img9.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.941667in}{0.827891in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.941667in}{0.827891in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img10.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.652083in}{0.827891in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.652083in}{0.827891in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img11.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.100000in}{0.100000in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.100000in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img12.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.810417in}{0.100000in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{0.810417in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img13.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{1.520833in}{0.100000in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{1.520833in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img14.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.231250in}{0.100000in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.231250in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img15.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{2.941667in}{0.100000in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{2.941667in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img16.png}}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{3.652083in}{0.100000in}}{\pgfqpoint{0.661719in}{0.661719in}}%
+\pgfusepath{clip}%
+\pgfsys@transformshift{3.652083in}{0.100000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.670000in,height=0.670000in]{final_net-img17.png}}%
+\end{pgfscope}%
+\end{pgfpicture}%
+\makeatother%
+\endgroup%

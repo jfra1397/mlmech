@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 from matplotlib import image
 import numpy as np
+from numpy.core import numerictypes
 
 figure_width = 5.5
 latex_export = False
@@ -51,6 +52,14 @@ for plot_type in plot_types:
         nets = ["Big_images_mC", "Sliced_images"]
         titles = ["Image", "Mask"] + ["big\nimages", "sliced\nimages"]
         horizontal = [3,7,1]
+
+    elif plot_type == "Unet_mC":
+        vmax = [2,2,2,2]
+        output_path = "plots/predictions/unet_mC"
+        img_path = "plots/predictions/unet/plot4"
+        nets = ["Complexity=3", "Complexity=4", "Complexity=5"]
+        titles = ["Image", "Mask"] + nets
+        #horizontal = [3,7,1]
     
     elif plot_type == "UnetJaccard":
         vmax = [1,1,1,1]
